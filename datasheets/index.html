@@ -6,12 +6,12 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         
         <meta name="author" content="陈硕">
-        
-        <link rel="shortcut icon" href="/img/favicon.ico">
-        <title>全国大学生电子设计竞赛</title>
-        <link href="/css/bootstrap.min.css" rel="stylesheet">
-        <link href="/css/font-awesome.min.css" rel="stylesheet">
-        <link href="/css/base.css" rel="stylesheet">
+        <link rel="canonical" href="https://nuedc.org/datasheets/">
+        <link rel="shortcut icon" href="../img/favicon.ico">
+        <title>器件手册 - 全国大学生电子设计竞赛</title>
+        <link href="../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../css/font-awesome.min.css" rel="stylesheet">
+        <link href="../css/base.css" rel="stylesheet">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css">
         <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
         <script>hljs.highlightAll();</script> 
@@ -20,7 +20,7 @@
     <body>
         <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
             <div class="container">
-                <a class="navbar-brand" href="/.">全国大学生电子设计竞赛</a>
+                <a class="navbar-brand" href="..">全国大学生电子设计竞赛</a>
                 <!-- Expander button -->
                 <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-collapse">
                     <span class="navbar-toggler-icon"></span>
@@ -31,19 +31,19 @@
                         <!-- Main navigation -->
                         <ul class="nav navbar-nav">
                             <li class="navitem">
-                                <a href="/." class="nav-link">首页</a>
+                                <a href=".." class="nav-link">首页</a>
                             </li>
                             <li class="navitem">
-                                <a href="/problems/" class="nav-link">历届试题</a>
+                                <a href="../problems/" class="nav-link">历届试题</a>
+                            </li>
+                            <li class="navitem active">
+                                <a href="./" class="nav-link">器件手册</a>
                             </li>
                             <li class="navitem">
-                                <a href="/datasheets/" class="nav-link">器件手册</a>
+                                <a href="../notes/" class="nav-link">笔记</a>
                             </li>
                             <li class="navitem">
-                                <a href="/notes/" class="nav-link">笔记</a>
-                            </li>
-                            <li class="navitem">
-                                <a href="/about/" class="nav-link">关于</a>
+                                <a href="../about/" class="nav-link">关于</a>
                             </li>
                         </ul>
 
@@ -54,7 +54,17 @@
                             </a>
                         </li>
                             <li class="nav-item">
-                                <a href="https://github.com/chenshuo/nuedc" class="nav-link"><i class="fa fa-github"></i> GitHub</a>
+                                <a rel="prev" href="../problems/" class="nav-link">
+                                    <i class="fa fa-arrow-left"></i> Previous
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a rel="next" href="../notes/" class="nav-link">
+                                    Next <i class="fa fa-arrow-right"></i>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="https://github.com/chenshuo/nuedc/edit/master/docs/datasheets.md" class="nav-link"><i class="fa fa-github"></i> Edit on GitHub</a>
                             </li>
                     </ul>
                 </div>
@@ -63,15 +73,86 @@
 
         <div class="container">
             <div class="row">
-
-    <div class="row-fluid">
-      <div id="main-content" class="span12">
-        <h1 id="404-page-not-found" style="text-align: center">404</h1>
-        <p style="text-align: center"><strong>Page not found</strong></p>
-      </div>
+                    <div class="col-md-3"><div class="navbar-light navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-toggle="collapse" data-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
     </div>
 
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-level="2"><a href="#_1" class="nav-link">运放与比较器</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="2"><a href="#_2" class="nav-link">三端稳压与电压基准</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="2"><a href="#bjtfet" class="nav-link">晶体管（BJT、FET）</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
 
+<h1>常用器件数据手册</h1>
+
+<h2 id="_1">运放与比较器</h2>
+<p>EEVBlog 1436 - <a href="https://www.youtube.com/watch?v=uq1DMWtjL2U&amp;ab_channel=EEVblog">The TOP 5 Jellybean OPAMP's</a></p>
+<table>
+<thead>
+<tr>
+<th>型号</th>
+<th>输入</th>
+<th>特点</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>LM358/324</td>
+<td>BJT</td>
+<td>通用、单电源、低功耗</td>
+</tr>
+<tr>
+<td>TL082</td>
+<td>FET</td>
+<td>高速</td>
+</tr>
+<tr>
+<td>OP07</td>
+<td>BJT</td>
+<td>精密</td>
+</tr>
+</tbody>
+</table>
+<p>不推荐： µA741/LM741，已经被淘汰，与上面几款相比没有任何优势。</p>
+<p>EEVblog 1464 - <a href="https://www.youtube.com/watch?v=c5M8P6oe9xY&amp;ab_channel=EEVblog">TOP 5 Jellybean Comparators</a></p>
+<table>
+<thead>
+<tr>
+<th>型号</th>
+<th>特点</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h2 id="_2">三端稳压与电压基准</h2>
+<p>EEVblog 1438 - <a href="https://www.youtube.com/watch?v=YHRxvUqy3Uw&amp;ab_channel=EEVblog">The TOP 5 Jellybean Regulators &amp; References</a></p>
+<h2 id="bjtfet">晶体管（BJT、FET）</h2>
+<p>EEVblog 1599 - <a href="https://www.youtube.com/watch?v=XYdmX8w8xwI&amp;ab_channel=EEVblog">TOP 5 Jellybean Bipolar Transistors</a></p></div>
             </div>
         </div>
 
@@ -79,14 +160,14 @@
             <hr>
             <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
         </footer>
-        <script src="/js/jquery-3.6.0.min.js"></script>
-        <script src="/js/bootstrap.min.js"></script>
+        <script src="../js/jquery-3.6.0.min.js"></script>
+        <script src="../js/bootstrap.min.js"></script>
         <script>
-            var base_url = "/",
+            var base_url = "..",
                 shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
         </script>
-        <script src="/js/base.js"></script>
-        <script src="/search/main.js"></script>
+        <script src="../js/base.js"></script>
+        <script src="../search/main.js"></script>
 
         <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-lg">
