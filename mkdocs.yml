@@ -3,6 +3,11 @@ site_url: https://nuedc.org/
 repo_url: https://github.com/chenshuo/nuedc
 site_author: 陈硕
 
+theme:
+  name: mkdocs
+  analytics:
+    gtag: G-KF122GXJGS
+
 nav:
  - 首页: 'index.md'
  - 历届试题: problems.md
