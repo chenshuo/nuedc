@@ -6,6 +6,6 @@ site_author: 陈硕
 nav:
  - 首页: 'index.md'
  - 历届试题: problems.md
- - 数据手册: datasheets.md
- - 书籍: books.md
+ - 器件手册: datasheets.md
+ - 笔记: notes.md
  - 关于: 'about.md'
