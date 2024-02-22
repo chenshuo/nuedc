@@ -1,13 +1,10 @@
-<h1>电子学笔记</h1>
+<h1>资料与笔记</h1>
 
-* 电子学名人堂
+网站
 
-## 重温模拟电路
+<h2>DIY 项目</h2>
 
-* 电路仿真 Python Jupyter + NgSpice
-
-## 数字信号处理实验
-
-## 数字逻辑 Verilog 实验
+* <https://sound-au.com/>, 特别是 <https://sound-au.com/project3a.htm>
+* 
 
 
