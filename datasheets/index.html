@@ -140,6 +140,11 @@
 <td>Rail-to-rail 输出、低压 (5.5V)</td>
 </tr>
 <tr>
+<td>MCP6292</td>
+<td>CMOS</td>
+<td>高速 (10 MHz)、Rail-to-rail、低压 (5.5V)</td>
+</tr>
+<tr>
 <td>OP07</td>
 <td>BJT</td>
 <td>精密、低失调</td>
@@ -147,11 +152,22 @@
 <tr>
 <td>LM4562/LME49720</td>
 <td>BJT</td>
-<td>低噪音、低失真</td>
+<td>Hi-Fi、低噪音、低失真</td>
 </tr>
 </tbody>
 </table>
-<p>不推荐： µA741/LM741，已经被淘汰，与上面几款相比没有任何优势。</p>
+<p>不推荐： µA741/LM741，已经被淘汰，与上面几款相比没有任何优势。
+741 有历史意义，也有学习的价值，资料丰富，但没有多少使用价值。</p>
+<ul>
+<li><a href="https://en.wikipedia.org/wiki/Operational_amplifier#Internal_circuitry_of_741-type_op_amp">741 内部电路</a>很经典，国内的模电教材上常讲的 F007 运放其实是 µA741 的“山寨版”，“F”字头我猜代表“放”大。</li>
+<li><a href="https://www.righto.com/2015/10/inside-ubiquitous-741-op-amp-circuits.html">https://www.righto.com/2015/10/inside-ubiquitous-741-op-amp-circuits.html</a></li>
+<li>仙童公司(Fairchild，2016 年被 onsemi 收购)的器件常以 µA 开头，<a href="https://www.quora.com/What-is-the-difference-between-LM741-and-UA741/answer/Larry-Zuckerman-2">据说</a>是 micro amplifier 的缩写。</li>
+<li>美国国家半导体(“国半/National”，2011 被 TI 收购)的器件型号常以 LM 开头，据前面同一个人说是 Linear Microchip 的缩写。</li>
+<li>德州仪器 (TI) 的器件常以 TL 开头，我推测是 TI Linear 的缩写，例如 TL082、TL431、TL494 等等。</li>
+</ul>
+<h2>比较器</h2>
+
+<p>一般不建议直接拿运放当电压比较器，而应该使用专门的器件。</p>
 <p>EEVblog 1464 - <a href="https://www.youtube.com/watch?v=c5M8P6oe9xY&amp;ab_channel=EEVblog">TOP 5 Jellybean Comparators</a></p>
 <table>
 <thead>
@@ -199,7 +215,14 @@
 </tr>
 </tbody>
 </table>
-<p>电压基准</p>
+<p>LM7805 是（最）流行的三端稳压集成电路，非常好用、耐用。</p>
+<ul>
+<li><a href="https://artofelectronics.net/">The Art of Electronics 3/e</a> 第 9 章 <a href="https://artofelectronics.net/wp-content/uploads/2016/02/AoE3_chapter9.pdf">稳压电源</a></li>
+<li><a href="https://www.righto.com/2014/09/reverse-engineering-counterfeit-7805.html">https://www.righto.com/2014/09/reverse-engineering-counterfeit-7805.html</a> 有其内部电路原理（包括 <a href="https://en.wikipedia.org/wiki/Bandgap_voltage_reference">bandgap</a> <a href="https://circuitcellar.com/resources/quickbits/bandgap-voltage-reference/">reference</a>）的精彩介绍。国内模电教材有的会讲 W7800 的内部电路，是早期 µA7805 的翻版。“W”字头我猜代表的是“稳”压。</li>
+<li>LM317 现在的 datasheet 上只有原理框图，在旧的 datasheet 上有详细的电路图。</li>
+</ul>
+<h2>电压基准</h2>
+
 <table>
 <thead>
 <tr>
@@ -226,6 +249,14 @@
 </tr>
 </tbody>
 </table>
+<p>TL431 用途非常广泛</p>
+<ul>
+<li><a href="https://en.wikipedia.org/wiki/TL431">https://en.wikipedia.org/wiki/TL431</a></li>
+<li><a href="https://www.righto.com/2014/05/reverse-engineering-tl431-most-common.html">https://www.righto.com/2014/05/reverse-engineering-tl431-most-common.html</a></li>
+<li>Eugene Dvoskin 发布的 <a href="https://www.audio-perfection.com/voltage-regulators/linear-regulators/accurate-tl431-model-development-analysis-and-evaluation/">TL431 SPICE 仿真模型</a></li>
+<li>onsemi 的 <a href="http://powersimtof.com/Spice.htm">Christophe Basso</a> 写的讲义
+ <a href="https://www.onsemi.com/pub/Collateral/TND381-D.PDF">The TL431 in the Control of Switching Power Supplies</a></li>
+</ul>
 <h2 id="bjtfet">晶体管（BJT、FET）</h2>
 <p>EEVblog 1599 - <a href="https://www.youtube.com/watch?v=XYdmX8w8xwI&amp;ab_channel=EEVblog">TOP 5 Jellybean Bipolar Transistors</a></p>
 <table>
