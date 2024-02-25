@@ -2,7 +2,7 @@
 
 首届全国大学生电子设计竞赛举办于 1994 年，此后逢奇数年举办，截至 2023 年已成功举办了 16 届。
 
-这是历届的试题，可直接下载，文件保存在 <https://github.com/chenshuo/nuedc>
+这是历届的试题，可直接下载，也可以直接 `$ git clone ` <https://github.com/chenshuo/nuedc>
 
 从 1999 年起，通常每届比赛颁奖的次年会出版“获奖作品选编”书籍，但是我没有找到
 2019 年第十四届的相应书籍，请知晓缘由的人士不吝赐教： chenshuo_AT_chenshuo.com

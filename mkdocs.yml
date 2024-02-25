@@ -1,6 +1,7 @@
 site_name: 全国大学生电子设计竞赛
 site_url: https://nuedc.org/
 repo_url: https://github.com/chenshuo/nuedc
+edit_uri: ''
 site_author: 陈硕
 
 theme:
