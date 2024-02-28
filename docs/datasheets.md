@@ -38,6 +38,8 @@ EEVblog 1464 - [TOP 5 Jellybean Comparators](https://www.youtube.com/watch?v=c5M
 
 ## 三端稳压与电压基准
 
+关于 LM7805、TL431 等的笔记 [稳压与基准](regulator.md)
+
 EEVblog 1438 - [The TOP 5 Jellybean Regulators & References](https://www.youtube.com/watch?v=YHRxvUqy3Uw&ab_channel=EEVblog)
 
 | 型号 | 特点 |
