@@ -73,13 +73,17 @@ TL431 用途非常广泛
 
 ## 晶体管（BJT、FET）
 
-EEVblog 1599 - [TOP 5 Jellybean Bipolar Transistors](https://www.youtube.com/watch?v=XYdmX8w8xwI&ab_channel=EEVblog)
+* EEVblog 1599 - [TOP 5 Jellybean Bipolar Transistors](https://www.youtube.com/watch?v=XYdmX8w8xwI&ab_channel=EEVblog)
+* [Jellybean components](https://theknowledgeaccelerator.com/2016/04/16/jellybean-components/#Transistors)
+* https://www.eevblog.com/forum/beginners/jellybean-hobbyist-general-purpose-transistors/
+* https://en.wikipedia.org/wiki/2N2222
 
-| 型号 | 特点 |
-| --- | --- |
-| 2N3904/3906 | 小功率 |
-| PN2222/2907 | 中小功率 |
-| SS8050/8550 | 中功率 |
-| MJE3055/2955 | 大功率 |
-| TIP41/42 | 大功率 |
-| TIP142/147 | 达林顿 |
+
+| 型号 | Vce | Ic | \(P_\mathrm{D}\) | \(f_\mathrm{T}\) |特点 |
+| --- | --- | --- | --- | --- | --- |
+| 2N3904/3906 | 40V | 200mA | 625mW | 250MHz | 小功率 |
+| PN2222/2907 | 30V | 600mA | 625mW | 250MHz | 中小功率 |
+| SS8050/8550 | 25V | 1.0A  | 1W    | 100MHz | 中功率 |
+| MJE3055/2955 | 60V | 10A | 75W | 2MHz | 大功率 |
+| TIP41/42   | 100V | 6A  | 65W  | 3MHz | 大功率 |
+| TIP142/147 | 100V | 10A | 125W | ?    | 达林顿 |

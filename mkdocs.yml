@@ -9,9 +9,16 @@ theme:
   analytics:
     gtag: G-KF122GXJGS
 
+extra_javascript:
+  - https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=TeX-AMS_HTML
+markdown_extensions:
+  - mdx_math
+
 nav:
  - 首页: 'index.md'
  - 历届试题: problems.md
  - 器件手册: datasheets.md
- - 笔记: notes.md
+ - 笔记:
+   - 笔记: notes.md
+   - 稳压与基准: regulator.md
  - 关于: 'about.md'
