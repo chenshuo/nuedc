@@ -47,8 +47,18 @@
                             <li class="navitem active">
                                 <a href="./" class="nav-link">器件手册</a>
                             </li>
-                            <li class="navitem">
-                                <a href="../notes/" class="nav-link">笔记</a>
+                            <li class="dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">笔记 <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../notes/" class="dropdown-item">笔记</a>
+</li>
+                                    
+<li>
+    <a href="../regulator/" class="dropdown-item">稳压与基准</a>
+</li>
+                                </ul>
                             </li>
                             <li class="navitem">
                                 <a href="../about/" class="nav-link">关于</a>
@@ -259,37 +269,74 @@
  <a href="https://www.onsemi.com/pub/Collateral/TND381-D.PDF">The TL431 in the Control of Switching Power Supplies</a></li>
 </ul>
 <h2 id="bjtfet">晶体管（BJT、FET）</h2>
-<p>EEVblog 1599 - <a href="https://www.youtube.com/watch?v=XYdmX8w8xwI&amp;ab_channel=EEVblog">TOP 5 Jellybean Bipolar Transistors</a></p>
+<ul>
+<li>EEVblog 1599 - <a href="https://www.youtube.com/watch?v=XYdmX8w8xwI&amp;ab_channel=EEVblog">TOP 5 Jellybean Bipolar Transistors</a></li>
+<li><a href="https://theknowledgeaccelerator.com/2016/04/16/jellybean-components/#Transistors">Jellybean components</a></li>
+<li>https://www.eevblog.com/forum/beginners/jellybean-hobbyist-general-purpose-transistors/</li>
+<li>https://en.wikipedia.org/wiki/2N2222</li>
+</ul>
 <table>
 <thead>
 <tr>
 <th>型号</th>
+<th>Vce</th>
+<th>Ic</th>
+<th>
+<script type="math/tex">P_\mathrm{D}</script>
+</th>
+<th>
+<script type="math/tex">f_\mathrm{T}</script>
+</th>
 <th>特点</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td>2N3904/3906</td>
+<td>40V</td>
+<td>200mA</td>
+<td>625mW</td>
+<td>250MHz</td>
 <td>小功率</td>
 </tr>
 <tr>
 <td>PN2222/2907</td>
+<td>30V</td>
+<td>600mA</td>
+<td>625mW</td>
+<td>250MHz</td>
 <td>中小功率</td>
 </tr>
 <tr>
 <td>SS8050/8550</td>
+<td>25V</td>
+<td>1.0A</td>
+<td>1W</td>
+<td>100MHz</td>
 <td>中功率</td>
 </tr>
 <tr>
 <td>MJE3055/2955</td>
+<td>60V</td>
+<td>10A</td>
+<td>75W</td>
+<td>2MHz</td>
 <td>大功率</td>
 </tr>
 <tr>
 <td>TIP41/42</td>
+<td>100V</td>
+<td>6A</td>
+<td>65W</td>
+<td>3MHz</td>
 <td>大功率</td>
 </tr>
 <tr>
 <td>TIP142/147</td>
+<td>100V</td>
+<td>10A</td>
+<td>125W</td>
+<td>?</td>
 <td>达林顿</td>
 </tr>
 </tbody>
@@ -308,6 +355,7 @@
                 shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
         </script>
         <script src="../js/base.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=TeX-AMS_HTML"></script>
         <script src="../search/main.js"></script>
 
         <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">

@@ -8,7 +8,7 @@
         <meta name="author" content="陈硕">
         <link rel="canonical" href="https://nuedc.org/regulator/">
         <link rel="shortcut icon" href="../img/favicon.ico">
-        <title>Regulator - 全国大学生电子设计竞赛</title>
+        <title>稳压与基准 - 全国大学生电子设计竞赛</title>
         <link href="../css/bootstrap.min.css" rel="stylesheet">
         <link href="../css/font-awesome.min.css" rel="stylesheet">
         <link href="../css/base.css" rel="stylesheet">
@@ -47,8 +47,18 @@
                             <li class="navitem">
                                 <a href="../datasheets/" class="nav-link">器件手册</a>
                             </li>
-                            <li class="navitem">
-                                <a href="../notes/" class="nav-link">笔记</a>
+                            <li class="dropdown active">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">笔记 <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../notes/" class="dropdown-item">笔记</a>
+</li>
+                                    
+<li>
+    <a href="./" class="dropdown-item active">稳压与基准</a>
+</li>
+                                </ul>
                             </li>
                             <li class="navitem">
                                 <a href="../about/" class="nav-link">关于</a>
@@ -61,6 +71,16 @@
                                 <i class="fa fa-search"></i> Search
                             </a>
                         </li>
+                            <li class="nav-item">
+                                <a rel="prev" href="../notes/" class="nav-link">
+                                    <i class="fa fa-arrow-left"></i> Previous
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a rel="next" href="../about/" class="nav-link">
+                                    Next <i class="fa fa-arrow-right"></i>
+                                </a>
+                            </li>
                             <li class="nav-item">
                                 <a href="https://github.com/chenshuo/nuedc" class="nav-link"><i class="fa fa-github"></i> GitHub</a>
                             </li>
@@ -148,6 +168,7 @@
                 shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
         </script>
         <script src="../js/base.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=TeX-AMS_HTML"></script>
         <script src="../search/main.js"></script>
 
         <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">

@@ -47,8 +47,18 @@
                             <li class="navitem">
                                 <a href="../datasheets/" class="nav-link">器件手册</a>
                             </li>
-                            <li class="navitem">
-                                <a href="../notes/" class="nav-link">笔记</a>
+                            <li class="dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">笔记 <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../notes/" class="dropdown-item">笔记</a>
+</li>
+                                    
+<li>
+    <a href="../regulator/" class="dropdown-item">稳压与基准</a>
+</li>
+                                </ul>
                             </li>
                             <li class="navitem">
                                 <a href="../about/" class="nav-link">关于</a>
@@ -388,6 +398,7 @@
                 shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
         </script>
         <script src="../js/base.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=TeX-AMS_HTML"></script>
         <script src="../search/main.js"></script>
 
         <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
