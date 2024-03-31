@@ -28,20 +28,34 @@ TO-220 封装的 LM7805 的 pin 1 是输入，pin 2 是 GND，pin 3 是 5V 输�
 ## LM7805 内部电路简析
 
 现在的 datasheet 没有具体参数(电阻阻值)，要看旧图。
-即便如此，三极管的参数(beta、面积比)也无从得知。因此比例电流源电路的比值也就
+即便如此，三极管的参数(beta、面积比)也无从得知。
 
 从三极管的编号可以推测电路的设计过程。
 
 LM78L05 的电路比 LM7805 要容易理解得多。
 
+μA78L05 内部电路的简单分析与仿真 <https://chenshuo.github.io/notes/UA78L05>
+
+
 ## TL431
+
+内部电路的分析与计算： <https://chenshuo.github.io/notes/tl431>
 
 我怀疑 TI 公布的内部电路留了一手，手册上给的内部电路参数可以符合直流和交流特性，但是不一定符合温度特性。
 
+
 ## 参考
 
-1972 年 National Semiconductor 模拟器件数据手册
+* 1971 年 Fairchild [Linear Integrated Circuits Data Catalog](https://bitsavers.org/components/fairchild/_dataBooks/1971_Fairchild_Linear_Integrated_Circuits_Data_Catalog.pdf) 出现了 μA7800
 
-1977 年 TI 模拟器件数据手册
+* 1972 年 National Semiconductor [Linear Integrated Circuits](https://bitsavers.org/components/national/_dataBooks/1972_National_Linear_Integrated_Circuits.pdf) 有 LM340，也就是后来的 LM7800
 
-Linden T. Harrison, _Current Sources and Voltage References_, 2005.
+* 1974 年 Fairchild [Voltage Regulator Applications Handbook](https://bitsavers.org/components/fairchild/_dataBooks/1974_Fairchild_Voltage_Regulator_Applications_Handbook.pdf) 介绍了 μA7805 内部工作原理
+
+* 1977 年 TI [Voltage Regulator Handbook](https://frank.pocnet.net/other/sos/TexasInstruments_TheVoltageRegulatorHandbook_1977.pdf) 宣布 TL431 即将上市
+
+* 1977 年 Signetics [Analog Data Manual](http://www.bitsavers.org/components/signetics/_dataBooks/1977_Signetics_Analog_Data_Manual.pdf)
+
+* 1980 年 National Semiconductor [Voltage Regulator Handbook](https://media.searchelec.com/specshee/NATIONAL/NationalSemiconductorVoltageRegulatorHandbook1980_text.pdf)
+
+* Linden T. Harrison, _Current Sources and Voltage References_, 2005.
