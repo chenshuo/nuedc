@@ -8,7 +8,7 @@ theme:
   name: mkdocs
   analytics:
     gtag: G-KF122GXJGS
-
+extra_css: [extra.css]
 extra_javascript:
   - https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=TeX-AMS_HTML
 markdown_extensions:
