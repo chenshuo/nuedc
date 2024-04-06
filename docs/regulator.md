@@ -27,8 +27,29 @@ TO-220 封装的 LM7805 的 pin 1 是输入，pin 2 是 GND，pin 3 是 5V 输�
 
 ## LM7805 内部电路简析
 
+<https://www.righto.com/2014/09/reverse-engineering-counterfeit-7805.html>
+
 现在的 datasheet 没有具体参数(电阻阻值)，要看旧图。
 即便如此，三极管的参数(beta、面积比)也无从得知。
+
+78L05 的电路比 7805 要容易理解得多，建议从此入手。
+μA78L05 内部电路的分析与仿真 <https://chenshuo.github.io/notes/UA78L05>
+
+这是我仿真得到的 μA78L05 直流工作点：
+
+![μA78L05 op](img/ua78l05op.png)
+
+LM7805 与 μA7805 内部电路的分析与仿真 <https://chenshuo.github.io/notes/LM7805>
+
+这是我仿真得到的 μA7805 直流工作点：
+
+![μA7805 DC operating point](img/ua7805op.png)
+
+这是用[网上找的 SPICE 模型](https://github.com/kafana/ltspice-misc/blob/master/models/regulators.lib)仿真的 LM7805 直流工作点：
+
+![LM7805 DC operating point](img/lm7805op.png)
+
+**一个猜想**
 
 从三极管的编号可以推测电路的设计过程。7805 是 1970 年左右设计的，当时可没有什么 EDA 软件。鼠标是 1968 年才发明，第一个图形界面的计算机是 1973 年上市（[Xerox Alto](https://en.wikipedia.org/wiki/Xerox_Alto)），Unix 是 1974 年对外发布，SPICE 也是 1973 年发表第一版。所以我推测 7805 是手工计算+画图来设计的，设计步骤会以纸质文档的方式保存下来。那么更改三极管的编号就不是电子文档里“查找+替换”那么简单。所以三级管的编号一定程度上可以推测电路的设计过程，这里以 μA7805 的 bandgap 基准部分为例：**我猜**，一开始的设计是常规的 3 个三极管：
 
@@ -38,20 +59,7 @@ TO-220 封装的 LM7805 的 pin 1 是输入，pin 2 是 GND，pin 3 是 5V 输�
 
 随后发现可能 \(Q_3\) 的增益不够，或者其他原因，需要加一个 \(Q_4\) 做 Darlinton。这样一来，\(Q_2\) 集电极的电压就变成了 \(V_\mathrm{BE4} + V_\mathrm{BE3} \approx 2 V_\mathrm{BE}\approx 1.3\)V，为了把 \(Q_1\) 集电极的电压也升高为 \(2 V_\mathrm{BE}\)，就加入了 \(Q_7\)。然后为了释放 \(Q_7\) 的发射极电流，又增加了 \(R_{10}\) 这个泻流电阻。同理，\(R_{14}\) 是给 \(Q_4\) 泻流用的。于是电路就变成了现在这个样子，三极管的编号也就这么确定下来了。
 
-
 ![μA7805 Bandgap](img/ua7805bandgap.png)
-
-
-78L05 的电路比 7805 要容易理解得多。
-
-μA78L05 内部电路的分析与仿真 <https://chenshuo.github.io/notes/UA78L05>
-
-LM7805 与 μA7805 内部电路的分析与仿真 <https://chenshuo.github.io/notes/LM7805>
-
-这是我仿真得到的 μA7805 直流工作点：
-
-![μA7805 DC operating point](img/ua7805op.png)
-
 
 ## TL431
 
@@ -64,8 +72,16 @@ TL431 内部电路的分析与计算： <https://chenshuo.github.io/notes/tl431>
 
 我怀疑 TI 公布的内部电路留了一手，手册上给的内部电路参数可以符合直流和交流特性，但是不一定符合温度特性。
 
+## LM185
+
+<https://www.righto.com/2022/04/reverse-engineering-lm185-voltage.html>
+
+## AD580
+
 
 ## 参考
+
+*  Bob Pease "The Design of Band-Gap Reference Circuits: Trials and Tribulations", https://www.tayloredge.com/reference/Ganssle-Pease/bobpease-bandgap.pdf
 
 * 1971 年 Fairchild [Linear Integrated Circuits Data Catalog](https://bitsavers.org/components/fairchild/_dataBooks/1971_Fairchild_Linear_Integrated_Circuits_Data_Catalog.pdf) 出现了 μA7800
 
