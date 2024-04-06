@@ -118,6 +118,16 @@
               </ul>
             </li>
             
+            <li class="nav-item" data-level="2"><a href="#lm185" class="nav-link">LM185</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
+            <li class="nav-item" data-level="2"><a href="#ad580" class="nav-link">AD580</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            
             <li class="nav-item" data-level="2"><a href="#_2" class="nav-link">参考</a>
               <ul class="nav flex-column">
               </ul>
@@ -145,25 +155,37 @@
 同年？<a href="https://en.wikipedia.org/wiki/Bob_Pease">Robert A. Pease</a> 发明了 LM337，负电压可调三端稳压。</p>
 <p>1978 TI 发布了可调电压基准 TL431。<a href="https://frank.pocnet.net/other/sos/TexasInstruments_TheVoltageRegulatorHandbook_1977.pdf">1977 年“预告”</a>，1978 年上市。经典的开关电源控制芯片 TL494 是跟 TL431 是同年上市的。</p>
 <h2 id="lm7805">LM7805 内部电路简析</h2>
+<p><a href="https://www.righto.com/2014/09/reverse-engineering-counterfeit-7805.html">https://www.righto.com/2014/09/reverse-engineering-counterfeit-7805.html</a></p>
 <p>现在的 datasheet 没有具体参数(电阻阻值)，要看旧图。
 即便如此，三极管的参数(beta、面积比)也无从得知。</p>
+<p>78L05 的电路比 7805 要容易理解得多，建议从此入手。
+μA78L05 内部电路的分析与仿真 <a href="https://chenshuo.github.io/notes/UA78L05">https://chenshuo.github.io/notes/UA78L05</a></p>
+<p>这是我仿真得到的 μA78L05 直流工作点：</p>
+<p><img alt="μA78L05 op" src="../img/ua78l05op.png" /></p>
+<p>LM7805 与 μA7805 内部电路的分析与仿真 <a href="https://chenshuo.github.io/notes/LM7805">https://chenshuo.github.io/notes/LM7805</a></p>
+<p>这是我仿真得到的 μA7805 直流工作点：</p>
+<p><img alt="μA7805 DC operating point" src="../img/ua7805op.png" /></p>
+<p>这是用<a href="https://github.com/kafana/ltspice-misc/blob/master/models/regulators.lib">网上找的 SPICE 模型</a>仿真的 LM7805 直流工作点：</p>
+<p><img alt="LM7805 DC operating point" src="../img/lm7805op.png" /></p>
+<p><strong>一个猜想</strong></p>
 <p>从三极管的编号可以推测电路的设计过程。7805 是 1970 年左右设计的，当时可没有什么 EDA 软件。鼠标是 1968 年才发明，第一个图形界面的计算机是 1973 年上市（<a href="https://en.wikipedia.org/wiki/Xerox_Alto">Xerox Alto</a>），Unix 是 1974 年对外发布，SPICE 也是 1973 年发表第一版。所以我推测 7805 是手工计算+画图来设计的，设计步骤会以纸质文档的方式保存下来。那么更改三极管的编号就不是电子文档里“查找+替换”那么简单。所以三级管的编号一定程度上可以推测电路的设计过程，这里以 μA7805 的 bandgap 基准部分为例：<strong>我猜</strong>，一开始的设计是常规的 3 个三极管：</p>
 <p><img alt="μA7805 Bandgap guess" src="../img/ua7805guess.png" /></p>
 <p>假设 <script type="math/tex">V_\mathrm{BE1}\approx V_\mathrm{BE3}</script>，那么 <script type="math/tex">R_1</script> 和 <script type="math/tex">R_2</script> 上的电压基本相等，所以 <script type="math/tex">I_1=\dfrac{R_2}{R_1}{I_2}</script>，于是 <script type="math/tex">R_3</script> 上的电压 <script type="math/tex">V_\mathrm{R3} =\Delta V_\mathrm{BE} = V_\mathrm{T}\ln \dfrac{R_2}{R_1}</script>. <script type="math/tex">R_2</script> 上的电压 <script type="math/tex">V_\mathrm{R2} = \dfrac{R_2}{R_3} \Delta V_\mathrm{BE} = \dfrac{R_2}{R_3} \ln \dfrac{R_2}{R_1} \Delta V_\mathrm{T}</script>.</p>
 <p>随后发现可能 <script type="math/tex">Q_3</script> 的增益不够，或者其他原因，需要加一个 <script type="math/tex">Q_4</script> 做 Darlinton。这样一来，<script type="math/tex">Q_2</script> 集电极的电压就变成了 <script type="math/tex">V_\mathrm{BE4} + V_\mathrm{BE3} \approx 2 V_\mathrm{BE}\approx 1.3</script>V，为了把 <script type="math/tex">Q_1</script> 集电极的电压也升高为 <script type="math/tex">2 V_\mathrm{BE}</script>，就加入了 <script type="math/tex">Q_7</script>。然后为了释放 <script type="math/tex">Q_7</script> 的发射极电流，又增加了 <script type="math/tex">R_{10}</script> 这个泻流电阻。同理，<script type="math/tex">R_{14}</script> 是给 <script type="math/tex">Q_4</script> 泻流用的。于是电路就变成了现在这个样子，三极管的编号也就这么确定下来了。</p>
 <p><img alt="μA7805 Bandgap" src="../img/ua7805bandgap.png" /></p>
-<p>78L05 的电路比 7805 要容易理解得多。</p>
-<p>μA78L05 内部电路的分析与仿真 <a href="https://chenshuo.github.io/notes/UA78L05">https://chenshuo.github.io/notes/UA78L05</a></p>
-<p>LM7805 与 μA7805 内部电路的分析与仿真 <a href="https://chenshuo.github.io/notes/LM7805">https://chenshuo.github.io/notes/LM7805</a></p>
-<p>这是我仿真得到的 μA7805 直流工作点：</p>
-<p><img alt="μA7805 DC operating point" src="../img/ua7805op.png" /></p>
 <h2 id="tl431">TL431</h2>
 <p>TL431 内部电路的分析与计算： <a href="https://chenshuo.github.io/notes/tl431">https://chenshuo.github.io/notes/tl431</a></p>
 <p>这是我仿真得到的 TL431 直流工作点：</p>
 <p><img alt="TL431 DC operating point" src="../img/tl431op.png" /></p>
 <p>我怀疑 TI 公布的内部电路留了一手，手册上给的内部电路参数可以符合直流和交流特性，但是不一定符合温度特性。</p>
+<h2 id="lm185">LM185</h2>
+<p><a href="https://www.righto.com/2022/04/reverse-engineering-lm185-voltage.html">https://www.righto.com/2022/04/reverse-engineering-lm185-voltage.html</a></p>
+<h2 id="ad580">AD580</h2>
 <h2 id="_2">参考</h2>
 <ul>
+<li>
+<p>Bob Pease "The Design of Band-Gap Reference Circuits: Trials and Tribulations", https://www.tayloredge.com/reference/Ganssle-Pease/bobpease-bandgap.pdf</p>
+</li>
 <li>
 <p>1971 年 Fairchild <a href="https://bitsavers.org/components/fairchild/_dataBooks/1971_Fairchild_Linear_Integrated_Circuits_Data_Catalog.pdf">Linear Integrated Circuits Data Catalog</a> 出现了 μA7800</p>
 </li>
