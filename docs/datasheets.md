@@ -61,7 +61,12 @@ LM7805 是（最）流行的三端稳压集成电路，非常好用、耐用。
 | TL431 | 通用可调电压基准，自带基准电压的比较器 |
 | LM4040/4041 | 精密固定电压 2.048V, 4.096V 等，以及可调版 |
 | LM336 | 固定 2.5V / 5.0V |
-| LM285 | 固定 1.2V / 2.5V / 可调|
+| LM385 | 固定 1.2V / 2.5V / 可调|
+| LM399 | 恒温、精密 |
+| LM334 | 恒流、温度传感器 |
+| REF34 / REF50 | 精密、小体积 |
+| AD580 / AD581 | 早期经典 |
+| LTZ1000 / ADR1000 | 神器 |
 
 TL431 用途非常广泛
 
@@ -70,6 +75,8 @@ TL431 用途非常广泛
 * Eugene Dvoskin 发布的 [TL431 SPICE 仿真模型](https://www.audio-perfection.com/voltage-regulators/linear-regulators/accurate-tl431-model-development-analysis-and-evaluation/)
 * onsemi 的 [Christophe Basso](http://powersimtof.com/Spice.htm) 写的讲义
  [The TL431 in the Control of Switching Power Supplies](https://www.onsemi.com/pub/Collateral/TND381-D.PDF)
+
+LM385 <http://www.righto.com/2022/04/reverse-engineering-lm185-voltage.html>
 
 ## 晶体管（BJT、FET）
 
