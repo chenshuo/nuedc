@@ -21,4 +21,5 @@ nav:
  - 笔记:
    - 笔记: notes.md
    - 稳压与基准: regulator.md
+   - 741 运放: 741.md
  - 关于: 'about.md'

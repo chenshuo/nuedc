@@ -2,6 +2,8 @@
 
 关于 LM7805、TL431 等的笔记 [稳压与基准](regulator.md)
 
+关于 [741 运放的笔记](741.md)
+
 <h2>SPICE 相关</h2>
 
 McGill 大学的 [Gordon W. Roberts](https://www.ece.mcgill.ca/~grober4/ROBERTS/Welcome.html) 写了[几本 SPICE 书](https://www.ece.mcgill.ca/~grober4/ROBERTS/My_Textbooks.html)
