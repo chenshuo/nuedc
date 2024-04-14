@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <meta name="author" content="陈硕">
+        <link rel="canonical" href="https://nuedc.org/741/">
+        <link rel="shortcut icon" href="../img/favicon.ico">
+        <title>741 运放 - 全国大学生电子设计竞赛</title>
+        <link href="../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../css/font-awesome.min.css" rel="stylesheet">
+        <link href="../css/base.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css">
+        <link href="../extra.css" rel="stylesheet">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+        <script>hljs.highlightAll();</script>
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-KF122GXJGS"></script>
+        <script>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+
+          gtag('config', "G-KF122GXJGS");
+        </script> 
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="..">全国大学生电子设计竞赛</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-collapse">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="navitem">
+                                <a href=".." class="nav-link">首页</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../problems/" class="nav-link">历届试题</a>
+                            </li>
+                            <li class="navitem">
+                                <a href="../datasheets/" class="nav-link">器件手册</a>
+                            </li>
+                            <li class="dropdown active">
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">笔记 <b class="caret"></b></a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../notes/" class="dropdown-item">笔记</a>
+</li>
+                                    
+<li>
+    <a href="../regulator/" class="dropdown-item">稳压与基准</a>
+</li>
+                                    
+<li>
+    <a href="./" class="dropdown-item active">741 运放</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="navitem">
+                                <a href="../about/" class="nav-link">关于</a>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-toggle="modal" data-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                            <li class="nav-item">
+                                <a rel="prev" href="../regulator/" class="nav-link">
+                                    <i class="fa fa-arrow-left"></i> Previous
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a rel="next" href="../about/" class="nav-link">
+                                    Next <i class="fa fa-arrow-right"></i>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="https://github.com/chenshuo/nuedc" class="nav-link"><i class="fa fa-github"></i> GitHub</a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-light navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-toggle="collapse" data-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-level="1"><a href="#a741" class="nav-link">µA741 笔记</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-level="2"><a href="#_1" class="nav-link">内部电路</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#_2" class="nav-link">分析与仿真</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<h1 id="a741">µA741 笔记</h1>
+<p>µA741 是第二代集成运算放大器的代表，由 David Fullagar 在 1968 年为 Fairchild 公司设计。常见的兼容型号有 UA741, LM741, KA741 等等。以下简称 741。741 有历史意义，也有学习的价值，资料丰富，但在 21 世纪没有多少使用价值。</p>
+<p>MC1458 / MC1558 是 741 的双运放版本，电路特性是一样的。</p>
+<p>Dave Fullagar and history of µA741</p>
+<ul>
+<li><a href="https://www.edn.com/voices-dave-fullagar-analog-ic-designer-and-entrepreneur/">https://www.edn.com/voices-dave-fullagar-analog-ic-designer-and-entrepreneur/</a></li>
+<li><a href="https://www.computerhistory.org/collections/catalog/102739975">https://www.computerhistory.org/collections/catalog/102739975</a></li>
+<li><a href="https://archive.computerhistory.org/resources/text/Oral_History/Fairchild_at_50/102658281.05.01.acc.pdf">https://archive.computerhistory.org/resources/text/Oral_History/Fairchild_at_50/102658281.05.01.acc.pdf</a></li>
+<li><a href="https://exhibits.stanford.edu/silicongenesis/catalog/gr517bk2144">https://exhibits.stanford.edu/silicongenesis/catalog/gr517bk2144</a></li>
+<li><a href="https://www.electronicsweekly.com/blogs/engineer-in-wonderland/an-engineer-in-wonderland-inventing-the-555-and-2009-03/">https://www.electronicsweekly.com/blogs/engineer-in-wonderland/an-engineer-in-wonderland-inventing-the-555-and-2009-03/</a></li>
+<li><a href="https://www.electronicsweekly.com/blogs/mannerisms/yarns/designing-741-dave-fullagar-2017-02/">https://www.electronicsweekly.com/blogs/mannerisms/yarns/designing-741-dave-fullagar-2017-02/</a></li>
+</ul>
+<p>芯片的版图：</p>
+<ul>
+<li><a href="https://www.righto.com/2015/10/inside-ubiquitous-741-op-amp-circuits.html">https://www.righto.com/2015/10/inside-ubiquitous-741-op-amp-circuits.html</a> 分析的是金封的 AD741</li>
+<li><a href="https://spectrum.ieee.org/chip-hall-of-fame-fairchild-semiconductor-a741-opamp">https://spectrum.ieee.org/chip-hall-of-fame-fairchild-semiconductor-a741-opamp</a> 是原始 Fairchild 的硅片，也见 <a href="https://www.computerhistory.org/revolution/digital-logic/12/281/1478">https://www.computerhistory.org/revolution/digital-logic/12/281/1478</a></li>
+</ul>
+<p>其中面积最大的发亮的区域是 30pF 的补偿电容。</p>
+<h2 id="_1">内部电路</h2>
+<p>741 内部电路很经典，国内的模电教材上常讲的 F007 运放其实是 µA741 的“山寨版”，“F”字头我猜代表“放”大。741 的内部电路有两个常见的版本，分别有 20 个三极管和 24 个三极管，以下称为 20T 版和 24T 版。</p>
+<p>为了简化，两个调零的引脚没有画出来。</p>
+<p>20T 版（Wikipedia 以此为例介绍<a href="https://en.wikipedia.org/wiki/Operational_amplifier#Internal_circuitry_of_741-type_op_amp">运算放大器</a>），重绘自 Fairchild <a href="fairchild1970.pdf">1970 年数据手册</a>：</p>
+<p><img alt="" src="lm741-20t.png" /></p>
+<p>上图中电阻编号跳过了 R6，三极管跳过了 Q19 和 Q21。所以虽说三极管最大编号是 Q22，其实电路图中一共只有 20 个三极管。这可能说明电路几经修改才呈现现在的样子。</p>
+<p>更常见的 24T 版：</p>
+<p><img alt="" src="lm741-24t-ds.png" /></p>
+<p>上图中 Q16 基极到 Q6 集电极的 300Ω 电阻没有标号，似乎可以算 R12。</p>
+<p>可以看出输入级是一样的，但中间级和输出级略有不同。从上往下看：</p>
+<ul>
+<li>20T 版本的 Q13 是普通 PNP，24T 版的 Q13 有两个集电极，通常认为其面积之比为 <script type="math/tex">1:3</script>，电流是 550μA 和 180μA。</li>
+<li>20T 版本用来消除交越失真的是 Vbe 倍增电路，也叫 rubber diode，用了一个三极管 Q18 和两个电阻 R7/R8。24T 版本是两个三极管 Q18/Q19 和一个电阻 R10。Fairchild 手册上画的 R10 是 50k，Sedra&amp;Smith 书上分析的电路是 40k，我也不知道为啥不一样。</li>
+<li>R5 改成了 40kΩ，但 Sedra&amp;Smith 书上还是按 39kΩ 来计算参考电流。</li>
+<li>Q17 的集电极和 Q20 的基极之间增加了一个双发射极的 PNP 管 Q22，是比较少见的画法/用法。Q22 的第一个发射极接 Q20 基极，可以看作射极跟随器 Q22 的输出，是信号通路，比较容易理解；第二个发射极接到 Q16 基极，考虑到 Q16 基极电位只比 Vee 高 2Vbe，那只有在 Q22 基极比 Q16 基极低 1 个 Vbe 以上时，Q22 的第二发射极才会导通。一般认为它的第二个发射极的作用有两个：一是防止 Q16 电流过大而烧毁；二是防止 Q17 饱和，因为当 Q17 的集电极低于 Q17 的基极时，Q22 的第二发射极导通，Q17 的集电极电压不会进一步降低。有的版本把第二个发射极画成一个二极管（<a href="ua741-ti.pdf">TI 的 µA741 数据手册</a>），有的则干脆省略了第二个发射极（Sedra&amp;Smith 书）。</li>
+<li>在原来 Q15 的基础上，新增了 Q21 和 Q24 用作短路保护。Q24 的画法比较奇怪，它其实和 Q23 构成 current mirror，当 Q20 电流过大，Q21 导通，其集电极电流通过 Q24 复制到 Q23，从而将 Q16 基极拉低，以实现保护。</li>
+</ul>
+<p>一点技术文献考古：</p>
+<ul>
+<li>Fairchild <a href="fairchild1970.pdf">1970 年</a> 和 <a href="fairchild1973.pdf">1973 年</a> 的数据手册上画的是 20T 版本<ul>
+<li>1970 年的标题是 High Performance Operational Amplifier</li>
+<li>1973 年改成了 Frequency-compensated Operational Amplifier</li>
+<li>从电路图观察，增益级 Q17 和输出管 Q14/Q20 之间的空白似乎太大了，只画了一个限流的 Q15，我的猜测是设计和试生产过程中间有其他改动，最终版只保留了现在看到的几个管子，但是图纸上的空白也留下来了。</li>
+<li>1970 年只有 <a href="https://www.computerhistory.org/revolution/digital-logic/12/281/1490">TO-99 金属封装</a>，1973 年出现了现在常用的 DIP-8 封装。这或许解释了为什么 DIP-8 的管脚排列初看上去比较别扭，是为了和 TO-99 金封的管脚兼容。金属封装的管脚排列就比较自然，因为它是圆形的，旋转对称。</li>
+<li>为什么 pin8 不是 Vcc 而是悬空？因为上一代的 µA709 (Robert Widlar 设计) 需要外接频率补偿，而它的 pin1 和 pin8 正是干这个的。µA741 内置了频率补偿，但为了和 µA709 管脚兼容，只好把 pin8 悬空了。pin1 和 pin5 改成了调零端。</li>
+</ul>
+</li>
+<li>Fairchild <a href="fairchild1979.pdf">1979 年</a> 和 <a href="fairchild1987.pdf">1987 年</a> 的数据手册上画的是 24T 版本</li>
+<li>National <a href="national1971.pdf">1971 年</a>数据手册上的 LM741 是 20T 版本，原理图漏标了 Q18。直到现在<a href="LM741-TI.pdf">TI LM741 的手册</a>也是 20T 版本，也还是漏标了 Q18。从 <a href="national1988.pdf">1988 年</a>起，原理图把 Q15 标重复了，这个错误一直保留到了现在 TI 的 <a href="LM741-TI.pdf">LM741 datasheet</a> 第 7 页。我估计是重画这个电路的实习生把 Q17 肩膀上的 Q16 看成了 Q15。</li>
+<li>TI <a href="ti1984.pdf">1984 年技术手册</a>上的 µA741 是独有的 22T 设计，但是这个手册少画了 Q16 基极的输入信号（应该接到 Q4 的集电极），<a href="ua741-ti.pdf">TI 现在的手册</a>是正确的。换言之，由于收购 National 的关系，TI 现在的产品线既有国半的 20T 版 LM741 又有自己独特的 22T 版 µA741。</li>
+</ul>
+<p>Ken Shirrif 曾说，他问过发明人 Dave Fullagar 为何有两个版本的 741，得到的回复是 Fairchild 原始设计的芯片版图就有两个版本，具体原因他也不记得了。</p>
+<blockquote>
+<p>I talked with Dave Fullagar, the inventor of the 741, and it turns out that these two different designs go back to the original Fairchild dies, and he's not sure why there are the two designs.</p>
+</blockquote>
+<h2 id="_2">分析与仿真</h2>
+<p>20T 版的分析计算于仿真见分立器件 XL741 笔记 FIXME，以下讨论 24T 版。</p>
+<p>为了便于分析，现将 24T 版电路图重绘于下，暂时略去补偿电容：</p>
+<p><img alt="" src="lm741-24t.png" /></p>
+<p>上图把 Q22 画成普通 PNP 管，把它的第二发射极画成一个二极管。Q24 画成镜像电流源常见的形式，R5 取 39k，和手册略有不同，但和 XL741 和 Sedra&amp;Smith 书一致。</p>
+<p>待续。。。</p></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script src="../js/jquery-3.6.0.min.js"></script>
+        <script src="../js/bootstrap.min.js"></script>
+        <script>
+            var base_url = "..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../js/base.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=TeX-AMS_HTML"></script>
+        <script src="../search/main.js"></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+                <p>From here you can search these documents. Enter your search terms below.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>
