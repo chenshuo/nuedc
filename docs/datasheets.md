@@ -36,7 +36,7 @@ EEVBlog 1436 - [The TOP 5 Jellybean OPAMP's](https://www.youtube.com/watch?v=uq1
 关于器件型号的前缀。
 
 * 仙童公司(Fairchild，2016 年被 onsemi 收购)的器件常以 µA 开头，[据说](https://www.quora.com/What-is-the-difference-between-LM741-and-UA741/answer/Larry-Zuckerman-2)是 micro amplifier 的缩写。
-* 美国国家半导体(“国半/National”，2011 被 TI 收购)的器件型号常以 LM 开头，据前面同一个人说是 Linear Microchip 的缩写。
+* 美国国家半导体(“国半/National”，2011 被 TI 收购)的器件型号常以 LM 开头，据前面同一个人说是 Linear Microchip 的缩写，另外一种说法是 Linear Monolithic 的缩写。
 * 德州仪器 (TI) 的器件常以 TL 开头，我推测是 TI Linear 的缩写，例如 TL082、TL431、TL494 等等。
 
 <h2>比较器</h2>
