@@ -113,7 +113,7 @@
               <ul class="nav flex-column">
               </ul>
             </li>
-            <li class="nav-item" data-level="2"><a href="#_2" class="nav-link">分析与仿真</a>
+            <li class="nav-item" data-level="2"><a href="#_3" class="nav-link">分析与仿真</a>
               <ul class="nav flex-column">
               </ul>
             </li>
@@ -125,9 +125,9 @@
                     <div class="col-md-9" role="main">
 
 <h1 id="a741">µA741 笔记</h1>
-<p>µA741 是第二代集成运算放大器的代表，由 David Fullagar 在 1968 年为 Fairchild 公司设计。常见的兼容型号有 UA741, LM741, KA741 等等。以下简称 741。741 有历史意义，也有学习的价值，资料丰富，但在 21 世纪没有多少使用价值。</p>
+<p>µA741 是第二代集成运算放大器的代表，由 David Fullagar 在 1968 年为 Fairchild 公司设计。常见的兼容型号有 UA741, LM741, KA741 等等。以下简称 741。741 有<a href="SectionH.pdf">历史意义</a>，也有学习的价值，<a href="Sedra8e_x5.pdf">资料丰富</a>，但在 21 世纪的今天没有多少使用价值。</p>
 <p>MC1458 / MC1558 是 741 的双运放版本，电路特性是一样的。</p>
-<p>Dave Fullagar and history of µA741</p>
+<p>Dave Fullagar and <a href="ho18opamp.pdf">history of µA741</a></p>
 <ul>
 <li><a href="https://www.edn.com/voices-dave-fullagar-analog-ic-designer-and-entrepreneur/">https://www.edn.com/voices-dave-fullagar-analog-ic-designer-and-entrepreneur/</a></li>
 <li><a href="https://www.computerhistory.org/collections/catalog/102739975">https://www.computerhistory.org/collections/catalog/102739975</a></li>
@@ -149,18 +149,18 @@
 <p>20T 版（Wikipedia 以此为例介绍<a href="https://en.wikipedia.org/wiki/Operational_amplifier#Internal_circuitry_of_741-type_op_amp">运算放大器</a>），重绘自 Fairchild <a href="fairchild1970.pdf">1970 年数据手册</a>：</p>
 <p><img alt="" src="lm741-20t.png" /></p>
 <p>上图中电阻编号跳过了 R6，三极管跳过了 Q19 和 Q21。所以虽说三极管最大编号是 Q22，其实电路图中一共只有 20 个三极管。这可能说明电路几经修改才呈现现在的样子。</p>
-<p>更常见的 24T 版：</p>
+<p>更常见的 24T 版，重绘自 Fairchild <a href="fairchild1987.pdf">1987 年数据手册</a>：</p>
 <p><img alt="" src="lm741-24t-ds.png" /></p>
-<p>上图中 Q16 基极到 Q6 集电极的 300Ω 电阻没有标号，似乎可以算 R12。</p>
+<p>上图中 Q16 基极到 Q6 集电极的 300Ω 电阻没有标号，似乎可以算作 R12。</p>
 <p>可以看出输入级是一样的，但中间级和输出级略有不同。从上往下看：</p>
 <ul>
-<li>20T 版本的 Q13 是普通 PNP，24T 版的 Q13 有两个集电极，通常认为其面积之比为 <script type="math/tex">1:3</script>，电流是 550μA 和 180μA。</li>
-<li>20T 版本用来消除交越失真的是 Vbe 倍增电路，也叫 rubber diode，用了一个三极管 Q18 和两个电阻 R7/R8。24T 版本是两个三极管 Q18/Q19 和一个电阻 R10。Fairchild 手册上画的 R10 是 50k，Sedra&amp;Smith 书上分析的电路是 40k，我也不知道为啥不一样。</li>
+<li>20T 版本的 Q13 是普通 PNP，24T 版的 Q13 有两个集电极，通常认为其面积之比为 <script type="math/tex">3:1</script>，电流是 550μA 和 180μA。</li>
+<li>20T 版本用来消除交越失真的是 Vbe 倍增电路，也叫 <a href="https://en.wikipedia.org/wiki/Rubber_diode">rubber diode</a>，用了一个三极管 Q18 和两个电阻 R7/R8。24T 版本是两个三极管 Q18/Q19 和一个电阻 R10。Fairchild 手册上画的 R10 是 50k，Sedra&amp;Smith 书上分析的电路是 40k，我也不知道为啥不一样。</li>
 <li>R5 改成了 40kΩ，但 Sedra&amp;Smith 书上还是按 39kΩ 来计算参考电流。</li>
 <li>Q17 的集电极和 Q20 的基极之间增加了一个双发射极的 PNP 管 Q22，是比较少见的画法/用法。Q22 的第一个发射极接 Q20 基极，可以看作射极跟随器 Q22 的输出，是信号通路，比较容易理解；第二个发射极接到 Q16 基极，考虑到 Q16 基极电位只比 Vee 高 2Vbe，那只有在 Q22 基极比 Q16 基极低 1 个 Vbe 以上时，Q22 的第二发射极才会导通。一般认为它的第二个发射极的作用有两个：一是防止 Q16 电流过大而烧毁；二是防止 Q17 饱和，因为当 Q17 的集电极低于 Q17 的基极时，Q22 的第二发射极导通，Q17 的集电极电压不会进一步降低。有的版本把第二个发射极画成一个二极管（<a href="ua741-ti.pdf">TI 的 µA741 数据手册</a>），有的则干脆省略了第二个发射极（Sedra&amp;Smith 书）。</li>
 <li>在原来 Q15 的基础上，新增了 Q21 和 Q24 用作短路保护。Q24 的画法比较奇怪，它其实和 Q23 构成 current mirror，当 Q20 电流过大，Q21 导通，其集电极电流通过 Q24 复制到 Q23，从而将 Q16 基极拉低，以实现保护。</li>
 </ul>
-<p>一点技术文献考古：</p>
+<h3 id="_2">一点技术文献考古</h3>
 <ul>
 <li>Fairchild <a href="fairchild1970.pdf">1970 年</a> 和 <a href="fairchild1971.pdf">1971 年</a> 的数据手册上画的是 20T 版本<ul>
 <li>1970 年的标题是 High Performance Operational Amplifier</li>
@@ -173,7 +173,9 @@
 </li>
 <li>Fairchild <a href="fairchild1973.pdf">1973 年</a> 数据手册最有意思，它同时有 20T 版本的 µA741/µA741C，又有 24T 版本的 µA741A/µA741E。<ul>
 <li>出现了日后常用的 DIP-8 封装，这或许解释了为什么 DIP-8 的管脚排列初看上去比较别扭，是为了和 TO-99 金封的管脚兼容。金属封装的管脚排列就比较自然，因为它是圆形的，旋转对称。</li>
-<li>µA741A 各方面的性能比原始 µA741 略有提高。我推测，Fairchild 1973 年改进了生产工艺，提高了集成电路中三极管的性能，顺便微调了 µA741 的电路图和版图，顺势推出了 24T 版的 µA741A。为了照顾现有客户，还继续生产旧的 20T 版 µA741。</li>
+<li>µA741A 各方面的性能比原始 µA741 略有提高，比如失调电压、失调电流、偏置电流都都有所减小。我推测，Fairchild 1973 年改进了生产工艺，提高了集成电路中三极管的性能，顺便微调了 µA741 的电路图和版图，顺势推出了 24T 版的 µA741A。为了照顾现有客户，还继续生产旧的 20T 版 µA741。</li>
+<li><a href="LM741-NS.pdf">National LM741</a> 列出了 741A/741/741C 的性能对比。注意到输入偏置电流的典型值从 80nA 减小为 30nA，我们<a href="Sedra8e_x5.pdf">计算得知</a> 741 输入级的集电极电流约为 9.5μA，据此可以推测旧版的输入级差分 NPN 对管 Q1/Q2 的 <script type="math/tex">\beta = 9.5 / 0.08 \approx 120</script>，新版的 <script type="math/tex">\beta = 9.5/0.03\approx 317</script>。</li>
+<li>输入失调电流的典型值从 20nA 大幅降低为 3nA，可能得益于 PNP 管的性能提升。文献上提到，旧版的横向 PNP 管的 <script type="math/tex">\beta</script> 只有不到 10，一般以 5 计算；而新版的估计能有 50.</li>
 </ul>
 </li>
 <li>Fairchild <a href="fairchild1979.pdf">1979 年</a> 和 <a href="fairchild1987.pdf">1987 年</a> 的数据手册上画的 µA741 是 24T 版本，说明旧的 20T 版已经淘汰。</li>
@@ -184,10 +186,26 @@
 <blockquote>
 <p>I talked with Dave Fullagar, the inventor of the 741, and it turns out that these two different designs go back to the original Fairchild dies, and he's not sure why there are the two designs.</p>
 </blockquote>
-<h2 id="_2">分析与仿真</h2>
-<p>20T 版的直流工作点仿真结果：</p>
-<p><img alt="" src="lm741-20t-op0.png" /></p>
+<h2 id="_3">分析与仿真</h2>
 <p>FIXME: 分立器件 XL741 笔记 </p>
+<p>20T 版的直流工作点仿真结果，用于短路保护的 Q15 和 Q22 处于关断状态，用虚线表示：</p>
+<p><img alt="" src="lm741-20t-op0.png" /></p>
+<p>直流工作点计算过程，假设 <script type="math/tex">\beta \gg 1</script>，忽略基极电流，<script type="math/tex">I_\mathrm{C}\approx I_\mathrm{E}</script>：</p>
+<ul>
+<li>
+<p>假设 Vbe = 0.65V，<script type="math/tex">I_\mathrm{REF} = I_\mathrm{R5} = \dfrac{30-0.65\times 2}{39\mathrm{k}}\approx 0.736 \mathrm{mA}</script>。Q12/Q13 是电流镜 <script type="math/tex">I_\mathrm{C11} \approx I_\mathrm{C12} \approx I_\mathrm{C13} \approx I_\mathrm{REF} = 0.736 \mathrm{mA}</script>
+</p>
+</li>
+<li>
+<p>Widlar 电流源 Q10/Q11，<script type="math/tex">I_\mathrm{C10} R_4 = V_\mathrm{T}\ln \dfrac{I_\mathrm{REF}}{I_\mathrm{C10}}</script>，这是个超越方程，用数值方法求出 <script type="math/tex">I_\mathrm{C10} \approx 18.9</script>µA，Sedra&amp;Smith 取 19µA。</p>
+</li>
+<li>Q8/Q9 是电流镜（其实要算上 Q3/Q4 的负反馈，可看作 Wilson 电流源），所以 <script type="math/tex">I_\mathrm{C8} = I_\mathrm{C9} = I_\mathrm{C10} = 18.9</script>µA</li>
+<li>Q5/Q6 也是电流镜，所以 Q1 和 Q2 平分 <script type="math/tex">I_\mathrm{C8}</script>，<script type="math/tex">I_\mathrm{C1} = I_\mathrm{C2} = I_\mathrm{C3} = I_\mathrm{C4} = I_\mathrm{C5} = I_\mathrm{C6} = \dfrac{I_\mathrm{C8}}{2}\approx 9.5</script>µA</li>
+<li>现在来算 Q7 的电流 <script type="math/tex">I_\mathrm{C7}</script>。假设 <script type="math/tex">I_\mathrm{S} = 10</script>fA，由于 <script type="math/tex">I_\mathrm{C5}=9.5</script>µA，算得 <script type="math/tex">V_\mathrm{BE5} = V_\mathrm{T} \ln\dfrac{I_\mathrm{C5}}{I_\mathrm{S}} \approx 25.8  \ln (9.5\times 10^{8}) \approx 533.3</script>mV，Q5 基极（Q7 发射极）到 Vee 的电压是 <script type="math/tex">V_\mathrm{B5} - V_\mathrm{EE} = V_\mathrm{BE5} + I_\mathrm{C5}\,R_1 = 533.3 + 9.5 = 542.8</script>mV。 <script type="math/tex">I_\mathrm{C7}\approx  I_\mathrm{E7} \approx \dfrac{542.8\mathrm{mV}}{R_3} = 10.86</script>µA</li>
+</ul>
+<p>至此，Q1 ~ Q13 的偏置电流全部算出来了，这部分的计算和 24T 版是完全一样的。</p>
+<p>待续。。。</p>
+<h3 id="24t">24T 版</h3>
 <p>以下讨论 24T 版。</p>
 <p>为了便于分析，现将 24T 版电路图重绘于下，暂时略去补偿电容：</p>
 <p><img alt="" src="lm741-24t.png" /></p>
