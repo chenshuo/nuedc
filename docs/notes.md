@@ -18,6 +18,6 @@ McGill 大学的 [Gordon W. Roberts](https://www.ece.mcgill.ca/~grober4/ROBERTS/
 ## DIY 项目
 
 * <https://sound-au.com/>, 特别是 <https://sound-au.com/project3a.htm>
-* [XL741](https://shop.evilmadscientist.com/productsmenu/762) 
+* 用分立器件搭的 [XL741 / 741SE](https://wiki.evilmadscientist.com/741) 
 
 

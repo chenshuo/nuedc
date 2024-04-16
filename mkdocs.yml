@@ -18,8 +18,8 @@ nav:
  - 首页: 'index.md'
  - 历届试题: problems.md
  - 器件手册: datasheets.md
- - 笔记:
-   - 笔记: notes.md
+ - 资料笔记:
+   - 资料: notes.md
    - 稳压与基准: regulator.md
    - 741 运放: 741.md
  - 关于: 'about.md'
