@@ -49,11 +49,11 @@
                                 <a href="../datasheets/" class="nav-link">器件手册</a>
                             </li>
                             <li class="dropdown active">
-                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">笔记 <b class="caret"></b></a>
+                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">资料笔记 <b class="caret"></b></a>
                                 <ul class="dropdown-menu">
                                     
 <li>
-    <a href="../notes/" class="dropdown-item">笔记</a>
+    <a href="../notes/" class="dropdown-item">资料</a>
 </li>
                                     
 <li>
@@ -157,8 +157,9 @@
 <li>20T 版本的 Q13 是普通 PNP，24T 版的 Q13 有两个集电极，通常认为其面积之比为 <script type="math/tex">3:1</script>，电流是 550μA 和 180μA。</li>
 <li>20T 版本用来消除交越失真的是 Vbe 倍增电路，也叫 <a href="https://en.wikipedia.org/wiki/Rubber_diode">rubber diode</a>，用了一个三极管 Q18 和两个电阻 R7/R8。24T 版本是两个三极管 Q18/Q19 和一个电阻 R10。Fairchild 手册上画的 R10 是 50k，Sedra&amp;Smith 书上分析的电路是 40k，我也不知道为啥不一样。</li>
 <li>R5 改成了 40kΩ，但 Sedra&amp;Smith 书上还是按 39kΩ 来计算参考电流。</li>
-<li>Q17 的集电极和 Q20 的基极之间增加了一个双发射极的 PNP 管 Q22，是比较少见的画法/用法。Q22 的第一个发射极接 Q20 基极，可以看作射极跟随器 Q22 的输出，是信号通路，比较容易理解；第二个发射极接到 Q16 基极，考虑到 Q16 基极电位只比 Vee 高 2Vbe，那只有在 Q22 基极比 Q16 基极低 1 个 Vbe 以上时，Q22 的第二发射极才会导通。一般认为它的第二个发射极的作用有两个：一是防止 Q16 电流过大而烧毁；二是防止 Q17 饱和，因为当 Q17 的集电极低于 Q17 的基极时，Q22 的第二发射极导通，Q17 的集电极电压不会进一步降低。有的版本把第二个发射极画成一个二极管（<a href="ua741-ti.pdf">TI 的 µA741 数据手册</a>），有的则干脆省略了第二个发射极（Sedra&amp;Smith 书）。</li>
-<li>在原来 Q15 的基础上，新增了 Q21 和 Q24 用作短路保护。Q24 的画法比较奇怪，它其实和 Q23 构成 current mirror，当 Q20 电流过大，Q21 导通，其集电极电流通过 Q24 复制到 Q23，从而将 Q16 基极拉低，以实现保护。</li>
+<li>Q16 和 Q17 原来是 Darlinton pair，24T 版本把 Q16 的集电极接到 Vcc，等于把 Q16 做成射极跟随器。这样一来，中间级的增益完全由 Q17 提供，因为后面新增 Q22 也是射极跟随器，不提供电压增益。我猜测是 24T 版本的生产工艺进步，单个三极管的 beta 提高，所以可以这么改。</li>
+<li>Q17 的集电极和 Q20 的基极之间增加了一个双发射极的 PNP 管 Q22，是比较少见的画法/用法。Q22 的第一个发射极接 Q20 基极，可以看作射极跟随器 Q22 的输出，是信号通路，比较容易理解；第二个发射极接到 Q16 基极，考虑到 Q16 基极电位只比 Vee 高 2Vbe，那只有在 Q22 基极比 Q16 基极低 1 个 Vbe 以上时，Q22 的第二发射极才会导通。一般认为它的第二个发射极的作用有两个：一是防止 Q16 电流过大而烧毁（因为现在 Q16 的集电极接到 Vcc 去了，原来它的电流受 Q13 限制）；二是防止 Q17 饱和，因为当 Q17 的集电极低于 Q17 的基极时，Q22 的第二发射极导通，Q17 的集电极电压不会进一步降低。有的版本把第二个发射极画成一个二极管（<a href="ua741-ti.pdf">TI 的 µA741 数据手册</a>），有的则干脆省略了第二个发射极（Sedra&amp;Smith 书）。</li>
+<li>在原来 Q15/Q23 的基础上，新增了 Q21 和 Q24 用作短路保护。Q24 的画法比较奇怪，它其实和 Q23 构成 current mirror，当 Q20 电流过大，Q21 导通，其集电极电流通过 Q24 复制到 Q23，从而将 Q16 基极拉低，以实现保护。</li>
 </ul>
 <h3 id="_2">一点技术文献考古</h3>
 <ul>
@@ -190,7 +191,8 @@
 <p>FIXME: 分立器件 XL741 笔记 </p>
 <p>20T 版的直流工作点仿真结果，用于短路保护的 Q15 和 Q22 处于关断状态，用虚线表示：</p>
 <p><img alt="" src="lm741-20t-op0.png" /></p>
-<p>直流工作点计算过程，假设 <script type="math/tex">\beta \gg 1</script>，忽略基极电流，<script type="math/tex">I_\mathrm{C}\approx I_\mathrm{E}</script>：</p>
+<h3 id="_4">直流工作点计算</h3>
+<p>假设 <script type="math/tex">\beta \gg 1</script>，忽略基极电流，<script type="math/tex">I_\mathrm{C}\approx I_\mathrm{E}</script>：</p>
 <ul>
 <li>
 <p>假设 Vbe = 0.65V，<script type="math/tex">I_\mathrm{REF} = I_\mathrm{R5} = \dfrac{30-0.65\times 2}{39\mathrm{k}}\approx 0.736 \mathrm{mA}</script>。Q12/Q13 是电流镜 <script type="math/tex">I_\mathrm{C11} \approx I_\mathrm{C12} \approx I_\mathrm{C13} \approx I_\mathrm{REF} = 0.736 \mathrm{mA}</script>
@@ -204,6 +206,56 @@
 <li>现在来算 Q7 的电流 <script type="math/tex">I_\mathrm{C7}</script>。假设 <script type="math/tex">I_\mathrm{S} = 10</script>fA，由于 <script type="math/tex">I_\mathrm{C5}=9.5</script>µA，算得 <script type="math/tex">V_\mathrm{BE5} = V_\mathrm{T} \ln\dfrac{I_\mathrm{C5}}{I_\mathrm{S}} \approx 25.8  \ln (9.5\times 10^{8}) \approx 533.3</script>mV，Q5 基极（Q7 发射极）到 Vee 的电压是 <script type="math/tex">V_\mathrm{B5} - V_\mathrm{EE} = V_\mathrm{BE5} + I_\mathrm{C5}\,R_1 = 533.3 + 9.5 = 542.8</script>mV。 <script type="math/tex">I_\mathrm{C7}\approx  I_\mathrm{E7} \approx \dfrac{542.8\mathrm{mV}}{R_3} = 10.86</script>µA</li>
 </ul>
 <p>至此，Q1 ~ Q13 的偏置电流全部算出来了，这部分的计算和 24T 版是完全一样的。</p>
+<p>以下中间增益级的计算和 24T 有所不同。</p>
+<ul>
+<li>
+<p>Q16 和 Q17 做成 Darlinton pair，如果忽略 Q14 和 Q20 的基极电流，考虑 Q12/Q13 电流镜，则 <script type="math/tex">I_\mathrm{C16} + I_\mathrm{C17} \approx I_\mathrm{REF} = 0.736</script>mA</p>
+</li>
+<li>
+<p>Q16 的发射极电流会进入 R12 和 Q17 的基极 <script type="math/tex"> I_\mathrm{R12} + I_\mathrm{B17} = I_\mathrm{E16} \approx I_\mathrm{C16}</script>
+</p>
+</li>
+<li>
+<p>Q17 的基极到 Vee 的电压（即 R12 上的电压）为 <script type="math/tex">V_\mathrm{B17} - V_\mathrm{EE} = V_\mathrm{BE7} + I_\mathrm{E17}\,R_{11}</script>
+</p>
+</li>
+<li>
+<p>R12 上的电流 <script type="math/tex">I_\mathrm{R12} = \dfrac{V_\mathrm{B17} - V_\mathrm{EE}}{R_{12}}</script>
+</p>
+</li>
+</ul>
+<p>联立以上几个条件：</p>
+<p>
+<script type="math/tex">I_\mathrm{C16} + I_\mathrm{C17} = 0.736</script>
+</p>
+<p>
+<script type="math/tex">I_\mathrm{R12} + I_\mathrm{C17} / \beta = I_\mathrm{C16}</script>
+</p>
+<p>
+<script type="math/tex">I_\mathrm{R12}\,R_{12} =  V_\mathrm{BE7} +\dfrac{\beta+1}{\beta} I_\mathrm{C17}\,R_{11}</script>
+</p>
+<p>假设 <script type="math/tex">\beta=200</script>，考虑到大部分偏置电流会经过 Q17，假设 <script type="math/tex">V_\mathrm{BE7}=0.65</script>V，解线性方程组得</p>
+<ul>
+<li>
+<script type="math/tex">I_\mathrm{R12} = 13.7</script>µA</li>
+<li>
+<script type="math/tex">I_\mathrm{E17} = 736 - 13.7 = 722.3</script>µA</li>
+<li>
+<script type="math/tex">I_\mathrm{B17} = I_\mathrm{E17} / (\beta+1) = 3.6</script>µA</li>
+<li>
+<script type="math/tex">I_\mathrm{C16} \approx I_\mathrm{E16} = 13.7+3.6 = 17.3</script>µA</li>
+</ul>
+<p>输出级：</p>
+<ul>
+<li>近似认为 Q18 的电流是 <script type="math/tex">I_\mathrm{REF} = 0.736</script>mA，则 <script type="math/tex">V_\mathrm{BE18}\approx 0.65</script>V，考虑 Q18 的 Vbe 倍增效果，<script type="math/tex">V_\mathrm{CE18}\approx (1+\dfrac{R_7}{R_8}) V_\mathrm{BE18} = 1.6 \times 0.65 = 1.04</script>V</li>
+<li>
+<p>当输出为 0V 时，<script type="math/tex">I_\mathrm{E14} = I_\mathrm{E20}</script>，所以认为 <script type="math/tex">V_\mathrm{BE14}</script> 和 <script type="math/tex">V_\mathrm{BE20}</script> 平分 <script type="math/tex">V_\mathrm{CE18}</script>，即  <script type="math/tex">V_\mathrm{BE14} =  V_\mathrm{BE20} = V_\mathrm{CE18}/2 = 0.52</script>V</p>
+</li>
+<li>
+<p>Q14 和 Q20 的静态偏置电流为 <script type="math/tex">I_\mathrm{S}\exp\dfrac{V_\mathrm{BE14}}{V_\mathrm{T}} = 10\times 10 ^{-15} \exp\dfrac{0.52}{0.0258}\approx 5.7</script>µA</p>
+</li>
+</ul>
+<p>至此，全部管子的直流工作点已经求出来。</p>
 <p>待续。。。</p>
 <h3 id="24t">24T 版</h3>
 <p>以下讨论 24T 版。</p>
