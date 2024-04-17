@@ -192,7 +192,7 @@
 <p>20T 版的直流工作点仿真结果，用于短路保护的 Q15 和 Q22 处于关断状态，用虚线表示：</p>
 <p><img alt="" src="lm741-20t-op0.png" /></p>
 <h3 id="_4">直流工作点计算</h3>
-<p>假设 <script type="math/tex">\beta \gg 1</script>，忽略基极电流，<script type="math/tex">I_\mathrm{C}\approx I_\mathrm{E}</script>：</p>
+<p>假设所有三极管 <script type="math/tex">I_\mathrm{S} = 10</script>fA，除输出推挽管 Q14/Q20 外，面积均相等。假设 <script type="math/tex">\beta \gg 1</script>，忽略基极电流，<script type="math/tex">I_\mathrm{C}\approx I_\mathrm{E}</script>：</p>
 <ul>
 <li>
 <p>假设 Vbe = 0.65V，<script type="math/tex">I_\mathrm{REF} = I_\mathrm{R5} = \dfrac{30-0.65\times 2}{39\mathrm{k}}\approx 0.736 \mathrm{mA}</script>。Q12/Q13 是电流镜 <script type="math/tex">I_\mathrm{C11} \approx I_\mathrm{C12} \approx I_\mathrm{C13} \approx I_\mathrm{REF} = 0.736 \mathrm{mA}</script>
@@ -245,14 +245,14 @@
 <li>
 <script type="math/tex">I_\mathrm{C16} \approx I_\mathrm{E16} = 13.7+3.6 = 17.3</script>µA</li>
 </ul>
-<p>输出级：</p>
+<p>输出级，一般认为 Q14 和 Q20 的面积是普通管子的 3 倍：</p>
 <ul>
 <li>近似认为 Q18 的电流是 <script type="math/tex">I_\mathrm{REF} = 0.736</script>mA，则 <script type="math/tex">V_\mathrm{BE18}\approx 0.65</script>V，考虑 Q18 的 Vbe 倍增效果，<script type="math/tex">V_\mathrm{CE18}\approx (1+\dfrac{R_7}{R_8}) V_\mathrm{BE18} = 1.6 \times 0.65 = 1.04</script>V</li>
 <li>
 <p>当输出为 0V 时，<script type="math/tex">I_\mathrm{E14} = I_\mathrm{E20}</script>，所以认为 <script type="math/tex">V_\mathrm{BE14}</script> 和 <script type="math/tex">V_\mathrm{BE20}</script> 平分 <script type="math/tex">V_\mathrm{CE18}</script>，即  <script type="math/tex">V_\mathrm{BE14} =  V_\mathrm{BE20} = V_\mathrm{CE18}/2 = 0.52</script>V</p>
 </li>
 <li>
-<p>Q14 和 Q20 的静态偏置电流为 <script type="math/tex">I_\mathrm{S}\exp\dfrac{V_\mathrm{BE14}}{V_\mathrm{T}} = 10\times 10 ^{-15} \exp\dfrac{0.52}{0.0258}\approx 5.7</script>µA</p>
+<p>Q14 和 Q20 的静态偏置电流为 <script type="math/tex">3 I_\mathrm{S}\exp\dfrac{V_\mathrm{BE14}}{V_\mathrm{T}} = 10\times 10 ^{-15} \exp\dfrac{0.52}{0.0258}\approx 17</script>µA</p>
 </li>
 </ul>
 <p>至此，全部管子的直流工作点已经求出来。</p>
@@ -262,6 +262,60 @@
 <p>为了便于分析，现将 24T 版电路图重绘于下，暂时略去补偿电容：</p>
 <p><img alt="" src="lm741-24t.png" /></p>
 <p>上图把 Q22 画成普通 PNP 管，把它的第二发射极画成一个二极管。Q24 画成镜像电流源常见的形式，R5 取 39k，和手册略有不同，但和 XL741 和 Sedra&amp;Smith 书一致。</p>
+<p>Q1 ~ Q12 的偏置电流的计算方法和 20T 版完全一样，此处不再重复，而直接列出结果。
+假设 <script type="math/tex">\beta \gg 1</script>，忽略基极电流，<script type="math/tex">I_\mathrm{C}\approx I_\mathrm{E}</script>：</p>
+<table>
+<thead>
+<tr>
+<th>三极管</th>
+<th>
+<script type="math/tex">I_\mathrm{C}</script> (µA)</th>
+<th>计算方法</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Q11/Q12</td>
+<td>736</td>
+<td>
+<script type="math/tex">I_\mathrm{REF}=\dfrac{30-2\times 0.65}{39\mathrm{k}}</script>
+</td>
+</tr>
+<tr>
+<td>Q10/Q9/Q8</td>
+<td>18.9</td>
+<td>
+<script type="math/tex">I_\mathrm{C10} R_4 = V_\mathrm{T}\ln \dfrac{I_\mathrm{REF}}{I_\mathrm{C10}}</script>
+</td>
+</tr>
+<tr>
+<td>Q1 ~ Q6</td>
+<td>9.5</td>
+<td>
+<script type="math/tex">I_\mathrm{C1} = I_\mathrm{C10} / 2</script>
+</td>
+</tr>
+<tr>
+<td>Q7</td>
+<td>10.86</td>
+<td>
+<script type="math/tex">I_\mathrm{E7} \approx \dfrac{V_\mathrm{B5} - V_\mathrm{EE}}{R_3}</script>
+</td>
+</tr>
+</tbody>
+</table>
+<p>中间级，假设 <script type="math/tex">\beta=200</script>：</p>
+<ul>
+<li>Q17 集电极接 Q13B 的集电极，电流为 <script type="math/tex">I_\mathrm{C17} = \dfrac{3}{4}I_\mathrm{REF} = 552</script>µA.</li>
+<li>
+<script type="math/tex">V_\mathrm{BE17} = V_\mathrm{T}\ln\dfrac{I_\mathrm{E17}}{I_\mathrm{S}}=25.8\times \ln \dfrac{552\times 10^{-6} (1+\beta)}{ 10^{-14}\beta} = 638</script> mV, <script type="math/tex">V_\mathrm{B17} - V_\mathrm{EE}= V_\mathrm{BE17} + I_\mathrm{E17}\,R_8 = 694</script>mV</li>
+<li>Q16 的发射极电流 <script type="math/tex">I_\mathrm{E16} = I_\mathrm{B17} + I_\mathrm{R9} =\dfrac{I_\mathrm{C17}}{\beta} + \dfrac{V_\mathrm{B17} - V_\mathrm{EE}}{R_9} = 16.6</script>µA</li>
+</ul>
+<p>输出级，一般认为 Q14 和 Q20 的面积是普通管子的 3 倍：</p>
+<ul>
+<li>先估算 <script type="math/tex">V_\mathrm{CE19}=V_\mathrm{BE18} + V_\mathrm{BE19}</script>
+</li>
+</ul>
 <p>待续。。。</p></div>
             </div>
         </div>
