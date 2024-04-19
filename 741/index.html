@@ -126,7 +126,7 @@
 
 <h1 id="a741">µA741 笔记</h1>
 <p>µA741 是第二代集成运算放大器的代表，由 David Fullagar 在 1968 年为 Fairchild 公司设计。常见的兼容型号有 UA741, LM741, KA741 等等。以下简称 741。741 有<a href="SectionH.pdf">历史意义</a>，也有学习的价值，<a href="Sedra8e_x5.pdf">资料丰富</a>，但在 21 世纪的今天没有多少使用价值。</p>
-<p>MC1458 / MC1558 是 741 的双运放版本，电路特性是一样的。</p>
+<p>MC1458 / MC1558 是 741 的双运放版本，电路特性是一样的。RC4558 是第一款集成双运放，其性能指标和 µA741 相仿，电路比 741 略微简单一些。</p>
 <p>Dave Fullagar and <a href="ho18opamp.pdf">history of µA741</a></p>
 <ul>
 <li><a href="https://www.edn.com/voices-dave-fullagar-analog-ic-designer-and-entrepreneur/">https://www.edn.com/voices-dave-fullagar-analog-ic-designer-and-entrepreneur/</a></li>
@@ -187,8 +187,9 @@
 <blockquote>
 <p>I talked with Dave Fullagar, the inventor of the 741, and it turns out that these two different designs go back to the original Fairchild dies, and he's not sure why there are the two designs.</p>
 </blockquote>
+<p>Dave Fullagar 1969 年离开 Fairchild 加盟 Intersil，所以我猜测 24T 版的改动是他在 Fairchild 的前同事们做的，他并不知情。</p>
 <h2 id="_3">分析与仿真</h2>
-<p>FIXME: 分立器件 XL741 笔记 </p>
+<p>分立器件 XL741 笔记 ： <a href="http://chenshuo.github.io/notes/XL741/">http://chenshuo.github.io/notes/XL741/</a></p>
 <p>20T 版的直流工作点仿真结果，用于短路保护的 Q15 和 Q22 处于关断状态，用虚线表示：</p>
 <p><img alt="" src="lm741-20t-op0.png" /></p>
 <h3 id="_4">直流工作点计算</h3>
@@ -256,7 +257,69 @@
 </li>
 </ul>
 <p>至此，全部管子的直流工作点已经求出来。</p>
-<p>待续。。。</p>
+<table>
+<thead>
+<tr>
+<th>三极管</th>
+<th>
+<script type="math/tex">I_\mathrm{C}</script> (µA)</th>
+<th>仿真结果 (µA)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Q11/Q12</td>
+<td>736</td>
+<td>736</td>
+</tr>
+<tr>
+<td>Q13</td>
+<td>736</td>
+<td>859.5</td>
+</tr>
+<tr>
+<td>Q10/Q9</td>
+<td>18.9</td>
+<td>~19.5</td>
+</tr>
+<tr>
+<td>Q8</td>
+<td>18.9</td>
+<td>15.4</td>
+</tr>
+<tr>
+<td>Q1 ~ Q6</td>
+<td>9.5</td>
+<td>~7.6</td>
+</tr>
+<tr>
+<td>Q7</td>
+<td>10.86</td>
+<td>10.8</td>
+</tr>
+<tr>
+<td>Q16</td>
+<td>17.3</td>
+<td>17.6</td>
+</tr>
+<tr>
+<td>Q17</td>
+<td>722.3</td>
+<td>842</td>
+</tr>
+<tr>
+<td>Q18</td>
+<td>Vce = 1.04V</td>
+<td>Vce = 1.058V</td>
+</tr>
+<tr>
+<td>Q14/Q20</td>
+<td>17</td>
+<td>~27</td>
+</tr>
+</tbody>
+</table>
+<p>据我分析，误差主要来自 PNP 管 Early 电压只有 50V。在手工计算中，我们忽略了 Early 效应，如果加上这一因素，计算结果会更接近仿真结果。例子可参考<a href="http://chenshuo.github.io/notes/XL741/#summary">分立器件 XL741 笔记</a>。</p>
 <h3 id="24t">24T 版</h3>
 <p>以下讨论 24T 版。</p>
 <p>为了便于分析，现将 24T 版电路图重绘于下，暂时略去补偿电容：</p>
@@ -306,16 +369,34 @@
 </table>
 <p>中间级，假设 <script type="math/tex">\beta=200</script>：</p>
 <ul>
-<li>Q17 集电极接 Q13B 的集电极，电流为 <script type="math/tex">I_\mathrm{C17} = \dfrac{3}{4}I_\mathrm{REF} = 552</script>µA.</li>
 <li>
-<script type="math/tex">V_\mathrm{BE17} = V_\mathrm{T}\ln\dfrac{I_\mathrm{E17}}{I_\mathrm{S}}=25.8\times \ln \dfrac{552\times 10^{-6} (1+\beta)}{ 10^{-14}\beta} = 638</script> mV, <script type="math/tex">V_\mathrm{B17} - V_\mathrm{EE}= V_\mathrm{BE17} + I_\mathrm{E17}\,R_8 = 694</script>mV</li>
-<li>Q16 的发射极电流 <script type="math/tex">I_\mathrm{E16} = I_\mathrm{B17} + I_\mathrm{R9} =\dfrac{I_\mathrm{C17}}{\beta} + \dfrac{V_\mathrm{B17} - V_\mathrm{EE}}{R_9} = 16.6</script>µA</li>
-</ul>
-<p>输出级，一般认为 Q14 和 Q20 的面积是普通管子的 3 倍：</p>
-<ul>
-<li>先估算 <script type="math/tex">V_\mathrm{CE19}=V_\mathrm{BE18} + V_\mathrm{BE19}</script>
+<p>Q17 集电极接 Q13B 的集电极，电流为 <script type="math/tex">I_\mathrm{C17} = \dfrac{3}{4}I_\mathrm{REF} = 552</script>µA.</p>
+</li>
+<li>
+<p>
+<script type="math/tex">V_\mathrm{BE17} = V_\mathrm{T}\ln\dfrac{I_\mathrm{E17}}{I_\mathrm{S}}=25.8\times \ln \dfrac{552\times 10^{-6} }{ 10^{-14}} = 638</script> mV,</p>
+</li>
+<li>
+<p>R9 两端的电压 <script type="math/tex">V_\mathrm{B17} - V_\mathrm{EE}= V_\mathrm{BE17} + I_\mathrm{E17}\,R_8 = 694</script>mV</p>
+</li>
+<li>
+<p>Q16 的发射极电流 <script type="math/tex">I_\mathrm{E16} = I_\mathrm{B17} + I_\mathrm{R9} =\dfrac{I_\mathrm{C17}}{\beta} + \dfrac{V_\mathrm{B17} - V_\mathrm{EE}}{R_9} = 16.6</script>µA</p>
 </li>
 </ul>
+<p>一般的算法是先估算 <script type="math/tex">V_\mathrm{CE19}</script> 以确定 Q14 和 Q20 的偏置电压。</p>
+<ul>
+<li>
+<script type="math/tex">V_\mathrm{CE19}=V_\mathrm{BE18} + V_\mathrm{BE19}</script>
+</li>
+<li>
+<script type="math/tex">I_\mathrm{R10}\,R_\mathrm{10} = V_\mathrm{BE19}</script>
+</li>
+<li>
+<script type="math/tex">I_\mathrm{E18} = I_\mathrm{R10} + I_\mathrm{B19}</script>
+</li>
+</ul>
+<p>也可以先估算 Q18 和 Q19 的电流，再用 translinear 电路的分析方法求 Q14 和 Q20 的电流。</p>
+<p>输出级，一般认为 Q14 和 Q20 的面积是普通管子的 3 倍。</p>
 <p>待续。。。</p></div>
             </div>
         </div>
