@@ -12,6 +12,7 @@ EEVBlog 1436 - [The TOP 5 Jellybean OPAMP's](https://www.youtube.com/watch?v=uq1
 | MCP6292 | CMOS | 高速 (10 MHz)、Rail-to-rail、低压 (5.5V) |
 | OP07 | BJT | 精密、低失调 |
 | LM4562/LME49720 | BJT | Hi-Fi、低噪音、低失真 |
+| OPA1612 | BJT | Hi-Fi、低噪音、低失真 |
 
 
 不推荐： [µA741/LM741](741.md)，已经被淘汰，与上面几款相比没有任何优势。
