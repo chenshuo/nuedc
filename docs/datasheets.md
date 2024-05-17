@@ -19,26 +19,41 @@ EEVBlog 1436 - [The TOP 5 Jellybean OPAMP's](https://www.youtube.com/watch?v=uq1
 741 有历史意义，也有学习的价值，资料丰富，但没有多少使用价值。
 
 * 运放电路集锦 [AN-31: Op Amp Circuit Collection](https://web.ece.ucsb.edu/Faculty/rodwell/Classes/ece2c/resources/an-31.pdf) 国半 1978, [TI 最新版](https://www.ti.com/lit/an/snla140d/snla140d.pdf)
-* LM358/LM324 可能是目前最常用的通用运放。
-    * LM358 是双运放，LM324 是四运放，后者的[器件手册](https://www.ti.com/lit/ds/symlink/lm2902-n.pdf)有非常多的电路示例。
-    * LM358/LM324 可以单电源供电，输入输出都可以到 GND。
-    * 注意它为了实现低功耗（按当时的标准），输出极采用的是乙类放大，放大交流信号会有交越失真。消除办法之一是把负载电阻从接地改成接电源负极，从而迫使输出极工作在甲类状态，代价则是输出电流增加，功耗加大。 
-
-     ![](img/lm358-crossover.jpg)
-
-    * 注意它的共模输入范围，如果输入电压比负电源低 0.3V 以上，会出现相位反转 phase reversal。如下图中的 A 区，输入比电源负极低 0.5V，输出电压从 0 跳变成接近正电源电压。设计电路的时候需要注意防止出现这种意外情况，参考 [Application Design Guidelines for LM324 and LM358 Devices](https://www.ti.com/lit/an/sloa277b/sloa277b.pdf)
-
-    ![](img/lm358-phase-reversal.png)
-    
-    * 器件手册上给的内部简化电路图只有十几个三极管，看上去比 741 还简单，但实际上它有五十几个晶体管，远比早期运放复杂。我在 onsemi 的手册上找到一份[详细的电路图](https://www.onsemi.com/download/data-sheet/pdf/lm358-d.pdf)。目前我能找到的 SPICE 仿真模型也都是行为仿真，而不是三极管级别的仿真。有的模型会加入固定的 2mV 输入失调电压，有的则没有。而且不是每个模型都能复现上面提到的交越失真和相位反转这两个常见 bug。
-
-![](img/lm358-schematic.png)
 
 关于器件型号的前缀。
 
 * 仙童公司(Fairchild，2016 年被 onsemi 收购)的器件常以 µA 开头，[据说](https://www.quora.com/What-is-the-difference-between-LM741-and-UA741/answer/Larry-Zuckerman-2)是 micro amplifier 的缩写。
 * 美国国家半导体(“国半/National”，2011 被 TI 收购)的器件型号常以 LM 开头，据前面同一个人说是 Linear Microchip 的缩写，另外一种说法是 Linear Monolithic 的缩写。
 * 德州仪器 (TI) 的器件常以 TL 开头，我推测是 TI Linear 的缩写，例如 TL082、TL431、TL494 等等。
+
+### LM358/LM324
+
+LM358/LM324 可能是目前最常用的通用运放。
+
+* LM358 是双运放，LM324 是四运放，后者的[器件手册](https://www.ti.com/lit/ds/symlink/lm2902-n.pdf)有非常多的电路示例。
+* LM358/LM324 可以单电源供电，输入输出都可以到 GND。注意输出为 0V 时它只能 sink ~50µA 电流，如果 sink 电流大于此值，输出的低端 PNP 管会导通，使得输出电压升高到 0.6V 左右。
+* 注意它为了实现低功耗（按当时的标准），输出极采用的是乙类放大，放大交流信号会有交越失真。消除办法之一是把负载电阻从接地改成接电源负极，从而迫使输出极工作在甲类状态，代价则是输出电流增加，功耗加大。 
+
+     ![](img/lm358-crossover.jpg)
+
+* 注意它的共模输入范围，如果输入电压比负电源低 0.3V 以上，会出现相位反转 phase reversal。如下图中的 A 区，输入比电源负极低 0.5V，输出电压从 0 跳变成接近正电源电压。设计电路的时候需要注意防止出现这种意外情况，参考 [Application Design Guidelines for LM324 and LM358 Devices](https://www.ti.com/lit/an/sloa277b/sloa277b.pdf)
+
+    ![](img/lm358-phase-reversal.png)
+    
+* 器件手册上给的内部简化电路图只有十几个三极管，看上去比 741 还简单，但实际上 LM358 有五十几个晶体管，算下来每路运放用了二十多个管子。我在 onsemi 的手册上找到一份[详细的电路图](https://www.onsemi.com/download/data-sheet/pdf/lm358-d.pdf)。目前我能找到的 SPICE 仿真模型也都是行为仿真，而不是三极管级别的仿真。有的模型会加入固定的 2mV 输入失调电压，有的则没有。而且不是每个模型都能复现上面提到的交越失真和相位反转这两个常见 bug。
+
+![](img/lm358-schematic.png)
+
+
+### 关于相位反转 phase reversal
+
+使用运放的时候要注意 common mode 输入电压范围。在没有特殊需求的情况下，对于常见的 Vcc=15V, Vee=-15V 供电，共模输入电压安全范围是 +/- 13V，输出电压摆幅也大约是 +/- 13V。
+
+特别值得注意的是，当输入电压接近负电源电压 Vee 时，有些运放会出现相位反转（输出高电平）。应该设法避免出现这种工作状态。
+
+* LM324/LM358 可以单电源工作，输入输出电压包含 Vee，但输入低于 Vee-0.3V 会发生相位反转。同时注意前面提到的带 sink 负载的能力有限。
+* TL072 的输入电压可以高达 Vcc，但是它的输入电压最低只能到 Vee+1.5V，如果低于 Vee+1V 则会出现相位反转（输出高电平）。
+* RC4558 手册上说它共模输入电压范围是 +/- 14V。与 TL072 类似，它的输入电压低于 Vee+1V 时会出现相位反转。
 
 <h2>比较器</h2>
 
