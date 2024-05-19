@@ -4,9 +4,12 @@
 
 关于 [741 运放的笔记](741.md)
 
-## Course
+## Courses
 
-* MIT 6.301 Solid State Circuits <https://www.mit.edu/~6.301/>
+* UCB EE105 Microelectronic Devices and Circuits <https://inst.eecs.berkeley.edu/~ee105/archives.html>
+    * EE140 Linear Integrated Circuits <https://inst.eecs.berkeley.edu/~ee140/archives.html>
+* MIT 6.002x 
+    * 6.301 Solid State Circuits <https://www.mit.edu/~6.301/>
 
 ## SPICE
 
@@ -19,6 +22,9 @@ The lase release from Berkeley was [3f5](https://ptolemy.berkeley.edu/projects/e
 McGill 大学的 [Gordon W. Roberts](https://www.ece.mcgill.ca/~grober4/ROBERTS/Welcome.html) 写了[几本 SPICE 书](https://www.ece.mcgill.ca/~grober4/ROBERTS/My_Textbooks.html)
 
 _The SPICE book_ by [Andrei Vladimirescu](https://scholar.google.com/citations?user=ppZ1RtAAAAAJ&hl=en), 1994.
+
+电路仿真集锦： <http://www.ecircuitcenter.com/Circuits.htm>
+
 
 我怀疑，免费的 LTspice 让两家小的商用 SPICE 公司关张。
 

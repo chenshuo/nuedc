@@ -116,7 +116,7 @@ LM385 <http://www.righto.com/2022/04/reverse-engineering-lm185-voltage.html>
 * [Jellybean components](https://theknowledgeaccelerator.com/2016/04/16/jellybean-components/#Transistors)
 * https://www.eevblog.com/forum/beginners/jellybean-hobbyist-general-purpose-transistors/
 * https://en.wikipedia.org/wiki/2N2222
-
+* https://designers-guide.org/theory/transistors.pdf
 
 | 型号 | Vce | Ic | \(P_\mathrm{D}\) | \(f_\mathrm{T}\) |特点 |
 | --- | --- | --- | --- | --- | --- |
