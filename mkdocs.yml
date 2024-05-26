@@ -13,6 +13,15 @@ extra_javascript:
   - https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=TeX-AMS_HTML
 markdown_extensions:
   - mdx_math
+plugins:
+  - mkdocs-jupyter:
+      no_input: True
+      remove_tag_config:
+        remove_input_tags:
+          - hide_code
+        remove_cell_tags:
+          - hide_cell
+
 
 nav:
  - 首页: 'index.md'
@@ -22,4 +31,5 @@ nav:
    - 资料: notes.md
    - 稳压与基准: regulator.md
    - 741 运放: 741.md
+   - RC4558 运放: rc4558.ipynb
  - 关于: 'about.md'
