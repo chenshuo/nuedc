@@ -1,2 +1,5 @@
 *.swp
+.ipynb_checkpoints/
+__pycache__/
 site/
+
