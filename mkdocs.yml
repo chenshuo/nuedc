@@ -33,4 +33,5 @@ nav:
    - 741 运放: 741.md
    - RC4558 运放: rc4558.ipynb
    - 定性使用 BJT 三极管: bjt-circuits.ipynb
+   - BJT 三极管基础知识复习: bjt-basics.ipynb
  - 关于: 'about.md'
