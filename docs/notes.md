@@ -16,6 +16,9 @@
 * Video lectures by Prof. [Behzad Razavi](https://www.seas.ucla.edu/brweb/director.html)
     * [Electronic circuits 1](https://www.youtube.com/watch?v=yQDfVJzEymI&list=PLiDoPUX9nLkJ8dnPgKoVEOiAb8BfulKRR)
     * [Electronic circuits 2](https://www.youtube.com/watch?v=pK2elUcXWzs&list=PLOKCSCGG776qj6mncVzBHMEnWu64hCH0M)
+* Prof. W. Marshall Leach of Georgia Institute of Technology <https://leachlegacy.ece.gatech.edu/>
+    * [ECE3050](https://leachlegacy.ece.gatech.edu/ece3050/) Analog Electronics
+    * [ECE3040](https://leachlegacy.ece.gatech.edu/ece3040/) Microelectronic Circuits
 
 ## SPICE
 

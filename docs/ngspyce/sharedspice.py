@@ -52,7 +52,8 @@ def printfcn(output, _id, _ret):
     global captured_output
     prefix, _, content = output.decode('ascii').partition(' ')
     if prefix == 'stderr':
-        logger.error(content)
+        if 'Using SPARSE 1.3 as Direct Linear Solver' not in content:
+            logger.error(content)
     else:
         captured_output.append(content)
     return 0
