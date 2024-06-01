@@ -626,6 +626,21 @@ $\newcommand{\sm}[2]{{{#1}_\mathrm{#2}}}$</p>
 </div>
 </div>
 </div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=6b040621-b785-48a9-a98b-3b03faa4e418">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<p><a href="https://en.wikipedia.org/wiki/2019_redefinition_of_the_SI_base_units">2019 年重新定义 SI 基本单位</a>之后，</p>
+<ul>
+<li>新的 <a href="https://en.wikipedia.org/wiki/Boltzmann_constant">Boltzmann常数</a>是精确值 $1.380\,649\times 10^{-23}$ J/K.</li>
+<li>新的<a href="https://en.wikipedia.org/wiki/Elementary_charge">基本电荷</a>也是精确值 $ 1.602\,176\,634\times 10 ^{-19}$ C.</li>
+</ul>
+<p>为了得到和 SPICE 相近的结果，我们只好也取旧值。</p>
+</div>
+</div>
+</div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
 <div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=84cac87a-76e4-4e45-8e81-620f0793ba85">
 <div class="jp-Cell-inputWrapper" tabindex="0">
@@ -678,26 +693,12 @@ print(Vt)</div>
 </div>
 </div>
 </div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=6b040621-b785-48a9-a98b-3b03faa4e418">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p><a href="https://en.wikipedia.org/wiki/2019_redefinition_of_the_SI_base_units">2019 年重新定义 SI 基本单位</a>之后，</p>
-<ul>
-<li>新的 <a href="https://en.wikipedia.org/wiki/Boltzmann_constant">Boltzmann常数</a>是精确值 $1.380\,649\times 10^{-23}$ J/K.</li>
-<li>新的<a href="https://en.wikipedia.org/wiki/Elementary_charge">基本电荷</a>也是精确值 $ 1.602\,176\,634\times 10 ^{-19}$ C.</li>
-</ul>
-</div>
-</div>
-</div>
-</div>
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=b66648a6-b2cd-4ad7-aeee-64e12860e092">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="ebers-moll">Ebers-Moll 大型号模型<a class="anchor-link" href="#ebers-moll">¶</a></h3>
+<h3 id="ebers-moll">Ebers-Moll 大型号模型<a class="anchor-link" href="#ebers-moll">¶</a></h3><p>以下是放大区的大信号模型，可以看成压控电流源(VCCS)或流空电流源(CCCS)。</p>
 </div>
 </div>
 </div>
@@ -825,6 +826,16 @@ ng.operating_point()
 </div>
 </div>
 </div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=5bec9e79-dd92-42f1-93de-3a191bebfb1f">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<p>在 $\uv{A}=\infty$ 的情况下，我们用 Ebers-Moll 模型公式计算的结果与 SPICE 误差小于 1ppm，换言之前 6 位有效数字是相同的。</p>
+</div>
+</div>
+</div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
 <div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=7aabc9c6-2ae4-4a88-9a36-78a5b7dac087">
 <div class="jp-Cell-inputWrapper" tabindex="0">
@@ -888,13 +899,15 @@ print('%.5f uA (EM)' % (Ic * 1e6))</div>
 </div>
 </clipboard-copy>
 </div>
-<div class="highlight-ipynb hl-python"><pre><span></span><span class="n">Ib</span> <span class="o">=</span> <span class="o">-</span><span class="n">ng</span><span class="o">.</span><span class="n">vector</span><span class="p">(</span><span class="s1">'vb#branch'</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">'</span><span class="si">%.7f</span><span class="s1"> uA (SPICE)'</span> <span class="o">%</span> <span class="p">(</span><span class="n">Ib</span> <span class="o">*</span> <span class="mf">1e6</span><span class="p">))</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">'</span><span class="si">%.7f</span><span class="s1"> uA (EM)'</span> <span class="o">%</span> <span class="p">(</span><span class="n">Ic</span> <span class="o">/</span> <span class="mi">100</span> <span class="o">*</span> <span class="mf">1e6</span><span class="p">))</span>
+<div class="highlight-ipynb hl-python"><pre><span></span><span class="n">Ib2</span> <span class="o">=</span> <span class="o">-</span><span class="n">ng</span><span class="o">.</span><span class="n">vector</span><span class="p">(</span><span class="s1">'vb#branch'</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">'</span><span class="si">%.7f</span><span class="s1"> uA (SPICE)'</span> <span class="o">%</span> <span class="p">(</span><span class="n">Ib2</span> <span class="o">*</span> <span class="mf">1e6</span><span class="p">))</span>
+<span class="n">beta</span> <span class="o">=</span> <span class="mi">100</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">'</span><span class="si">%.7f</span><span class="s1"> uA (EM)'</span> <span class="o">%</span> <span class="p">(</span><span class="n">Ic</span> <span class="o">/</span> <span class="n">beta</span> <span class="o">*</span> <span class="mf">1e6</span><span class="p">))</span>
 </pre></div>
-<div class="clipboard-copy-txt" id="cell-6">Ib = -ng.vector('vb#branch')[0]
-print('%.7f uA (SPICE)' % (Ib * 1e6))
-print('%.7f uA (EM)' % (Ic / 100 * 1e6))</div>
+<div class="clipboard-copy-txt" id="cell-6">Ib2 = -ng.vector('vb#branch')[0]
+print('%.7f uA (SPICE)' % (Ib2 * 1e6))
+beta = 100
+print('%.7f uA (EM)' % (Ic / beta * 1e6))</div>
 </div>
 </div>
 </div>
@@ -1091,7 +1104,7 @@ plt.ylabel('Ic (mA)')</div>
 <span class="s1">  Q  c b 0 NPN</span>
 <span class="s1">  Vc c 0 10V</span>
 <span class="s1">  Vb b 0 0.7V</span>
-<span class="s1">  .model NPN NPN(IS=1fA BF=100 VAF=150)</span>
+<span class="s1">  .model NPN NPN(IS=1fA BF=100 VAF=130)</span>
 <span class="s1">  .save all @q[gm]</span>
 <span class="s1">'''</span><span class="p">)</span>
 <span class="n">ng</span><span class="o">.</span><span class="n">operating_point</span><span class="p">()</span>
@@ -1101,7 +1114,7 @@ plt.ylabel('Ic (mA)')</div>
   Q  c b 0 NPN
   Vc c 0 10V
   Vb b 0 0.7V
-  .model NPN NPN(IS=1fA BF=100 VAF=150)
+  .model NPN NPN(IS=1fA BF=100 VAF=130)
   .save all @q[gm]
 ''')
 ng.operating_point()
@@ -1116,8 +1129,8 @@ ng.operating_point()
 <div class="jp-OutputArea jp-Cell-outputArea">
 <div class="jp-OutputArea-child jp-OutputArea-executeResult">
 <div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain" tabindex="0">
-<pre>{'@q[gm]': array([0.02327837]),
- 'vc#branch': array([-0.00060219]),
+<pre>{'@q[gm]': array([0.0234869]),
+ 'vc#branch': array([-0.0006076]),
  'vb#branch': array([-5.67033817e-06]),
  'b': array([0.7]),
  'c': array([10.])}</pre>
@@ -1155,21 +1168,27 @@ ng.operating_point()
 </div>
 </clipboard-copy>
 </div>
-<div class="highlight-ipynb hl-python"><pre><span></span><span class="n">Vcb</span> <span class="o">=</span> <span class="mi">10</span> <span class="o">-</span> <span class="n">Vbe</span>
-<span class="n">Vaf</span> <span class="o">=</span> <span class="mi">150</span>
-<span class="n">Ic3</span> <span class="o">=</span> <span class="n">Ic</span> <span class="o">*</span> <span class="p">(</span><span class="mi">1</span> <span class="o">+</span> <span class="n">Vcb</span> <span class="o">/</span> <span class="n">Vaf</span><span class="p">)</span>
+<div class="highlight-ipynb hl-python"><pre><span></span><span class="n">Is</span> <span class="o">=</span> <span class="mf">1e-15</span>
+<span class="n">Vbe</span> <span class="o">=</span> <span class="mf">0.7</span>
+<span class="n">Ic0</span> <span class="o">=</span> <span class="n">Is</span> <span class="o">*</span> <span class="n">exp</span><span class="p">(</span><span class="n">Vbe</span> <span class="o">/</span> <span class="n">Vt</span><span class="p">)</span>
+<span class="n">Vcb</span> <span class="o">=</span> <span class="mi">10</span> <span class="o">-</span> <span class="n">Vbe</span>
+<span class="n">Vaf</span> <span class="o">=</span> <span class="mi">130</span>
+<span class="n">Ic</span> <span class="o">=</span> <span class="n">Ic0</span> <span class="o">*</span> <span class="p">(</span><span class="mi">1</span> <span class="o">+</span> <span class="n">Vcb</span> <span class="o">/</span> <span class="n">Vaf</span><span class="p">)</span>
 
 <span class="n">Ic2</span> <span class="o">=</span> <span class="o">-</span><span class="n">ng</span><span class="o">.</span><span class="n">vector</span><span class="p">(</span><span class="s1">'vc#branch'</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
 <span class="nb">print</span><span class="p">(</span><span class="s1">'</span><span class="si">%.5f</span><span class="s1"> uA (SPICE)'</span> <span class="o">%</span> <span class="p">(</span><span class="n">Ic2</span> <span class="o">*</span> <span class="mf">1e6</span><span class="p">))</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">'</span><span class="si">%.5f</span><span class="s1"> uA (EM)'</span> <span class="o">%</span> <span class="p">(</span><span class="n">Ic3</span> <span class="o">*</span> <span class="mf">1e6</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">'</span><span class="si">%.5f</span><span class="s1"> uA (EM)'</span> <span class="o">%</span> <span class="p">(</span><span class="n">Ic</span> <span class="o">*</span> <span class="mf">1e6</span><span class="p">))</span>
 </pre></div>
-<div class="clipboard-copy-txt" id="cell-10">Vcb = 10 - Vbe
-Vaf = 150
-Ic3 = Ic * (1 + Vcb / Vaf)
+<div class="clipboard-copy-txt" id="cell-10">Is = 1e-15
+Vbe = 0.7
+Ic0 = Is * exp(Vbe / Vt)
+Vcb = 10 - Vbe
+Vaf = 130
+Ic = Ic0 * (1 + Vcb / Vaf)
 
 Ic2 = -ng.vector('vc#branch')[0]
 print('%.5f uA (SPICE)' % (Ic2 * 1e6))
-print('%.5f uA (EM)' % (Ic3 * 1e6))</div>
+print('%.5f uA (EM)' % (Ic * 1e6))</div>
 </div>
 </div>
 </div>
@@ -1180,8 +1199,8 @@ print('%.5f uA (EM)' % (Ic3 * 1e6))</div>
 <div class="jp-OutputArea jp-Cell-outputArea">
 <div class="jp-OutputArea-child">
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
-<pre>602.19085 uA (SPICE)
-602.19082 uA (EM)
+<pre>607.59948 uA (SPICE)
+607.59946 uA (EM)
 </pre>
 </div>
 </div>
@@ -1207,13 +1226,13 @@ print('%.5f uA (EM)' % (Ic3 * 1e6))</div>
 </div>
 </clipboard-copy>
 </div>
-<div class="highlight-ipynb hl-python"><pre><span></span><span class="n">Ib</span> <span class="o">=</span> <span class="o">-</span><span class="n">ng</span><span class="o">.</span><span class="n">vector</span><span class="p">(</span><span class="s1">'vb#branch'</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">'</span><span class="si">%.7f</span><span class="s1"> uA (SPICE)'</span> <span class="o">%</span> <span class="p">(</span><span class="n">Ib</span> <span class="o">*</span> <span class="mf">1e6</span><span class="p">))</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">'</span><span class="si">%.7f</span><span class="s1"> uA (EM)'</span> <span class="o">%</span> <span class="p">(</span><span class="n">Ic</span> <span class="o">/</span> <span class="mi">100</span> <span class="o">*</span> <span class="mf">1e6</span><span class="p">))</span>
+<div class="highlight-ipynb hl-python"><pre><span></span><span class="n">Ib2</span> <span class="o">=</span> <span class="o">-</span><span class="n">ng</span><span class="o">.</span><span class="n">vector</span><span class="p">(</span><span class="s1">'vb#branch'</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">'</span><span class="si">%.7f</span><span class="s1"> uA (SPICE)'</span> <span class="o">%</span> <span class="p">(</span><span class="n">Ib2</span> <span class="o">*</span> <span class="mf">1e6</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">'</span><span class="si">%.7f</span><span class="s1"> uA (EM)'</span> <span class="o">%</span> <span class="p">(</span><span class="n">Ic0</span> <span class="o">/</span> <span class="n">beta</span> <span class="o">*</span> <span class="mf">1e6</span><span class="p">))</span>
 </pre></div>
-<div class="clipboard-copy-txt" id="cell-11">Ib = -ng.vector('vb#branch')[0]
-print('%.7f uA (SPICE)' % (Ib * 1e6))
-print('%.7f uA (EM)' % (Ic / 100 * 1e6))</div>
+<div class="clipboard-copy-txt" id="cell-11">Ib2 = -ng.vector('vb#branch')[0]
+print('%.7f uA (SPICE)' % (Ib2 * 1e6))
+print('%.7f uA (EM)' % (Ic0 / beta * 1e6))</div>
 </div>
 </div>
 </div>
@@ -1251,13 +1270,13 @@ print('%.7f uA (EM)' % (Ic / 100 * 1e6))</div>
 </div>
 </clipboard-copy>
 </div>
-<div class="highlight-ipynb hl-python"><pre><span></span><span class="n">gm3</span> <span class="o">=</span> <span class="n">ng</span><span class="o">.</span><span class="n">vector</span><span class="p">(</span><span class="s1">'@q[gm]'</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">'gm </span><span class="si">%.3f</span><span class="s1"> mS (SPICE)'</span> <span class="o">%</span> <span class="p">(</span><span class="n">gm3</span> <span class="o">*</span> <span class="mf">1e3</span><span class="p">))</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">'gm </span><span class="si">%.3f</span><span class="s1"> mS (EM)'</span> <span class="o">%</span> <span class="p">(</span><span class="mf">1e3</span> <span class="o">*</span> <span class="n">Ic3</span> <span class="o">/</span> <span class="n">Vt</span><span class="p">))</span>
+<div class="highlight-ipynb hl-python"><pre><span></span><span class="n">gm2</span> <span class="o">=</span> <span class="n">ng</span><span class="o">.</span><span class="n">vector</span><span class="p">(</span><span class="s1">'@q[gm]'</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">'gm </span><span class="si">%.3f</span><span class="s1"> mS (SPICE)'</span> <span class="o">%</span> <span class="p">(</span><span class="n">gm2</span> <span class="o">*</span> <span class="mf">1e3</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">'gm </span><span class="si">%.3f</span><span class="s1"> mS (EM)'</span> <span class="o">%</span> <span class="p">(</span><span class="mf">1e3</span> <span class="o">*</span> <span class="n">Ic</span> <span class="o">/</span> <span class="n">Vt</span><span class="p">))</span>
 </pre></div>
-<div class="clipboard-copy-txt" id="cell-12">gm3 = ng.vector('@q[gm]')[0]
-print('gm %.3f mS (SPICE)' % (gm3 * 1e3))
-print('gm %.3f mS (EM)' % (1e3 * Ic3 / Vt))</div>
+<div class="clipboard-copy-txt" id="cell-12">gm2 = ng.vector('@q[gm]')[0]
+print('gm %.3f mS (SPICE)' % (gm2 * 1e3))
+print('gm %.3f mS (EM)' % (1e3 * Ic / Vt))</div>
 </div>
 </div>
 </div>
@@ -1268,8 +1287,8 @@ print('gm %.3f mS (EM)' % (1e3 * Ic3 / Vt))</div>
 <div class="jp-OutputArea jp-Cell-outputArea">
 <div class="jp-OutputArea-child">
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
-<pre>gm 23.278 mS (SPICE)
-gm 23.282 mS (EM)
+<pre>gm 23.487 mS (SPICE)
+gm 23.491 mS (EM)
 </pre>
 </div>
 </div>
@@ -1390,11 +1409,10 @@ plt.ylabel('Ic (mA)')</div>
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p>跨导 Transconduance $\sm{g}{m}$</p>
+<p><strong>跨导 Transconduance</strong> $\sm{g}{m}$</p>
 <p>如果基极电压改变了 $\Delta \lv{BE}$，那么集电极电流将改变 $\Delta \li{C}$，跨导 $\sm{g}{m}$ 表示二者的比值，$\sm{g}{m}$ 越大，表明相同 $\Delta \lv{BE}$ 下 $\Delta \li{C}$ 越大，也就是电流的放大能力越大。</p>
 <p>$\sm{g}{m}=\dfrac{\Delta \li{C}}{\Delta \lv{BE}} = \dfrac{\mathrm{d}\, \ui{S}\exp \dfrac{\lv{BE}}{\uv{T}}}{\mathrm{d}\, \lv{BE}} = \dfrac{1}{\uv{T}}\ui{S}\exp \dfrac{\uv{BEQ}}{\uv{T}} = \dfrac{\ui{CQ}}{\uv{T}}$</p>
-<p>$\sm{g}{m} \propto \ui{CQ}$，$\sm{g}{m} \propto \dfrac{1}{T}$，
-可见对于 BJT 来说，$\sm{g}{m}$ 只跟 $\ui{CQ}$ 和温度 $T$ 有关。
+<p>可见对于 BJT 来说，$\sm{g}{m}$ 只跟 $\ui{CQ}$ 和温度 $T$ 有关，$\sm{g}{m} \propto \ui{CQ}$，$\sm{g}{m} \propto \dfrac{1}{T}$。
 温度越高 $\sm{g}{m}$ 越小，为了维持 $\sm{g}{m}$ 稳定，有时需要设法让 $\ui{CQ} \propto T$ 。</p>
 </div>
 </div>
@@ -1422,7 +1440,7 @@ plt.ylabel('Ic (mA)')</div>
 <span class="s1">  Q  c b 0 NPN</span>
 <span class="s1">  Ic 0 c 600u</span>
 <span class="s1">  Vb b 0 0.7V</span>
-<span class="s1">  .model NPN NPN(IS=1fA BF=100 VAF=150)</span>
+<span class="s1">  .model NPN NPN(IS=1fA BF=100 VAF=130)</span>
 <span class="s1">  .save all @q[gm] @q[ic]</span>
 <span class="s1">'''</span><span class="p">)</span>
 <span class="n">ng</span><span class="o">.</span><span class="n">operating_point</span><span class="p">()</span>
@@ -1432,7 +1450,7 @@ plt.ylabel('Ic (mA)')</div>
   Q  c b 0 NPN
   Ic 0 c 600u
   Vb b 0 0.7V
-  .model NPN NPN(IS=1fA BF=100 VAF=150)
+  .model NPN NPN(IS=1fA BF=100 VAF=130)
   .save all @q[gm] @q[ic]
 ''')
 ng.operating_point()
@@ -1448,10 +1466,10 @@ ng.operating_point()
 <div class="jp-OutputArea-child jp-OutputArea-executeResult">
 <div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain" tabindex="0">
 <pre>{'@q[ic]': array([0.0006]),
- '@q[gm]': array([0.02319366]),
- 'vb#branch': array([-5.67033875e-06]),
+ '@q[gm]': array([0.02319308]),
+ 'vb#branch': array([-5.67033991e-06]),
  'b': array([0.7]),
- 'c': array([9.42044675])}</pre>
+ 'c': array([8.25772105])}</pre>
 </div>
 </div>
 </div>
@@ -1503,9 +1521,9 @@ print('Delta gm', gm - gm2)</div>
 <div class="jp-OutputArea jp-Cell-outputArea">
 <div class="jp-OutputArea-child">
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
-<pre>gm 23.1937 mS (SPICE)
+<pre>gm 23.1931 mS (SPICE)
 gm 23.1974 mS (EM)
-Delta gm 3.7809210074110644e-06
+Delta gm 4.362405127682212e-06
 </pre>
 </div>
 </div>
@@ -1518,7 +1536,7 @@ Delta gm 3.7809210074110644e-06
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p>输入阻抗 Input impedance</p>
+<p><strong>输入阻抗 Input impedance</strong> $r_\pi$，国内教材一般用 $\sm{r}{be}$ 或 $\sm{r}{b'e}$ 表示。</p>
 <p>如果基极电压改变了 $\Delta \lv{BE}$ 那么基极电流改变 $\Delta \li{B}$</p>
 <p>$r_\pi = \dfrac{\Delta \lv{BE}}{\Delta \li{B}}= \dfrac{\uv{T}}{\ui{B}}$</p>
 <p>$r_\pi = \dfrac{\beta\, \uv{T}}{\ui{C0}}$</p>
@@ -1610,10 +1628,10 @@ ng.vectors()</div>
 <div class="jp-OutputArea-child jp-OutputArea-executeResult">
 <div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain" tabindex="0">
 <pre>{'@q[ic]': array([0.0006]),
- '@q[gm]': array([0.02319366]),
- 'output_impedance_at_V(c)': array([264533.94595817]),
- 'vb#Input_impedance': array([4561.30708746]),
- 'Transfer_function': array([-6135.51158203])}</pre>
+ '@q[gm]': array([0.02319308]),
+ 'output_impedance_at_V(c)': array([229262.76933649]),
+ 'vb#Input_impedance': array([4561.32411062]),
+ 'Transfer_function': array([-5317.31043354])}</pre>
 </div>
 </div>
 </div>
@@ -1625,12 +1643,13 @@ ng.vectors()</div>
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<p>以上可见 $r_\pi$ 的计算结果与 SPICE 非常接近。</p>
 <ul>
 <li>$r_\pi \propto \beta$，$\beta$ 越大，$r_\pi$ 越大。</li>
 <li>$r_\pi \propto \dfrac{1}{\ui{CQ}}$，$\ui{CQ}$ 越小，$r_\pi$ 越大。</li>
 </ul>
-<p>$\ui{CQ}$ 同时控制 $\sm{g}{m}$ 和 $r_\pi$。</p>
-<p>假设 $\beta=100$, $\uv{T}=26$mV，$\uv{A}=130$V.</p>
+<p>$\ui{CQ}$ 同时控制 $\sm{g}{m}$ 和 $r_\pi$，
+假设 $\beta=100$, $\uv{T}=26$mV，$\uv{A}=130$V，下表是不同 $\ui{C}$ 对应的 $\sm{g}{m}$ 与 $r_\pi$.</p>
 <table>
 <thead>
 <tr>
@@ -1677,7 +1696,7 @@ ng.vectors()</div>
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p>Output impedance</p>
+<p><strong>输出阻抗 Output impedance</strong> $\sm{r}{o}$，国内教材一般用 $\sm{r}{ce}$.</p>
 <p>$\sm{r}{o} = \dfrac{\uv{A}}{\ui{C}}$ for $\ui{C}|_{\uv{BC}=0}$</p>
 </div>
 </div>
@@ -1701,13 +1720,21 @@ ng.vectors()</div>
 </div>
 </clipboard-copy>
 </div>
-<div class="highlight-ipynb hl-python"><pre><span></span><span class="n">Ic</span> <span class="o">=</span> <span class="n">Is</span> <span class="o">*</span> <span class="n">exp</span><span class="p">(</span><span class="n">Vbe</span> <span class="o">/</span> <span class="n">Vt</span><span class="p">)</span>
+<div class="highlight-ipynb hl-python"><pre><span></span><span class="n">Is</span> <span class="o">=</span> <span class="mf">1e-15</span>
+<span class="n">Vbe</span> <span class="o">=</span> <span class="mf">0.7</span>
+<span class="n">Vaf</span> <span class="o">=</span> <span class="mi">130</span>
+<span class="n">Ic</span> <span class="o">=</span> <span class="n">Is</span> <span class="o">*</span> <span class="n">exp</span><span class="p">(</span><span class="n">Vbe</span> <span class="o">/</span> <span class="n">Vt</span><span class="p">)</span>
 <span class="n">ro</span> <span class="o">=</span> <span class="n">Vaf</span> <span class="o">/</span> <span class="n">Ic</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">ro</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">'ro </span><span class="si">%.3f</span><span class="s1"> (SPICE)'</span> <span class="o">%</span> <span class="p">(</span><span class="n">ng</span><span class="o">.</span><span class="n">vector</span><span class="p">(</span><span class="s1">'output_impedance_at_V(c)'</span><span class="p">)[</span><span class="mi">0</span><span class="p">]))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">'ro </span><span class="si">%.3f</span><span class="s1"> (EM)'</span> <span class="o">%</span> <span class="n">ro</span><span class="p">)</span>
 </pre></div>
-<div class="clipboard-copy-txt" id="cell-18">Ic = Is * exp(Vbe / Vt)
+<div class="clipboard-copy-txt" id="cell-18">Is = 1e-15
+Vbe = 0.7
+Vaf = 130
+Ic = Is * exp(Vbe / Vt)
 ro = Vaf / Ic
-print(ro)</div>
+print('ro %.3f (SPICE)' % (ng.vector('output_impedance_at_V(c)')[0]))
+print('ro %.3f (EM)' % ro)</div>
 </div>
 </div>
 </div>
@@ -1718,7 +1745,8 @@ print(ro)</div>
 <div class="jp-OutputArea jp-Cell-outputArea">
 <div class="jp-OutputArea-child">
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
-<pre>264534.08948943496
+<pre>ro 229262.769 (SPICE)
+ro 229262.878 (EM)
 </pre>
 </div>
 </div>
@@ -1731,7 +1759,8 @@ print(ro)</div>
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p>Intrinsic gain $A_0 = \dfrac{\uv{A}}{\uv{T}}$</p>
+<p><strong>本征增益 Intrinsic gain</strong> $A_0 = \sm{g}{m}\,\sm{r}{o} = \dfrac{\ui{C}}{\uv{T}}\cdot \dfrac{\uv{A}}{\ui{C}} = \dfrac{\uv{A}}{\uv{T}}$</p>
+<p>计算结果与 SPICE 有较大误差。</p>
 </div>
 </div>
 </div>
@@ -1754,9 +1783,11 @@ print(ro)</div>
 </div>
 </clipboard-copy>
 </div>
-<div class="highlight-ipynb hl-python"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">Vaf</span><span class="o">/</span><span class="n">Vt</span><span class="p">)</span>
+<div class="highlight-ipynb hl-python"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">'A0 </span><span class="si">%.3f</span><span class="s1"> (SPICE)'</span> <span class="o">%</span> <span class="p">(</span><span class="n">ng</span><span class="o">.</span><span class="n">vector</span><span class="p">(</span><span class="s1">'Transfer_function'</span><span class="p">)[</span><span class="mi">0</span><span class="p">]))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">'A0 -</span><span class="si">%.3f</span><span class="s1"> (EM)'</span> <span class="o">%</span> <span class="p">(</span><span class="n">Vaf</span><span class="o">/</span><span class="n">Vt</span><span class="p">))</span>
 </pre></div>
-<div class="clipboard-copy-txt" id="cell-19">print(Vaf/Vt)</div>
+<div class="clipboard-copy-txt" id="cell-19">print('A0 %.3f (SPICE)' % (ng.vector('Transfer_function')[0]))
+print('A0 -%.3f (EM)' % (Vaf/Vt))</div>
 </div>
 </div>
 </div>
@@ -1767,7 +1798,8 @@ print(ro)</div>
 <div class="jp-OutputArea jp-Cell-outputArea">
 <div class="jp-OutputArea-child">
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
-<pre>5799.36134663
+<pre>A0 -5317.310 (SPICE)
+A0 -5026.113 (EM)
 </pre>
 </div>
 </div>
@@ -1783,7 +1815,7 @@ print(ro)</div>
 <h2 id="emitter-follower">Emitter follower<a class="anchor-link" href="#emitter-follower">¶</a></h2><p>主要起阻抗变换的作用，</p>
 <ul>
 <li>输入阻抗高 $\sm{R}{in} = r_\pi + (1+\beta)\sm{R}{E}$，相当于把负载 $\sm{R}{E}$ 至少放大了 $\beta+1$ 倍</li>
-<li>输出阻抗低 $\sm{r}{e}=\dfrac{1}{\sm{g}{m}} = \dfrac{\uv{T}}{\ui{C}}$.（$\ui{C}=1$mA 时约为二三十 $\Omega$）</li>
+<li>输出阻抗低 $\sm{r}{e} = \dfrac{\uv{T}}{\ui{E}}=\dfrac{\alpha}{\sm{g}{m}}$.（$\ui{E}=1$mA 时约为二三十 $\Omega$）</li>
 </ul>
 </div>
 </div>
@@ -1828,10 +1860,10 @@ print(ro)</div>
 <span class="s1">  Vb b 0 5.7V</span>
 <span class="s1">  Re e 0 5000</span>
 <span class="s1">  .model NPN NPN(IS=1fA BF=100)</span>
-<span class="s1">  .save all @q[gm]</span>
+<span class="s1">  .save all @q[gm] @q[ie]</span>
 <span class="s1">'''</span><span class="p">)</span>
 <span class="c1">#ng.operating_point()</span>
-<span class="n">print_op</span><span class="p">()</span>
+<span class="n">print_op</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
 <span class="n">ng</span><span class="o">.</span><span class="n">cmd</span><span class="p">(</span><span class="s1">'tf v(e) vb'</span><span class="p">)</span>
 <span class="n">ng</span><span class="o">.</span><span class="n">vectors</span><span class="p">()</span>
 </pre></div>
@@ -1841,10 +1873,10 @@ print(ro)</div>
   Vb b 0 5.7V
   Re e 0 5000
   .model NPN NPN(IS=1fA BF=100)
-  .save all @q[gm]
+  .save all @q[gm] @q[ie]
 ''')
 #ng.operating_point()
-print_op()
+print_op(1, 1)
 ng.cmd('tf v(e) vb')
 ng.vectors()</div>
 </div>
@@ -1858,6 +1890,7 @@ ng.vectors()</div>
 <div class="jp-OutputArea-child">
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
 <pre>    @q[gm] =   38.299 mS
+    @q[ie] =   -1.001 mA
          b =   5.7000 V
          c =  10.0000 V
          e =   4.9856 V
@@ -1868,7 +1901,8 @@ ng.vectors()</div>
 </div>
 <div class="jp-OutputArea-child jp-OutputArea-executeResult">
 <div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain" tabindex="0">
-<pre>{'@q[gm]': array([0.03829897]),
+<pre>{'@q[ie]': array([-0.00100051]),
+ '@q[gm]': array([0.03829897]),
  'output_impedance_at_V(e)': array([25.71886983]),
  'vb#Input_impedance': array([507610.77745333]),
  'Transfer_function': array([0.99485623])}</pre>
@@ -1897,25 +1931,33 @@ ng.vectors()</div>
 </clipboard-copy>
 </div>
 <div class="highlight-ipynb hl-python"><pre><span></span><span class="n">Ic</span> <span class="o">=</span> <span class="mf">987.242e-6</span>
-<span class="n">gm</span> <span class="o">=</span> <span class="n">Ic</span> <span class="o">/</span> <span class="n">Vt</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">'Rout'</span><span class="p">,</span> <span class="mi">1</span><span class="o">/</span><span class="n">gm</span><span class="p">)</span>
+<span class="n">Ie</span> <span class="o">=</span> <span class="n">Ic</span> <span class="o">*</span> <span class="mf">1.01</span>
+<span class="n">re</span> <span class="o">=</span> <span class="n">Vt</span><span class="o">/</span><span class="n">Ie</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">'Rout'</span><span class="p">,</span> <span class="n">re</span><span class="p">)</span>
+
 <span class="n">beta</span> <span class="o">=</span> <span class="mi">100</span>
+<span class="n">gm</span> <span class="o">=</span> <span class="n">Ic</span> <span class="o">/</span> <span class="n">Vt</span>
 <span class="n">rpi</span> <span class="o">=</span> <span class="n">beta</span> <span class="o">/</span> <span class="n">gm</span>
 <span class="n">Re</span> <span class="o">=</span> <span class="mf">5e3</span>
 <span class="n">Rin</span> <span class="o">=</span> <span class="n">rpi</span> <span class="o">+</span> <span class="p">(</span><span class="mi">1</span> <span class="o">+</span> <span class="n">beta</span><span class="p">)</span> <span class="o">*</span> <span class="n">Re</span>
 <span class="nb">print</span><span class="p">(</span><span class="s1">'Rin'</span><span class="p">,</span> <span class="n">Rin</span><span class="p">)</span>
-<span class="n">Av</span> <span class="o">=</span> <span class="n">Re</span> <span class="o">/</span> <span class="p">(</span><span class="n">Re</span> <span class="o">+</span> <span class="mi">1</span><span class="o">/</span><span class="n">gm</span><span class="p">)</span>
+
+<span class="n">Av</span> <span class="o">=</span> <span class="n">Re</span> <span class="o">/</span> <span class="p">(</span><span class="n">Re</span> <span class="o">+</span> <span class="n">re</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="s1">'Av'</span><span class="p">,</span> <span class="n">Av</span><span class="p">)</span>
 </pre></div>
 <div class="clipboard-copy-txt" id="cell-21">Ic = 987.242e-6
-gm = Ic / Vt
-print('Rout', 1/gm)
+Ie = Ic * 1.01
+re = Vt/Ie
+print('Rout', re)
+
 beta = 100
+gm = Ic / Vt
 rpi = beta / gm
 Re = 5e3
 Rin = rpi + (1 + beta) * Re
 print('Rin', Rin)
-Av = Re / (Re + 1/gm)
+
+Av = Re / (Re + re)
 print('Av', Av)</div>
 </div>
 </div>
@@ -1927,12 +1969,22 @@ print('Av', Av)</div>
 <div class="jp-OutputArea jp-Cell-outputArea">
 <div class="jp-OutputArea-child">
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
-<pre>Rout 26.199165979640608
+<pre>Rout 25.93976829667387
 Rin 507619.91659796407
-Av 0.9947874795418032
+Av 0.9948388222914448
 </pre>
 </div>
 </div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=8159f346-912d-4948-a860-79e6cba17b0b">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<p>可见计算结果与 SPICE 基本符合</p>
 </div>
 </div>
 </div>
@@ -2068,7 +2120,7 @@ ng.vectors()</div>
 <div class="jp-OutputArea jp-Cell-outputArea">
 <div class="jp-OutputArea-child">
 <div class="jp-RenderedImage jp-OutputArea-output" tabindex="0">
-<img alt="No description has been provided for this image" class="" src="data:image/png;base64,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
+<img alt="No description has been provided for this image" class="" src="data:image/png;base64,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
 "/>
 </div>
 </div>
@@ -2172,19 +2224,23 @@ ng.vectors()</div>
 <span class="n">Vbe</span> <span class="o">=</span> <span class="mf">0.7</span>
 <span class="n">Ic</span> <span class="o">=</span> <span class="n">Is</span> <span class="o">*</span> <span class="n">exp</span><span class="p">(</span><span class="n">Vbe</span> <span class="o">/</span> <span class="n">Vt</span><span class="p">)</span>
 <span class="n">gm</span> <span class="o">=</span> <span class="n">Ic</span> <span class="o">/</span> <span class="n">Vt</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">'Ic'</span><span class="p">,</span> <span class="n">Ic</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">'gm'</span><span class="p">,</span> <span class="n">gm</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">'Ic '</span><span class="p">,</span> <span class="n">Ic</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">'gm '</span><span class="p">,</span> <span class="n">gm</span><span class="p">)</span>
+<span class="n">beta</span> <span class="o">=</span> <span class="mi">100</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">'Rin'</span><span class="p">,</span> <span class="n">beta</span><span class="o">/</span><span class="n">gm</span><span class="p">)</span>
 <span class="n">Rc</span> <span class="o">=</span> <span class="mf">10e3</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">'Av'</span><span class="p">,</span> <span class="n">gm</span> <span class="o">*</span> <span class="n">Rc</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">'Av '</span><span class="p">,</span> <span class="n">gm</span> <span class="o">*</span> <span class="n">Rc</span><span class="p">)</span>
 </pre></div>
 <div class="clipboard-copy-txt" id="cell-25">Is = 1e-15
 Vbe = 0.7
 Ic = Is * exp(Vbe / Vt)
 gm = Ic / Vt
-print('Ic', Ic)
-print('gm', gm)
+print('Ic ', Ic)
+print('gm ', gm)
+beta = 100
+print('Rin', beta/gm)
 Rc = 10e3
-print('Av', gm * Rc)</div>
+print('Av ', gm * Rc)</div>
 </div>
 </div>
 </div>
@@ -2195,9 +2251,10 @@ print('Av', gm * Rc)</div>
 <div class="jp-OutputArea jp-Cell-outputArea">
 <div class="jp-OutputArea-child">
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
-<pre>Ic 0.0005670346694806257
-gm 0.02192292629590039
-Av 219.2292629590039
+<pre>Ic  0.0005670346694806257
+gm  0.02192292629590039
+Rin 4561.434849083085
+Av  219.2292629590039
 </pre>
 </div>
 </div>
@@ -2211,11 +2268,16 @@ Av 219.2292629590039
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <h4 id="early-effect">Early effect<a class="anchor-link" href="#early-effect">¶</a></h4><ul>
-<li>$\ui{C}=\ui{C0}\Big(1+\dfrac{\uv{CE}}{\uv{A}}\Big)$</li>
-<li>$\sm{g}{m}=\dfrac{\ui{C}}{\uv{T}}$</li>
-<li>$\sm{r}{o}=\dfrac{\uv{A}}{\ui{C0}}$</li>
-<li>$\sm{R}{o} = \sm{R}{C} /\!/ \sm{r}{o}$</li>
-<li>$\sm{A}{v} = \sm{g}{m}\sm{R}{o} = \sm{g}{m}( \sm{R}{C} /\!/ \sm{r}{o})$</li>
+<li><p>$\ui{C}=\ui{C0}\Big(1+\dfrac{\uv{CE}}{\uv{A}}\Big)$</p>
+</li>
+<li><p>$\sm{g}{m}=\dfrac{\ui{C}}{\uv{T}}$</p>
+</li>
+<li><p>$\sm{r}{o}=\dfrac{\uv{A}}{\ui{C0}}$</p>
+</li>
+<li><p>$\sm{R}{o} = \sm{R}{C} /\!/ \sm{r}{o}$</p>
+</li>
+<li><p>$\sm{A}{v} = \sm{g}{m}\sm{R}{o} = \sm{g}{m}( \sm{R}{C} /\!/ \sm{r}{o})$</p>
+</li>
 </ul>
 </div>
 </div>
@@ -2244,7 +2306,7 @@ Av 219.2292629590039
 <span class="s1">  Vc vcc 0  10V</span>
 <span class="s1">  Vb b 0 0.7V</span>
 <span class="s1">  Rc vcc c  10k</span>
-<span class="s1">  .model NPN NPN(IS=1fA BF=100 VAF=150)</span>
+<span class="s1">  .model NPN NPN(IS=1fA BF=100 VAF=130)</span>
 <span class="s1">  .save all @q[gm] @q[ic]</span>
 <span class="s1">'''</span><span class="p">)</span>
 <span class="n">print_op</span><span class="p">()</span>
@@ -2256,7 +2318,7 @@ Av 219.2292629590039
   Vc vcc 0  10V
   Vb b 0 0.7V
   Rc vcc c  10k
-  .model NPN NPN(IS=1fA BF=100 VAF=150)
+  .model NPN NPN(IS=1fA BF=100 VAF=130)
   .save all @q[gm] @q[ic]
 ''')
 print_op()
@@ -2272,23 +2334,23 @@ ng.vectors()</div>
 <div class="jp-OutputArea jp-Cell-outputArea">
 <div class="jp-OutputArea-child">
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
-<pre>    @q[gm] =   22.430 mS
-    @q[ic] =  580.256 uA
+<pre>    @q[gm] =   22.505 mS
+    @q[ic] =  582.205 uA
          b =   0.7000 V
-         c =   4.1974 V
+         c =   4.1780 V
  vb#branch =   -5.670 uA
- vc#branch = -580.256 uA
+ vc#branch = -582.205 uA
        vcc =  10.0000 V
 </pre>
 </div>
 </div>
 <div class="jp-OutputArea-child jp-OutputArea-executeResult">
 <div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain" tabindex="0">
-<pre>{'@q[ic]': array([0.00058026]),
- '@q[gm]': array([0.02243031]),
- 'output_impedance_at_V(c)': array([9635.74632036]),
- 'vb#Input_impedance': array([4561.43024655]),
- 'Transfer_function': array([-216.1327523])}</pre>
+<pre>{'@q[ic]': array([0.0005822]),
+ '@q[gm]': array([0.02250508]),
+ 'output_impedance_at_V(c)': array([9582.04947524]),
+ 'vb#Input_impedance': array([4561.4302567]),
+ 'Transfer_function': array([-215.64478285])}</pre>
 </div>
 </div>
 </div>
@@ -2315,8 +2377,8 @@ ng.vectors()</div>
 </div>
 <div class="highlight-ipynb hl-python"><pre><span></span><span class="n">Is</span> <span class="o">=</span> <span class="mf">1e-15</span>
 <span class="n">Vbe</span> <span class="o">=</span> <span class="mf">0.7</span>
-<span class="n">Vcb</span> <span class="o">=</span> <span class="mf">4.1974</span> <span class="o">-</span> <span class="n">Vbe</span>
-<span class="n">Vaf</span> <span class="o">=</span> <span class="mi">150</span>
+<span class="n">Vcb</span> <span class="o">=</span> <span class="mf">4.1780</span> <span class="o">-</span> <span class="n">Vbe</span>
+<span class="n">Vaf</span> <span class="o">=</span> <span class="mi">130</span>
 <span class="n">Ic0</span> <span class="o">=</span> <span class="n">Is</span> <span class="o">*</span> <span class="n">exp</span><span class="p">(</span><span class="n">Vbe</span> <span class="o">/</span> <span class="n">Vt</span><span class="p">)</span>
 <span class="n">Ic</span> <span class="o">=</span> <span class="n">Ic0</span> <span class="o">*</span> <span class="p">(</span><span class="mi">1</span> <span class="o">+</span> <span class="n">Vcb</span> <span class="o">/</span> <span class="n">Vaf</span><span class="p">)</span>
 <span class="n">gm</span> <span class="o">=</span> <span class="n">Ic</span> <span class="o">/</span> <span class="n">Vt</span>
@@ -2330,8 +2392,8 @@ ng.vectors()</div>
 </pre></div>
 <div class="clipboard-copy-txt" id="cell-27">Is = 1e-15
 Vbe = 0.7
-Vcb = 4.1974 - Vbe
-Vaf = 150
+Vcb = 4.1780 - Vbe
+Vaf = 130
 Ic0 = Is * exp(Vbe / Vt)
 Ic = Ic0 * (1 + Vcb / Vaf)
 gm = Ic / Vt
@@ -2352,10 +2414,10 @@ print('Av', gm * Ro)</div>
 <div class="jp-OutputArea jp-Cell-outputArea">
 <div class="jp-OutputArea-child">
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
-<pre>Ic 0.0005802556498342359
-gm 0.022434081245415603
-Ro 9635.746510803176
-Av 216.16912008358835
+<pre>Ic 0.0005822050277918073
+gm 0.022509448893263014
+Ro 9582.049664282067
+Av 215.6866572108652
 </pre>
 </div>
 </div>
@@ -2368,8 +2430,9 @@ Av 216.16912008358835
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="common-emitter-with-degeneration">Common-Emitter with degeneration<a class="anchor-link" href="#common-emitter-with-degeneration">¶</a></h2><p>在发射极和地之间串接电阻 $\sm{R}{E}$ 可大大增加 $r_\pi$，代价是降低 $\sm{A}{v}$</p>
+<h2 id="common-emitter-with-degeneration">Common-Emitter with degeneration<a class="anchor-link" href="#common-emitter-with-degeneration">¶</a></h2><p>在发射极和地之间串接电阻 $\sm{R}{E}$ 可大大增加 $r_\pi$，代价是大大降低 $\sm{A}{v}$</p>
 <p>$\sm{R}{in} = r_\pi + (1+\beta)\sm{R}{E}$</p>
+<p>$A =\dfrac{\sm{R}{C}}{\sm{r}{e}+\sm{R}{E}} \approx \dfrac{R_\mathrm{C}}{R_\mathrm{E}}$</p>
 </div>
 </div>
 </div>
@@ -2381,7 +2444,7 @@ Av 216.16912008358835
 <div class="jp-OutputArea jp-Cell-outputArea">
 <div class="jp-OutputArea-child">
 <div class="jp-RenderedImage jp-OutputArea-output" tabindex="0">
-<img alt="No description has been provided for this image" class="" src="data:image/png;base64,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
+<img alt="No description has been provided for this image" class="" src="data:image/png;base64,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
 "/>
 </div>
 </div>
@@ -2466,7 +2529,7 @@ ng.vectors()</div>
 </div>
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
-<div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=e6a354dd-0755-4e4c-8afd-152797d48e1d">
+<div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=e399232b-f31b-4bf0-9ad0-225d47a015fc">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -2486,23 +2549,37 @@ ng.vectors()</div>
 </div>
 <div class="highlight-ipynb hl-python"><pre><span></span><span class="n">Ic</span> <span class="o">=</span> <span class="mf">508.9e-6</span>
 <span class="n">gm</span> <span class="o">=</span> <span class="n">Ic</span> <span class="o">/</span> <span class="n">Vt</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">'gm'</span><span class="p">,</span> <span class="n">gm</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">'gm '</span><span class="p">,</span> <span class="n">gm</span><span class="p">)</span>
+
+<span class="n">Ie</span> <span class="o">=</span> <span class="n">Ic</span> <span class="o">*</span> <span class="mf">1.01</span>
+<span class="n">re</span> <span class="o">=</span> <span class="n">Vt</span> <span class="o">/</span> <span class="n">Ie</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">'re '</span><span class="p">,</span> <span class="n">re</span><span class="p">)</span>
 
 <span class="n">beta</span> <span class="o">=</span> <span class="mi">100</span>
 <span class="n">rpi</span> <span class="o">=</span> <span class="n">beta</span> <span class="o">/</span> <span class="n">gm</span>
 <span class="n">Re</span> <span class="o">=</span> <span class="mi">200</span>
 <span class="n">Rin</span> <span class="o">=</span> <span class="n">rpi</span> <span class="o">+</span> <span class="p">(</span><span class="mi">1</span><span class="o">+</span><span class="n">beta</span><span class="p">)</span><span class="o">*</span><span class="n">Re</span>
 <span class="nb">print</span><span class="p">(</span><span class="s1">'Rin'</span><span class="p">,</span> <span class="n">Rin</span><span class="p">)</span>
+
+<span class="n">Rc</span> <span class="o">=</span> <span class="mf">10e3</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">'Av '</span><span class="p">,</span> <span class="n">Rc</span> <span class="o">/</span> <span class="p">(</span><span class="n">Re</span> <span class="o">+</span> <span class="n">re</span><span class="p">))</span>
 </pre></div>
 <div class="clipboard-copy-txt" id="cell-29">Ic = 508.9e-6
 gm = Ic / Vt
-print('gm', gm)
+print('gm ', gm)
+
+Ie = Ic * 1.01
+re = Vt / Ie
+print('re ', re)
 
 beta = 100
 rpi = beta / gm
 Re = 200
 Rin = rpi + (1+beta)*Re
-print('Rin', Rin)</div>
+print('Rin', Rin)
+
+Rc = 10e3
+print('Av ', Rc / (Re + re))</div>
 </div>
 </div>
 </div>
@@ -2513,11 +2590,23 @@ print('Rin', Rin)</div>
 <div class="jp-OutputArea jp-Cell-outputArea">
 <div class="jp-OutputArea-child">
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
-<pre>gm 0.019675299928666713
+<pre>gm  0.019675299928666713
+re  50.3219271620061
 Rin 25282.514643362614
+Av  39.94855789652055
 </pre>
 </div>
 </div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=b7d81496-580e-4d8a-9fc1-3829ce7390dd">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<p>可见 $\sm{R}{E}=200\Omega$，而 $\sm{R}{in}$ 从 $r_\pi=5$kΩ 左右增大到了 25kΩ，增加了 $(1+\beta)\sm{R}{E}=20\mathrm{k}\Omega$.</p>
 </div>
 </div>
 </div>
@@ -2528,7 +2617,8 @@ Rin 25282.514643362614
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <h2 id="common-emitter-with-active-load">Common-Emitter with active load<a class="anchor-link" href="#common-emitter-with-active-load">¶</a></h2><p>有源负载可以大大增加 $\sm{A}{v}$，通常可以达到 $1000\sim 2000$</p>
-<p>开路增益 $\sm{A}{v}=\sm{g}{m}\sm{R}{o}=\sm{g}{m}(\sm{r}{o1}/\!/\sm{r}{o2})=\dfrac{\uv{A1}\uv{A2}}{\uv{T}(\uv{A1}+\uv{A2})}$ 跟偏置电流无关，但是输出阻抗跟偏置电流成反比，为了提高带负载的能力，应该增加偏置电流。</p>
+<p>输出阻抗 $\sm{R}{o}=\sm{r}{o1}/\!/\sm{r}{o2}=\dfrac{1}{\dfrac{1}{\sm{r}{o1}}+\dfrac{1}{\sm{r}{o2}}}=\dfrac{1}{\dfrac{\ui{C}}{\uv{A1}} + \dfrac{\ui{C}}{\uv{A2}}} =\dfrac{1}{\ui{C}}\cdot\dfrac{\uv{A1}\uv{A2}}{\uv{A1}+\uv{A2}}$</p>
+<p>开路增益 $\sm{A}{v}=\sm{g}{m}\sm{R}{o}=\sm{g}{m}(\sm{r}{o1}/\!/\sm{r}{o2})=\dfrac{\uv{A1}\uv{A2}}{\uv{T}(\uv{A1}+\uv{A2})}$ 跟偏置电流 $\ui{C}$ 无关，但是输出阻抗 $\sm{R}{o}$ 跟偏置电流成反比，为了提高带负载的能力，应该增加偏置电流。</p>
 </div>
 </div>
 </div>
@@ -2568,11 +2658,11 @@ Rin 25282.514643362614
 </div>
 <div class="highlight-ipynb hl-python"><pre><span></span><span class="n">Va1</span> <span class="o">=</span> <span class="mi">130</span>
 <span class="n">Va2</span> <span class="o">=</span> <span class="mi">50</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">Va1</span><span class="o">*</span><span class="n">Va1</span><span class="o">/</span><span class="p">(</span><span class="n">Vt</span><span class="o">*</span><span class="p">(</span><span class="n">Va1</span><span class="o">+</span><span class="n">Va2</span><span class="p">)))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">Va1</span><span class="o">*</span><span class="n">Va2</span><span class="o">/</span><span class="p">(</span><span class="n">Vt</span><span class="o">*</span><span class="p">(</span><span class="n">Va1</span><span class="o">+</span><span class="n">Va2</span><span class="p">)))</span>
 </pre></div>
 <div class="clipboard-copy-txt" id="cell-30">Va1 = 130
 Va2 = 50
-print(Va1*Va1/(Vt*(Va1+Va2)))</div>
+print(Va1*Va2/(Vt*(Va1+Va2)))</div>
 </div>
 </div>
 </div>
@@ -2583,7 +2673,161 @@ print(Va1*Va1/(Vt*(Va1+Va2)))</div>
 <div class="jp-OutputArea jp-Cell-outputArea">
 <div class="jp-OutputArea-child">
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
-<pre>3629.9706206684073
+<pre>1396.142546410926
+</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
+<div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=7eafce79-e79b-44bd-9b8c-b0ba55f048e4">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="CodeMirror cm-s-jupyter">
+<div class="zeroclipboard-container">
+<clipboard-copy for="cell-31">
+<div>
+<span class="notice" hidden="">Copied!</span>
+<svg aria-hidden="true" class="clipboard-copy-icon" data-view-component="true" height="20" version="1.1" viewbox="0 0 16 16" width="20">
+<path d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z" fill="currentColor" fill-rule="evenodd"></path>
+<path d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z" fill="currentColor" fill-rule="evenodd"></path>
+</svg>
+</div>
+</clipboard-copy>
+</div>
+<div class="highlight-ipynb hl-python"><pre><span></span><span class="n">ng</span><span class="o">.</span><span class="n">circ</span><span class="p">(</span><span class="s1">'''</span>
+<span class="s1">  Q3  bias  bias  vcc  PNP</span>
+<span class="s1">  Q2  c     bias  vcc  PNP</span>
+<span class="s1">  Q1  c     b     0    NPN</span>
+<span class="s1">  R1  bias  0  15k</span>
+<span class="s1">  Vcc  vcc  0  15V</span>
+<span class="s1">  Vin  b  0  0.715V</span>
+<span class="s1">  * .options savecurrents</span>
+<span class="s1">  .save all @q1[ic] @q1[gm]</span>
+<span class="s1">  .model PNP PNP(IS=1fA BF=80  VAF=50)</span>
+<span class="s1">  .model NPN NPN(IS=1fA BF=100 VAF=130)</span>
+<span class="s1">'''</span><span class="p">)</span>
+<span class="n">print_op</span><span class="p">()</span>
+<span class="n">ng</span><span class="o">.</span><span class="n">cmd</span><span class="p">(</span><span class="s1">'tf  v(c)  vin'</span><span class="p">)</span>
+<span class="n">ng</span><span class="o">.</span><span class="n">vectors</span><span class="p">()</span>
+</pre></div>
+<div class="clipboard-copy-txt" id="cell-31">ng.circ('''
+  Q3  bias  bias  vcc  PNP
+  Q2  c     bias  vcc  PNP
+  Q1  c     b     0    NPN
+  R1  bias  0  15k
+  Vcc  vcc  0  15V
+  Vin  b  0  0.715V
+  * .options savecurrents
+  .save all @q1[ic] @q1[gm]
+  .model PNP PNP(IS=1fA BF=80  VAF=50)
+  .model NPN NPN(IS=1fA BF=100 VAF=130)
+''')
+print_op()
+ng.cmd('tf  v(c)  vin')
+ng.vectors()</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child">
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
+<pre>   @q1[gm] =   41.073 mS
+   @q1[ic] =    1.063 mA
+         b =   0.7150 V
+      bias =  14.2872 V
+         c =   7.1154 V
+       vcc =  15.0000 V
+vcc#branch =   -2.015 mA
+vin#branch =  -10.127 uA
+</pre>
+</div>
+</div>
+<div class="jp-OutputArea-child jp-OutputArea-executeResult">
+<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain" tabindex="0">
+<pre>{'@q1[gm]': array([0.04107253]),
+ '@q1[ic]': array([0.00106254]),
+ 'output_impedance_at_V(c)': array([37914.88514855]),
+ 'vin#Input_impedance': array([2554.0928264]),
+ 'Transfer_function': array([-1557.26029682])}</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
+<div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=40eadc32-5ad4-449e-a1e1-c539aa42b4c5">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="CodeMirror cm-s-jupyter">
+<div class="zeroclipboard-container">
+<clipboard-copy for="cell-32">
+<div>
+<span class="notice" hidden="">Copied!</span>
+<svg aria-hidden="true" class="clipboard-copy-icon" data-view-component="true" height="20" version="1.1" viewbox="0 0 16 16" width="20">
+<path d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z" fill="currentColor" fill-rule="evenodd"></path>
+<path d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z" fill="currentColor" fill-rule="evenodd"></path>
+</svg>
+</div>
+</clipboard-copy>
+</div>
+<div class="highlight-ipynb hl-python"><pre><span></span><span class="n">Vbe1</span> <span class="o">=</span> <span class="mf">0.715</span>
+<span class="n">Is</span> <span class="o">=</span> <span class="mf">1e-15</span>
+<span class="n">Ic1</span> <span class="o">=</span> <span class="n">Is</span> <span class="o">*</span> <span class="n">exp</span><span class="p">(</span><span class="n">Vbe1</span> <span class="o">/</span> <span class="n">Vt</span><span class="p">)</span>
+<span class="n">rpi1</span> <span class="o">=</span> <span class="mi">100</span> <span class="o">*</span> <span class="n">Vt</span> <span class="o">/</span> <span class="n">Ic1</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">'rpi'</span><span class="p">,</span> <span class="n">rpi1</span><span class="p">)</span>
+<span class="n">ro1</span> <span class="o">=</span> <span class="n">Va1</span> <span class="o">/</span> <span class="n">Ic1</span>
+
+<span class="c1"># PNP</span>
+<span class="n">Vbe2</span> <span class="o">=</span> <span class="mi">15</span><span class="o">-</span><span class="mf">14.2872</span>
+<span class="n">Ic2</span> <span class="o">=</span> <span class="n">Is</span> <span class="o">*</span> <span class="n">exp</span><span class="p">(</span><span class="n">Vbe2</span> <span class="o">/</span> <span class="n">Vt</span><span class="p">)</span>
+<span class="n">ro2</span> <span class="o">=</span> <span class="n">Va2</span> <span class="o">/</span> <span class="n">Ic2</span>
+<span class="n">Ro</span> <span class="o">=</span> <span class="n">para</span><span class="p">(</span><span class="n">ro1</span><span class="p">,</span> <span class="n">ro2</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">'Ro'</span><span class="p">,</span> <span class="n">Ro</span><span class="p">)</span>
+
+<span class="n">gm</span> <span class="o">=</span> <span class="mf">1.063e-3</span> <span class="o">/</span> <span class="n">Vt</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">'Av '</span><span class="p">,</span> <span class="n">gm</span> <span class="o">*</span> <span class="n">Ro</span><span class="p">)</span>
+</pre></div>
+<div class="clipboard-copy-txt" id="cell-32">Vbe1 = 0.715
+Is = 1e-15
+Ic1 = Is * exp(Vbe1 / Vt)
+rpi1 = 100 * Vt / Ic1
+print('rpi', rpi1)
+ro1 = Va1 / Ic1
+
+# PNP
+Vbe2 = 15-14.2872
+Ic2 = Is * exp(Vbe2 / Vt)
+ro2 = Va2 / Ic2
+Ro = para(ro1, ro2)
+print('Ro', Ro)
+
+gm = 1.063e-3 / Vt
+print('Av ', gm * Ro)</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child">
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
+<pre>rpi 2554.103034638456
+Ro 37890.28761381275
+Av  1557.2203731496945
 </pre>
 </div>
 </div>
@@ -2621,56 +2865,8 @@ print(Va1*Va1/(Vt*(Va1+Va2)))</div>
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
-<div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=781a01cb-1d32-4776-adc7-b1b27613768f">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-<div class="CodeMirror cm-s-jupyter">
-<div class="zeroclipboard-container">
-<clipboard-copy for="cell-31">
-<div>
-<span class="notice" hidden="">Copied!</span>
-<svg aria-hidden="true" class="clipboard-copy-icon" data-view-component="true" height="20" version="1.1" viewbox="0 0 16 16" width="20">
-<path d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z" fill="currentColor" fill-rule="evenodd"></path>
-<path d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z" fill="currentColor" fill-rule="evenodd"></path>
-</svg>
-</div>
-</clipboard-copy>
-</div>
-<div class="highlight-ipynb hl-python"><pre><span></span><span class="o">%%</span><span class="n">tikz</span> <span class="o">-</span><span class="n">ct</span>
-\<span class="n">ctikzset</span><span class="p">{</span><span class="n">transistors</span><span class="o">/</span><span class="n">arrow</span> <span class="n">pos</span><span class="o">=</span><span class="n">end</span><span class="p">,</span> <span class="n">american</span> <span class="n">currents</span><span class="p">,</span> <span class="n">american</span> <span class="n">voltages</span><span class="p">,</span> <span class="n">european</span> <span class="n">resistors</span><span class="p">}</span>
-
-\<span class="n">draw</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span> <span class="n">node</span> <span class="p">[</span><span class="n">npn</span><span class="p">]</span> <span class="p">(</span><span class="n">Q1</span><span class="p">)</span> <span class="p">{</span><span class="n">Q1</span><span class="p">};</span>
-\<span class="n">draw</span> <span class="p">(</span><span class="n">Q1</span><span class="o">.</span><span class="n">E</span><span class="p">)</span> <span class="n">to</span> <span class="p">[</span><span class="n">short</span><span class="p">,</span> <span class="o">*-</span><span class="p">]</span> <span class="o">++</span><span class="p">(</span><span class="mf">0.5</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
-  <span class="n">node</span> <span class="p">[</span><span class="n">npn</span><span class="p">,</span> <span class="n">anchor</span><span class="o">=</span><span class="n">B</span><span class="p">]</span> <span class="p">(</span><span class="n">Q2</span><span class="p">)</span> <span class="p">{</span><span class="n">Q2</span><span class="p">};</span>
-\<span class="n">draw</span> <span class="p">(</span><span class="n">Q1</span><span class="o">.</span><span class="n">E</span><span class="p">)</span> <span class="n">to</span> <span class="p">[</span><span class="n">R</span><span class="p">,</span> <span class="n">l</span><span class="o">=</span><span class="p">{</span><span class="err">$</span><span class="n">R_</span>\<span class="n">mathrm</span><span class="p">{</span><span class="n">E</span><span class="p">}</span><span class="err">$</span><span class="p">},</span> <span class="n">bipoles</span><span class="o">/</span><span class="n">length</span><span class="o">=</span><span class="mi">1</span><span class="n">cm</span><span class="p">]</span> <span class="o">++</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mf">1.5</span><span class="p">)</span> <span class="n">coordinate</span> <span class="p">(</span><span class="n">G</span><span class="p">);</span>
-\<span class="n">draw</span> <span class="p">(</span><span class="n">Q2</span><span class="o">.</span><span class="n">C</span><span class="p">)</span> <span class="n">to</span> <span class="p">[</span><span class="n">I</span><span class="p">,</span> <span class="n">invert</span><span class="p">,</span> <span class="n">l_</span><span class="o">=</span><span class="p">{</span><span class="err">$</span><span class="n">I_</span>\<span class="n">mathrm</span><span class="p">{</span><span class="n">C2</span><span class="p">}</span><span class="err">$</span><span class="p">},</span> <span class="n">bipoles</span><span class="o">/</span><span class="n">length</span><span class="o">=</span><span class="mf">1.2</span><span class="n">cm</span><span class="p">]</span> <span class="o">++</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mf">1.5</span><span class="p">)</span> <span class="n">coordinate</span> <span class="p">(</span><span class="n">T</span><span class="p">);</span>
-\<span class="n">draw</span> <span class="p">(</span><span class="n">Q1</span><span class="o">.</span><span class="n">C</span><span class="p">)</span> <span class="o">|-</span> <span class="p">(</span><span class="n">T</span><span class="p">)</span> <span class="n">node</span> <span class="p">[</span><span class="n">circ</span><span class="p">]</span> <span class="p">{}</span> <span class="n">node</span> <span class="p">[</span><span class="n">vcc</span><span class="p">]</span> <span class="p">{</span><span class="n">Vcc</span><span class="p">};</span>
-\<span class="n">draw</span> <span class="p">(</span><span class="n">Q2</span><span class="o">.</span><span class="n">E</span><span class="p">)</span> <span class="o">|-</span> <span class="p">(</span><span class="n">G</span><span class="p">);</span>
-\<span class="n">draw</span> <span class="p">(</span><span class="n">Q2</span><span class="o">.</span><span class="n">E</span> <span class="o">|-</span> <span class="n">G</span><span class="p">)</span> <span class="n">node</span> <span class="p">[</span><span class="n">circ</span><span class="p">]</span> <span class="p">{}</span> <span class="n">node</span> <span class="p">[</span><span class="n">sground</span><span class="p">]</span> <span class="p">{};</span>
-\<span class="n">draw</span> <span class="p">(</span><span class="n">Q2</span><span class="o">.</span><span class="n">C</span><span class="p">)</span> <span class="n">to</span> <span class="p">[</span><span class="n">short</span><span class="p">,</span> <span class="o">*-</span><span class="n">o</span><span class="p">]</span> <span class="o">++</span><span class="p">(</span><span class="mf">0.6</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span> <span class="n">node</span> <span class="p">[</span><span class="n">right</span><span class="p">]</span> <span class="p">{</span><span class="n">Vout</span><span class="p">};</span>
-\<span class="n">draw</span> <span class="p">(</span><span class="n">Q1</span><span class="o">.</span><span class="n">B</span><span class="p">)</span> <span class="n">to</span> <span class="p">[</span><span class="n">short</span><span class="p">,</span> <span class="o">-</span><span class="n">o</span><span class="p">]</span> <span class="o">++</span><span class="p">(</span><span class="o">-</span><span class="mf">0.2</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span> <span class="n">node</span> <span class="p">[</span><span class="n">left</span><span class="p">]</span> <span class="p">{</span><span class="n">Vin</span><span class="p">};</span>
-</pre></div>
-<div class="clipboard-copy-txt" id="cell-31">%%tikz -ct
-\ctikzset{transistors/arrow pos=end, american currents, american voltages, european resistors}
-
-\draw (0, 0) node [npn] (Q1) {Q1};
-\draw (Q1.E) to [short, *-] ++(0.5, 0)
-  node [npn, anchor=B] (Q2) {Q2};
-\draw (Q1.E) to [R, l={$R_\mathrm{E}$}, bipoles/length=1cm] ++(0, -1.5) coordinate (G);
-\draw (Q2.C) to [I, invert, l_={$I_\mathrm{C2}$}, bipoles/length=1.2cm] ++(0, 1.5) coordinate (T);
-\draw (Q1.C) |- (T) node [circ] {} node [vcc] {Vcc};
-\draw (Q2.E) |- (G);
-\draw (Q2.E |- G) node [circ] {} node [sground] {};
-\draw (Q2.C) to [short, *-o] ++(0.6, 0) node [right] {Vout};
-\draw (Q1.B) to [short, -o] ++(-0.2, 0) node [left] {Vin};</div>
-</div>
-</div>
-</div>
-</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell celltag_hide_code">
+<div class="jp-Cell jp-CodeCell jp-Notebook-cell celltag_hide_code" id="cell-id=781a01cb-1d32-4776-adc7-b1b27613768f">
 <div class="jp-Cell-outputWrapper">
 <div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
 </div>
@@ -2705,6 +2901,100 @@ print(Va1*Va1/(Vt*(Va1+Va2)))</div>
 </li>
 </ul>
 <p>降低 $\ui{C2}$ 可以增加 $r_{\pi 2}$ 从而增加 $\sm{R}{i1}$，但同时也会增加 $\sm{r}{o2}=\dfrac{\uv{A2}}{\ui{C2}}$，这又是一对矛盾。</p>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
+<div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=80c72992-b9cd-4744-836e-04fd092d1bc5">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="CodeMirror cm-s-jupyter">
+<div class="zeroclipboard-container">
+<clipboard-copy for="cell-33">
+<div>
+<span class="notice" hidden="">Copied!</span>
+<svg aria-hidden="true" class="clipboard-copy-icon" data-view-component="true" height="20" version="1.1" viewbox="0 0 16 16" width="20">
+<path d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z" fill="currentColor" fill-rule="evenodd"></path>
+<path d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z" fill="currentColor" fill-rule="evenodd"></path>
+</svg>
+</div>
+</clipboard-copy>
+</div>
+<div class="highlight-ipynb hl-python"><pre><span></span><span class="n">ng</span><span class="o">.</span><span class="n">circ</span><span class="p">(</span><span class="s1">'''</span>
+<span class="s1">  Q3  bias  bias  vcc  PNP</span>
+<span class="s1">  Q4  c     bias  vcc  PNP</span>
+<span class="s1">  R1  bias  0  15k</span>
+
+<span class="s1">  Q2  c     b     0    NPN</span>
+<span class="s1">  Q1  vcc   vin   b    NPN</span>
+<span class="s1">  Re  b     0  50k</span>
+
+<span class="s1">  Vcc  vcc  0  15V</span>
+<span class="s1">  Vin  vin  0  1.33V</span>
+<span class="s1">  * .options savecurrents</span>
+<span class="s1">  .save all @q1[ic] @q2[ic] @q2[gm]</span>
+<span class="s1">  .model PNP PNP(IS=1fA BF=80  VAF=50)</span>
+<span class="s1">  .model NPN NPN(IS=1fA BF=100 VAF=130)</span>
+<span class="s1">'''</span><span class="p">)</span>
+<span class="n">print_op</span><span class="p">()</span>
+<span class="n">ng</span><span class="o">.</span><span class="n">cmd</span><span class="p">(</span><span class="s1">'tf  v(c)  vin'</span><span class="p">)</span>
+<span class="n">ng</span><span class="o">.</span><span class="n">vectors</span><span class="p">()</span>
+</pre></div>
+<div class="clipboard-copy-txt" id="cell-33">ng.circ('''
+  Q3  bias  bias  vcc  PNP
+  Q4  c     bias  vcc  PNP
+  R1  bias  0  15k
+
+  Q2  c     b     0    NPN
+  Q1  vcc   vin   b    NPN
+  Re  b     0  50k
+
+  Vcc  vcc  0  15V
+  Vin  vin  0  1.33V
+  * .options savecurrents
+  .save all @q1[ic] @q2[ic] @q2[gm]
+  .model PNP PNP(IS=1fA BF=80  VAF=50)
+  .model NPN NPN(IS=1fA BF=100 VAF=130)
+''')
+print_op()
+ng.cmd('tf  v(c)  vin')
+ng.vectors()</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell-outputWrapper">
+<div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
+</div>
+<div class="jp-OutputArea jp-Cell-outputArea">
+<div class="jp-OutputArea-child">
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain" tabindex="0">
+<pre>   @q1[ic] =   23.971 uA
+   @q2[gm] =   40.418 mS
+   @q2[ic] =    1.046 mA
+         b =   0.7144 V
+      bias =  14.2872 V
+         c =   8.0265 V
+       vcc =  15.0000 V
+vcc#branch =   -2.022 mA
+       vin =   1.3300 V
+vin#branch =   -0.217 uA
+</pre>
+</div>
+</div>
+<div class="jp-OutputArea-child jp-OutputArea-executeResult">
+<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain" tabindex="0">
+<pre>{'@q2[gm]': array([0.04041801]),
+ '@q2[ic]': array([0.00104561]),
+ '@q1[ic]': array([2.39706021e-05]),
+ 'output_impedance_at_V(c)': array([38168.15781395]),
+ 'vin#Input_impedance': array([395983.19138987]),
+ 'Transfer_function': array([-1078.10888197])}</pre>
+</div>
+</div>
 </div>
 </div>
 </div>
@@ -2753,6 +3043,33 @@ print(Va1*Va1/(Vt*(Va1+Va2)))</div>
 <div class="jp-RenderedImage jp-OutputArea-output" tabindex="0">
 <img alt="No description has been provided for this image" class="" src="data:image/png;base64,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
 "/>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
+<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=9b00eb74-e82d-4d59-8480-c1d368701f33">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="CodeMirror cm-s-jupyter">
+<div class="zeroclipboard-container">
+<clipboard-copy for="cell-34">
+<div>
+<span class="notice" hidden="">Copied!</span>
+<svg aria-hidden="true" class="clipboard-copy-icon" data-view-component="true" height="20" version="1.1" viewbox="0 0 16 16" width="20">
+<path d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z" fill="currentColor" fill-rule="evenodd"></path>
+<path d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z" fill="currentColor" fill-rule="evenodd"></path>
+</svg>
+</div>
+</clipboard-copy>
+</div>
+<div class="highlight-ipynb hl-python"><pre><span></span>
+</pre></div>
+<div class="clipboard-copy-txt" id="cell-34"></div>
 </div>
 </div>
 </div>
