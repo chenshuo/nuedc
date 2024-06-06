@@ -73,6 +73,10 @@
 </li>
                                     
 <li>
+    <a href="../diode/" class="dropdown-item">二极管复习</a>
+</li>
+                                    
+<li>
     <a href="./" class="dropdown-item active">BJT 三极管基础知识复习</a>
 </li>
                                 </ul>
@@ -84,7 +88,7 @@
 
                     <ul class="nav navbar-nav ml-auto">
                             <li class="nav-item">
-                                <a rel="prev" href="../bjt-circuits/" class="nav-link">
+                                <a rel="prev" href="../diode/" class="nav-link">
                                     <i class="fa fa-arrow-left"></i> Previous
                                 </a>
                             </li>
@@ -116,7 +120,11 @@
             
             <li class="nav-item" data-level="1"><a href="#bjt" class="nav-link">BJT 三极管基础知识复习</a>
               <ul class="nav flex-column">
-            <li class="nav-item" data-level="2"><a href="#_1" class="nav-link">基本模型</a>
+            <li class="nav-item" data-level="2"><a href="#_1" class="nav-link">简史</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-level="2"><a href="#_2" class="nav-link">基本模型</a>
               <ul class="nav flex-column">
               </ul>
             </li>
@@ -562,6 +570,32 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <h1 id="bjt">BJT 三极管基础知识复习<a class="anchor-link" href="#bjt">¶</a></h1>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=55d36dfd-0478-4b30-9e3b-9200d56504f1">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h2 id="">简史<a class="anchor-link" href="#">¶</a></h2><p><a href="https://www.computerhistory.org/revolution/digital-logic/12/273">https://www.computerhistory.org/revolution/digital-logic/12/273</a></p>
+<p>1947 年 12 月圣诞节前夜，John Bardeen 和 Walter Brattain 在实验室试制成功了第一个 point-contact transistor。根据清华童诗白教授在“世纪回眸：纪念晶体管的发明和由此引出的启发”一文中的考证，。</p>
+<blockquote>
+<p>完整故事：
+<a href="https://www.worldradiohistory.com/Archive-Electronics/Electronics-1980-04-17-Anniversary.pdf">https://www.worldradiohistory.com/Archive-Electronics/Electronics-1980-04-17-Anniversary.pdf</a></p>
+</blockquote>
+<p>后来在 1948 年 6 月底，Bell Labs 公开了这一发现。为了宣传的需要，实验室让这三人摆拍了著名的照片：
+<a href="https://www.computerhistory.org/siliconengine/invention-of-the-point-contact-transistor/">https://www.computerhistory.org/siliconengine/invention-of-the-point-contact-transistor/</a> 和 <a href="https://en.wikipedia.org/wiki/File:Bardeen_Shockley_Brattain_1948.JPG">https://en.wikipedia.org/wiki/File:Bardeen_Shockley_Brattain_1948.JPG</a>
+。为什么说是摆拍？因为 Bardeen 是理论物理学家（后来凭超导理论拿了第二个 Nobel 物理奖），他一般不进实验室，如果要和 Brattain 交流，一般会在自己的办公室就着黑板写写画画。而 Brattain 是实验物理学家，照片是在他的实验室拍的，如果要仔细观察晶体管，那么坐着看显微镜的人应该是他而不是 Shockley.</p>
+<blockquote>
+<p>Walter Brown debunks the myth created by the Bell Labs press photo:
+"Bardeen was not at all a laboratory experimentalist. He was a theorist. And he was the guy that provided the theoretical ideas for Brattain. It was Brattain who went in the lab and wired up the stuff and put the pieces together. And Bardeen really didn't play a part in the laboratory scene at all. Their association was primarily outside the laboratory. Of course, there is the famous picture of Bardeen, Brattain and Shockley that's taken in Brattain's laboratory. But that really was not a very common—certainly having the three of them together would be very uncommon—but having Brattain and Bardeen together in the laboratory wouldn't have been, that wouldn't have ordinarily happened. It would have happened in Bardeen's office more than it would have been in Brattain's lab." <a href="https://www.pbs.org/transistor/album1/addlbios/egos.html">https://www.pbs.org/transistor/album1/addlbios/egos.html</a></p>
+</blockquote>
+<p>随即，1948 年 7 月，John Bardeen 和 Walter Brattain 在 <em>Physical Review</em> 发表了短短两页的报告
+"The Transistor, a Semi-Conductor Triode." <a href="https://journals.aps.org/pr/pdf/10.1103/PhysRev.74.230">[PDF]</a> 正式命名这个新器件为 transistor，这个名字是他们在 Bell Labs 的同事 <a href="https://en.wikipedia.org/wiki/John_R._Pierce">John R. Pierce</a> 起的。从 transresistance 变化而来，意思是“跨阻器/传递电阻” transfer resistor。如果我没有理解错，这篇报告展示的是 PNP 管的 common-base 放大电路。<a href="https://x.com/TubeTimeUS/status/1249023089528078337">https://x.com/TubeTimeUS/status/1249023089528078337</a></p>
+<p>一年后，William Shockley 于 1949/07 在 BSTJ 发表了 "The theory of p-n junctions in semiconductors and p-n junction transistors" <a href="https://ieeexplore.ieee.org/document/6773080">https://ieeexplore.ieee.org/document/6773080</a></p>
+<p><a href="https://www.computerhistory.org/siliconengine/conception-of-the-junction-transistor/">https://www.computerhistory.org/siliconengine/conception-of-the-junction-transistor/</a></p>
 </div>
 </div>
 </div>
