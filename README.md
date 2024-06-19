@@ -8,3 +8,5 @@ Nuedc.org's mission is to organize NUEDC's information and make it universally a
 
 
 历届试题： http://nuedc.org/problems
+
+模拟电路知识点小结 http://nuedc.org/analog.pdf
