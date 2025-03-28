@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-bs-theme="light">
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -10,9 +10,13 @@
         <link rel="shortcut icon" href="../img/favicon.ico">
         <title>741 运放 - 全国大学生电子设计竞赛</title>
         <link href="../css/bootstrap.min.css" rel="stylesheet">
-        <link href="../css/font-awesome.min.css" rel="stylesheet">
+        <link href="../css/fontawesome.min.css" rel="stylesheet">
+        <link href="../css/brands.min.css" rel="stylesheet">
+        <link href="../css/solid.min.css" rel="stylesheet">
+        <link href="../css/v4-font-face.min.css" rel="stylesheet">
         <link href="../css/base.css" rel="stylesheet">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css">
+        <link id="hljs-light" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" >
+        <link id="hljs-dark" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github-dark.min.css" disabled>
         <link href="../extra.css" rel="stylesheet">
         <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
         <script>hljs.highlightAll();</script>
@@ -31,7 +35,7 @@
             <div class="container">
                 <a class="navbar-brand" href="..">全国大学生电子设计竞赛</a>
                 <!-- Expander button -->
-                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-collapse">
+                <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbar-collapse" aria-controls="navbar-collapse" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
 
@@ -39,17 +43,17 @@
                 <div id="navbar-collapse" class="navbar-collapse collapse">
                         <!-- Main navigation -->
                         <ul class="nav navbar-nav">
-                            <li class="navitem">
+                            <li class="nav-item">
                                 <a href=".." class="nav-link">首页</a>
                             </li>
-                            <li class="navitem">
+                            <li class="nav-item">
                                 <a href="../problems/" class="nav-link">历届试题</a>
                             </li>
-                            <li class="navitem">
+                            <li class="nav-item">
                                 <a href="../datasheets/" class="nav-link">器件手册</a>
                             </li>
-                            <li class="dropdown active">
-                                <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">资料笔记 <b class="caret"></b></a>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle active" aria-current="page" role="button" data-bs-toggle="dropdown"  aria-expanded="false">资料笔记</a>
                                 <ul class="dropdown-menu">
                                     
 <li>
@@ -61,7 +65,7 @@
 </li>
                                     
 <li>
-    <a href="./" class="dropdown-item active">741 运放</a>
+    <a href="./" class="dropdown-item active" aria-current="page">741 运放</a>
 </li>
                                     
 <li>
@@ -81,12 +85,12 @@
 </li>
                                 </ul>
                             </li>
-                            <li class="navitem">
+                            <li class="nav-item">
                                 <a href="../about/" class="nav-link">关于</a>
                             </li>
                         </ul>
 
-                    <ul class="nav navbar-nav ml-auto">
+                    <ul class="nav navbar-nav ms-md-auto">
                             <li class="nav-item">
                                 <a rel="prev" href="../regulator/" class="nav-link">
                                     <i class="fa fa-arrow-left"></i> Previous
@@ -98,7 +102,7 @@
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a href="https://github.com/chenshuo/nuedc" class="nav-link"><i class="fa fa-github"></i> GitHub</a>
+                                <a href="https://github.com/chenshuo/nuedc" class="nav-link"><i class="fa-brands fa-github"></i> GitHub</a>
                             </li>
                     </ul>
                 </div>
@@ -107,28 +111,28 @@
 
         <div class="container">
             <div class="row">
-                    <div class="col-md-3"><div class="navbar-light navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+                    <div class="col-md-3"><div class="navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
     <div class="navbar-header">
-        <button type="button" class="navbar-toggler collapsed" data-toggle="collapse" data-target="#toc-collapse" title="Table of Contents">
+        <button type="button" class="navbar-toggler collapsed" data-bs-toggle="collapse" data-bs-target="#toc-collapse" title="Table of Contents">
             <span class="fa fa-angle-down"></span>
         </button>
     </div>
 
     
-    <div id="toc-collapse" class="navbar-collapse collapse card bg-secondary">
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-body-tertiary">
         <ul class="nav flex-column">
             
-            <li class="nav-item" data-level="1"><a href="#a741" class="nav-link">µA741 笔记</a>
+            <li class="nav-item" data-bs-level="1"><a href="#a741" class="nav-link">µA741 笔记</a>
               <ul class="nav flex-column">
-            <li class="nav-item" data-level="2"><a href="#_1" class="nav-link">内部电路</a>
-              <ul class="nav flex-column">
-              </ul>
-            </li>
-            <li class="nav-item" data-level="2"><a href="#_3" class="nav-link">分析与仿真</a>
+            <li class="nav-item" data-bs-level="2"><a href="#_1" class="nav-link">内部电路</a>
               <ul class="nav flex-column">
               </ul>
             </li>
-            <li class="nav-item" data-level="2"><a href="#24t" class="nav-link">24T 版工作点计算与仿真</a>
+            <li class="nav-item" data-bs-level="2"><a href="#_3" class="nav-link">分析与仿真</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#24t" class="nav-link">24T 版工作点计算与仿真</a>
               <ul class="nav flex-column">
               </ul>
             </li>
@@ -141,7 +145,7 @@
 
 <h1 id="a741">µA741 笔记</h1>
 <p>µA741 是第二代集成运算放大器的代表，由 David Fullagar 在 1968 年为 Fairchild 公司设计。常见的兼容型号有 UA741, LM741, KA741 等等。以下简称 741。741 有<a href="SectionH.pdf">历史意义</a>，也有学习的价值，<a href="Sedra8e_x5.pdf">资料丰富</a>，但在 21 世纪的今天没有多少使用价值。</p>
-<p>MC1458 / MC1558 是 741 的双运放版本，电路特性是一样的。<a href="https://www.learningelectronics.net/VA3AVR/gadgets/741/741.html">1974 年上市</a>的 RC4558 是第一款集成双运放，其性能指标和 µA741 相仿，<a href="rc4558.png">电路比 741 略微简单一些</a>。同年晚些时候上市的 LM324 是集成四运放，连同其双运放版 LM358 至今是十分流行的器件，我怀疑 LM358 可能是目前销量最大的运放。</p>
+<p>MC1458 / MC1558 是 741 的双运放版本，电路特性是一样的。<a href="https://www.learningelectronics.net/VA3AVR/gadgets/741/741.html">1974 年上市</a>的 <a href="/rc4558/">RC4558</a> 是第一款集成双运放，其性能指标和 µA741 相仿，<a href="rc4558.png">电路比 741 略微简单一些</a>。同年晚些时候上市的 LM324 是集成四运放，连同其双运放版 LM358 至今是十分流行的器件，我怀疑 LM358 可能是目前销量最大的运放。</p>
 <p>Dave Fullagar and <a href="ho18opamp.pdf">history of µA741</a></p>
 <ul>
 <li><a href="https://www.edn.com/voices-dave-fullagar-analog-ic-designer-and-entrepreneur/">https://www.edn.com/voices-dave-fullagar-analog-ic-designer-and-entrepreneur/</a></li>
@@ -154,10 +158,10 @@
 <p>芯片的版图：</p>
 <ul>
 <li><a href="https://www.righto.com/2015/10/inside-ubiquitous-741-op-amp-circuits.html">https://www.righto.com/2015/10/inside-ubiquitous-741-op-amp-circuits.html</a> 分析的是金封的 AD741</li>
-<li><a href="https://spectrum.ieee.org/chip-hall-of-fame-fairchild-semiconductor-a741-opamp">https://spectrum.ieee.org/chip-hall-of-fame-fairchild-semiconductor-a741-opamp</a> 是原始 Fairchild 的硅片，也见 <a href="https://www.computerhistory.org/revolution/digital-logic/12/281/1478">https://www.computerhistory.org/revolution/digital-logic/12/281/1478</a></li>
+<li><a href="https://spectrum.ieee.org/chip-hall-of-fame-fairchild-semiconductor-a741-opamp">https://spectrum.ieee.org/chip-hall-of-fame-fairchild-semiconductor-a741-opamp</a> 是原始 Fairchild 的硅片，也见 <a href="https://www.computerhistory.org/revolution/digital-logic/12/281/1478">https://www.computerhistory.org/revolution/digital-logic/12/281/1478</a>。</li>
+<li>我也试着逆向工程 https://x.com/bnu_chenshuo/status/1900702896628658225 ，其中面积最大的发亮的区域是 30pF 的补偿电容，R5 (39k)的面积也很大。</li>
 <li><a href="https://www.tinytransistors.net/2020/11/03/the-741-op-amp/">https://www.tinytransistors.net/2020/11/03/the-741-op-amp/</a> 列出了多个厂家的 die。</li>
 </ul>
-<p>其中面积最大的发亮的区域是 30pF 的补偿电容。</p>
 <p>讲解各种版本的 741 内部电路的书籍，我知道的有：</p>
 <ul>
 <li>清华童诗白《模拟电子技术基础》<ul>
@@ -175,10 +179,10 @@
 <h2 id="_1">内部电路</h2>
 <p>741 内部电路很经典，国内的模电教材上常讲的 F007 运放其实是 µA741 的“山寨版”，“F”字头我猜代表“放”大。741 的内部电路有两个常见的版本，分别有 20 个三极管和 24 个三极管，以下称为 20T 版和 24T 版。</p>
 <p>为了简化，两个调零的引脚没有画出来。</p>
-<p>20T 版（Wikipedia 以此为例介绍<a href="https://en.wikipedia.org/wiki/Operational_amplifier#Internal_circuitry_of_741-type_op_amp">运算放大器</a>），重绘自 Fairchild <a href="fairchild1970.pdf">1970 年数据手册</a>：</p>
+<p>20T 版（Wikipedia 以此为例介绍<a href="https://en.wikipedia.org/wiki/Operational_amplifier#Internal_circuitry_of_741-type_op_amp">运算放大器</a>），取自 Fairchild <a href="fairchild1970.pdf">1970 年数据手册</a>：</p>
 <p><img alt="" src="lm741-20t.png" /></p>
 <p>上图中电阻编号跳过了 R6，三极管跳过了 Q19 和 Q21。所以虽说三极管最大编号是 Q22，其实电路图中一共只有 20 个三极管。这可能说明电路几经修改才呈现现在的样子。</p>
-<p>更常见的 24T 版，重绘自 Fairchild <a href="fairchild1987.pdf">1987 年数据手册</a>：</p>
+<p>更常见的 24T 版，取自 Fairchild <a href="fairchild1987.pdf">1987 年数据手册</a>：</p>
 <p><img alt="" src="lm741-24t-ds.png" /></p>
 <p>上图中 Q16 基极到 Q6 集电极的 300Ω 电阻没有标号，似乎可以算作 R12。</p>
 <p>可以看出输入级是一样的，但中间级和输出级略有不同。从上往下看：</p>
@@ -351,9 +355,9 @@
 <p><img alt="" src="lm741-20t-op0.png" /></p>
 <h2 id="24t">24T 版工作点计算与仿真</h2>
 <p>以下讨论 24T 版。</p>
-<p>为了便于分析，现将 24T 版电路图重绘于下，暂时略去补偿电容：</p>
+<p>为了便于分析，现将 24T 版电路图重绘于下：</p>
 <p><img alt="" src="lm741-24t.png" /></p>
-<p>上图把 Q22 画成普通 PNP 管，把它的第二发射极画成一个二极管。Q24 画成镜像电流源常见的形式，R5 取 39k，和手册略有不同，但和 XL741 和 Sedra&amp;Smith 书一致。</p>
+<p>上图将 Q24 与 R11 位置调换，Q23/Q24 画成镜像电流源常见的形式；R5 取 39k，和手册略有不同，但和 XL741 和 Sedra&amp;Smith 书一致。</p>
 <p><strong>偏置和输入级</strong></p>
 <p>Q1 ~ Q12 的偏置电流的计算方法和 20T 版完全一样，此处不再重复，而直接列出结果。
 假设 <script type="math/tex">\beta \gg 1</script>，忽略基极电流，<script type="math/tex">I_\mathrm{C}\approx I_\mathrm{E}</script>：</p>
@@ -551,8 +555,9 @@
 </tbody>
 </table>
 <p>24T 版的直流工作点仿真结果，处于关断状态的管子用虚线表示：</p>
-<p><img alt="" src="lm741-24t-op.png" />
-待续。。。</p></div>
+<p><img alt="" src="lm741-24t-op.png" /></p>
+<p>上图把 Q22 画成普通 PNP 管，把它的第二发射极画成一个二极管；因其在正常状态下截止，故画成虚线。</p>
+<p>待续。。。</p></div>
             </div>
         </div>
 
@@ -560,8 +565,7 @@
             <hr>
             <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
         </footer>
-        <script src="../js/jquery-3.6.0.min.js"></script>
-        <script src="../js/bootstrap.min.js"></script>
+        <script src="../js/bootstrap.bundle.min.js"></script>
         <script>
             var base_url = "..",
                 shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
@@ -574,7 +578,7 @@
         <div class="modal-content">
             <div class="modal-header">
                 <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
-                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
               <table class="table">
