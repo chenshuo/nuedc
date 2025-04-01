@@ -128,7 +128,7 @@
               <ul class="nav flex-column">
               </ul>
             </li>
-            <li class="nav-item" data-bs-level="2"><a href="#_3" class="nav-link">分析与仿真</a>
+            <li class="nav-item" data-bs-level="2"><a href="#20t" class="nav-link">20T 版工作点计算与仿真</a>
               <ul class="nav flex-column">
               </ul>
             </li>
@@ -144,7 +144,7 @@
                     <div class="col-md-9" role="main">
 
 <h1 id="a741">µA741 笔记</h1>
-<p>µA741 是第二代集成运算放大器的代表，由 David Fullagar 在 1968 年为 Fairchild 公司设计，一度是<a href="https://sound-au.com/articles/opamp-history.htm#s33">最流行的通用运放</a>。常见的兼容型号有 UA741, LM741, KA741 等等。以下简称 741。741 有<a href="SectionH.pdf">历史意义</a>，也有学习的价值，<a href="Sedra8e_x5.pdf">资料丰富</a>，但在 21 世纪的今天没有多少使用价值。</p>
+<p>µA741 是第二代集成运算放大器的代表，由 David Fullagar 在 1968 年为 Fairchild 公司设计，一度是<a href="https://sound-au.com/articles/opamp-history.htm#s33">最流行的通用运放</a>。常见的兼容型号有 UA741, LM741, KA741 等等。以下简称 741。741 有<a href="SectionH.pdf">历史意义</a>，也有<a href="https://electronics.stackexchange.com/questions/8253/whats-the-ua741s-appeal">学习的价值</a>，<a href="Sedra8e_x5.pdf">资料丰富</a>，但在 21 世纪的今天没有多少使用价值。</p>
 <p>MC1458 / MC1558 是 741 的双运放版本，电路特性是一样的。<a href="https://www.learningelectronics.net/VA3AVR/gadgets/741/741.html">1974 年上市</a>的 <a href="/rc4558/">RC4558</a> 是第一款集成双运放，其性能指标和 µA741 相仿，<a href="rc4558.png">电路比 741 略微简单一些</a>。同年晚些时候上市的 LM324 是集成四运放，连同其双运放版 LM358 至今是十分流行的器件，我怀疑 LM358 可能是目前销量最大的运放。</p>
 <p>Dave Fullagar and <a href="ho18opamp.pdf">history of µA741</a></p>
 <ul>
@@ -180,7 +180,6 @@
 </ul>
 <h2 id="_1">内部电路</h2>
 <p>741 内部电路很经典，国内的模电教材上常讲的 F007 运放其实是 µA741 的“山寨版”，“F”字头我猜代表“放”大。741 的内部电路有两个常见的版本，分别有 20 个三极管和 24 个三极管，以下称为 20T 版和 24T 版。</p>
-<p>为了简化，两个调零的引脚没有画出来。</p>
 <p>20T 版（Wikipedia 以此为例介绍<a href="https://en.wikipedia.org/wiki/Operational_amplifier#Internal_circuitry_of_741-type_op_amp">运算放大器</a>），取自 Fairchild <a href="fairchild1970.pdf">1970 年数据手册</a>：</p>
 <p><img alt="" src="lm741-20t.png" /></p>
 <p>上图中电阻编号跳过了 R6，三极管跳过了 Q19 和 Q21。所以虽说三极管最大编号是 Q22，其实电路图中一共只有 20 个三极管。这可能说明电路几经修改才呈现现在的样子。</p>
@@ -223,9 +222,9 @@
 <p>I talked with Dave Fullagar, the inventor of the 741, and it turns out that these two different designs go back to the original Fairchild dies, and he's not sure why there are the two designs.</p>
 </blockquote>
 <p>Dave Fullagar 1969 年离开 Fairchild 加盟 Intersil，所以我猜测 24T 版的改动是他在 Fairchild 的前同事们做的，他并不知情。</p>
-<h2 id="_3">分析与仿真</h2>
+<h2 id="20t">20T 版工作点计算与仿真</h2>
 <p>分立器件 XL741 笔记 ： <a href="http://chenshuo.github.io/notes/XL741/">http://chenshuo.github.io/notes/XL741/</a></p>
-<h3 id="_4">直流工作点计算</h3>
+<h3 id="_3">直流工作点计算</h3>
 <p>假设所有三极管 <script type="math/tex">I_\mathrm{S} = 10</script>fA，除输出推挽管 Q14/Q20 外，面积均相等。假设 <script type="math/tex">\beta \gg 1</script>，忽略基极电流，<script type="math/tex">I_\mathrm{C}\approx I_\mathrm{E}</script>：</p>
 <ul>
 <li>
@@ -357,7 +356,7 @@
 <p><img alt="" src="lm741-20t-op0.png" /></p>
 <h2 id="24t">24T 版工作点计算与仿真</h2>
 <p>以下讨论 24T 版。</p>
-<p>为了便于分析，现将 24T 版电路图重绘于下：</p>
+<p>为了便于分析，现将 24T 版电路图重绘于下（为了简化，两个调零的引脚没有画出来）：</p>
 <p><img alt="" src="lm741-24t.png" /></p>
 <p>上图将 Q24 与 R11 位置调换，Q23/Q24 画成镜像电流源常见的形式；R5 取 39k，和手册略有不同，但和 XL741 和 Sedra&amp;Smith 书一致。</p>
 <p><strong>偏置和输入级</strong></p>
