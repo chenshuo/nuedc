@@ -552,86 +552,1876 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
 </style>
 <!-- End of mermaid configuration --><div class="jupyter-wrapper">
 <div class="jp-Notebook" data-jp-theme-light="true" data-jp-theme-name="JupyterLab Light">
-<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs jp-mod-noInput">
-<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs jp-mod-noInput" id="cell-id=9ac44170">
+<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
+<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=9ec26f84">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs jp-mod-noInput">
-<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs jp-mod-noInput" id="cell-id=0f420db7">
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="CodeMirror cm-s-jupyter">
+<div class="zeroclipboard-container">
+<clipboard-copy ,="" aria-label="Copy to Clipboard" for="cell-1">
+<div>
+<span class="notice" hidden="">Copied!</span>
+<svg aria-hidden="true" class="clipboard-copy-icon" data-view-component="true" height="20" version="1.1" viewbox="0 0 16 16" width="20">
+<path d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z" fill="currentColor" fill-rule="evenodd"></path>
+<path d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z" fill="currentColor" fill-rule="evenodd"></path>
+</svg>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs jp-mod-noInput">
-<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs jp-mod-noInput" id="cell-id=9e7f0986">
+</clipboard-copy>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs jp-mod-noInput">
-<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs jp-mod-noInput" id="cell-id=bddde9de">
+<div class="highlight-ipynb hl-python"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">logging</span>
+<span class="kn">from</span> <span class="nn">.sharedspice</span> <span class="kn">import</span> <span class="o">*</span>
+</pre></div>
+<div class="clipboard-copy-txt" id="cell-1">import numpy as np
+import logging
+from .sharedspice import *</div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs jp-mod-noInput">
-<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs jp-mod-noInput" id="cell-id=514af5a7">
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs jp-mod-noInput">
-<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs jp-mod-noInput" id="cell-id=2de92ea5">
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs jp-mod-noInput">
-<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs jp-mod-noInput" id="cell-id=ed9332bc">
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs jp-mod-noInput">
-<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs jp-mod-noInput" id="cell-id=8c27f97f">
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs jp-mod-noInput">
-<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs jp-mod-noInput" id="cell-id=9eff72a8">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
+<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=80a6d229">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs jp-mod-noInput">
-<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs jp-mod-noInput" id="cell-id=a9b4df37">
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="CodeMirror cm-s-jupyter">
+<div class="zeroclipboard-container">
+<clipboard-copy ,="" aria-label="Copy to Clipboard" for="cell-2">
+<div>
+<span class="notice" hidden="">Copied!</span>
+<svg aria-hidden="true" class="clipboard-copy-icon" data-view-component="true" height="20" version="1.1" viewbox="0 0 16 16" width="20">
+<path d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z" fill="currentColor" fill-rule="evenodd"></path>
+<path d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z" fill="currentColor" fill-rule="evenodd"></path>
+</svg>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs jp-mod-noInput">
-<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs jp-mod-noInput" id="cell-id=356daab8">
+</clipboard-copy>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs jp-mod-noInput">
-<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs jp-mod-noInput" id="cell-id=b8e81c3f">
+<div class="highlight-ipynb hl-python"><pre><span></span><span class="n">__all__</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="s1">'cmd'</span><span class="p">,</span>
+    <span class="s1">'circ'</span><span class="p">,</span>
+    <span class="s1">'plots'</span><span class="p">,</span>
+    <span class="s1">'vector_names'</span><span class="p">,</span>
+    <span class="s1">'vectors'</span><span class="p">,</span>
+    <span class="s1">'vector'</span><span class="p">,</span>
+    <span class="s1">'try_float'</span><span class="p">,</span>
+    <span class="s1">'model_parameters'</span><span class="p">,</span>
+    <span class="s1">'device_state'</span><span class="p">,</span>
+    <span class="s1">'alter_model'</span><span class="p">,</span>
+    <span class="s1">'ac'</span><span class="p">,</span>
+    <span class="s1">'dc'</span><span class="p">,</span>
+    <span class="s1">'operating_point'</span><span class="p">,</span>
+    <span class="s1">'linear_sweep'</span><span class="p">,</span>
+    <span class="s1">'save'</span><span class="p">,</span>
+    <span class="s1">'destroy'</span><span class="p">,</span>
+    <span class="s1">'decibel'</span><span class="p">,</span>
+    <span class="s1">'alter'</span><span class="p">,</span>
+    <span class="s1">'alterparams'</span><span class="p">,</span>
+    <span class="s1">'source'</span><span class="p">,</span>
+    <span class="s1">'xspice_enabled'</span>
+<span class="p">]</span>
+</pre></div>
+<div class="clipboard-copy-txt" id="cell-2">__all__ = [
+    'cmd',
+    'circ',
+    'plots',
+    'vector_names',
+    'vectors',
+    'vector',
+    'try_float',
+    'model_parameters',
+    'device_state',
+    'alter_model',
+    'ac',
+    'dc',
+    'operating_point',
+    'linear_sweep',
+    'save',
+    'destroy',
+    'decibel',
+    'alter',
+    'alterparams',
+    'source',
+    'xspice_enabled'
+]</div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs jp-mod-noInput">
-<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs jp-mod-noInput" id="cell-id=bf69cfef">
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs jp-mod-noInput">
-<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs jp-mod-noInput" id="cell-id=1af8cbc5">
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs jp-mod-noInput">
-<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs jp-mod-noInput" id="cell-id=19d39e60">
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs jp-mod-noInput">
-<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs jp-mod-noInput" id="cell-id=328cbc43">
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs jp-mod-noInput">
-<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs jp-mod-noInput" id="cell-id=0f4631a3">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
+<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=dcc0b09c">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs jp-mod-noInput">
-<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs jp-mod-noInput" id="cell-id=4ca04c50">
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="CodeMirror cm-s-jupyter">
+<div class="zeroclipboard-container">
+<clipboard-copy ,="" aria-label="Copy to Clipboard" for="cell-3">
+<div>
+<span class="notice" hidden="">Copied!</span>
+<svg aria-hidden="true" class="clipboard-copy-icon" data-view-component="true" height="20" version="1.1" viewbox="0 0 16 16" width="20">
+<path d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z" fill="currentColor" fill-rule="evenodd"></path>
+<path d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z" fill="currentColor" fill-rule="evenodd"></path>
+</svg>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs jp-mod-noInput">
-<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs jp-mod-noInput" id="cell-id=f9442487">
+</clipboard-copy>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs jp-mod-noInput">
-<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs jp-mod-noInput" id="cell-id=62644c8f">
+<div class="highlight-ipynb hl-python"><pre><span></span><span class="n">logger</span> <span class="o">=</span> <span class="n">logging</span><span class="o">.</span><span class="n">getLogger</span><span class="p">(</span><span class="vm">__name__</span><span class="p">)</span>
+<span class="n">logging</span><span class="o">.</span><span class="n">basicConfig</span><span class="p">(</span><span class="n">level</span><span class="o">=</span><span class="n">logging</span><span class="o">.</span><span class="n">WARNING</span><span class="p">)</span>
+</pre></div>
+<div class="clipboard-copy-txt" id="cell-3">logger = logging.getLogger(__name__)
+logging.basicConfig(level=logging.WARNING)</div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs jp-mod-noInput">
-<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs jp-mod-noInput" id="cell-id=6e1561d2">
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs jp-mod-noInput">
-<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs jp-mod-noInput" id="cell-id=7a7bb49a">
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs jp-mod-noInput">
-<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs jp-mod-noInput" id="cell-id=553c6829">
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs jp-mod-noInput">
-<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs jp-mod-noInput" id="cell-id=4a6c1e28">
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs jp-mod-noInput">
-<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs jp-mod-noInput" id="cell-id=2242c571">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
+<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=a20dadd3">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs jp-mod-noInput">
-<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs jp-mod-noInput" id="cell-id=fac09517">
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="CodeMirror cm-s-jupyter">
+<div class="zeroclipboard-container">
+<clipboard-copy ,="" aria-label="Copy to Clipboard" for="cell-4">
+<div>
+<span class="notice" hidden="">Copied!</span>
+<svg aria-hidden="true" class="clipboard-copy-icon" data-view-component="true" height="20" version="1.1" viewbox="0 0 16 16" width="20">
+<path d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z" fill="currentColor" fill-rule="evenodd"></path>
+<path d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z" fill="currentColor" fill-rule="evenodd"></path>
+</svg>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs jp-mod-noInput">
-<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs jp-mod-noInput" id="cell-id=adee3452">
+</clipboard-copy>
+</div>
+<div class="highlight-ipynb hl-python"><pre><span></span><span class="k">def</span> <span class="nf">initialize</span><span class="p">():</span>
+    <span class="n">spice</span><span class="o">.</span><span class="n">ngSpice_Init</span><span class="p">(</span><span class="n">printfcn</span><span class="p">,</span> <span class="n">statfcn</span><span class="p">,</span> <span class="n">controlled_exit</span><span class="p">,</span> <span class="n">send_data</span><span class="p">,</span> <span class="kc">None</span><span class="p">,</span> <span class="kc">None</span><span class="p">,</span>
+                       <span class="kc">None</span><span class="p">)</span>
+    <span class="c1"># Prevent paging output of commands (hangs)</span>
+    <span class="n">cmd</span><span class="p">(</span><span class="s1">'set nomoremode'</span><span class="p">)</span>
+</pre></div>
+<div class="clipboard-copy-txt" id="cell-4">def initialize():
+    spice.ngSpice_Init(printfcn, statfcn, controlled_exit, send_data, None, None,
+                       None)
+    # Prevent paging output of commands (hangs)
+    cmd('set nomoremode')</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
+<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=ce6e080c">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="CodeMirror cm-s-jupyter">
+<div class="zeroclipboard-container">
+<clipboard-copy ,="" aria-label="Copy to Clipboard" for="cell-5">
+<div>
+<span class="notice" hidden="">Copied!</span>
+<svg aria-hidden="true" class="clipboard-copy-icon" data-view-component="true" height="20" version="1.1" viewbox="0 0 16 16" width="20">
+<path d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z" fill="currentColor" fill-rule="evenodd"></path>
+<path d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z" fill="currentColor" fill-rule="evenodd"></path>
+</svg>
+</div>
+</clipboard-copy>
+</div>
+<div class="highlight-ipynb hl-python"><pre><span></span><span class="k">def</span> <span class="nf">cmd</span><span class="p">(</span><span class="n">command</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">"""</span>
+<span class="sd">    Send a command to the ngspice engine</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    command : str</span>
+<span class="sd">        An ngspice command</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    list of str</span>
+<span class="sd">        Lines of the captured output</span>
+
+<span class="sd">    Examples</span>
+<span class="sd">    --------</span>
+
+<span class="sd">    Print all default variables</span>
+
+<span class="sd">    &gt;&gt;&gt; ns.cmd('print all')</span>
+<span class="sd">    ['false = 0.000000e+00',</span>
+<span class="sd">     'true = 1.000000e+00',</span>
+<span class="sd">     'boltz = 1.380620e-23',</span>
+<span class="sd">     'c = 2.997925e+08',</span>
+<span class="sd">     'e = 2.718282e+00',</span>
+<span class="sd">     'echarge = 1.602190e-19',</span>
+<span class="sd">     'i = 0.000000e+00,1.000000e+00',</span>
+<span class="sd">     'kelvin = -2.73150e+02',</span>
+<span class="sd">     'no = 0.000000e+00',</span>
+<span class="sd">     'pi = 3.141593e+00',</span>
+<span class="sd">     'planck = 6.626200e-34',</span>
+<span class="sd">     'yes = 1.000000e+00']</span>
+
+<span class="sd">    """</span>
+    <span class="n">max_length</span> <span class="o">=</span> <span class="mi">1023</span>
+    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">command</span><span class="p">)</span> <span class="o">&gt;</span> <span class="n">max_length</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s1">'Command length'</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">command</span><span class="p">),</span> <span class="s1">'greater than'</span><span class="p">,</span>
+                         <span class="n">max_length</span><span class="p">)</span>
+    <span class="k">del</span> <span class="n">captured_output</span><span class="p">[:]</span>
+    <span class="n">spice</span><span class="o">.</span><span class="n">ngSpice_Command</span><span class="p">(</span><span class="n">command</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span><span class="s1">'ascii'</span><span class="p">))</span>
+    <span class="n">logger</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="s1">'Command </span><span class="si">%s</span><span class="s1"> returned </span><span class="si">%s</span><span class="s1">'</span><span class="p">,</span> <span class="n">command</span><span class="p">,</span> <span class="n">captured_output</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">captured_output</span>
+</pre></div>
+<div class="clipboard-copy-txt" id="cell-5">def cmd(command):
+    """
+    Send a command to the ngspice engine
+
+    Parameters
+    ----------
+    command : str
+        An ngspice command
+
+    Returns
+    -------
+    list of str
+        Lines of the captured output
+
+    Examples
+    --------
+
+    Print all default variables
+
+    &gt;&gt;&gt; ns.cmd('print all')
+    ['false = 0.000000e+00',
+     'true = 1.000000e+00',
+     'boltz = 1.380620e-23',
+     'c = 2.997925e+08',
+     'e = 2.718282e+00',
+     'echarge = 1.602190e-19',
+     'i = 0.000000e+00,1.000000e+00',
+     'kelvin = -2.73150e+02',
+     'no = 0.000000e+00',
+     'pi = 3.141593e+00',
+     'planck = 6.626200e-34',
+     'yes = 1.000000e+00']
+
+    """
+    max_length = 1023
+    if len(command) &gt; max_length:
+        raise ValueError('Command length', len(command), 'greater than',
+                         max_length)
+    del captured_output[:]
+    spice.ngSpice_Command(command.encode('ascii'))
+    logger.debug('Command %s returned %s', command, captured_output)
+    return captured_output</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
+<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=5b036492">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="CodeMirror cm-s-jupyter">
+<div class="zeroclipboard-container">
+<clipboard-copy ,="" aria-label="Copy to Clipboard" for="cell-6">
+<div>
+<span class="notice" hidden="">Copied!</span>
+<svg aria-hidden="true" class="clipboard-copy-icon" data-view-component="true" height="20" version="1.1" viewbox="0 0 16 16" width="20">
+<path d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z" fill="currentColor" fill-rule="evenodd"></path>
+<path d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z" fill="currentColor" fill-rule="evenodd"></path>
+</svg>
+</div>
+</clipboard-copy>
+</div>
+<div class="highlight-ipynb hl-python"><pre><span></span><span class="k">def</span> <span class="nf">circ</span><span class="p">(</span><span class="n">netlist_lines</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">"""</span>
+<span class="sd">    Load a netlist</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+
+<span class="sd">    netlist_lines : str or list of str</span>
+<span class="sd">        Netlist, either as a list of lines, or a</span>
+<span class="sd">        single multi-line string.  Indentation and white</span>
+<span class="sd">        space don't matter. Unlike a netlist file, the</span>
+<span class="sd">        first line doesn't need to be a comment, and you</span>
+<span class="sd">        don't need to provide the `.end`.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    int</span>
+<span class="sd">        `1` upon error, otherwise `0`.</span>
+
+<span class="sd">    Examples</span>
+<span class="sd">    --------</span>
+
+<span class="sd">    Using a sequence of lines:</span>
+
+<span class="sd">    &gt;&gt;&gt; ns.circ(['va a 0 dc 1', 'r a 0 2'])</span>
+<span class="sd">    0</span>
+
+<span class="sd">    Using a single string:</span>
+
+<span class="sd">    &gt;&gt;&gt; ns.circ('''va a 0 dc 1</span>
+<span class="sd">    ...         r a 0 2''')</span>
+<span class="sd">    0</span>
+
+<span class="sd">    """</span>
+    <span class="k">if</span> <span class="nb">issubclass</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">netlist_lines</span><span class="p">),</span> <span class="nb">str</span><span class="p">):</span>
+        <span class="n">netlist_lines</span> <span class="o">=</span> <span class="n">netlist_lines</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">'</span><span class="se">\n</span><span class="s1">'</span><span class="p">)</span>
+    <span class="n">netlist_lines</span> <span class="o">=</span> <span class="p">[</span><span class="n">line</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span><span class="s1">'ascii'</span><span class="p">)</span> <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">netlist_lines</span><span class="p">]</span>
+    <span class="c1"># First line is ignored by the engine</span>
+    <span class="n">netlist_lines</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="sa">b</span><span class="s1">'* ngspyce-created netlist'</span><span class="p">)</span>
+    <span class="c1"># Add netlist end</span>
+    <span class="n">netlist_lines</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="sa">b</span><span class="s1">'.end'</span><span class="p">)</span>
+    <span class="c1"># Add list terminator</span>
+    <span class="n">netlist_lines</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="kc">None</span><span class="p">)</span>
+    <span class="n">array</span> <span class="o">=</span> <span class="p">(</span><span class="n">c_char_p</span> <span class="o">*</span> <span class="nb">len</span><span class="p">(</span><span class="n">netlist_lines</span><span class="p">))(</span><span class="o">*</span><span class="n">netlist_lines</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">spice</span><span class="o">.</span><span class="n">ngSpice_Circ</span><span class="p">(</span><span class="n">array</span><span class="p">)</span>
+</pre></div>
+<div class="clipboard-copy-txt" id="cell-6">def circ(netlist_lines):
+    """
+    Load a netlist
+
+    Parameters
+    ----------
+
+    netlist_lines : str or list of str
+        Netlist, either as a list of lines, or a
+        single multi-line string.  Indentation and white
+        space don't matter. Unlike a netlist file, the
+        first line doesn't need to be a comment, and you
+        don't need to provide the `.end`.
+
+    Returns
+    -------
+    int
+        `1` upon error, otherwise `0`.
+
+    Examples
+    --------
+
+    Using a sequence of lines:
+
+    &gt;&gt;&gt; ns.circ(['va a 0 dc 1', 'r a 0 2'])
+    0
+
+    Using a single string:
+
+    &gt;&gt;&gt; ns.circ('''va a 0 dc 1
+    ...         r a 0 2''')
+    0
+
+    """
+    if issubclass(type(netlist_lines), str):
+        netlist_lines = netlist_lines.split('\n')
+    netlist_lines = [line.encode('ascii') for line in netlist_lines]
+    # First line is ignored by the engine
+    netlist_lines.insert(0, b'* ngspyce-created netlist')
+    # Add netlist end
+    netlist_lines.append(b'.end')
+    # Add list terminator
+    netlist_lines.append(None)
+    array = (c_char_p * len(netlist_lines))(*netlist_lines)
+    return spice.ngSpice_Circ(array)</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
+<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=8697e801">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="CodeMirror cm-s-jupyter">
+<div class="zeroclipboard-container">
+<clipboard-copy ,="" aria-label="Copy to Clipboard" for="cell-7">
+<div>
+<span class="notice" hidden="">Copied!</span>
+<svg aria-hidden="true" class="clipboard-copy-icon" data-view-component="true" height="20" version="1.1" viewbox="0 0 16 16" width="20">
+<path d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z" fill="currentColor" fill-rule="evenodd"></path>
+<path d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z" fill="currentColor" fill-rule="evenodd"></path>
+</svg>
+</div>
+</clipboard-copy>
+</div>
+<div class="highlight-ipynb hl-python"><pre><span></span><span class="k">def</span> <span class="nf">plots</span><span class="p">():</span>
+<span class="w">    </span><span class="sd">"""</span>
+<span class="sd">    List available plots (result sets)</span>
+
+<span class="sd">    Each plot is a collection of vector results</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    list of str</span>
+<span class="sd">        List of existing plot names</span>
+
+<span class="sd">    Examples</span>
+<span class="sd">    --------</span>
+
+<span class="sd">    Each analysis creates a new plot</span>
+
+<span class="sd">    &gt;&gt;&gt; ns.circ(['v1 a 0 dc 1', 'r1 a 0 1k']); ns.plots()</span>
+<span class="sd">    ['const']</span>
+<span class="sd">    &gt;&gt;&gt; ns.operating_point(); ns.plots()</span>
+<span class="sd">    ['op1', 'const']</span>
+<span class="sd">    &gt;&gt;&gt; ns.dc('v1', 0, 5, 1); ns.plots()</span>
+<span class="sd">    ['dc1', 'op1', 'const']</span>
+
+<span class="sd">    Get lists of vectors available in different plots:</span>
+
+<span class="sd">    &gt;&gt;&gt; ns.vectors(plot='const').keys()</span>
+<span class="sd">    dict_keys(['echarge', 'e', 'TRUE', 'FALSE', 'no', 'i', ... 'c', 'boltz'])</span>
+<span class="sd">    &gt;&gt;&gt; ns.vectors(plot='ac1').keys()</span>
+<span class="sd">    dict_keys(['V(1)', 'vout', 'v1#branch', 'frequency'])</span>
+<span class="sd">    """</span>
+    <span class="n">ret</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="n">plotlist</span> <span class="o">=</span> <span class="n">spice</span><span class="o">.</span><span class="n">ngSpice_AllPlots</span><span class="p">()</span>
+    <span class="n">ii</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">plotlist</span><span class="p">[</span><span class="n">ii</span><span class="p">]:</span>
+            <span class="k">return</span> <span class="n">ret</span>
+        <span class="n">ret</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">plotlist</span><span class="p">[</span><span class="n">ii</span><span class="p">]</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s1">'ascii'</span><span class="p">))</span>
+        <span class="n">ii</span> <span class="o">+=</span> <span class="mi">1</span>
+</pre></div>
+<div class="clipboard-copy-txt" id="cell-7">def plots():
+    """
+    List available plots (result sets)
+
+    Each plot is a collection of vector results
+
+    Returns
+    -------
+    list of str
+        List of existing plot names
+
+    Examples
+    --------
+
+    Each analysis creates a new plot
+
+    &gt;&gt;&gt; ns.circ(['v1 a 0 dc 1', 'r1 a 0 1k']); ns.plots()
+    ['const']
+    &gt;&gt;&gt; ns.operating_point(); ns.plots()
+    ['op1', 'const']
+    &gt;&gt;&gt; ns.dc('v1', 0, 5, 1); ns.plots()
+    ['dc1', 'op1', 'const']
+
+    Get lists of vectors available in different plots:
+
+    &gt;&gt;&gt; ns.vectors(plot='const').keys()
+    dict_keys(['echarge', 'e', 'TRUE', 'FALSE', 'no', 'i', ... 'c', 'boltz'])
+    &gt;&gt;&gt; ns.vectors(plot='ac1').keys()
+    dict_keys(['V(1)', 'vout', 'v1#branch', 'frequency'])
+    """
+    ret = []
+    plotlist = spice.ngSpice_AllPlots()
+    ii = 0
+    while True:
+        if not plotlist[ii]:
+            return ret
+        ret.append(plotlist[ii].decode('ascii'))
+        ii += 1</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
+<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=4ed72869">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="CodeMirror cm-s-jupyter">
+<div class="zeroclipboard-container">
+<clipboard-copy ,="" aria-label="Copy to Clipboard" for="cell-8">
+<div>
+<span class="notice" hidden="">Copied!</span>
+<svg aria-hidden="true" class="clipboard-copy-icon" data-view-component="true" height="20" version="1.1" viewbox="0 0 16 16" width="20">
+<path d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z" fill="currentColor" fill-rule="evenodd"></path>
+<path d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z" fill="currentColor" fill-rule="evenodd"></path>
+</svg>
+</div>
+</clipboard-copy>
+</div>
+<div class="highlight-ipynb hl-python"><pre><span></span><span class="k">def</span> <span class="nf">vector_names</span><span class="p">(</span><span class="n">plot</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">"""</span>
+<span class="sd">    Names of vectors present in the specified plot</span>
+
+<span class="sd">    Names of the voltages, currents, etc present in the specified plot.</span>
+<span class="sd">    Defaults to the current plot.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    plot : str, optional</span>
+<span class="sd">        Plot name. Defaults to the current plot.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    list of str</span>
+<span class="sd">        Names of vectors in the plot</span>
+
+<span class="sd">    Examples</span>
+<span class="sd">    --------</span>
+
+<span class="sd">    List built-in constants</span>
+
+<span class="sd">    &gt;&gt;&gt; ns.vector_names('const')</span>
+<span class="sd">    ['planck', 'boltz', 'echarge', 'kelvin', 'i', 'c', 'e', 'pi', 'FALSE', 'no', 'TRUE', 'yes']</span>
+
+<span class="sd">    Vectors produced by last analysis</span>
+
+<span class="sd">    &gt;&gt;&gt; ns.circ('v1 a 0 dc 2');</span>
+<span class="sd">    &gt;&gt;&gt; ns.operating_point();</span>
+<span class="sd">    &gt;&gt;&gt; ns.vector_names()</span>
+<span class="sd">    ['v1#branch', 'a']</span>
+
+<span class="sd">    """</span>
+    <span class="n">names</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">if</span> <span class="n">plot</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">plot</span> <span class="o">=</span> <span class="n">spice</span><span class="o">.</span><span class="n">ngSpice_CurPlot</span><span class="p">()</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s1">'ascii'</span><span class="p">)</span>
+    <span class="n">veclist</span> <span class="o">=</span> <span class="n">spice</span><span class="o">.</span><span class="n">ngSpice_AllVecs</span><span class="p">(</span><span class="n">plot</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span><span class="s1">'ascii'</span><span class="p">))</span>
+    <span class="n">ii</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">veclist</span><span class="p">[</span><span class="n">ii</span><span class="p">]:</span>
+            <span class="k">return</span> <span class="n">names</span>
+        <span class="n">names</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">veclist</span><span class="p">[</span><span class="n">ii</span><span class="p">]</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s1">'ascii'</span><span class="p">))</span>
+        <span class="n">ii</span> <span class="o">+=</span> <span class="mi">1</span>
+</pre></div>
+<div class="clipboard-copy-txt" id="cell-8">def vector_names(plot=None):
+    """
+    Names of vectors present in the specified plot
+
+    Names of the voltages, currents, etc present in the specified plot.
+    Defaults to the current plot.
+
+    Parameters
+    ----------
+    plot : str, optional
+        Plot name. Defaults to the current plot.
+
+    Returns
+    -------
+    list of str
+        Names of vectors in the plot
+
+    Examples
+    --------
+
+    List built-in constants
+
+    &gt;&gt;&gt; ns.vector_names('const')
+    ['planck', 'boltz', 'echarge', 'kelvin', 'i', 'c', 'e', 'pi', 'FALSE', 'no', 'TRUE', 'yes']
+
+    Vectors produced by last analysis
+
+    &gt;&gt;&gt; ns.circ('v1 a 0 dc 2');
+    &gt;&gt;&gt; ns.operating_point();
+    &gt;&gt;&gt; ns.vector_names()
+    ['v1#branch', 'a']
+
+    """
+    names = []
+    if plot is None:
+        plot = spice.ngSpice_CurPlot().decode('ascii')
+    veclist = spice.ngSpice_AllVecs(plot.encode('ascii'))
+    ii = 0
+    while True:
+        if not veclist[ii]:
+            return names
+        names.append(veclist[ii].decode('ascii'))
+        ii += 1</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
+<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=ee4578e3">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="CodeMirror cm-s-jupyter">
+<div class="zeroclipboard-container">
+<clipboard-copy ,="" aria-label="Copy to Clipboard" for="cell-9">
+<div>
+<span class="notice" hidden="">Copied!</span>
+<svg aria-hidden="true" class="clipboard-copy-icon" data-view-component="true" height="20" version="1.1" viewbox="0 0 16 16" width="20">
+<path d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z" fill="currentColor" fill-rule="evenodd"></path>
+<path d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z" fill="currentColor" fill-rule="evenodd"></path>
+</svg>
+</div>
+</clipboard-copy>
+</div>
+<div class="highlight-ipynb hl-python"><pre><span></span><span class="k">def</span> <span class="nf">vectors</span><span class="p">(</span><span class="n">names</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">"""</span>
+<span class="sd">    Dictionary with the specified vectors (defaults to all in current plot)</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    names : list of str, optional</span>
+<span class="sd">        Names of vectors to retrieve.  If omitted, return all vectors</span>
+<span class="sd">        in current plot</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    dict from str to ndarray</span>
+<span class="sd">        Dictionary of vectors.  Keys are vector names and values are Numpy</span>
+<span class="sd">        arrays containing the data.</span>
+
+<span class="sd">    Examples</span>
+<span class="sd">    --------</span>
+
+<span class="sd">    Do an AC sweep and retrieve the frequency axis and output voltage</span>
+
+<span class="sd">    &gt;&gt;&gt; nc.ac('dec', 3, 1e3, 10e6);</span>
+<span class="sd">    &gt;&gt;&gt; nc.ac_results = vectors(['frequency', 'vout'])</span>
+
+<span class="sd">    """</span>
+    <span class="k">if</span> <span class="n">names</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">names</span> <span class="o">=</span> <span class="n">vector_names</span><span class="p">()</span>
+    <span class="k">return</span> <span class="nb">dict</span><span class="p">(</span><span class="nb">zip</span><span class="p">(</span><span class="n">names</span><span class="p">,</span> <span class="nb">map</span><span class="p">(</span><span class="n">vector</span><span class="p">,</span> <span class="n">names</span><span class="p">)))</span>
+</pre></div>
+<div class="clipboard-copy-txt" id="cell-9">def vectors(names=None):
+    """
+    Dictionary with the specified vectors (defaults to all in current plot)
+
+    Parameters
+    ----------
+    names : list of str, optional
+        Names of vectors to retrieve.  If omitted, return all vectors
+        in current plot
+
+    Returns
+    -------
+    dict from str to ndarray
+        Dictionary of vectors.  Keys are vector names and values are Numpy
+        arrays containing the data.
+
+    Examples
+    --------
+
+    Do an AC sweep and retrieve the frequency axis and output voltage
+
+    &gt;&gt;&gt; nc.ac('dec', 3, 1e3, 10e6);
+    &gt;&gt;&gt; nc.ac_results = vectors(['frequency', 'vout'])
+
+    """
+    if names is None:
+        names = vector_names()
+    return dict(zip(names, map(vector, names)))</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
+<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=3f1e0f09">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="CodeMirror cm-s-jupyter">
+<div class="zeroclipboard-container">
+<clipboard-copy ,="" aria-label="Copy to Clipboard" for="cell-10">
+<div>
+<span class="notice" hidden="">Copied!</span>
+<svg aria-hidden="true" class="clipboard-copy-icon" data-view-component="true" height="20" version="1.1" viewbox="0 0 16 16" width="20">
+<path d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z" fill="currentColor" fill-rule="evenodd"></path>
+<path d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z" fill="currentColor" fill-rule="evenodd"></path>
+</svg>
+</div>
+</clipboard-copy>
+</div>
+<div class="highlight-ipynb hl-python"><pre><span></span><span class="k">def</span> <span class="nf">vector</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">plot</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">"""</span>
+<span class="sd">    Return a numpy.ndarray with the specified vector</span>
+
+<span class="sd">    Uses the current plot by default.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    name : str</span>
+<span class="sd">        Name of vector</span>
+<span class="sd">    plot : str, optional</span>
+<span class="sd">        Which plot the vector is in. Defaults to current plot.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    ndarray</span>
+<span class="sd">        Value of the vector</span>
+
+<span class="sd">    Examples</span>
+<span class="sd">    --------</span>
+
+<span class="sd">    Run an analysis and retrieve a vector</span>
+
+<span class="sd">    &gt;&gt;&gt; ns.circ(['v1 a 0 dc 2', 'r1 a 0 1k']);</span>
+<span class="sd">    &gt;&gt;&gt; ns.dc('v1', 0, 2, 1);</span>
+<span class="sd">    &gt;&gt;&gt; ns.vector('v1#branch')</span>
+<span class="sd">    array([ 0.   , -0.001, -0.002])</span>
+
+<span class="sd">    """</span>
+    <span class="k">if</span> <span class="n">plot</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">name</span> <span class="o">=</span> <span class="n">plot</span> <span class="o">+</span> <span class="s1">'.'</span> <span class="o">+</span> <span class="n">name</span>
+    <span class="n">vec</span> <span class="o">=</span> <span class="n">spice</span><span class="o">.</span><span class="n">ngGet_Vec_Info</span><span class="p">(</span><span class="n">name</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span><span class="s1">'ascii'</span><span class="p">))</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">vec</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">RuntimeError</span><span class="p">(</span><span class="s1">'Vector </span><span class="si">{}</span><span class="s1"> not found'</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">name</span><span class="p">))</span>
+    <span class="n">vec</span> <span class="o">=</span> <span class="n">vec</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="k">if</span> <span class="n">vec</span><span class="o">.</span><span class="n">v_length</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="n">array</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([])</span>
+    <span class="k">elif</span> <span class="n">vec</span><span class="o">.</span><span class="n">v_flags</span> <span class="o">&amp;</span> <span class="n">dvec_flags</span><span class="o">.</span><span class="n">vf_real</span><span class="p">:</span>
+        <span class="n">array</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">ctypeslib</span><span class="o">.</span><span class="n">as_array</span><span class="p">(</span><span class="n">vec</span><span class="o">.</span><span class="n">v_realdata</span><span class="p">,</span> <span class="n">shape</span><span class="o">=</span><span class="p">(</span><span class="n">vec</span><span class="o">.</span><span class="n">v_length</span><span class="p">,))</span>
+    <span class="k">elif</span> <span class="n">vec</span><span class="o">.</span><span class="n">v_flags</span> <span class="o">&amp;</span> <span class="n">dvec_flags</span><span class="o">.</span><span class="n">vf_complex</span><span class="p">:</span>
+        <span class="n">components</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">ctypeslib</span><span class="o">.</span><span class="n">as_array</span><span class="p">(</span><span class="n">vec</span><span class="o">.</span><span class="n">v_compdata</span><span class="p">,</span>
+                                           <span class="n">shape</span><span class="o">=</span><span class="p">(</span><span class="n">vec</span><span class="o">.</span><span class="n">v_length</span><span class="p">,</span> <span class="mi">2</span><span class="p">))</span>
+        <span class="n">array</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">ndarray</span><span class="p">(</span><span class="n">shape</span><span class="o">=</span><span class="p">(</span><span class="n">vec</span><span class="o">.</span><span class="n">v_length</span><span class="p">,),</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">complex128</span><span class="p">,</span>
+                           <span class="n">buffer</span><span class="o">=</span><span class="n">components</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">RuntimeError</span><span class="p">(</span><span class="s1">'No valid data in vector'</span><span class="p">)</span>
+    <span class="n">logger</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="s1">'Fetched vector </span><span class="si">{}</span><span class="s1"> type </span><span class="si">{}</span><span class="s1">'</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">vec</span><span class="o">.</span><span class="n">v_type</span><span class="p">))</span>
+    <span class="n">array</span><span class="o">.</span><span class="n">setflags</span><span class="p">(</span><span class="n">write</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">name</span> <span class="o">==</span> <span class="s1">'frequency'</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">array</span><span class="o">.</span><span class="n">real</span>
+    <span class="k">return</span> <span class="n">array</span>
+</pre></div>
+<div class="clipboard-copy-txt" id="cell-10">def vector(name, plot=None):
+    """
+    Return a numpy.ndarray with the specified vector
+
+    Uses the current plot by default.
+
+    Parameters
+    ----------
+    name : str
+        Name of vector
+    plot : str, optional
+        Which plot the vector is in. Defaults to current plot.
+
+    Returns
+    -------
+    ndarray
+        Value of the vector
+
+    Examples
+    --------
+
+    Run an analysis and retrieve a vector
+
+    &gt;&gt;&gt; ns.circ(['v1 a 0 dc 2', 'r1 a 0 1k']);
+    &gt;&gt;&gt; ns.dc('v1', 0, 2, 1);
+    &gt;&gt;&gt; ns.vector('v1#branch')
+    array([ 0.   , -0.001, -0.002])
+
+    """
+    if plot is not None:
+        name = plot + '.' + name
+    vec = spice.ngGet_Vec_Info(name.encode('ascii'))
+    if not vec:
+        raise RuntimeError('Vector {} not found'.format(name))
+    vec = vec[0]
+    if vec.v_length == 0:
+        array = np.array([])
+    elif vec.v_flags &amp; dvec_flags.vf_real:
+        array = np.ctypeslib.as_array(vec.v_realdata, shape=(vec.v_length,))
+    elif vec.v_flags &amp; dvec_flags.vf_complex:
+        components = np.ctypeslib.as_array(vec.v_compdata,
+                                           shape=(vec.v_length, 2))
+        array = np.ndarray(shape=(vec.v_length,), dtype=np.complex128,
+                           buffer=components)
+    else:
+        raise RuntimeError('No valid data in vector')
+    logger.debug('Fetched vector {} type {}'.format(name, vec.v_type))
+    array.setflags(write=False)
+    if name == 'frequency':
+        return array.real
+    return array</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
+<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=491ccb40">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="CodeMirror cm-s-jupyter">
+<div class="zeroclipboard-container">
+<clipboard-copy ,="" aria-label="Copy to Clipboard" for="cell-11">
+<div>
+<span class="notice" hidden="">Copied!</span>
+<svg aria-hidden="true" class="clipboard-copy-icon" data-view-component="true" height="20" version="1.1" viewbox="0 0 16 16" width="20">
+<path d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z" fill="currentColor" fill-rule="evenodd"></path>
+<path d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z" fill="currentColor" fill-rule="evenodd"></path>
+</svg>
+</div>
+</clipboard-copy>
+</div>
+<div class="highlight-ipynb hl-python"><pre><span></span><span class="k">def</span> <span class="nf">try_float</span><span class="p">(</span><span class="n">s</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">"""</span>
+<span class="sd">    Parse `s` as float if possible, otherwise return `s`.</span>
+<span class="sd">    """</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="k">return</span> <span class="nb">float</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
+    <span class="k">except</span> <span class="ne">ValueError</span><span class="p">:</span>
+        <span class="k">try</span><span class="p">:</span>
+            <span class="k">return</span> <span class="nb">float</span><span class="p">(</span><span class="n">s</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">','</span><span class="p">,</span> <span class="s1">'.'</span><span class="p">))</span>
+        <span class="k">except</span> <span class="ne">ValueError</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">s</span>
+</pre></div>
+<div class="clipboard-copy-txt" id="cell-11">def try_float(s):
+    """
+    Parse `s` as float if possible, otherwise return `s`.
+    """
+    try:
+        return float(s)
+    except ValueError:
+        try:
+            return float(s.replace(',', '.'))
+        except ValueError:
+            return s</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
+<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=3293a914">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="CodeMirror cm-s-jupyter">
+<div class="zeroclipboard-container">
+<clipboard-copy ,="" aria-label="Copy to Clipboard" for="cell-12">
+<div>
+<span class="notice" hidden="">Copied!</span>
+<svg aria-hidden="true" class="clipboard-copy-icon" data-view-component="true" height="20" version="1.1" viewbox="0 0 16 16" width="20">
+<path d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z" fill="currentColor" fill-rule="evenodd"></path>
+<path d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z" fill="currentColor" fill-rule="evenodd"></path>
+</svg>
+</div>
+</clipboard-copy>
+</div>
+<div class="highlight-ipynb hl-python"><pre><span></span><span class="k">def</span> <span class="nf">model_parameters</span><span class="p">(</span><span class="n">device</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">model</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">"""</span>
+<span class="sd">    Model parameters for device or model</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    device : str, optional</span>
+<span class="sd">        Instance name</span>
+<span class="sd">    model : str, optional</span>
+<span class="sd">        Model card name</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    dict from str to float or str</span>
+<span class="sd">        Model parameters</span>
+
+<span class="sd">    Examples</span>
+<span class="sd">    --------</span>
+
+<span class="sd">    Parameters of a resistor's model</span>
+
+<span class="sd">    &gt;&gt;&gt; ns.circ('r1 a 0 2k');</span>
+<span class="sd">    &gt;&gt;&gt; ns.model_parameters(device='r1')</span>
+<span class="sd">    {'description': 'Resistor models (Simple linear resistor)', 'model': 'R',</span>
+<span class="sd">    'rsh': 0.0, 'narrow': 0.0, 'short': 0.0, 'tc1': 0.0, 'tc2': 0.0,</span>
+<span class="sd">    'tce': 0.0, 'defw': 0.0, 'l': 0.0, 'kf': 0.0, 'af': 0.0, 'r': 0.0,</span>
+<span class="sd">    'bv_max': 0.0, 'lf': 0.0, 'wf': 0.0, 'ef': 0.0}</span>
+<span class="sd">    """</span>
+    <span class="k">if</span> <span class="n">device</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">model</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">lines</span> <span class="o">=</span> <span class="n">cmd</span><span class="p">(</span><span class="s1">'showmod #'</span> <span class="o">+</span> <span class="n">model</span><span class="o">.</span><span class="n">lower</span><span class="p">())</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s1">'Either device or model must be specified'</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">model</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">lines</span> <span class="o">=</span> <span class="n">cmd</span><span class="p">(</span><span class="s1">'showmod '</span> <span class="o">+</span> <span class="n">device</span><span class="o">.</span><span class="n">lower</span><span class="p">())</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s1">'Only specify one of device, model'</span><span class="p">)</span>
+    <span class="n">ret</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="n">description</span><span class="o">=</span><span class="n">lines</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="mi">0</span><span class="p">))</span>
+    <span class="n">ret</span><span class="o">.</span><span class="n">update</span><span class="p">({</span><span class="n">parts</span><span class="p">[</span><span class="mi">0</span><span class="p">]:</span> <span class="n">try_float</span><span class="p">(</span><span class="n">parts</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+                <span class="k">for</span> <span class="n">parts</span> <span class="ow">in</span> <span class="nb">map</span><span class="p">(</span><span class="nb">str</span><span class="o">.</span><span class="n">split</span><span class="p">,</span> <span class="n">lines</span><span class="p">)})</span>
+    <span class="k">return</span> <span class="n">ret</span>
+</pre></div>
+<div class="clipboard-copy-txt" id="cell-12">def model_parameters(device=None, model=None):
+    """
+    Model parameters for device or model
+
+    Parameters
+    ----------
+    device : str, optional
+        Instance name
+    model : str, optional
+        Model card name
+
+    Returns
+    -------
+    dict from str to float or str
+        Model parameters
+
+    Examples
+    --------
+
+    Parameters of a resistor's model
+
+    &gt;&gt;&gt; ns.circ('r1 a 0 2k');
+    &gt;&gt;&gt; ns.model_parameters(device='r1')
+    {'description': 'Resistor models (Simple linear resistor)', 'model': 'R',
+    'rsh': 0.0, 'narrow': 0.0, 'short': 0.0, 'tc1': 0.0, 'tc2': 0.0,
+    'tce': 0.0, 'defw': 0.0, 'l': 0.0, 'kf': 0.0, 'af': 0.0, 'r': 0.0,
+    'bv_max': 0.0, 'lf': 0.0, 'wf': 0.0, 'ef': 0.0}
+    """
+    if device is None:
+        if model is not None:
+            lines = cmd('showmod #' + model.lower())
+        else:
+            raise ValueError('Either device or model must be specified')
+    else:
+        if model is None:
+            lines = cmd('showmod ' + device.lower())
+        else:
+            raise ValueError('Only specify one of device, model')
+    ret = dict(description=lines.pop(0))
+    ret.update({parts[0]: try_float(parts[1])
+                for parts in map(str.split, lines)})
+    return ret</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
+<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=8f802764">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="CodeMirror cm-s-jupyter">
+<div class="zeroclipboard-container">
+<clipboard-copy ,="" aria-label="Copy to Clipboard" for="cell-13">
+<div>
+<span class="notice" hidden="">Copied!</span>
+<svg aria-hidden="true" class="clipboard-copy-icon" data-view-component="true" height="20" version="1.1" viewbox="0 0 16 16" width="20">
+<path d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z" fill="currentColor" fill-rule="evenodd"></path>
+<path d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z" fill="currentColor" fill-rule="evenodd"></path>
+</svg>
+</div>
+</clipboard-copy>
+</div>
+<div class="highlight-ipynb hl-python"><pre><span></span><span class="k">def</span> <span class="nf">device_state</span><span class="p">(</span><span class="n">device</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">"""</span>
+<span class="sd">    Dict with device state</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    device : str</span>
+<span class="sd">        Instance name</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    dict from str to float or str</span>
+<span class="sd">        Device description, model, operating point, etc.</span>
+
+<span class="sd">    Examples</span>
+<span class="sd">    --------</span>
+
+<span class="sd">    Resistor description</span>
+
+<span class="sd">    &gt;&gt;&gt; ns.circ(['r1 a 0 4'])</span>
+<span class="sd">    &gt;&gt;&gt; ns.device_state('r1')</span>
+<span class="sd">    {'description': 'Resistor: Simple linear resistor', 'device': 'r1',</span>
+<span class="sd">    'model': 'R', 'resistance': 4.0, 'ac': 4.0, 'dtemp': 0.0, 'bv_max': 0.0,</span>
+<span class="sd">    'noisy': 0.0}</span>
+<span class="sd">    """</span>
+    <span class="n">lines</span> <span class="o">=</span> <span class="n">cmd</span><span class="p">(</span><span class="s1">'show '</span> <span class="o">+</span> <span class="n">device</span><span class="o">.</span><span class="n">lower</span><span class="p">())</span>
+
+    <span class="n">ret</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="n">description</span><span class="o">=</span><span class="n">lines</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="mi">0</span><span class="p">))</span>
+    <span class="n">ret</span><span class="o">.</span><span class="n">update</span><span class="p">({</span><span class="n">parts</span><span class="p">[</span><span class="mi">0</span><span class="p">]:</span> <span class="n">try_float</span><span class="p">(</span><span class="n">parts</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+                <span class="k">for</span> <span class="n">parts</span> <span class="ow">in</span> <span class="nb">map</span><span class="p">(</span><span class="nb">str</span><span class="o">.</span><span class="n">split</span><span class="p">,</span> <span class="n">lines</span><span class="p">)})</span>
+    <span class="k">return</span> <span class="n">ret</span>
+</pre></div>
+<div class="clipboard-copy-txt" id="cell-13">def device_state(device):
+    """
+    Dict with device state
+
+    Parameters
+    ----------
+    device : str
+        Instance name
+
+    Returns
+    -------
+    dict from str to float or str
+        Device description, model, operating point, etc.
+
+    Examples
+    --------
+
+    Resistor description
+
+    &gt;&gt;&gt; ns.circ(['r1 a 0 4'])
+    &gt;&gt;&gt; ns.device_state('r1')
+    {'description': 'Resistor: Simple linear resistor', 'device': 'r1',
+    'model': 'R', 'resistance': 4.0, 'ac': 4.0, 'dtemp': 0.0, 'bv_max': 0.0,
+    'noisy': 0.0}
+    """
+    lines = cmd('show ' + device.lower())
+
+    ret = dict(description=lines.pop(0))
+    ret.update({parts[0]: try_float(parts[1])
+                for parts in map(str.split, lines)})
+    return ret</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
+<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=7fae0d14">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="CodeMirror cm-s-jupyter">
+<div class="zeroclipboard-container">
+<clipboard-copy ,="" aria-label="Copy to Clipboard" for="cell-14">
+<div>
+<span class="notice" hidden="">Copied!</span>
+<svg aria-hidden="true" class="clipboard-copy-icon" data-view-component="true" height="20" version="1.1" viewbox="0 0 16 16" width="20">
+<path d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z" fill="currentColor" fill-rule="evenodd"></path>
+<path d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z" fill="currentColor" fill-rule="evenodd"></path>
+</svg>
+</div>
+</clipboard-copy>
+</div>
+<div class="highlight-ipynb hl-python"><pre><span></span><span class="k">def</span> <span class="nf">alter_model</span><span class="p">(</span><span class="n">model</span><span class="p">,</span> <span class="o">**</span><span class="n">params</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">"""</span>
+<span class="sd">    Change parameters of a model card</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    model : str</span>
+<span class="sd">        Model card name</span>
+<span class="sd">    """</span>
+    <span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">params</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+        <span class="n">cmd</span><span class="p">(</span><span class="s1">'altermod </span><span class="si">{}</span><span class="s1"> </span><span class="si">{}</span><span class="s1"> = </span><span class="si">{:.6e}</span><span class="s1">'</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">model</span><span class="p">,</span> <span class="n">k</span><span class="p">,</span> <span class="n">v</span><span class="p">))</span>
+</pre></div>
+<div class="clipboard-copy-txt" id="cell-14">def alter_model(model, **params):
+    """
+    Change parameters of a model card
+
+    Parameters
+    ----------
+    model : str
+        Model card name
+    """
+    for k, v in params.items():
+        cmd('altermod {} {} = {:.6e}'.format(model, k, v))</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
+<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=e54432db">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="CodeMirror cm-s-jupyter">
+<div class="zeroclipboard-container">
+<clipboard-copy ,="" aria-label="Copy to Clipboard" for="cell-15">
+<div>
+<span class="notice" hidden="">Copied!</span>
+<svg aria-hidden="true" class="clipboard-copy-icon" data-view-component="true" height="20" version="1.1" viewbox="0 0 16 16" width="20">
+<path d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z" fill="currentColor" fill-rule="evenodd"></path>
+<path d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z" fill="currentColor" fill-rule="evenodd"></path>
+</svg>
+</div>
+</clipboard-copy>
+</div>
+<div class="highlight-ipynb hl-python"><pre><span></span><span class="k">def</span> <span class="nf">ac</span><span class="p">(</span><span class="n">mode</span><span class="p">,</span> <span class="n">npoints</span><span class="p">,</span> <span class="n">fstart</span><span class="p">,</span> <span class="n">fstop</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">"""</span>
+<span class="sd">    Small-signal AC analysis</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    mode : {'lin', 'oct', 'dec'}</span>
+<span class="sd">        Frequency axis spacing: linear, octave or decade</span>
+<span class="sd">    npoints : int</span>
+<span class="sd">        If mode is ``'lin'``, this is the total number of points for the sweep.</span>
+<span class="sd">        Otherwise, this is the number of points per decade or per octave.</span>
+<span class="sd">    fstart : float</span>
+<span class="sd">        Starting frequency</span>
+<span class="sd">    fstop : float</span>
+<span class="sd">        Final frequency</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    dict from str to ndarray</span>
+<span class="sd">        Result vectors: voltages, currents and frequency (under key ``'frequency'``).</span>
+
+<span class="sd">    Examples</span>
+<span class="sd">    --------</span>
+
+<span class="sd">    Sweep from 1 kHz to 10 MHz with 3 points per decade</span>
+
+<span class="sd">    &gt;&gt;&gt; results = nc.ac('dec', 3, 1e3, 10e6)</span>
+<span class="sd">    &gt;&gt;&gt; len(results['frequency'])</span>
+<span class="sd">    13</span>
+
+<span class="sd">    Sweep from 20 to 20 kHz in 21 linearly spaced points</span>
+
+<span class="sd">    &gt;&gt;&gt; results = nc.ac('lin', 21, 20, 20e3)</span>
+<span class="sd">    &gt;&gt;&gt; len(results['frequency'])</span>
+<span class="sd">    21</span>
+
+<span class="sd">    Bode plot of low-pass filter::</span>
+
+<span class="sd">        ns.circ('''</span>
+<span class="sd">        v1 in 0 dc 0 ac 1</span>
+<span class="sd">        r1 in out 1k</span>
+<span class="sd">        c1 out 0 1n''')</span>
+<span class="sd">        results = ns.ac('dec', 2, 1e0, 1e9)</span>
+<span class="sd">        plt.semilogx(results['frequency'], 2*ns.decibel(results['out']))</span>
+
+<span class="sd">    .. image:: lowpass.png</span>
+
+<span class="sd">    """</span>
+    <span class="n">modes</span> <span class="o">=</span> <span class="p">(</span><span class="s1">'dec'</span><span class="p">,</span> <span class="s1">'lin'</span><span class="p">,</span> <span class="s1">'oct'</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">mode</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">modes</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">"'</span><span class="si">{}</span><span class="s2">' is not a valid AC sweep "</span>
+                         <span class="s2">"mode: </span><span class="si">{}</span><span class="s2">"</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">mode</span><span class="p">,</span> <span class="n">modes</span><span class="p">))</span>
+    <span class="k">if</span> <span class="n">fstop</span> <span class="o">&lt;</span> <span class="n">fstart</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s1">'Start frequency'</span><span class="p">,</span> <span class="n">fstart</span><span class="p">,</span>
+                         <span class="s1">'greater than stop frequency'</span><span class="p">,</span> <span class="n">fstop</span><span class="p">)</span>
+    <span class="n">cmd</span><span class="p">(</span><span class="s1">'ac </span><span class="si">{}</span><span class="s1"> </span><span class="si">{}</span><span class="s1"> </span><span class="si">{}</span><span class="s1"> </span><span class="si">{}</span><span class="s1">'</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">mode</span><span class="p">,</span> <span class="n">npoints</span><span class="p">,</span> <span class="n">fstart</span><span class="p">,</span> <span class="n">fstop</span><span class="p">))</span>
+    <span class="k">return</span> <span class="n">vectors</span><span class="p">()</span>
+</pre></div>
+<div class="clipboard-copy-txt" id="cell-15">def ac(mode, npoints, fstart, fstop):
+    """
+    Small-signal AC analysis
+
+    Parameters
+    ----------
+    mode : {'lin', 'oct', 'dec'}
+        Frequency axis spacing: linear, octave or decade
+    npoints : int
+        If mode is ``'lin'``, this is the total number of points for the sweep.
+        Otherwise, this is the number of points per decade or per octave.
+    fstart : float
+        Starting frequency
+    fstop : float
+        Final frequency
+
+    Returns
+    -------
+    dict from str to ndarray
+        Result vectors: voltages, currents and frequency (under key ``'frequency'``).
+
+    Examples
+    --------
+
+    Sweep from 1 kHz to 10 MHz with 3 points per decade
+
+    &gt;&gt;&gt; results = nc.ac('dec', 3, 1e3, 10e6)
+    &gt;&gt;&gt; len(results['frequency'])
+    13
+
+    Sweep from 20 to 20 kHz in 21 linearly spaced points
+
+    &gt;&gt;&gt; results = nc.ac('lin', 21, 20, 20e3)
+    &gt;&gt;&gt; len(results['frequency'])
+    21
+
+    Bode plot of low-pass filter::
+
+        ns.circ('''
+        v1 in 0 dc 0 ac 1
+        r1 in out 1k
+        c1 out 0 1n''')
+        results = ns.ac('dec', 2, 1e0, 1e9)
+        plt.semilogx(results['frequency'], 2*ns.decibel(results['out']))
+
+    .. image:: lowpass.png
+
+    """
+    modes = ('dec', 'lin', 'oct')
+    if mode.lower() not in modes:
+        raise ValueError("'{}' is not a valid AC sweep "
+                         "mode: {}".format(mode, modes))
+    if fstop &lt; fstart:
+        raise ValueError('Start frequency', fstart,
+                         'greater than stop frequency', fstop)
+    cmd('ac {} {} {} {}'.format(mode, npoints, fstart, fstop))
+    return vectors()</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
+<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=086ad9a8">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="CodeMirror cm-s-jupyter">
+<div class="zeroclipboard-container">
+<clipboard-copy ,="" aria-label="Copy to Clipboard" for="cell-16">
+<div>
+<span class="notice" hidden="">Copied!</span>
+<svg aria-hidden="true" class="clipboard-copy-icon" data-view-component="true" height="20" version="1.1" viewbox="0 0 16 16" width="20">
+<path d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z" fill="currentColor" fill-rule="evenodd"></path>
+<path d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z" fill="currentColor" fill-rule="evenodd"></path>
+</svg>
+</div>
+</clipboard-copy>
+</div>
+<div class="highlight-ipynb hl-python"><pre><span></span><span class="k">def</span> <span class="nf">group</span><span class="p">(</span><span class="n">iterable</span><span class="p">,</span> <span class="n">grouplength</span><span class="p">):</span>
+    <span class="k">return</span> <span class="nb">zip</span><span class="p">(</span><span class="o">*</span><span class="p">(</span><span class="n">iterable</span><span class="p">[</span><span class="n">ii</span><span class="p">::</span><span class="n">grouplength</span><span class="p">]</span>
+                 <span class="k">for</span> <span class="n">ii</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">grouplength</span><span class="p">)))</span>
+</pre></div>
+<div class="clipboard-copy-txt" id="cell-16">def group(iterable, grouplength):
+    return zip(*(iterable[ii::grouplength]
+                 for ii in range(grouplength)))</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
+<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=bc522d65">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="CodeMirror cm-s-jupyter">
+<div class="zeroclipboard-container">
+<clipboard-copy ,="" aria-label="Copy to Clipboard" for="cell-17">
+<div>
+<span class="notice" hidden="">Copied!</span>
+<svg aria-hidden="true" class="clipboard-copy-icon" data-view-component="true" height="20" version="1.1" viewbox="0 0 16 16" width="20">
+<path d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z" fill="currentColor" fill-rule="evenodd"></path>
+<path d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z" fill="currentColor" fill-rule="evenodd"></path>
+</svg>
+</div>
+</clipboard-copy>
+</div>
+<div class="highlight-ipynb hl-python"><pre><span></span><span class="k">def</span> <span class="nf">dc</span><span class="p">(</span><span class="o">*</span><span class="n">sweeps</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">"""</span>
+<span class="sd">    Analyze DC transfer function, return vectors with one axis per sweep</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    sweeps:</span>
+<span class="sd">        One or two sequences of (src, start, stop, increment).</span>
+<span class="sd">        src can be an independent voltage or current source, a resistor, or ``'TEMP'``.</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    dict from str to ndarray</span>
+<span class="sd">        Voltages and currents. If there is a secondary sweep, the ndarrays will have two axes.</span>
+
+<span class="sd">    Examples</span>
+<span class="sd">    --------</span>
+
+<span class="sd">    Sweep a voltage source</span>
+
+<span class="sd">    &gt;&gt;&gt; ns.circ('v1 a 0 dc 0');</span>
+<span class="sd">    &gt;&gt;&gt; ns.dc('v1', 0, 5, 1)</span>
+<span class="sd">    {'a': array([ 0.,  1.,  2.,  3.,  4.,  5.]),</span>
+<span class="sd">     'v-sweep': array([ 0.,  1.,  2.,  3.,  4.,  5.]),</span>
+<span class="sd">     'v1': array([0, 1, 2, 3, 4, 5]),</span>
+<span class="sd">     'v1#branch': array([ 0.,  0.,  0.,  0.,  0.,  0.])}</span>
+
+<span class="sd">    Add a secondary sweep::</span>
+
+<span class="sd">        ns.circ(['v1 a 0 dc 0', 'r1 a 0 1k'])</span>
+<span class="sd">        results = ns.dc('v1', 0, 3, 1, 'r1', 1e3, 10e3, 1e3)</span>
+<span class="sd">        plt.plot(-results['v1#branch']);</span>
+
+<span class="sd">    .. image:: secondary_sweep.png</span>
+
+<span class="sd">    """</span>
+    <span class="c1"># TODO: support more than two sweeps</span>
+    <span class="c1"># TODO: implement other sweeps</span>
+    <span class="n">cmd</span><span class="p">(</span><span class="s1">'dc '</span> <span class="o">+</span> <span class="s1">' '</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="nb">map</span><span class="p">(</span><span class="nb">str</span><span class="p">,</span> <span class="n">sweeps</span><span class="p">)))</span>
+    <span class="n">sweepvalues</span> <span class="o">=</span> <span class="p">[</span><span class="n">linear_sweep</span><span class="p">(</span><span class="o">*</span><span class="n">sweep</span><span class="p">[</span><span class="mi">1</span><span class="p">:])</span>
+                   <span class="k">for</span> <span class="n">sweep</span> <span class="ow">in</span> <span class="n">group</span><span class="p">(</span><span class="n">sweeps</span><span class="p">,</span> <span class="mi">4</span><span class="p">)]</span>
+    <span class="n">sweeplengths</span> <span class="o">=</span> <span class="nb">tuple</span><span class="p">(</span><span class="nb">map</span><span class="p">(</span><span class="nb">len</span><span class="p">,</span> <span class="n">sweepvalues</span><span class="p">))</span>
+    <span class="n">ret</span> <span class="o">=</span> <span class="p">{</span><span class="n">k</span><span class="p">:</span> <span class="n">v</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="n">sweeplengths</span><span class="p">,</span> <span class="n">order</span><span class="o">=</span><span class="s1">'F'</span><span class="p">)</span>
+           <span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">vectors</span><span class="p">()</span><span class="o">.</span><span class="n">items</span><span class="p">()}</span>
+    <span class="c1"># Add vectors with swept sources/parameters</span>
+    <span class="k">for</span> <span class="n">ii</span><span class="p">,</span> <span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">values</span><span class="p">)</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="nb">zip</span><span class="p">(</span><span class="n">sweeps</span><span class="p">[::</span><span class="mi">4</span><span class="p">],</span> <span class="n">sweepvalues</span><span class="p">)):</span>
+        <span class="n">shape</span> <span class="o">=</span> <span class="p">[</span><span class="n">length</span> <span class="k">if</span> <span class="n">ii</span> <span class="o">==</span> <span class="n">jj</span> <span class="k">else</span> <span class="mi">1</span>
+                 <span class="k">for</span> <span class="n">jj</span><span class="p">,</span> <span class="n">length</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">sweeplengths</span><span class="p">)]</span>
+        <span class="n">ret</span><span class="p">[</span><span class="n">name</span><span class="p">]</span> <span class="o">=</span> <span class="n">values</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="n">shape</span><span class="p">,</span> <span class="n">order</span><span class="o">=</span><span class="s1">'F'</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">ret</span>
+</pre></div>
+<div class="clipboard-copy-txt" id="cell-17">def dc(*sweeps):
+    """
+    Analyze DC transfer function, return vectors with one axis per sweep
+
+    Parameters
+    ----------
+    sweeps:
+        One or two sequences of (src, start, stop, increment).
+        src can be an independent voltage or current source, a resistor, or ``'TEMP'``.
+
+    Returns
+    -------
+    dict from str to ndarray
+        Voltages and currents. If there is a secondary sweep, the ndarrays will have two axes.
+
+    Examples
+    --------
+
+    Sweep a voltage source
+
+    &gt;&gt;&gt; ns.circ('v1 a 0 dc 0');
+    &gt;&gt;&gt; ns.dc('v1', 0, 5, 1)
+    {'a': array([ 0.,  1.,  2.,  3.,  4.,  5.]),
+     'v-sweep': array([ 0.,  1.,  2.,  3.,  4.,  5.]),
+     'v1': array([0, 1, 2, 3, 4, 5]),
+     'v1#branch': array([ 0.,  0.,  0.,  0.,  0.,  0.])}
+
+    Add a secondary sweep::
+
+        ns.circ(['v1 a 0 dc 0', 'r1 a 0 1k'])
+        results = ns.dc('v1', 0, 3, 1, 'r1', 1e3, 10e3, 1e3)
+        plt.plot(-results['v1#branch']);
+
+    .. image:: secondary_sweep.png
+
+    """
+    # TODO: support more than two sweeps
+    # TODO: implement other sweeps
+    cmd('dc ' + ' '.join(map(str, sweeps)))
+    sweepvalues = [linear_sweep(*sweep[1:])
+                   for sweep in group(sweeps, 4)]
+    sweeplengths = tuple(map(len, sweepvalues))
+    ret = {k: v.reshape(sweeplengths, order='F')
+           for k, v in vectors().items()}
+    # Add vectors with swept sources/parameters
+    for ii, (name, values) in enumerate(zip(sweeps[::4], sweepvalues)):
+        shape = [length if ii == jj else 1
+                 for jj, length in enumerate(sweeplengths)]
+        ret[name] = values.reshape(shape, order='F')
+    return ret</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
+<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=d79b1b52">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="CodeMirror cm-s-jupyter">
+<div class="zeroclipboard-container">
+<clipboard-copy ,="" aria-label="Copy to Clipboard" for="cell-18">
+<div>
+<span class="notice" hidden="">Copied!</span>
+<svg aria-hidden="true" class="clipboard-copy-icon" data-view-component="true" height="20" version="1.1" viewbox="0 0 16 16" width="20">
+<path d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z" fill="currentColor" fill-rule="evenodd"></path>
+<path d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z" fill="currentColor" fill-rule="evenodd"></path>
+</svg>
+</div>
+</clipboard-copy>
+</div>
+<div class="highlight-ipynb hl-python"><pre><span></span><span class="k">def</span> <span class="nf">operating_point</span><span class="p">():</span>
+<span class="w">    </span><span class="sd">"""</span>
+<span class="sd">    Analyze DC operating point</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    dict from str to ndarray</span>
+<span class="sd">        Voltages and currents</span>
+<span class="sd">    """</span>
+    <span class="n">cmd</span><span class="p">(</span><span class="s1">'op'</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">vectors</span><span class="p">()</span>
+</pre></div>
+<div class="clipboard-copy-txt" id="cell-18">def operating_point():
+    """
+    Analyze DC operating point
+
+    Returns
+    -------
+    dict from str to ndarray
+        Voltages and currents
+    """
+    cmd('op')
+    return vectors()</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
+<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=9e430529">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="CodeMirror cm-s-jupyter">
+<div class="zeroclipboard-container">
+<clipboard-copy ,="" aria-label="Copy to Clipboard" for="cell-19">
+<div>
+<span class="notice" hidden="">Copied!</span>
+<svg aria-hidden="true" class="clipboard-copy-icon" data-view-component="true" height="20" version="1.1" viewbox="0 0 16 16" width="20">
+<path d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z" fill="currentColor" fill-rule="evenodd"></path>
+<path d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z" fill="currentColor" fill-rule="evenodd"></path>
+</svg>
+</div>
+</clipboard-copy>
+</div>
+<div class="highlight-ipynb hl-python"><pre><span></span><span class="k">def</span> <span class="nf">save</span><span class="p">(</span><span class="n">vector_name</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">"""</span>
+<span class="sd">    Save this vector in the following analyses</span>
+
+<span class="sd">    If this command is used, only explicitly saved vectors will be kept in next analysis.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    vector_name : str</span>
+<span class="sd">        Name of the vector</span>
+<span class="sd">    """</span>
+    <span class="n">cmd</span><span class="p">(</span><span class="s1">'save '</span> <span class="o">+</span> <span class="n">vector_name</span><span class="p">)</span>
+</pre></div>
+<div class="clipboard-copy-txt" id="cell-19">def save(vector_name):
+    """
+    Save this vector in the following analyses
+
+    If this command is used, only explicitly saved vectors will be kept in next analysis.
+
+    Parameters
+    ----------
+    vector_name : str
+        Name of the vector
+    """
+    cmd('save ' + vector_name)</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
+<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=ca844f77">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="CodeMirror cm-s-jupyter">
+<div class="zeroclipboard-container">
+<clipboard-copy ,="" aria-label="Copy to Clipboard" for="cell-20">
+<div>
+<span class="notice" hidden="">Copied!</span>
+<svg aria-hidden="true" class="clipboard-copy-icon" data-view-component="true" height="20" version="1.1" viewbox="0 0 16 16" width="20">
+<path d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z" fill="currentColor" fill-rule="evenodd"></path>
+<path d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z" fill="currentColor" fill-rule="evenodd"></path>
+</svg>
+</div>
+</clipboard-copy>
+</div>
+<div class="highlight-ipynb hl-python"><pre><span></span><span class="k">def</span> <span class="nf">destroy</span><span class="p">(</span><span class="n">plotname</span><span class="o">=</span><span class="s1">'all'</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">"""</span>
+<span class="sd">    Erase plot from memory</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    plotname : str, optional</span>
+<span class="sd">        Name of a plot. If omitted, erase all plots.</span>
+<span class="sd">    """</span>
+    <span class="n">cmd</span><span class="p">(</span><span class="s1">'destroy '</span> <span class="o">+</span> <span class="n">plotname</span><span class="p">)</span>
+</pre></div>
+<div class="clipboard-copy-txt" id="cell-20">def destroy(plotname='all'):
+    """
+    Erase plot from memory
+
+    Parameters
+    ----------
+    plotname : str, optional
+        Name of a plot. If omitted, erase all plots.
+    """
+    cmd('destroy ' + plotname)</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
+<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=5cf54d74">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="CodeMirror cm-s-jupyter">
+<div class="zeroclipboard-container">
+<clipboard-copy ,="" aria-label="Copy to Clipboard" for="cell-21">
+<div>
+<span class="notice" hidden="">Copied!</span>
+<svg aria-hidden="true" class="clipboard-copy-icon" data-view-component="true" height="20" version="1.1" viewbox="0 0 16 16" width="20">
+<path d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z" fill="currentColor" fill-rule="evenodd"></path>
+<path d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z" fill="currentColor" fill-rule="evenodd"></path>
+</svg>
+</div>
+</clipboard-copy>
+</div>
+<div class="highlight-ipynb hl-python"><pre><span></span><span class="k">def</span> <span class="nf">decibel</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">'''Calculate 10*log(abs(x))'''</span>
+    <span class="k">return</span> <span class="mf">10.</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">log10</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>
+</pre></div>
+<div class="clipboard-copy-txt" id="cell-21">def decibel(x):
+    '''Calculate 10*log(abs(x))'''
+    return 10. * np.log10(np.abs(x))</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
+<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=b34ab53f">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="CodeMirror cm-s-jupyter">
+<div class="zeroclipboard-container">
+<clipboard-copy ,="" aria-label="Copy to Clipboard" for="cell-22">
+<div>
+<span class="notice" hidden="">Copied!</span>
+<svg aria-hidden="true" class="clipboard-copy-icon" data-view-component="true" height="20" version="1.1" viewbox="0 0 16 16" width="20">
+<path d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z" fill="currentColor" fill-rule="evenodd"></path>
+<path d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z" fill="currentColor" fill-rule="evenodd"></path>
+</svg>
+</div>
+</clipboard-copy>
+</div>
+<div class="highlight-ipynb hl-python"><pre><span></span><span class="k">def</span> <span class="nf">alter</span><span class="p">(</span><span class="n">device</span><span class="p">,</span> <span class="o">**</span><span class="n">parameters</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">"""</span>
+<span class="sd">    Alter device parameters</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    device : str</span>
+<span class="sd">        Instance name</span>
+
+<span class="sd">    Examples</span>
+<span class="sd">    --------</span>
+
+<span class="sd">    &gt;&gt;&gt; ns.alter('R1', resistance=200)</span>
+<span class="sd">    &gt;&gt;&gt; ns.alter('vin', ac=2, dc=3)</span>
+<span class="sd">    """</span>
+    <span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">parameters</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">v</span><span class="p">,</span> <span class="p">(</span><span class="nb">list</span><span class="p">,</span> <span class="nb">tuple</span><span class="p">)):</span>
+            <span class="n">v</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">v</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">v</span> <span class="o">=</span> <span class="s1">'[ '</span> <span class="o">+</span> <span class="s1">' '</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">v</span><span class="p">)</span> <span class="o">+</span> <span class="s1">' ]'</span>
+        <span class="n">cmd</span><span class="p">(</span><span class="s1">'alter </span><span class="si">{}</span><span class="s1"> </span><span class="si">{}</span><span class="s1"> = </span><span class="si">{}</span><span class="s1">'</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">device</span><span class="o">.</span><span class="n">lower</span><span class="p">(),</span> <span class="n">k</span><span class="p">,</span> <span class="n">v</span><span class="p">))</span>
+</pre></div>
+<div class="clipboard-copy-txt" id="cell-22">def alter(device, **parameters):
+    """
+    Alter device parameters
+
+    Parameters
+    ----------
+    device : str
+        Instance name
+
+    Examples
+    --------
+
+    &gt;&gt;&gt; ns.alter('R1', resistance=200)
+    &gt;&gt;&gt; ns.alter('vin', ac=2, dc=3)
+    """
+    for k, v in parameters.items():
+        if not isinstance(v, (list, tuple)):
+            v = str(v)
+        else:
+            v = '[ ' + ' '.join(v) + ' ]'
+        cmd('alter {} {} = {}'.format(device.lower(), k, v))</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
+<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=d811e5a6">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="CodeMirror cm-s-jupyter">
+<div class="zeroclipboard-container">
+<clipboard-copy ,="" aria-label="Copy to Clipboard" for="cell-23">
+<div>
+<span class="notice" hidden="">Copied!</span>
+<svg aria-hidden="true" class="clipboard-copy-icon" data-view-component="true" height="20" version="1.1" viewbox="0 0 16 16" width="20">
+<path d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z" fill="currentColor" fill-rule="evenodd"></path>
+<path d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z" fill="currentColor" fill-rule="evenodd"></path>
+</svg>
+</div>
+</clipboard-copy>
+</div>
+<div class="highlight-ipynb hl-python"><pre><span></span><span class="k">def</span> <span class="nf">alterparams</span><span class="p">(</span><span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">kwargs</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+        <span class="n">cmd</span><span class="p">(</span><span class="s1">'alterparam </span><span class="si">{}</span><span class="s1"> = </span><span class="si">{}</span><span class="s1">'</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">k</span><span class="p">,</span> <span class="n">v</span><span class="p">))</span>
+    <span class="n">cmd</span><span class="p">(</span><span class="s1">'reset'</span><span class="p">)</span>
+</pre></div>
+<div class="clipboard-copy-txt" id="cell-23">def alterparams(**kwargs):
+    for k, v in kwargs.items():
+        cmd('alterparam {} = {}'.format(k, v))
+    cmd('reset')</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
+<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=dc917d91">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="CodeMirror cm-s-jupyter">
+<div class="zeroclipboard-container">
+<clipboard-copy ,="" aria-label="Copy to Clipboard" for="cell-24">
+<div>
+<span class="notice" hidden="">Copied!</span>
+<svg aria-hidden="true" class="clipboard-copy-icon" data-view-component="true" height="20" version="1.1" viewbox="0 0 16 16" width="20">
+<path d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z" fill="currentColor" fill-rule="evenodd"></path>
+<path d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z" fill="currentColor" fill-rule="evenodd"></path>
+</svg>
+</div>
+</clipboard-copy>
+</div>
+<div class="highlight-ipynb hl-python"><pre><span></span><span class="k">def</span> <span class="nf">linear_sweep</span><span class="p">(</span><span class="n">start</span><span class="p">,</span> <span class="n">stop</span><span class="p">,</span> <span class="n">step</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">"""</span>
+<span class="sd">    Numbers from start to stop (inclusive), separated by step.</span>
+
+<span class="sd">    These match the values used in a dc linear sweep</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    ndarray</span>
+
+<span class="sd">    Examples</span>
+<span class="sd">    --------</span>
+
+<span class="sd">    &gt;&gt;&gt; ns.linear_sweep(0, 100, 20)</span>
+<span class="sd">    array([  0,  20,  40,  60,  80, 100])</span>
+
+<span class="sd">    """</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">start</span> <span class="o">&gt;</span> <span class="n">stop</span> <span class="ow">and</span> <span class="n">step</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">)</span> <span class="ow">or</span> <span class="p">(</span><span class="n">start</span> <span class="o">&lt;</span> <span class="n">stop</span> <span class="ow">and</span> <span class="n">step</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">):</span>
+        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">"Can't sweep from"</span><span class="p">,</span> <span class="n">start</span><span class="p">,</span> <span class="s1">'to'</span><span class="p">,</span> <span class="n">stop</span><span class="p">,</span> <span class="s1">'with step'</span><span class="p">,</span>
+                         <span class="n">step</span><span class="p">)</span>
+    <span class="n">ret</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="n">nextval</span> <span class="o">=</span> <span class="n">start</span>
+    <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">np</span><span class="o">.</span><span class="n">sign</span><span class="p">(</span><span class="n">step</span><span class="p">)</span> <span class="o">*</span> <span class="n">nextval</span> <span class="o">-</span> <span class="n">np</span><span class="o">.</span><span class="n">sign</span><span class="p">(</span><span class="n">step</span><span class="p">)</span> <span class="o">*</span> <span class="n">stop</span> <span class="o">&gt;=</span> <span class="p">(</span>
+                <span class="n">np</span><span class="o">.</span><span class="n">finfo</span><span class="p">(</span><span class="nb">float</span><span class="p">)</span><span class="o">.</span><span class="n">eps</span> <span class="o">*</span> <span class="mf">1e3</span><span class="p">):</span>
+            <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">ret</span><span class="p">)</span>
+        <span class="n">ret</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">nextval</span><span class="p">)</span>
+        <span class="n">nextval</span> <span class="o">=</span> <span class="n">nextval</span> <span class="o">+</span> <span class="n">step</span>
+</pre></div>
+<div class="clipboard-copy-txt" id="cell-24">def linear_sweep(start, stop, step):
+    """
+    Numbers from start to stop (inclusive), separated by step.
+
+    These match the values used in a dc linear sweep
+
+    Returns
+    -------
+    ndarray
+
+    Examples
+    --------
+
+    &gt;&gt;&gt; ns.linear_sweep(0, 100, 20)
+    array([  0,  20,  40,  60,  80, 100])
+
+    """
+    if (start &gt; stop and step &gt; 0) or (start &lt; stop and step &lt; 0):
+        raise ValueError("Can't sweep from", start, 'to', stop, 'with step',
+                         step)
+    ret = []
+    nextval = start
+    while True:
+        if np.sign(step) * nextval - np.sign(step) * stop &gt;= (
+                np.finfo(float).eps * 1e3):
+            return np.array(ret)
+        ret.append(nextval)
+        nextval = nextval + step</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
+<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=8f39044e">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="CodeMirror cm-s-jupyter">
+<div class="zeroclipboard-container">
+<clipboard-copy ,="" aria-label="Copy to Clipboard" for="cell-25">
+<div>
+<span class="notice" hidden="">Copied!</span>
+<svg aria-hidden="true" class="clipboard-copy-icon" data-view-component="true" height="20" version="1.1" viewbox="0 0 16 16" width="20">
+<path d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z" fill="currentColor" fill-rule="evenodd"></path>
+<path d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z" fill="currentColor" fill-rule="evenodd"></path>
+</svg>
+</div>
+</clipboard-copy>
+</div>
+<div class="highlight-ipynb hl-python"><pre><span></span><span class="k">def</span> <span class="nf">source</span><span class="p">(</span><span class="n">filename</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">"""</span>
+<span class="sd">    Evaluate a ngspice input file</span>
+
+<span class="sd">    This function is the same as the ngspice source command, so the first line</span>
+<span class="sd">    of the file is considered a title line, lines beginning with the character</span>
+<span class="sd">    ``*`` are considered comments and are ignored, etc.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    filename : str</span>
+<span class="sd">        A file containing a circuit netlist.</span>
+<span class="sd">    """</span>
+    <span class="n">cmd</span><span class="p">(</span><span class="s2">"source '</span><span class="si">{}</span><span class="s2">'"</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">filename</span><span class="p">))</span>
+</pre></div>
+<div class="clipboard-copy-txt" id="cell-25">def source(filename):
+    """
+    Evaluate a ngspice input file
+
+    This function is the same as the ngspice source command, so the first line
+    of the file is considered a title line, lines beginning with the character
+    ``*`` are considered comments and are ignored, etc.
+
+    Parameters
+    ----------
+    filename : str
+        A file containing a circuit netlist.
+    """
+    cmd("source '{}'".format(filename))</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
+<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=6082bded">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="CodeMirror cm-s-jupyter">
+<div class="zeroclipboard-container">
+<clipboard-copy ,="" aria-label="Copy to Clipboard" for="cell-26">
+<div>
+<span class="notice" hidden="">Copied!</span>
+<svg aria-hidden="true" class="clipboard-copy-icon" data-view-component="true" height="20" version="1.1" viewbox="0 0 16 16" width="20">
+<path d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z" fill="currentColor" fill-rule="evenodd"></path>
+<path d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z" fill="currentColor" fill-rule="evenodd"></path>
+</svg>
+</div>
+</clipboard-copy>
+</div>
+<div class="highlight-ipynb hl-python"><pre><span></span><span class="k">def</span> <span class="nf">xspice_enabled</span><span class="p">():</span>
+<span class="w">    </span><span class="sd">"""</span>
+<span class="sd">    Was libngspice compiled with XSpice support?</span>
+
+<span class="sd">    Returns</span>
+<span class="sd">    -------</span>
+<span class="sd">    bool</span>
+<span class="sd">    """</span>
+    <span class="k">return</span> <span class="s1">'** XSPICE extensions included'</span> <span class="ow">in</span> <span class="n">cmd</span><span class="p">(</span><span class="s1">'version -f'</span><span class="p">)</span>
+</pre></div>
+<div class="clipboard-copy-txt" id="cell-26">def xspice_enabled():
+    """
+    Was libngspice compiled with XSpice support?
+
+    Returns
+    -------
+    bool
+    """
+    return '** XSPICE extensions included' in cmd('version -f')</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
+<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=7f3be7ba">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="CodeMirror cm-s-jupyter">
+<div class="zeroclipboard-container">
+<clipboard-copy ,="" aria-label="Copy to Clipboard" for="cell-27">
+<div>
+<span class="notice" hidden="">Copied!</span>
+<svg aria-hidden="true" class="clipboard-copy-icon" data-view-component="true" height="20" version="1.1" viewbox="0 0 16 16" width="20">
+<path d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z" fill="currentColor" fill-rule="evenodd"></path>
+<path d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z" fill="currentColor" fill-rule="evenodd"></path>
+</svg>
+</div>
+</clipboard-copy>
+</div>
+<div class="highlight-ipynb hl-python"><pre><span></span><span class="n">initialize</span><span class="p">()</span>
+</pre></div>
+<div class="clipboard-copy-txt" id="cell-27">initialize()</div>
+</div>
+</div>
+</div>
+</div>
 </div>
 </div>
 </div> <!-- jp-Notebook -->

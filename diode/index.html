@@ -651,8 +651,58 @@ $\newcommand{\sm}[2]{{{#1}_\mathrm{#2}}}$</p>
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noInput">
-<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noInput" id="cell-id=6e2f2bfa-ab39-4733-b69e-2171a22b8bc8">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
+<div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=6e2f2bfa-ab39-4733-b69e-2171a22b8bc8">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="CodeMirror cm-s-jupyter">
+<div class="zeroclipboard-container">
+<clipboard-copy ,="" aria-label="Copy to Clipboard" for="cell-1">
+<div>
+<span class="notice" hidden="">Copied!</span>
+<svg aria-hidden="true" class="clipboard-copy-icon" data-view-component="true" height="20" version="1.1" viewbox="0 0 16 16" width="20">
+<path d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z" fill="currentColor" fill-rule="evenodd"></path>
+<path d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z" fill="currentColor" fill-rule="evenodd"></path>
+</svg>
+</div>
+</clipboard-copy>
+</div>
+<div class="highlight-ipynb hl-python"><pre><span></span><span class="n">Vt</span> <span class="o">=</span> <span class="mf">25.865</span>
+
+<span class="c1"># import tabulate ?</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">'           Id ='</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s1">''</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">I</span> <span class="ow">in</span> <span class="p">[</span><span class="mf">0.001</span><span class="p">,</span> <span class="mf">0.01</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">,</span> <span class="mi">1</span><span class="p">]:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">'</span><span class="si">%4.0f</span><span class="s1"> mA  '</span> <span class="o">%</span> <span class="p">(</span><span class="n">I</span> <span class="o">*</span> <span class="mi">1000</span><span class="p">),</span> <span class="n">end</span><span class="o">=</span><span class="s1">''</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">()</span>
+
+<span class="c1">#for Is in [1e-11, 1e-12, 1e-13, 1e-14, 1e-15]:</span>
+<span class="k">for</span> <span class="n">Is</span> <span class="ow">in</span> <span class="p">[</span><span class="mf">1e-15</span><span class="p">,</span> <span class="mf">1e-14</span><span class="p">,</span> <span class="mf">1e-13</span><span class="p">,</span> <span class="mf">1e-12</span><span class="p">,</span> <span class="mf">1e-11</span><span class="p">]:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">'Is = </span><span class="si">%g</span><span class="s1"> A '</span> <span class="o">%</span> <span class="n">Is</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s1">''</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">I</span> <span class="ow">in</span> <span class="p">[</span><span class="mf">0.001</span><span class="p">,</span> <span class="mf">0.01</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">,</span> <span class="mi">1</span><span class="p">]:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">"  </span><span class="si">%4.0f</span><span class="s2"> mV"</span> <span class="o">%</span> <span class="p">(</span><span class="n">Vt</span> <span class="o">*</span> <span class="n">log</span><span class="p">(</span><span class="n">I</span> <span class="o">/</span> <span class="n">Is</span><span class="p">)),</span> <span class="n">end</span><span class="o">=</span><span class="s1">''</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">()</span>
+</pre></div>
+<div class="clipboard-copy-txt" id="cell-1">Vt = 25.865
+
+# import tabulate ?
+print('           Id =', end='')
+for I in [0.001, 0.01, 0.1, 1]:
+    print('%4.0f mA  ' % (I * 1000), end='')
+print()
+
+#for Is in [1e-11, 1e-12, 1e-13, 1e-14, 1e-15]:
+for Is in [1e-15, 1e-14, 1e-13, 1e-12, 1e-11]:
+    print('Is = %g A ' % Is, end='')
+    for I in [0.001, 0.01, 0.1, 1]:
+        print("  %4.0f mV" % (Vt * log(I / Is)), end='')
+    print()</div>
+</div>
+</div>
+</div>
+</div>
 <div class="jp-Cell-outputWrapper">
 <div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
 </div>
@@ -681,8 +731,8 @@ Is = 1e-11 A    476 mV   536 mV   596 mV   655 mV
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noInput celltag_hide_code">
-<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noInput celltag_hide_code" id="cell-id=94fe9900-b3e5-41de-a82f-e6e96acda3fa">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell celltag_hide_code">
+<div class="jp-Cell jp-CodeCell jp-Notebook-cell celltag_hide_code" id="cell-id=94fe9900-b3e5-41de-a82f-e6e96acda3fa">
 <div class="jp-Cell-outputWrapper">
 <div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
 </div>
@@ -696,8 +746,44 @@ Is = 1e-11 A    476 mV   536 mV   596 mV   655 mV
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noInput">
-<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noInput" id="cell-id=6d94dad5-da0c-4f8b-a324-69f46127369a">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
+<div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=6d94dad5-da0c-4f8b-a324-69f46127369a">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="CodeMirror cm-s-jupyter">
+<div class="zeroclipboard-container">
+<clipboard-copy ,="" aria-label="Copy to Clipboard" for="cell-2">
+<div>
+<span class="notice" hidden="">Copied!</span>
+<svg aria-hidden="true" class="clipboard-copy-icon" data-view-component="true" height="20" version="1.1" viewbox="0 0 16 16" width="20">
+<path d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z" fill="currentColor" fill-rule="evenodd"></path>
+<path d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z" fill="currentColor" fill-rule="evenodd"></path>
+</svg>
+</div>
+</clipboard-copy>
+</div>
+<div class="highlight-ipynb hl-python"><pre><span></span><span class="n">ng</span><span class="o">.</span><span class="n">circ</span><span class="p">(</span><span class="s1">'''</span>
+<span class="s1">  V  vcc  0  1V</span>
+<span class="s1">  R  vcc  d  1k</span>
+<span class="s1">  D  d    0  D</span>
+<span class="s1">  .model D D(IS=1fA)</span>
+<span class="s1">'''</span><span class="p">)</span>
+<span class="n">ng</span><span class="o">.</span><span class="n">operating_point</span><span class="p">()</span>
+</pre></div>
+<div class="clipboard-copy-txt" id="cell-2">ng.circ('''
+  V  vcc  0  1V
+  R  vcc  d  1k
+  D  d    0  D
+  .model D D(IS=1fA)
+''')
+ng.operating_point()</div>
+</div>
+</div>
+</div>
+</div>
 <div class="jp-Cell-outputWrapper">
 <div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
 </div>
@@ -781,8 +867,32 @@ Is = 1e-11 A    476 mV   536 mV   596 mV   655 mV
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noInput">
-<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noInput" id="cell-id=7e7c34c6-5efb-4711-9d52-b4d494704770">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
+<div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=7e7c34c6-5efb-4711-9d52-b4d494704770">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="CodeMirror cm-s-jupyter">
+<div class="zeroclipboard-container">
+<clipboard-copy ,="" aria-label="Copy to Clipboard" for="cell-3">
+<div>
+<span class="notice" hidden="">Copied!</span>
+<svg aria-hidden="true" class="clipboard-copy-icon" data-view-component="true" height="20" version="1.1" viewbox="0 0 16 16" width="20">
+<path d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z" fill="currentColor" fill-rule="evenodd"></path>
+<path d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z" fill="currentColor" fill-rule="evenodd"></path>
+</svg>
+</div>
+</clipboard-copy>
+</div>
+<div class="highlight-ipynb hl-python"><pre><span></span><span class="n">exp</span><span class="p">(</span><span class="mf">5.2</span><span class="o">/</span><span class="mi">26</span><span class="p">)</span><span class="o">-</span><span class="mi">1</span>
+</pre></div>
+<div class="clipboard-copy-txt" id="cell-3">exp(5.2/26)-1</div>
+</div>
+</div>
+</div>
+</div>
 <div class="jp-Cell-outputWrapper">
 <div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
 </div>
@@ -795,8 +905,32 @@ Is = 1e-11 A    476 mV   536 mV   596 mV   655 mV
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noInput">
-<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noInput" id="cell-id=9d49c9bb-ccfc-4c0f-80f2-44038d25a075">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
+<div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=9d49c9bb-ccfc-4c0f-80f2-44038d25a075">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="CodeMirror cm-s-jupyter">
+<div class="zeroclipboard-container">
+<clipboard-copy ,="" aria-label="Copy to Clipboard" for="cell-4">
+<div>
+<span class="notice" hidden="">Copied!</span>
+<svg aria-hidden="true" class="clipboard-copy-icon" data-view-component="true" height="20" version="1.1" viewbox="0 0 16 16" width="20">
+<path d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z" fill="currentColor" fill-rule="evenodd"></path>
+<path d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z" fill="currentColor" fill-rule="evenodd"></path>
+</svg>
+</div>
+</clipboard-copy>
+</div>
+<div class="highlight-ipynb hl-python"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">'Error </span><span class="si">%.2f</span><span class="s1"> </span><span class="si">%%</span><span class="s1">'</span> <span class="o">%</span> <span class="p">(</span><span class="mi">100</span> <span class="o">*</span> <span class="p">(</span><span class="mf">0.2</span><span class="o">/</span><span class="mf">0.2214</span><span class="o">-</span><span class="mi">1</span><span class="p">)))</span>
+</pre></div>
+<div class="clipboard-copy-txt" id="cell-4">print('Error %.2f %%' % (100 * (0.2/0.2214-1)))</div>
+</div>
+</div>
+</div>
+</div>
 <div class="jp-Cell-outputWrapper">
 <div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
 </div>
@@ -810,8 +944,40 @@ Is = 1e-11 A    476 mV   536 mV   596 mV   655 mV
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noInput">
-<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noInput" id="cell-id=29fa9c8a-ce33-406a-9d72-0c18da688f3b">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
+<div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=29fa9c8a-ce33-406a-9d72-0c18da688f3b">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="CodeMirror cm-s-jupyter">
+<div class="zeroclipboard-container">
+<clipboard-copy ,="" aria-label="Copy to Clipboard" for="cell-5">
+<div>
+<span class="notice" hidden="">Copied!</span>
+<svg aria-hidden="true" class="clipboard-copy-icon" data-view-component="true" height="20" version="1.1" viewbox="0 0 16 16" width="20">
+<path d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z" fill="currentColor" fill-rule="evenodd"></path>
+<path d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z" fill="currentColor" fill-rule="evenodd"></path>
+</svg>
+</div>
+</clipboard-copy>
+</div>
+<div class="highlight-ipynb hl-python"><pre><span></span><span class="k">for</span> <span class="n">vd</span> <span class="ow">in</span> <span class="p">[</span><span class="mf">0.1</span><span class="p">,</span> <span class="mf">0.2</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">10</span><span class="p">]:</span>
+    <span class="n">Vt</span> <span class="o">=</span> <span class="mi">26</span>
+    <span class="n">actual</span> <span class="o">=</span> <span class="n">exp</span><span class="p">(</span><span class="n">vd</span> <span class="o">/</span> <span class="n">Vt</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span>
+    <span class="n">estimate</span> <span class="o">=</span> <span class="n">vd</span> <span class="o">/</span> <span class="n">Vt</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">'vd = </span><span class="si">%4.1f</span><span class="s1"> mV, error = </span><span class="si">%5.2f</span><span class="s1"> </span><span class="si">%%</span><span class="s1">'</span> <span class="o">%</span> <span class="p">(</span><span class="n">vd</span><span class="p">,</span> <span class="mi">100</span> <span class="o">*</span> <span class="nb">abs</span><span class="p">(</span><span class="n">estimate</span> <span class="o">/</span> <span class="n">actual</span><span class="o">-</span><span class="mi">1</span><span class="p">)))</span>
+</pre></div>
+<div class="clipboard-copy-txt" id="cell-5">for vd in [0.1, 0.2, 0.5, 1, 2, 5, 10]:
+    Vt = 26
+    actual = exp(vd / Vt) - 1
+    estimate = vd / Vt
+    print('vd = %4.1f mV, error = %5.2f %%' % (vd, 100 * abs(estimate / actual-1)))</div>
+</div>
+</div>
+</div>
+</div>
 <div class="jp-Cell-outputWrapper">
 <div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
 </div>
@@ -841,8 +1007,42 @@ vd = 10.0 mV, error = 18.00 %
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noInput">
-<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noInput" id="cell-id=a9e99eaf-2825-4479-84bf-255fed3e8515">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
+<div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=a9e99eaf-2825-4479-84bf-255fed3e8515">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="CodeMirror cm-s-jupyter">
+<div class="zeroclipboard-container">
+<clipboard-copy ,="" aria-label="Copy to Clipboard" for="cell-6">
+<div>
+<span class="notice" hidden="">Copied!</span>
+<svg aria-hidden="true" class="clipboard-copy-icon" data-view-component="true" height="20" version="1.1" viewbox="0 0 16 16" width="20">
+<path d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z" fill="currentColor" fill-rule="evenodd"></path>
+<path d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z" fill="currentColor" fill-rule="evenodd"></path>
+</svg>
+</div>
+</clipboard-copy>
+</div>
+<div class="highlight-ipynb hl-python"><pre><span></span><span class="n">ng</span><span class="o">.</span><span class="n">circ</span><span class="p">(</span><span class="s1">'''</span>
+<span class="s1">  D anode 0 D</span>
+<span class="s1">  V anode 0 DC 0.7V AC SINE(0.7 10m 1k)</span>
+<span class="s1">  .model D D(IS=10fA)</span>
+<span class="s1">'''</span><span class="p">)</span>
+<span class="n">ng</span><span class="o">.</span><span class="n">operating_point</span><span class="p">()</span>
+</pre></div>
+<div class="clipboard-copy-txt" id="cell-6">ng.circ('''
+  D anode 0 D
+  V anode 0 DC 0.7V AC SINE(0.7 10m 1k)
+  .model D D(IS=10fA)
+''')
+ng.operating_point()</div>
+</div>
+</div>
+</div>
+</div>
 <div class="jp-Cell-outputWrapper">
 <div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
 </div>
@@ -865,8 +1065,38 @@ vd = 10.0 mV, error = 18.00 %
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noInput">
-<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noInput" id="cell-id=88fcb9de-b92d-4d74-bf80-5566bcf99707">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
+<div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=88fcb9de-b92d-4d74-bf80-5566bcf99707">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="CodeMirror cm-s-jupyter">
+<div class="zeroclipboard-container">
+<clipboard-copy ,="" aria-label="Copy to Clipboard" for="cell-7">
+<div>
+<span class="notice" hidden="">Copied!</span>
+<svg aria-hidden="true" class="clipboard-copy-icon" data-view-component="true" height="20" version="1.1" viewbox="0 0 16 16" width="20">
+<path d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z" fill="currentColor" fill-rule="evenodd"></path>
+<path d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z" fill="currentColor" fill-rule="evenodd"></path>
+</svg>
+</div>
+</clipboard-copy>
+</div>
+<div class="highlight-ipynb hl-python"><pre><span></span><span class="n">ng</span><span class="o">.</span><span class="n">cmd</span><span class="p">(</span><span class="s1">'dc v 0.69 0.71 10u'</span><span class="p">)</span>
+<span class="n">Vd</span> <span class="o">=</span> <span class="mf">1e3</span><span class="o">*</span><span class="n">ng</span><span class="o">.</span><span class="n">vector</span><span class="p">(</span><span class="s1">'anode'</span><span class="p">)</span>
+<span class="n">Id</span> <span class="o">=</span> <span class="o">-</span><span class="mf">1e3</span> <span class="o">*</span> <span class="n">ng</span><span class="o">.</span><span class="n">vector</span><span class="p">(</span><span class="s1">'v#branch'</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">Vd</span><span class="p">,</span> <span class="n">Id</span><span class="p">)</span>
+</pre></div>
+<div class="clipboard-copy-txt" id="cell-7">ng.cmd('dc v 0.69 0.71 10u')
+Vd = 1e3*ng.vector('anode')
+Id = -1e3 * ng.vector('v#branch')
+plt.plot(Vd, Id)</div>
+</div>
+</div>
+</div>
+</div>
 <div class="jp-Cell-outputWrapper">
 <div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
 </div>
@@ -884,8 +1114,46 @@ vd = 10.0 mV, error = 18.00 %
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noInput">
-<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noInput" id="cell-id=5160e1d3-351d-4da2-9b88-0265a4b57de8">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
+<div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=5160e1d3-351d-4da2-9b88-0265a4b57de8">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="CodeMirror cm-s-jupyter">
+<div class="zeroclipboard-container">
+<clipboard-copy ,="" aria-label="Copy to Clipboard" for="cell-8">
+<div>
+<span class="notice" hidden="">Copied!</span>
+<svg aria-hidden="true" class="clipboard-copy-icon" data-view-component="true" height="20" version="1.1" viewbox="0 0 16 16" width="20">
+<path d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z" fill="currentColor" fill-rule="evenodd"></path>
+<path d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z" fill="currentColor" fill-rule="evenodd"></path>
+</svg>
+</div>
+</clipboard-copy>
+</div>
+<div class="highlight-ipynb hl-python"><pre><span></span><span class="n">ng</span><span class="o">.</span><span class="n">cmd</span><span class="p">(</span><span class="s1">'tran 1u 3m'</span><span class="p">)</span>
+<span class="n">t</span> <span class="o">=</span> <span class="n">ng</span><span class="o">.</span><span class="n">vector</span><span class="p">(</span><span class="s1">'time'</span><span class="p">)</span>
+<span class="n">Vd</span> <span class="o">=</span> <span class="n">ng</span><span class="o">.</span><span class="n">vector</span><span class="p">(</span><span class="s1">'anode'</span><span class="p">)</span>
+<span class="n">Id</span> <span class="o">=</span> <span class="o">-</span><span class="mf">1e3</span> <span class="o">*</span> <span class="n">ng</span><span class="o">.</span><span class="n">vector</span><span class="p">(</span><span class="s1">'v#branch'</span><span class="p">)</span>
+<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">Vd</span><span class="p">)</span>
+<span class="n">ax2</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">twinx</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">Id</span><span class="p">,</span> <span class="s1">'orange'</span><span class="p">)</span>
+</pre></div>
+<div class="clipboard-copy-txt" id="cell-8">ng.cmd('tran 1u 3m')
+t = ng.vector('time')
+Vd = ng.vector('anode')
+Id = -1e3 * ng.vector('v#branch')
+fig, ax = plt.subplots()
+plt.plot(t, Vd)
+ax2 = ax.twinx()
+plt.plot(t, Id, 'orange')</div>
+</div>
+</div>
+</div>
+</div>
 <div class="jp-Cell-outputWrapper">
 <div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
 </div>
@@ -913,8 +1181,44 @@ vd = 10.0 mV, error = 18.00 %
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noInput">
-<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noInput" id="cell-id=e197dff4-2a8d-48e7-8d51-4c00edaa34a0">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
+<div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=e197dff4-2a8d-48e7-8d51-4c00edaa34a0">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="CodeMirror cm-s-jupyter">
+<div class="zeroclipboard-container">
+<clipboard-copy ,="" aria-label="Copy to Clipboard" for="cell-9">
+<div>
+<span class="notice" hidden="">Copied!</span>
+<svg aria-hidden="true" class="clipboard-copy-icon" data-view-component="true" height="20" version="1.1" viewbox="0 0 16 16" width="20">
+<path d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z" fill="currentColor" fill-rule="evenodd"></path>
+<path d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z" fill="currentColor" fill-rule="evenodd"></path>
+</svg>
+</div>
+</clipboard-copy>
+</div>
+<div class="highlight-ipynb hl-python"><pre><span></span><span class="n">ng</span><span class="o">.</span><span class="n">circ</span><span class="p">(</span><span class="s1">'''</span>
+<span class="s1">  V anode 0 PULSE(0.69V 0.71V 0 1m 1m 1u 2m)</span>
+<span class="s1">  D anode 0 D</span>
+<span class="s1">  .model D D(IS=10fA)</span>
+<span class="s1">'''</span><span class="p">)</span>
+<span class="n">ng</span><span class="o">.</span><span class="n">cmd</span><span class="p">(</span><span class="s1">'tran 1u 6m'</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">ng</span><span class="o">.</span><span class="n">vector</span><span class="p">(</span><span class="s1">'time'</span><span class="p">),</span> <span class="o">-</span><span class="mf">1e3</span><span class="o">*</span><span class="n">ng</span><span class="o">.</span><span class="n">vector</span><span class="p">(</span><span class="s1">'v#branch'</span><span class="p">))</span>
+</pre></div>
+<div class="clipboard-copy-txt" id="cell-9">ng.circ('''
+  V anode 0 PULSE(0.69V 0.71V 0 1m 1m 1u 2m)
+  D anode 0 D
+  .model D D(IS=10fA)
+''')
+ng.cmd('tran 1u 6m')
+plt.plot(ng.vector('time'), -1e3*ng.vector('v#branch'))</div>
+</div>
+</div>
+</div>
+</div>
 <div class="jp-Cell-outputWrapper">
 <div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
 </div>
@@ -942,8 +1246,8 @@ vd = 10.0 mV, error = 18.00 %
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noInput celltag_hide_code">
-<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noInput celltag_hide_code" id="cell-id=81a2932d-c178-4d5e-9244-4cdae6bfca6c">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell celltag_hide_code">
+<div class="jp-Cell jp-CodeCell jp-Notebook-cell celltag_hide_code" id="cell-id=81a2932d-c178-4d5e-9244-4cdae6bfca6c">
 <div class="jp-Cell-outputWrapper">
 <div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
 </div>
@@ -968,8 +1272,44 @@ vd = 10.0 mV, error = 18.00 %
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noInput">
-<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noInput" id="cell-id=f782701f-ba31-493a-b379-e5353f1fa861">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
+<div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=f782701f-ba31-493a-b379-e5353f1fa861">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="CodeMirror cm-s-jupyter">
+<div class="zeroclipboard-container">
+<clipboard-copy ,="" aria-label="Copy to Clipboard" for="cell-10">
+<div>
+<span class="notice" hidden="">Copied!</span>
+<svg aria-hidden="true" class="clipboard-copy-icon" data-view-component="true" height="20" version="1.1" viewbox="0 0 16 16" width="20">
+<path d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z" fill="currentColor" fill-rule="evenodd"></path>
+<path d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z" fill="currentColor" fill-rule="evenodd"></path>
+</svg>
+</div>
+</clipboard-copy>
+</div>
+<div class="highlight-ipynb hl-python"><pre><span></span><span class="n">ng</span><span class="o">.</span><span class="n">circ</span><span class="p">(</span><span class="s1">'''</span>
+<span class="s1">  V  vcc  0  DC 1V SINE(1V 10mV 1k)</span>
+<span class="s1">  R  vcc  d  1k</span>
+<span class="s1">  D  d    0  D</span>
+<span class="s1">  .model D D(IS=1fA)</span>
+<span class="s1">'''</span><span class="p">)</span>
+<span class="n">ng</span><span class="o">.</span><span class="n">operating_point</span><span class="p">()</span>
+</pre></div>
+<div class="clipboard-copy-txt" id="cell-10">ng.circ('''
+  V  vcc  0  DC 1V SINE(1V 10mV 1k)
+  R  vcc  d  1k
+  D  d    0  D
+  .model D D(IS=1fA)
+''')
+ng.operating_point()</div>
+</div>
+</div>
+</div>
+</div>
 <div class="jp-Cell-outputWrapper">
 <div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
 </div>
@@ -984,8 +1324,50 @@ vd = 10.0 mV, error = 18.00 %
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noInput">
-<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noInput" id="cell-id=935fcad9-0e4a-4cc6-b5f0-d0dedac9cd36">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
+<div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=935fcad9-0e4a-4cc6-b5f0-d0dedac9cd36">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="CodeMirror cm-s-jupyter">
+<div class="zeroclipboard-container">
+<clipboard-copy ,="" aria-label="Copy to Clipboard" for="cell-11">
+<div>
+<span class="notice" hidden="">Copied!</span>
+<svg aria-hidden="true" class="clipboard-copy-icon" data-view-component="true" height="20" version="1.1" viewbox="0 0 16 16" width="20">
+<path d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z" fill="currentColor" fill-rule="evenodd"></path>
+<path d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z" fill="currentColor" fill-rule="evenodd"></path>
+</svg>
+</div>
+</clipboard-copy>
+</div>
+<div class="highlight-ipynb hl-python"><pre><span></span><span class="n">ng</span><span class="o">.</span><span class="n">cmd</span><span class="p">(</span><span class="s1">'tran 1u 3m'</span><span class="p">)</span>
+<span class="n">t</span> <span class="o">=</span> <span class="n">ng</span><span class="o">.</span><span class="n">vector</span><span class="p">(</span><span class="s1">'time'</span><span class="p">)</span>
+<span class="n">Vin</span> <span class="o">=</span> <span class="n">ng</span><span class="o">.</span><span class="n">vector</span><span class="p">(</span><span class="s1">'vcc'</span><span class="p">)</span>
+<span class="n">Vd</span> <span class="o">=</span> <span class="n">ng</span><span class="o">.</span><span class="n">vector</span><span class="p">(</span><span class="s1">'d'</span><span class="p">)</span>
+<span class="n">Id</span> <span class="o">=</span> <span class="o">-</span><span class="mf">1e3</span> <span class="o">*</span> <span class="n">ng</span><span class="o">.</span><span class="n">vector</span><span class="p">(</span><span class="s1">'v#branch'</span><span class="p">)</span>
+<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
+<span class="c1"># plt.plot(t, Vin)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="mf">1e3</span><span class="o">*</span><span class="p">(</span><span class="n">Vd</span> <span class="o">-</span> <span class="mf">0.6848112</span><span class="p">))</span>
+<span class="c1">#ax2 = ax.twinx()</span>
+<span class="c1">#plt.plot(t, Vd, 'orange')</span>
+</pre></div>
+<div class="clipboard-copy-txt" id="cell-11">ng.cmd('tran 1u 3m')
+t = ng.vector('time')
+Vin = ng.vector('vcc')
+Vd = ng.vector('d')
+Id = -1e3 * ng.vector('v#branch')
+fig, ax = plt.subplots()
+# plt.plot(t, Vin)
+plt.plot(t, 1e3*(Vd - 0.6848112))
+#ax2 = ax.twinx()
+#plt.plot(t, Vd, 'orange')</div>
+</div>
+</div>
+</div>
+</div>
 <div class="jp-Cell-outputWrapper">
 <div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
 </div>
@@ -1033,11 +1415,69 @@ vd = 10.0 mV, error = 18.00 %
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs jp-mod-noInput">
-<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs jp-mod-noInput" id="cell-id=6d4c1a52-f274-4a38-8437-a90efa587e0b">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
+<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=6d4c1a52-f274-4a38-8437-a90efa587e0b">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noInput">
-<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noInput" id="cell-id=1e9c4b20-ff9a-49c3-a650-e5ce7d25de4a">
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="CodeMirror cm-s-jupyter">
+<div class="zeroclipboard-container">
+<clipboard-copy ,="" aria-label="Copy to Clipboard" for="cell-12">
+<div>
+<span class="notice" hidden="">Copied!</span>
+<svg aria-hidden="true" class="clipboard-copy-icon" data-view-component="true" height="20" version="1.1" viewbox="0 0 16 16" width="20">
+<path d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z" fill="currentColor" fill-rule="evenodd"></path>
+<path d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z" fill="currentColor" fill-rule="evenodd"></path>
+</svg>
+</div>
+</clipboard-copy>
+</div>
+<div class="highlight-ipynb hl-python"><pre><span></span>
+</pre></div>
+<div class="clipboard-copy-txt" id="cell-12"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
+<div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=1e9c4b20-ff9a-49c3-a650-e5ce7d25de4a">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="CodeMirror cm-s-jupyter">
+<div class="zeroclipboard-container">
+<clipboard-copy ,="" aria-label="Copy to Clipboard" for="cell-13">
+<div>
+<span class="notice" hidden="">Copied!</span>
+<svg aria-hidden="true" class="clipboard-copy-icon" data-view-component="true" height="20" version="1.1" viewbox="0 0 16 16" width="20">
+<path d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z" fill="currentColor" fill-rule="evenodd"></path>
+<path d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z" fill="currentColor" fill-rule="evenodd"></path>
+</svg>
+</div>
+</clipboard-copy>
+</div>
+<div class="highlight-ipynb hl-python"><pre><span></span><span class="n">ng</span><span class="o">.</span><span class="n">circ</span><span class="p">(</span><span class="s1">'''</span>
+<span class="s1">  I1 0 vd 10mA</span>
+<span class="s1">  D1 vd 0 LED</span>
+<span class="s1">  .model LED D(Is=1e-22 n=1.5)</span>
+<span class="s1">  '''</span><span class="p">)</span>
+<span class="n">ng</span><span class="o">.</span><span class="n">operating_point</span><span class="p">()</span>
+</pre></div>
+<div class="clipboard-copy-txt" id="cell-13">ng.circ('''
+  I1 0 vd 10mA
+  D1 vd 0 LED
+  .model LED D(Is=1e-22 n=1.5)
+  ''')
+ng.operating_point()</div>
+</div>
+</div>
+</div>
+</div>
 <div class="jp-Cell-outputWrapper">
 <div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
 </div>
@@ -1060,8 +1500,8 @@ vd = 10.0 mV, error = 18.00 %
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noInput celltag_hide_code">
-<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noInput celltag_hide_code" id="cell-id=9ca53c9c-e171-4d51-b28d-94bc71de11b3">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell celltag_hide_code">
+<div class="jp-Cell jp-CodeCell jp-Notebook-cell celltag_hide_code" id="cell-id=9ca53c9c-e171-4d51-b28d-94bc71de11b3">
 <div class="jp-Cell-outputWrapper">
 <div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
 </div>
@@ -1085,8 +1525,8 @@ vd = 10.0 mV, error = 18.00 %
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noInput celltag_hide_code">
-<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noInput celltag_hide_code" id="cell-id=c7b317f7-f25c-42d6-9760-edde4ad34c3e">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell celltag_hide_code">
+<div class="jp-Cell jp-CodeCell jp-Notebook-cell celltag_hide_code" id="cell-id=c7b317f7-f25c-42d6-9760-edde4ad34c3e">
 <div class="jp-Cell-outputWrapper">
 <div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
 </div>
@@ -1100,8 +1540,8 @@ vd = 10.0 mV, error = 18.00 %
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noInput celltag_hide_code">
-<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noInput celltag_hide_code" id="cell-id=114887f7-8127-4811-ac69-722fe4f3f94c">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell celltag_hide_code">
+<div class="jp-Cell jp-CodeCell jp-Notebook-cell celltag_hide_code" id="cell-id=114887f7-8127-4811-ac69-722fe4f3f94c">
 <div class="jp-Cell-outputWrapper">
 <div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
 </div>
@@ -1125,8 +1565,8 @@ vd = 10.0 mV, error = 18.00 %
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noInput celltag_hide_code">
-<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noInput celltag_hide_code" id="cell-id=25da4e0a-7592-40ff-a208-767c69e00f71">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell celltag_hide_code">
+<div class="jp-Cell jp-CodeCell jp-Notebook-cell celltag_hide_code" id="cell-id=25da4e0a-7592-40ff-a208-767c69e00f71">
 <div class="jp-Cell-outputWrapper">
 <div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
 </div>
@@ -1140,8 +1580,8 @@ vd = 10.0 mV, error = 18.00 %
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noInput celltag_hide_code">
-<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noInput celltag_hide_code" id="cell-id=7e9dc1b8-4875-43be-971f-efd845c9e216">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell celltag_hide_code">
+<div class="jp-Cell jp-CodeCell jp-Notebook-cell celltag_hide_code" id="cell-id=7e9dc1b8-4875-43be-971f-efd845c9e216">
 <div class="jp-Cell-outputWrapper">
 <div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
 </div>

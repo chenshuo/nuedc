@@ -552,14 +552,72 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
 </style>
 <!-- End of mermaid configuration --><div class="jupyter-wrapper">
 <div class="jp-Notebook" data-jp-theme-light="true" data-jp-theme-name="JupyterLab Light">
-<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs jp-mod-noInput">
-<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs jp-mod-noInput" id="cell-id=38c3a7cc">
+<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
+<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=d39bc3ca">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs jp-mod-noInput">
-<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs jp-mod-noInput" id="cell-id=dbf1f55c">
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="CodeMirror cm-s-jupyter">
+<div class="zeroclipboard-container">
+<clipboard-copy ,="" aria-label="Copy to Clipboard" for="cell-1">
+<div>
+<span class="notice" hidden="">Copied!</span>
+<svg aria-hidden="true" class="clipboard-copy-icon" data-view-component="true" height="20" version="1.1" viewbox="0 0 16 16" width="20">
+<path d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z" fill="currentColor" fill-rule="evenodd"></path>
+<path d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z" fill="currentColor" fill-rule="evenodd"></path>
+</svg>
+</div>
+</clipboard-copy>
+</div>
+<div class="highlight-ipynb hl-python"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>
+<span class="kn">import</span> <span class="nn">platform</span>
+<span class="kn">import</span> <span class="nn">logging</span>
+<span class="kn">from</span> <span class="nn">ctypes</span> <span class="kn">import</span> <span class="p">(</span><span class="n">CDLL</span><span class="p">,</span> <span class="n">CFUNCTYPE</span><span class="p">,</span> <span class="n">Structure</span><span class="p">,</span> <span class="n">c_int</span><span class="p">,</span> <span class="n">c_char_p</span><span class="p">,</span> <span class="n">c_void_p</span><span class="p">,</span>
+                    <span class="n">c_bool</span><span class="p">,</span> <span class="n">c_double</span><span class="p">,</span> <span class="n">POINTER</span><span class="p">,</span> <span class="n">c_short</span><span class="p">)</span>
+<span class="kn">from</span> <span class="nn">ctypes.util</span> <span class="kn">import</span> <span class="n">find_library</span>
+</pre></div>
+<div class="clipboard-copy-txt" id="cell-1">import os
+import platform
+import logging
+from ctypes import (CDLL, CFUNCTYPE, Structure, c_int, c_char_p, c_void_p,
+                    c_bool, c_double, POINTER, c_short)
+from ctypes.util import find_library</div>
 </div>
 </div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=810a425d">
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
+<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=17d42fbf">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="CodeMirror cm-s-jupyter">
+<div class="zeroclipboard-container">
+<clipboard-copy ,="" aria-label="Copy to Clipboard" for="cell-2">
+<div>
+<span class="notice" hidden="">Copied!</span>
+<svg aria-hidden="true" class="clipboard-copy-icon" data-view-component="true" height="20" version="1.1" viewbox="0 0 16 16" width="20">
+<path d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z" fill="currentColor" fill-rule="evenodd"></path>
+<path d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z" fill="currentColor" fill-rule="evenodd"></path>
+</svg>
+</div>
+</clipboard-copy>
+</div>
+<div class="highlight-ipynb hl-python"><pre><span></span><span class="n">logger</span> <span class="o">=</span> <span class="n">logging</span><span class="o">.</span><span class="n">getLogger</span><span class="p">(</span><span class="vm">__name__</span><span class="p">)</span>
+</pre></div>
+<div class="clipboard-copy-txt" id="cell-2">logger = logging.getLogger(__name__)</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=969e2a90">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -568,23 +626,253 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs jp-mod-noInput">
-<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs jp-mod-noInput" id="cell-id=6f0dbece">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
+<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=e70f9f21">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs jp-mod-noInput">
-<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs jp-mod-noInput" id="cell-id=a0e45b0f">
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="CodeMirror cm-s-jupyter">
+<div class="zeroclipboard-container">
+<clipboard-copy ,="" aria-label="Copy to Clipboard" for="cell-3">
+<div>
+<span class="notice" hidden="">Copied!</span>
+<svg aria-hidden="true" class="clipboard-copy-icon" data-view-component="true" height="20" version="1.1" viewbox="0 0 16 16" width="20">
+<path d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z" fill="currentColor" fill-rule="evenodd"></path>
+<path d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z" fill="currentColor" fill-rule="evenodd"></path>
+</svg>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs jp-mod-noInput">
-<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs jp-mod-noInput" id="cell-id=16819608">
+</clipboard-copy>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs jp-mod-noInput">
-<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs jp-mod-noInput" id="cell-id=9741df6d">
+<div class="highlight-ipynb hl-python"><pre><span></span><span class="k">if</span> <span class="n">os</span><span class="o">.</span><span class="n">name</span> <span class="o">==</span> <span class="s1">'nt'</span><span class="p">:</span>  <span class="c1"># Windows</span>
+    <span class="c1"># http://stackoverflow.com/a/13277363</span>
+    <span class="n">curr_dir_before</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">getcwd</span><span class="p">()</span>
+
+    <span class="n">drive</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">getenv</span><span class="p">(</span><span class="s2">"SystemDrive"</span><span class="p">)</span> <span class="ow">or</span> <span class="s1">'C:'</span>
+
+    <span class="c1"># Python and DLL must both be same number of bits</span>
+    <span class="k">if</span> <span class="n">platform</span><span class="o">.</span><span class="n">architecture</span><span class="p">()[</span><span class="mi">0</span><span class="p">]</span> <span class="o">==</span> <span class="s1">'64bit'</span><span class="p">:</span>
+        <span class="n">spice_path</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">drive</span><span class="p">,</span> <span class="n">os</span><span class="o">.</span><span class="n">sep</span><span class="p">,</span> <span class="s1">'Spice64'</span><span class="p">)</span>
+    <span class="k">elif</span> <span class="n">platform</span><span class="o">.</span><span class="n">architecture</span><span class="p">()[</span><span class="mi">0</span><span class="p">]</span> <span class="o">==</span> <span class="s1">'32bit'</span><span class="p">:</span>
+        <span class="n">spice_path</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">drive</span><span class="p">,</span> <span class="n">os</span><span class="o">.</span><span class="n">sep</span><span class="p">,</span> <span class="s1">'Spice'</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">RuntimeError</span><span class="p">(</span><span class="s2">"Couldn't determine if Python is 32-bit or 64-bit"</span><span class="p">)</span>
+
+<span class="w">    </span><span class="sd">"""</span>
+<span class="sd">    https://sourceforge.net/p/ngspice/discussion/133842/thread/1cece652/#4e32/5ab8/9027</span>
+<span class="sd">    On Windows, when environment variable SPICE_LIB_DIR is empty, ngspice</span>
+<span class="sd">    looks in `C:\Spice64\share\ngspice\scripts`.  If the variable is not empty</span>
+<span class="sd">    it tries `%SPICE_LIB_DIR%\scripts\spinit`</span>
+<span class="sd">    """</span>
+
+    <span class="k">if</span> <span class="s1">'SPICE_LIB_DIR'</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">:</span>
+        <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s1">'SPICE_LIB_DIR'</span><span class="p">]</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">spice_path</span><span class="p">,</span> <span class="s1">'share'</span><span class="p">,</span>
+                                                   <span class="s1">'ngspice'</span><span class="p">)</span>
+    <span class="n">os</span><span class="o">.</span><span class="n">chdir</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">spice_path</span><span class="p">,</span> <span class="s1">'bin_dll'</span><span class="p">))</span>
+    <span class="n">spice</span> <span class="o">=</span> <span class="n">CDLL</span><span class="p">(</span><span class="s1">'ngspice'</span><span class="p">)</span>
+    <span class="n">os</span><span class="o">.</span><span class="n">chdir</span><span class="p">(</span><span class="n">curr_dir_before</span><span class="p">)</span>
+<span class="k">else</span><span class="p">:</span>  <span class="c1"># Linux, etc.</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">lib_location</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s1">'LIBNGSPICE'</span><span class="p">]</span>
+    <span class="k">except</span> <span class="ne">KeyError</span><span class="p">:</span>
+        <span class="n">lib_location</span> <span class="o">=</span> <span class="n">find_library</span><span class="p">(</span><span class="s1">'ngspice'</span><span class="p">)</span>
+    <span class="n">spice</span> <span class="o">=</span> <span class="n">CDLL</span><span class="p">(</span><span class="n">lib_location</span><span class="p">)</span>
+</pre></div>
+<div class="clipboard-copy-txt" id="cell-3">if os.name == 'nt':  # Windows
+    # http://stackoverflow.com/a/13277363
+    curr_dir_before = os.getcwd()
+
+    drive = os.getenv("SystemDrive") or 'C:'
+
+    # Python and DLL must both be same number of bits
+    if platform.architecture()[0] == '64bit':
+        spice_path = os.path.join(drive, os.sep, 'Spice64')
+    elif platform.architecture()[0] == '32bit':
+        spice_path = os.path.join(drive, os.sep, 'Spice')
+    else:
+        raise RuntimeError("Couldn't determine if Python is 32-bit or 64-bit")
+
+    """
+    https://sourceforge.net/p/ngspice/discussion/133842/thread/1cece652/#4e32/5ab8/9027
+    On Windows, when environment variable SPICE_LIB_DIR is empty, ngspice
+    looks in `C:\Spice64\share\ngspice\scripts`.  If the variable is not empty
+    it tries `%SPICE_LIB_DIR%\scripts\spinit`
+    """
+
+    if 'SPICE_LIB_DIR' not in os.environ:
+        os.environ['SPICE_LIB_DIR'] = os.path.join(spice_path, 'share',
+                                                   'ngspice')
+    os.chdir(os.path.join(spice_path, 'bin_dll'))
+    spice = CDLL('ngspice')
+    os.chdir(curr_dir_before)
+else:  # Linux, etc.
+    try:
+        lib_location = os.environ['LIBNGSPICE']
+    except KeyError:
+        lib_location = find_library('ngspice')
+    spice = CDLL(lib_location)</div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs jp-mod-noInput">
-<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs jp-mod-noInput" id="cell-id=2b02c96f">
 </div>
 </div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=5ad951a1">
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
+<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=0d9eae98">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="CodeMirror cm-s-jupyter">
+<div class="zeroclipboard-container">
+<clipboard-copy ,="" aria-label="Copy to Clipboard" for="cell-4">
+<div>
+<span class="notice" hidden="">Copied!</span>
+<svg aria-hidden="true" class="clipboard-copy-icon" data-view-component="true" height="20" version="1.1" viewbox="0 0 16 16" width="20">
+<path d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z" fill="currentColor" fill-rule="evenodd"></path>
+<path d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z" fill="currentColor" fill-rule="evenodd"></path>
+</svg>
+</div>
+</clipboard-copy>
+</div>
+<div class="highlight-ipynb hl-python"><pre><span></span><span class="n">captured_output</span> <span class="o">=</span> <span class="p">[]</span>
+</pre></div>
+<div class="clipboard-copy-txt" id="cell-4">captured_output = []</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
+<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=67962fb6">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="CodeMirror cm-s-jupyter">
+<div class="zeroclipboard-container">
+<clipboard-copy ,="" aria-label="Copy to Clipboard" for="cell-5">
+<div>
+<span class="notice" hidden="">Copied!</span>
+<svg aria-hidden="true" class="clipboard-copy-icon" data-view-component="true" height="20" version="1.1" viewbox="0 0 16 16" width="20">
+<path d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z" fill="currentColor" fill-rule="evenodd"></path>
+<path d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z" fill="currentColor" fill-rule="evenodd"></path>
+</svg>
+</div>
+</clipboard-copy>
+</div>
+<div class="highlight-ipynb hl-python"><pre><span></span><span class="nd">@CFUNCTYPE</span><span class="p">(</span><span class="n">c_int</span><span class="p">,</span> <span class="n">c_char_p</span><span class="p">,</span> <span class="n">c_int</span><span class="p">,</span> <span class="n">c_void_p</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">printfcn</span><span class="p">(</span><span class="n">output</span><span class="p">,</span> <span class="n">_id</span><span class="p">,</span> <span class="n">_ret</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">"""Callback for libngspice to print a message"""</span>
+    <span class="k">global</span> <span class="n">captured_output</span>
+    <span class="n">prefix</span><span class="p">,</span> <span class="n">_</span><span class="p">,</span> <span class="n">content</span> <span class="o">=</span> <span class="n">output</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s1">'ascii'</span><span class="p">)</span><span class="o">.</span><span class="n">partition</span><span class="p">(</span><span class="s1">' '</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">prefix</span> <span class="o">==</span> <span class="s1">'stderr'</span><span class="p">:</span>
+        <span class="k">if</span> <span class="s1">'Using SPARSE 1.3 as Direct Linear Solver'</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">content</span><span class="p">:</span>
+            <span class="n">logger</span><span class="o">.</span><span class="n">error</span><span class="p">(</span><span class="n">content</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">captured_output</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">content</span><span class="p">)</span>
+    <span class="k">return</span> <span class="mi">0</span>
+</pre></div>
+<div class="clipboard-copy-txt" id="cell-5">@CFUNCTYPE(c_int, c_char_p, c_int, c_void_p)
+def printfcn(output, _id, _ret):
+    """Callback for libngspice to print a message"""
+    global captured_output
+    prefix, _, content = output.decode('ascii').partition(' ')
+    if prefix == 'stderr':
+        if 'Using SPARSE 1.3 as Direct Linear Solver' not in content:
+            logger.error(content)
+    else:
+        captured_output.append(content)
+    return 0</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
+<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=a805fe1f">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="CodeMirror cm-s-jupyter">
+<div class="zeroclipboard-container">
+<clipboard-copy ,="" aria-label="Copy to Clipboard" for="cell-6">
+<div>
+<span class="notice" hidden="">Copied!</span>
+<svg aria-hidden="true" class="clipboard-copy-icon" data-view-component="true" height="20" version="1.1" viewbox="0 0 16 16" width="20">
+<path d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z" fill="currentColor" fill-rule="evenodd"></path>
+<path d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z" fill="currentColor" fill-rule="evenodd"></path>
+</svg>
+</div>
+</clipboard-copy>
+</div>
+<div class="highlight-ipynb hl-python"><pre><span></span><span class="nd">@CFUNCTYPE</span><span class="p">(</span><span class="n">c_int</span><span class="p">,</span> <span class="n">c_char_p</span><span class="p">,</span> <span class="n">c_int</span><span class="p">,</span> <span class="n">c_void_p</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">statfcn</span><span class="p">(</span><span class="n">status</span><span class="p">,</span> <span class="n">_id</span><span class="p">,</span> <span class="n">_ret</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">"""</span>
+<span class="sd">    Callback for libngspice to report simulation status like 'tran 5%'</span>
+<span class="sd">    """</span>
+    <span class="n">logger</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="n">status</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s1">'ascii'</span><span class="p">))</span>
+    <span class="k">return</span> <span class="mi">0</span>
+</pre></div>
+<div class="clipboard-copy-txt" id="cell-6">@CFUNCTYPE(c_int, c_char_p, c_int, c_void_p)
+def statfcn(status, _id, _ret):
+    """
+    Callback for libngspice to report simulation status like 'tran 5%'
+    """
+    logger.debug(status.decode('ascii'))
+    return 0</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
+<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=0146841b">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="CodeMirror cm-s-jupyter">
+<div class="zeroclipboard-container">
+<clipboard-copy ,="" aria-label="Copy to Clipboard" for="cell-7">
+<div>
+<span class="notice" hidden="">Copied!</span>
+<svg aria-hidden="true" class="clipboard-copy-icon" data-view-component="true" height="20" version="1.1" viewbox="0 0 16 16" width="20">
+<path d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z" fill="currentColor" fill-rule="evenodd"></path>
+<path d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z" fill="currentColor" fill-rule="evenodd"></path>
+</svg>
+</div>
+</clipboard-copy>
+</div>
+<div class="highlight-ipynb hl-python"><pre><span></span><span class="nd">@CFUNCTYPE</span><span class="p">(</span><span class="n">c_int</span><span class="p">,</span> <span class="n">c_int</span><span class="p">,</span> <span class="n">c_bool</span><span class="p">,</span> <span class="n">c_bool</span><span class="p">,</span> <span class="n">c_int</span><span class="p">,</span> <span class="n">c_void_p</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">controlled_exit</span><span class="p">(</span><span class="n">exit_status</span><span class="p">,</span> <span class="n">immediate_unloading</span><span class="p">,</span> <span class="n">requested_exit</span><span class="p">,</span>
+                    <span class="n">libngspice_id</span><span class="p">,</span> <span class="n">ret</span><span class="p">):</span>
+    <span class="n">logger</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="s1">'ControlledExit'</span><span class="p">,</span>
+                 <span class="nb">dict</span><span class="p">(</span><span class="n">exit_status</span><span class="o">=</span><span class="n">exit_status</span><span class="p">,</span>
+                      <span class="n">immediate_unloading</span><span class="o">=</span><span class="n">immediate_unloading</span><span class="p">,</span>
+                      <span class="n">requested_exit</span><span class="o">=</span><span class="n">requested_exit</span><span class="p">,</span>
+                      <span class="n">libngspice_id</span><span class="o">=</span><span class="n">libngspice_id</span><span class="p">,</span> <span class="n">ret</span><span class="o">=</span><span class="n">ret</span><span class="p">))</span>
+</pre></div>
+<div class="clipboard-copy-txt" id="cell-7">@CFUNCTYPE(c_int, c_int, c_bool, c_bool, c_int, c_void_p)
+def controlled_exit(exit_status, immediate_unloading, requested_exit,
+                    libngspice_id, ret):
+    logger.debug('ControlledExit',
+                 dict(exit_status=exit_status,
+                      immediate_unloading=immediate_unloading,
+                      requested_exit=requested_exit,
+                      libngspice_id=libngspice_id, ret=ret))</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=8fd687f6">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -599,11 +887,47 @@ bool is_complex;/</em> if the data are complex numbers */
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs jp-mod-noInput">
-<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs jp-mod-noInput" id="cell-id=4d34cf23">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
+<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=f9cf149a">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="CodeMirror cm-s-jupyter">
+<div class="zeroclipboard-container">
+<clipboard-copy ,="" aria-label="Copy to Clipboard" for="cell-8">
+<div>
+<span class="notice" hidden="">Copied!</span>
+<svg aria-hidden="true" class="clipboard-copy-icon" data-view-component="true" height="20" version="1.1" viewbox="0 0 16 16" width="20">
+<path d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z" fill="currentColor" fill-rule="evenodd"></path>
+<path d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z" fill="currentColor" fill-rule="evenodd"></path>
+</svg>
+</div>
+</clipboard-copy>
+</div>
+<div class="highlight-ipynb hl-python"><pre><span></span><span class="k">class</span> <span class="nc">vecvalues</span><span class="p">(</span><span class="n">Structure</span><span class="p">):</span>
+    <span class="n">_fields_</span> <span class="o">=</span> <span class="p">[</span>
+        <span class="p">(</span><span class="s1">'name'</span><span class="p">,</span> <span class="n">c_char_p</span><span class="p">),</span>
+        <span class="p">(</span><span class="s1">'creal'</span><span class="p">,</span> <span class="n">c_double</span><span class="p">),</span>
+        <span class="p">(</span><span class="s1">'cimag'</span><span class="p">,</span> <span class="n">c_double</span><span class="p">),</span>
+        <span class="p">(</span><span class="s1">'is_scale'</span><span class="p">,</span> <span class="n">c_bool</span><span class="p">),</span>
+        <span class="p">(</span><span class="s1">'is_complex'</span><span class="p">,</span> <span class="n">c_bool</span><span class="p">)]</span>
+</pre></div>
+<div class="clipboard-copy-txt" id="cell-8">class vecvalues(Structure):
+    _fields_ = [
+        ('name', c_char_p),
+        ('creal', c_double),
+        ('cimag', c_double),
+        ('is_scale', c_bool),
+        ('is_complex', c_bool)]</div>
 </div>
 </div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=9503f1a7">
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=d4980758">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -616,23 +940,171 @@ pvecvalues *vecsa; /</em> values of actual set of vectors, indexed from 0 to vec
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs jp-mod-noInput">
-<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs jp-mod-noInput" id="cell-id=4cdcea8d">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
+<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=66769cd6">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs jp-mod-noInput">
-<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs jp-mod-noInput" id="cell-id=7c755e66">
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="CodeMirror cm-s-jupyter">
+<div class="zeroclipboard-container">
+<clipboard-copy ,="" aria-label="Copy to Clipboard" for="cell-9">
+<div>
+<span class="notice" hidden="">Copied!</span>
+<svg aria-hidden="true" class="clipboard-copy-icon" data-view-component="true" height="20" version="1.1" viewbox="0 0 16 16" width="20">
+<path d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z" fill="currentColor" fill-rule="evenodd"></path>
+<path d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z" fill="currentColor" fill-rule="evenodd"></path>
+</svg>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs jp-mod-noInput">
-<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs jp-mod-noInput" id="cell-id=6047a9c0">
+</clipboard-copy>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs jp-mod-noInput">
-<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs jp-mod-noInput" id="cell-id=4112075b">
+<div class="highlight-ipynb hl-python"><pre><span></span><span class="k">class</span> <span class="nc">vecvaluesall</span><span class="p">(</span><span class="n">Structure</span><span class="p">):</span>
+    <span class="n">_fields_</span> <span class="o">=</span> <span class="p">[</span>
+        <span class="p">(</span><span class="s1">'veccount'</span><span class="p">,</span> <span class="n">c_int</span><span class="p">),</span>
+        <span class="p">(</span><span class="s1">'vecindex'</span><span class="p">,</span> <span class="n">c_int</span><span class="p">),</span>
+        <span class="p">(</span><span class="s1">'vecsa'</span><span class="p">,</span> <span class="n">POINTER</span><span class="p">(</span><span class="n">POINTER</span><span class="p">(</span><span class="n">vecvalues</span><span class="p">)))]</span>
+</pre></div>
+<div class="clipboard-copy-txt" id="cell-9">class vecvaluesall(Structure):
+    _fields_ = [
+        ('veccount', c_int),
+        ('vecindex', c_int),
+        ('vecsa', POINTER(POINTER(vecvalues)))]</div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs jp-mod-noInput">
-<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs jp-mod-noInput" id="cell-id=2aab1477">
 </div>
 </div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=55c1dcd4">
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
+<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=d7e227d3">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="CodeMirror cm-s-jupyter">
+<div class="zeroclipboard-container">
+<clipboard-copy ,="" aria-label="Copy to Clipboard" for="cell-10">
+<div>
+<span class="notice" hidden="">Copied!</span>
+<svg aria-hidden="true" class="clipboard-copy-icon" data-view-component="true" height="20" version="1.1" viewbox="0 0 16 16" width="20">
+<path d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z" fill="currentColor" fill-rule="evenodd"></path>
+<path d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z" fill="currentColor" fill-rule="evenodd"></path>
+</svg>
+</div>
+</clipboard-copy>
+</div>
+<div class="highlight-ipynb hl-python"><pre><span></span><span class="nd">@CFUNCTYPE</span><span class="p">(</span><span class="n">c_int</span><span class="p">,</span> <span class="n">POINTER</span><span class="p">(</span><span class="n">vecvaluesall</span><span class="p">),</span> <span class="n">c_int</span><span class="p">,</span> <span class="n">c_int</span><span class="p">,</span> <span class="n">c_void_p</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">send_data</span><span class="p">(</span><span class="n">vecvaluesall_</span><span class="p">,</span> <span class="n">num_structs</span><span class="p">,</span> <span class="n">libngspice_id</span><span class="p">,</span> <span class="n">ret</span><span class="p">):</span>
+    <span class="n">logger</span><span class="o">.</span><span class="n">debug</span><span class="p">(</span><span class="s1">'SendData'</span><span class="p">,</span> <span class="nb">dict</span><span class="p">(</span><span class="n">vecvaluesall</span><span class="o">=</span><span class="n">vecvaluesall_</span><span class="p">,</span>
+                                  <span class="n">num_structs</span><span class="o">=</span><span class="n">num_structs</span><span class="p">,</span>
+                                  <span class="n">libngspice_id</span><span class="o">=</span><span class="n">libngspice_id</span><span class="p">,</span>
+                                  <span class="n">ret</span><span class="o">=</span><span class="n">ret</span><span class="p">))</span>
+</pre></div>
+<div class="clipboard-copy-txt" id="cell-10">@CFUNCTYPE(c_int, POINTER(vecvaluesall), c_int, c_int, c_void_p)
+def send_data(vecvaluesall_, num_structs, libngspice_id, ret):
+    logger.debug('SendData', dict(vecvaluesall=vecvaluesall_,
+                                  num_structs=num_structs,
+                                  libngspice_id=libngspice_id,
+                                  ret=ret))</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
+<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=98833217">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="CodeMirror cm-s-jupyter">
+<div class="zeroclipboard-container">
+<clipboard-copy ,="" aria-label="Copy to Clipboard" for="cell-11">
+<div>
+<span class="notice" hidden="">Copied!</span>
+<svg aria-hidden="true" class="clipboard-copy-icon" data-view-component="true" height="20" version="1.1" viewbox="0 0 16 16" width="20">
+<path d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z" fill="currentColor" fill-rule="evenodd"></path>
+<path d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z" fill="currentColor" fill-rule="evenodd"></path>
+</svg>
+</div>
+</clipboard-copy>
+</div>
+<div class="highlight-ipynb hl-python"><pre><span></span><span class="c1"># int  ngSpice_Command(char* command);</span>
+<span class="n">spice</span><span class="o">.</span><span class="n">ngSpice_Command</span><span class="o">.</span><span class="n">argtypes</span> <span class="o">=</span> <span class="p">[</span><span class="n">c_char_p</span><span class="p">]</span>
+</pre></div>
+<div class="clipboard-copy-txt" id="cell-11"># int  ngSpice_Command(char* command);
+spice.ngSpice_Command.argtypes = [c_char_p]</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
+<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=3faa35d0">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="CodeMirror cm-s-jupyter">
+<div class="zeroclipboard-container">
+<clipboard-copy ,="" aria-label="Copy to Clipboard" for="cell-12">
+<div>
+<span class="notice" hidden="">Copied!</span>
+<svg aria-hidden="true" class="clipboard-copy-icon" data-view-component="true" height="20" version="1.1" viewbox="0 0 16 16" width="20">
+<path d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z" fill="currentColor" fill-rule="evenodd"></path>
+<path d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z" fill="currentColor" fill-rule="evenodd"></path>
+</svg>
+</div>
+</clipboard-copy>
+</div>
+<div class="highlight-ipynb hl-python"><pre><span></span><span class="c1"># int ngSpice_Circ(char**)</span>
+<span class="n">spice</span><span class="o">.</span><span class="n">ngSpice_Circ</span><span class="o">.</span><span class="n">argtypes</span> <span class="o">=</span> <span class="p">[</span><span class="n">POINTER</span><span class="p">(</span><span class="n">c_char_p</span><span class="p">)]</span>
+<span class="n">spice</span><span class="o">.</span><span class="n">ngSpice_AllPlots</span><span class="o">.</span><span class="n">restype</span> <span class="o">=</span> <span class="n">POINTER</span><span class="p">(</span><span class="n">c_char_p</span><span class="p">)</span>
+</pre></div>
+<div class="clipboard-copy-txt" id="cell-12"># int ngSpice_Circ(char**)
+spice.ngSpice_Circ.argtypes = [POINTER(c_char_p)]
+spice.ngSpice_AllPlots.restype = POINTER(c_char_p)</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
+<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=49fba5e6">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="CodeMirror cm-s-jupyter">
+<div class="zeroclipboard-container">
+<clipboard-copy ,="" aria-label="Copy to Clipboard" for="cell-13">
+<div>
+<span class="notice" hidden="">Copied!</span>
+<svg aria-hidden="true" class="clipboard-copy-icon" data-view-component="true" height="20" version="1.1" viewbox="0 0 16 16" width="20">
+<path d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z" fill="currentColor" fill-rule="evenodd"></path>
+<path d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z" fill="currentColor" fill-rule="evenodd"></path>
+</svg>
+</div>
+</clipboard-copy>
+</div>
+<div class="highlight-ipynb hl-python"><pre><span></span><span class="n">spice</span><span class="o">.</span><span class="n">ngSpice_AllVecs</span><span class="o">.</span><span class="n">argtypes</span> <span class="o">=</span> <span class="p">[</span><span class="n">c_char_p</span><span class="p">]</span>
+<span class="n">spice</span><span class="o">.</span><span class="n">ngSpice_AllVecs</span><span class="o">.</span><span class="n">restype</span> <span class="o">=</span> <span class="n">POINTER</span><span class="p">(</span><span class="n">c_char_p</span><span class="p">)</span>
+<span class="n">spice</span><span class="o">.</span><span class="n">ngSpice_CurPlot</span><span class="o">.</span><span class="n">restype</span> <span class="o">=</span> <span class="n">c_char_p</span>
+</pre></div>
+<div class="clipboard-copy-txt" id="cell-13">spice.ngSpice_AllVecs.argtypes = [c_char_p]
+spice.ngSpice_AllVecs.restype = POINTER(c_char_p)
+spice.ngSpice_CurPlot.restype = c_char_p</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=68d62602">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -644,11 +1116,41 @@ double cx_imag;
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs jp-mod-noInput">
-<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs jp-mod-noInput" id="cell-id=acd6b051">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
+<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=c8c9e81f">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="CodeMirror cm-s-jupyter">
+<div class="zeroclipboard-container">
+<clipboard-copy ,="" aria-label="Copy to Clipboard" for="cell-14">
+<div>
+<span class="notice" hidden="">Copied!</span>
+<svg aria-hidden="true" class="clipboard-copy-icon" data-view-component="true" height="20" version="1.1" viewbox="0 0 16 16" width="20">
+<path d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z" fill="currentColor" fill-rule="evenodd"></path>
+<path d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z" fill="currentColor" fill-rule="evenodd"></path>
+</svg>
+</div>
+</clipboard-copy>
+</div>
+<div class="highlight-ipynb hl-python"><pre><span></span><span class="k">class</span> <span class="nc">ngcomplex</span><span class="p">(</span><span class="n">Structure</span><span class="p">):</span>
+    <span class="n">_fields_</span> <span class="o">=</span> <span class="p">[</span>
+        <span class="p">(</span><span class="s1">'cx_real'</span><span class="p">,</span> <span class="n">c_double</span><span class="p">),</span>
+        <span class="p">(</span><span class="s1">'cx_imag'</span><span class="p">,</span> <span class="n">c_double</span><span class="p">)]</span>
+</pre></div>
+<div class="clipboard-copy-txt" id="cell-14">class ngcomplex(Structure):
+    _fields_ = [
+        ('cx_real', c_double),
+        ('cx_imag', c_double)]</div>
 </div>
 </div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=80dfbff8">
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=7b7fec70">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -667,11 +1169,51 @@ VF_PERMANENT = (1 &lt;&lt; 7)   /</em> Don't garbage collect this vector. */
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs jp-mod-noInput">
-<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs jp-mod-noInput" id="cell-id=9e5b57ac">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
+<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=3af7a6aa">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="CodeMirror cm-s-jupyter">
+<div class="zeroclipboard-container">
+<clipboard-copy ,="" aria-label="Copy to Clipboard" for="cell-15">
+<div>
+<span class="notice" hidden="">Copied!</span>
+<svg aria-hidden="true" class="clipboard-copy-icon" data-view-component="true" height="20" version="1.1" viewbox="0 0 16 16" width="20">
+<path d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z" fill="currentColor" fill-rule="evenodd"></path>
+<path d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z" fill="currentColor" fill-rule="evenodd"></path>
+</svg>
+</div>
+</clipboard-copy>
+</div>
+<div class="highlight-ipynb hl-python"><pre><span></span><span class="k">class</span> <span class="nc">dvec_flags</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+    <span class="n">vf_real</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span> <span class="o">&lt;&lt;</span> <span class="mi">0</span><span class="p">)</span>  <span class="c1"># The data is real.</span>
+    <span class="n">vf_complex</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span> <span class="o">&lt;&lt;</span> <span class="mi">1</span><span class="p">)</span>  <span class="c1"># The data is complex.</span>
+    <span class="n">vf_accum</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span> <span class="o">&lt;&lt;</span> <span class="mi">2</span><span class="p">)</span>  <span class="c1"># writedata should save this vector.</span>
+    <span class="n">vf_plot</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span> <span class="o">&lt;&lt;</span> <span class="mi">3</span><span class="p">)</span>  <span class="c1"># writedata should incrementally plot it.</span>
+    <span class="n">vf_print</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span> <span class="o">&lt;&lt;</span> <span class="mi">4</span><span class="p">)</span>  <span class="c1"># writedata should print this vector.</span>
+    <span class="n">vf_mingiven</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span> <span class="o">&lt;&lt;</span> <span class="mi">5</span><span class="p">)</span>  <span class="c1"># The v_minsignal value is valid.</span>
+    <span class="n">vf_maxgiven</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span> <span class="o">&lt;&lt;</span> <span class="mi">6</span><span class="p">)</span>  <span class="c1"># The v_maxsignal value is valid.</span>
+    <span class="n">vf_permanent</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span> <span class="o">&lt;&lt;</span> <span class="mi">7</span><span class="p">)</span>  <span class="c1"># Don't garbage collect this vector.</span>
+</pre></div>
+<div class="clipboard-copy-txt" id="cell-15">class dvec_flags(object):
+    vf_real = (1 &lt;&lt; 0)  # The data is real.
+    vf_complex = (1 &lt;&lt; 1)  # The data is complex.
+    vf_accum = (1 &lt;&lt; 2)  # writedata should save this vector.
+    vf_plot = (1 &lt;&lt; 3)  # writedata should incrementally plot it.
+    vf_print = (1 &lt;&lt; 4)  # writedata should print this vector.
+    vf_mingiven = (1 &lt;&lt; 5)  # The v_minsignal value is valid.
+    vf_maxgiven = (1 &lt;&lt; 6)  # The v_maxsignal value is valid.
+    vf_permanent = (1 &lt;&lt; 7)  # Don't garbage collect this vector.</div>
 </div>
 </div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=db94494f">
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=44e8cc6e">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
@@ -690,17 +1232,229 @@ int v_length;		/</em> Length of the vector. */
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs jp-mod-noInput">
-<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs jp-mod-noInput" id="cell-id=cc14b281">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
+<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=6cd8093e">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs jp-mod-noInput">
-<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs jp-mod-noInput" id="cell-id=bd9eb722">
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="CodeMirror cm-s-jupyter">
+<div class="zeroclipboard-container">
+<clipboard-copy ,="" aria-label="Copy to Clipboard" for="cell-16">
+<div>
+<span class="notice" hidden="">Copied!</span>
+<svg aria-hidden="true" class="clipboard-copy-icon" data-view-component="true" height="20" version="1.1" viewbox="0 0 16 16" width="20">
+<path d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z" fill="currentColor" fill-rule="evenodd"></path>
+<path d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z" fill="currentColor" fill-rule="evenodd"></path>
+</svg>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs jp-mod-noInput">
-<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs jp-mod-noInput" id="cell-id=3974d7b0">
+</clipboard-copy>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs jp-mod-noInput">
-<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs jp-mod-noInput" id="cell-id=7e4945f8">
+<div class="highlight-ipynb hl-python"><pre><span></span><span class="k">class</span> <span class="nc">vector_info</span><span class="p">(</span><span class="n">Structure</span><span class="p">):</span>
+    <span class="n">_fields_</span> <span class="o">=</span> <span class="p">[</span>
+        <span class="p">(</span><span class="s1">'v_name'</span><span class="p">,</span> <span class="n">c_char_p</span><span class="p">),</span>
+        <span class="p">(</span><span class="s1">'v_type'</span><span class="p">,</span> <span class="n">c_int</span><span class="p">),</span>
+        <span class="p">(</span><span class="s1">'v_flags'</span><span class="p">,</span> <span class="n">c_short</span><span class="p">),</span>
+        <span class="p">(</span><span class="s1">'v_realdata'</span><span class="p">,</span> <span class="n">POINTER</span><span class="p">(</span><span class="n">c_double</span><span class="p">)),</span>
+        <span class="p">(</span><span class="s1">'v_compdata'</span><span class="p">,</span> <span class="n">POINTER</span><span class="p">(</span><span class="n">ngcomplex</span><span class="p">)),</span>
+        <span class="p">(</span><span class="s1">'v_length'</span><span class="p">,</span> <span class="n">c_int</span><span class="p">)]</span>
+</pre></div>
+<div class="clipboard-copy-txt" id="cell-16">class vector_info(Structure):
+    _fields_ = [
+        ('v_name', c_char_p),
+        ('v_type', c_int),
+        ('v_flags', c_short),
+        ('v_realdata', POINTER(c_double)),
+        ('v_compdata', POINTER(ngcomplex)),
+        ('v_length', c_int)]</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
+<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=1b7a92a9">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="CodeMirror cm-s-jupyter">
+<div class="zeroclipboard-container">
+<clipboard-copy ,="" aria-label="Copy to Clipboard" for="cell-17">
+<div>
+<span class="notice" hidden="">Copied!</span>
+<svg aria-hidden="true" class="clipboard-copy-icon" data-view-component="true" height="20" version="1.1" viewbox="0 0 16 16" width="20">
+<path d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z" fill="currentColor" fill-rule="evenodd"></path>
+<path d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z" fill="currentColor" fill-rule="evenodd"></path>
+</svg>
+</div>
+</clipboard-copy>
+</div>
+<div class="highlight-ipynb hl-python"><pre><span></span><span class="c1"># /* get info about a vector */</span>
+<span class="c1"># pvector_info ngGet_Vec_Info(char* vecname);</span>
+<span class="n">spice</span><span class="o">.</span><span class="n">ngGet_Vec_Info</span><span class="o">.</span><span class="n">restype</span> <span class="o">=</span> <span class="n">POINTER</span><span class="p">(</span><span class="n">vector_info</span><span class="p">)</span>
+<span class="n">spice</span><span class="o">.</span><span class="n">ngGet_Vec_Info</span><span class="o">.</span><span class="n">argtypes</span> <span class="o">=</span> <span class="p">[</span><span class="n">c_char_p</span><span class="p">]</span>
+</pre></div>
+<div class="clipboard-copy-txt" id="cell-17"># /* get info about a vector */
+# pvector_info ngGet_Vec_Info(char* vecname);
+spice.ngGet_Vec_Info.restype = POINTER(vector_info)
+spice.ngGet_Vec_Info.argtypes = [c_char_p]</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
+<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=32d8ddd3">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="CodeMirror cm-s-jupyter">
+<div class="zeroclipboard-container">
+<clipboard-copy ,="" aria-label="Copy to Clipboard" for="cell-18">
+<div>
+<span class="notice" hidden="">Copied!</span>
+<svg aria-hidden="true" class="clipboard-copy-icon" data-view-component="true" height="20" version="1.1" viewbox="0 0 16 16" width="20">
+<path d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z" fill="currentColor" fill-rule="evenodd"></path>
+<path d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z" fill="currentColor" fill-rule="evenodd"></path>
+</svg>
+</div>
+</clipboard-copy>
+</div>
+<div class="highlight-ipynb hl-python"><pre><span></span><span class="c1"># Unit names for use with pint or other unit libraries</span>
+<span class="n">vector_type</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="s1">'dimensionless'</span><span class="p">,</span>  <span class="c1"># notype = 0</span>
+    <span class="s1">'second'</span><span class="p">,</span>  <span class="c1"># time = 1</span>
+    <span class="s1">'hertz'</span><span class="p">,</span>  <span class="c1"># frequency = 2</span>
+    <span class="s1">'volt'</span><span class="p">,</span>  <span class="c1"># voltage = 3</span>
+    <span class="s1">'ampere'</span><span class="p">,</span>  <span class="c1"># current = 4</span>
+    <span class="s1">'NotImplemented'</span><span class="p">,</span>  <span class="c1"># output_n_dens = 5</span>
+    <span class="s1">'NotImplemented'</span><span class="p">,</span>  <span class="c1"># output_noise = 6</span>
+    <span class="s1">'NotImplemented'</span><span class="p">,</span>  <span class="c1"># input_n_dens = 7</span>
+    <span class="s1">'NotImplemented'</span><span class="p">,</span>  <span class="c1"># input_noise = 8</span>
+    <span class="s1">'NotImplemented'</span><span class="p">,</span>  <span class="c1"># pole = 9</span>
+    <span class="s1">'NotImplemented'</span><span class="p">,</span>  <span class="c1"># zero = 10</span>
+    <span class="s1">'NotImplemented'</span><span class="p">,</span>  <span class="c1"># sparam = 11</span>
+    <span class="s1">'NotImplemented'</span><span class="p">,</span>  <span class="c1"># temp = 12</span>
+    <span class="s1">'ohm'</span><span class="p">,</span>  <span class="c1"># res = 13</span>
+    <span class="s1">'ohm'</span><span class="p">,</span>  <span class="c1"># impedance = 14</span>
+    <span class="s1">'siemens'</span><span class="p">,</span>  <span class="c1"># admittance = 15</span>
+    <span class="s1">'watt'</span><span class="p">,</span>  <span class="c1"># power = 16</span>
+    <span class="s1">'dimensionless'</span>  <span class="c1"># phase = 17</span>
+    <span class="s1">'NotImplemented'</span><span class="p">,</span>  <span class="c1"># db = 18</span>
+    <span class="s1">'farad'</span>  <span class="c1"># capacitance = 19</span>
+    <span class="s1">'coulomb'</span>  <span class="c1"># charge = 21</span>
+<span class="p">]</span>
+</pre></div>
+<div class="clipboard-copy-txt" id="cell-18"># Unit names for use with pint or other unit libraries
+vector_type = [
+    'dimensionless',  # notype = 0
+    'second',  # time = 1
+    'hertz',  # frequency = 2
+    'volt',  # voltage = 3
+    'ampere',  # current = 4
+    'NotImplemented',  # output_n_dens = 5
+    'NotImplemented',  # output_noise = 6
+    'NotImplemented',  # input_n_dens = 7
+    'NotImplemented',  # input_noise = 8
+    'NotImplemented',  # pole = 9
+    'NotImplemented',  # zero = 10
+    'NotImplemented',  # sparam = 11
+    'NotImplemented',  # temp = 12
+    'ohm',  # res = 13
+    'ohm',  # impedance = 14
+    'siemens',  # admittance = 15
+    'watt',  # power = 16
+    'dimensionless'  # phase = 17
+    'NotImplemented',  # db = 18
+    'farad'  # capacitance = 19
+    'coulomb'  # charge = 21
+]</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
+<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=bb4785b2">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="CodeMirror cm-s-jupyter">
+<div class="zeroclipboard-container">
+<clipboard-copy ,="" aria-label="Copy to Clipboard" for="cell-19">
+<div>
+<span class="notice" hidden="">Copied!</span>
+<svg aria-hidden="true" class="clipboard-copy-icon" data-view-component="true" height="20" version="1.1" viewbox="0 0 16 16" width="20">
+<path d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z" fill="currentColor" fill-rule="evenodd"></path>
+<path d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z" fill="currentColor" fill-rule="evenodd"></path>
+</svg>
+</div>
+</clipboard-copy>
+</div>
+<div class="highlight-ipynb hl-python"><pre><span></span><span class="c1">#</span>
+<span class="c1"># enum simulation_types {</span>
+<span class="c1">#   ...</span>
+<span class="c1"># };</span>
+<span class="k">class</span> <span class="nc">simulation_type</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+    <span class="n">notype</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="n">time</span> <span class="o">=</span> <span class="mi">1</span>
+    <span class="n">frequency</span> <span class="o">=</span> <span class="mi">2</span>
+    <span class="n">voltage</span> <span class="o">=</span> <span class="mi">3</span>
+    <span class="n">current</span> <span class="o">=</span> <span class="mi">4</span>
+    <span class="n">output_n_dens</span> <span class="o">=</span> <span class="mi">5</span>
+    <span class="n">output_noise</span> <span class="o">=</span> <span class="mi">6</span>
+    <span class="n">input_n_dens</span> <span class="o">=</span> <span class="mi">7</span>
+    <span class="n">input_noise</span> <span class="o">=</span> <span class="mi">8</span>
+    <span class="n">pole</span> <span class="o">=</span> <span class="mi">9</span>
+    <span class="n">zero</span> <span class="o">=</span> <span class="mi">10</span>
+    <span class="n">sparam</span> <span class="o">=</span> <span class="mi">11</span>
+    <span class="n">temp</span> <span class="o">=</span> <span class="mi">12</span>
+    <span class="n">res</span> <span class="o">=</span> <span class="mi">13</span>
+    <span class="n">impedance</span> <span class="o">=</span> <span class="mi">14</span>
+    <span class="n">admittance</span> <span class="o">=</span> <span class="mi">15</span>
+    <span class="n">power</span> <span class="o">=</span> <span class="mi">16</span>
+    <span class="n">phase</span> <span class="o">=</span> <span class="mi">17</span>
+    <span class="n">db</span> <span class="o">=</span> <span class="mi">18</span>
+    <span class="n">capacitance</span> <span class="o">=</span> <span class="mi">19</span>
+    <span class="n">charge</span> <span class="o">=</span> <span class="mi">20</span>
+</pre></div>
+<div class="clipboard-copy-txt" id="cell-19">#
+# enum simulation_types {
+#   ...
+# };
+class simulation_type(object):
+    notype = 0
+    time = 1
+    frequency = 2
+    voltage = 3
+    current = 4
+    output_n_dens = 5
+    output_noise = 6
+    input_n_dens = 7
+    input_noise = 8
+    pole = 9
+    zero = 10
+    sparam = 11
+    temp = 12
+    res = 13
+    impedance = 14
+    admittance = 15
+    power = 16
+    phase = 17
+    db = 18
+    capacitance = 19
+    charge = 20</div>
+</div>
+</div>
+</div>
+</div>
 </div>
 </div>
 </div> <!-- jp-Notebook -->

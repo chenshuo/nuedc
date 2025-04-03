@@ -618,8 +618,8 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noInput celltag_hide_code">
-<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noInput celltag_hide_code" id="cell-id=64d1ff0e-cdee-4687-9b27-cf018ea28bbf">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell celltag_hide_code">
+<div class="jp-Cell jp-CodeCell jp-Notebook-cell celltag_hide_code" id="cell-id=64d1ff0e-cdee-4687-9b27-cf018ea28bbf">
 <div class="jp-Cell-outputWrapper">
 <div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
 </div>
@@ -653,8 +653,8 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noInput celltag_hide_code">
-<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noInput celltag_hide_code" id="cell-id=775d270e-9950-4ff2-b122-881149a8a494">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell celltag_hide_code">
+<div class="jp-Cell jp-CodeCell jp-Notebook-cell celltag_hide_code" id="cell-id=775d270e-9950-4ff2-b122-881149a8a494">
 <div class="jp-Cell-outputWrapper">
 <div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
 </div>
@@ -738,8 +738,8 @@ $\newcommand{\sm}[2]{{{#1}_\mathrm{#2}}}$</p>
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noInput celltag_hide_code">
-<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noInput celltag_hide_code" id="cell-id=2319c6bf-1d29-4794-94be-b735593c34e3">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell celltag_hide_code">
+<div class="jp-Cell jp-CodeCell jp-Notebook-cell celltag_hide_code" id="cell-id=2319c6bf-1d29-4794-94be-b735593c34e3">
 <div class="jp-Cell-outputWrapper">
 <div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
 </div>
@@ -820,8 +820,52 @@ $\newcommand{\sm}[2]{{{#1}_\mathrm{#2}}}$</p>
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noInput">
-<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noInput" id="cell-id=85ad9fe6-cec2-4aff-9d18-c000820a8693">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell">
+<div class="jp-Cell jp-CodeCell jp-Notebook-cell" id="cell-id=85ad9fe6-cec2-4aff-9d18-c000820a8693">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="CodeMirror cm-s-jupyter">
+<div class="zeroclipboard-container">
+<clipboard-copy ,="" aria-label="Copy to Clipboard" for="cell-1">
+<div>
+<span class="notice" hidden="">Copied!</span>
+<svg aria-hidden="true" class="clipboard-copy-icon" data-view-component="true" height="20" version="1.1" viewbox="0 0 16 16" width="20">
+<path d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z" fill="currentColor" fill-rule="evenodd"></path>
+<path d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z" fill="currentColor" fill-rule="evenodd"></path>
+</svg>
+</div>
+</clipboard-copy>
+</div>
+<div class="highlight-ipynb hl-python"><pre><span></span><span class="k">def</span> <span class="nf">Ic5</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+    <span class="n">Ic</span> <span class="o">=</span> <span class="n">x</span>
+    <span class="n">Vt</span> <span class="o">=</span> <span class="mi">26</span>
+    <span class="n">Iref</span> <span class="o">=</span> <span class="mi">860</span>
+    <span class="n">R4</span> <span class="o">=</span> <span class="mf">8.7</span>
+    <span class="k">return</span> <span class="n">Ic</span> <span class="o">*</span> <span class="n">R4</span> <span class="o">-</span> <span class="n">Vt</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">Iref</span> <span class="o">/</span> <span class="n">Ic</span><span class="p">)</span>
+
+<span class="n">root</span> <span class="o">=</span> <span class="n">scipy</span><span class="o">.</span><span class="n">optimize</span><span class="o">.</span><span class="n">root_scalar</span><span class="p">(</span><span class="n">Ic5</span><span class="p">,</span> <span class="n">x0</span><span class="o">=</span><span class="mf">0.1</span><span class="p">)</span>
+<span class="k">if</span> <span class="n">root</span><span class="o">.</span><span class="n">converged</span><span class="p">:</span>
+    <span class="n">Ic</span> <span class="o">=</span> <span class="n">root</span><span class="o">.</span><span class="n">root</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">'Ic5 = </span><span class="si">%.2f</span><span class="s1"> uA'</span> <span class="o">%</span> <span class="p">(</span><span class="n">Ic</span><span class="p">))</span>
+</pre></div>
+<div class="clipboard-copy-txt" id="cell-1">def Ic5(x):
+    Ic = x
+    Vt = 26
+    Iref = 860
+    R4 = 8.7
+    return Ic * R4 - Vt * np.log(Iref / Ic)
+
+root = scipy.optimize.root_scalar(Ic5, x0=0.1)
+if root.converged:
+    Ic = root.root
+    print('Ic5 = %.2f uA' % (Ic))</div>
+</div>
+</div>
+</div>
+</div>
 <div class="jp-Cell-outputWrapper">
 <div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
 </div>
@@ -972,8 +1016,8 @@ $\newcommand{\sm}[2]{{{#1}_\mathrm{#2}}}$</p>
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noInput celltag_hide_code">
-<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noInput celltag_hide_code" id="cell-id=818907b4-cda2-4a6d-b012-704232803455">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell celltag_hide_code">
+<div class="jp-Cell jp-CodeCell jp-Notebook-cell celltag_hide_code" id="cell-id=818907b4-cda2-4a6d-b012-704232803455">
 <div class="jp-Cell-outputWrapper">
 <div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
 </div>
@@ -1055,8 +1099,8 @@ $\newcommand{\sm}[2]{{{#1}_\mathrm{#2}}}$</p>
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noInput celltag_hide_code">
-<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noInput celltag_hide_code" id="cell-id=7b0a09ec-fe11-41af-878c-9e2f2d21ce1a">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell celltag_hide_code">
+<div class="jp-Cell jp-CodeCell jp-Notebook-cell celltag_hide_code" id="cell-id=7b0a09ec-fe11-41af-878c-9e2f2d21ce1a">
 <div class="jp-Cell-outputWrapper">
 <div class="jp-Collapser jp-OutputCollapser jp-Cell-outputCollapser">
 </div>
@@ -1131,11 +1175,59 @@ $\sm{A}{v1}=\sm{g}{m1}(\sm{R}{o1} /\!/ \sm{R}{i2})$</p>
 </div>
 </div>
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs jp-mod-noInput">
-<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs jp-mod-noInput" id="cell-id=732ed2f9-2047-4eb6-82e2-56772839fb5c">
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
+<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=732ed2f9-2047-4eb6-82e2-56772839fb5c">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs jp-mod-noInput">
-<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs jp-mod-noInput" id="cell-id=ddb91788-d0e7-4e9a-893b-2263d92fb83e">
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="CodeMirror cm-s-jupyter">
+<div class="zeroclipboard-container">
+<clipboard-copy ,="" aria-label="Copy to Clipboard" for="cell-2">
+<div>
+<span class="notice" hidden="">Copied!</span>
+<svg aria-hidden="true" class="clipboard-copy-icon" data-view-component="true" height="20" version="1.1" viewbox="0 0 16 16" width="20">
+<path d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z" fill="currentColor" fill-rule="evenodd"></path>
+<path d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z" fill="currentColor" fill-rule="evenodd"></path>
+</svg>
+</div>
+</clipboard-copy>
+</div>
+<div class="highlight-ipynb hl-python"><pre><span></span>
+</pre></div>
+<div class="clipboard-copy-txt" id="cell-2"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
+<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=ddb91788-d0e7-4e9a-893b-2263d92fb83e">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="CodeMirror cm-s-jupyter">
+<div class="zeroclipboard-container">
+<clipboard-copy ,="" aria-label="Copy to Clipboard" for="cell-3">
+<div>
+<span class="notice" hidden="">Copied!</span>
+<svg aria-hidden="true" class="clipboard-copy-icon" data-view-component="true" height="20" version="1.1" viewbox="0 0 16 16" width="20">
+<path d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z" fill="currentColor" fill-rule="evenodd"></path>
+<path d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z" fill="currentColor" fill-rule="evenodd"></path>
+</svg>
+</div>
+</clipboard-copy>
+</div>
+<div class="highlight-ipynb hl-python"><pre><span></span>
+</pre></div>
+<div class="clipboard-copy-txt" id="cell-3"></div>
+</div>
+</div>
+</div>
+</div>
 </div>
 </div>
 </div> <!-- jp-Notebook -->
