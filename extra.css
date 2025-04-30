@@ -3,3 +3,8 @@ p {
   margin-block-start:0ex;
   margin-block-end:1ex;
 }
+
+th, td {
+  border-width: 1px;
+  border-color: #bdb;
+}
