@@ -10,6 +10,7 @@ EEVBlog 1436 - [The TOP 5 Jellybean OPAMP's](https://www.youtube.com/watch?v=uq1
 | TL072/074 | JFET | 高速 (3 MHz, 13V/µs) |
 | LMV358 | CMOS | Rail-to-rail 输出、低压 (5.5V) |
 | MCP6292 | CMOS | 高速 (10 MHz)、Rail-to-rail、低压 (5.5V) |
+| MCP6002 | CMOS | 通用，Rail-to-rail、单电源 (6V)、低功耗 |
 | OP07 | BJT | 精密、低失调 |
 | LM4562/LME49720 | BJT | Hi-Fi、低噪音、低失真 |
 | OPA1612 | BJT | Hi-Fi、低噪音、低失真 |
@@ -23,7 +24,7 @@ EEVBlog 1436 - [The TOP 5 Jellybean OPAMP's](https://www.youtube.com/watch?v=uq1
 关于器件型号的前缀。
 
 * 仙童公司(Fairchild，2016 年被 onsemi 收购)的器件常以 µA 开头，[据说](https://www.quora.com/What-is-the-difference-between-LM741-and-UA741/answer/Larry-Zuckerman-2)是 micro amplifier 的缩写。
-* 美国国家半导体(“国半/National”，2011 被 TI 收购)的器件型号常以 LM 开头，据前面同一个人说是 Linear Microchip 的缩写，另外一种说法是 Linear Monolithic 的缩写。
+* 美国国家半导体(“国半/National”，2011 被 TI 收购)的器件型号常以 LM 开头，据前面同一个人说是 Linear Microchip 的缩写，另外一种说法是 Linear Monolithic 的缩写。LF 开头一般代表 FET 输入的运放，例如 LF356/LF353。
 * 德州仪器 (TI) 的器件常以 TL 开头，我推测是 TI Linear 的缩写，例如 TL082、TL431、TL494 等等。
 
 ### LM358/LM324
