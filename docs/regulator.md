@@ -6,13 +6,13 @@
 
 1968 年，Fairchild 上市 [µA723](https://www.ti.com/lit/ds/symlink/ua723.pdf)，输出电流 150mA。根据 µA741 的发明人 [Dave Fullagar 的说法](https://archive.computerhistory.org/resources/text/Oral_History/Fairchild_at_50/102658281.05.01.acc.pdf)，它是 Darryl Lieux 设计的。它内部是用 JFET 做了一个恒流源，驱动 Zener 二极管来获得电压基准 (7.15V)。它使用较为复杂、一般要接五六个外围阻容元件。如需大电流，还需要外接功率三极管。
 
-1969 [Robert Widlar](https://en.wikipedia.org/wiki/Bob_Widlar) (当时在 National 工作) 发明了 bandgap voltage reference，并为 National 设计了第一个集成 5V 三端稳压电路 LM109/LM309，[设计思路](http://www.ti.com/lit/an/snva512b/snva512b.pdf)、[1971 年数据手册](http://www.bitsavers.org/components/national/_dataBooks/1971_National_Linear_Integrated_Circuits.pdf)。输出电流达到 1A，说明温度系数很好。
+1969 [Robert Widlar](https://en.wikipedia.org/wiki/Bob_Widlar) (当时在 National 工作) 发明了 bandgap voltage reference，并为 National 设计了第一个集成 5V 三端稳压电路 LM109/LM309，[设计思路](http://www.ti.com/lit/an/snva512b/snva512b.pdf)、[1971 年数据手册](img/lm109-1971.pdf)。输出电流达到 1A，说明温度系数很好。
 
-[1971 年 Fairchild 发布 µA7800](http://www.bitsavers.org/components/fairchild/_dataBooks/1971_Fairchild_Linear_Integrated_Circuits_Data_Catalog.pdf) 系列三端稳压电路，采用的是 4 Vbe 的基准。
+[1971 年 Fairchild 发布 µA7800](img/ua7800-1971.pdf) 系列三端稳压电路，采用的是 4 Vbe 的基准。
 [有人推测](https://www.righto.com/2014/09/reverse-engineering-counterfeit-7805.html)是为了避免电路专利纠纷。
 
-[1972 年 National 发布 LM340-xx](http://www.bitsavers.org/components/national/_dataBooks/1972_National_Linear_Integrated_Circuits.pdf) 系列三端稳压电路，[后来改名为 LM78xx](http://www.bitsavers.org/components/national/_dataBooks/1980_National_Linear_Databook.pdf) (估计是跟风 Fairchild)。
-这个系列采用的是 3 Vbe 的基准，据说跟 [LM109 的电路](http://www.ti.com/lit/an/snva512b/snva512b.pdf)很相似，只是加了电阻分压反馈来获得 12V / 15V 的输出。Robert Widlar 1970 年 33 岁时从 National 退休，我猜他可能参与了 LM7805 的设计，但没有直接证据。
+[1972 年 National 发布 LM340-xx](img/lm340-1972.pdf) 系列三端稳压电路，[后来改名为 LM78xx](img/lm7800-1980.pdf) (估计是跟风 Fairchild)。
+这个系列采用的是 3 Vbe 的基准，据说跟 [LM109 的电路](img/lm109-jlh1982.pdf)很相似，只是加了电阻分压反馈来获得 12V / 15V 的输出。Robert Widlar 1970 年 33 岁时从 National 退休，我猜他可能参与了 LM7805 的设计，但没有直接证据。
 
 所以，从内部电路上看（存在多个修订版本，暂略），National 的 LM340-5.0 = 自家的 LM7805 != Fairchild 的 µA7805，尽管通常可以互换使用。国内仿制的 W7800 系列电路是参照 Fairchild 的 µA7805 设计，也是 4 Vbe 的基准。
 
@@ -83,7 +83,7 @@ TL431 内部电路的分析与计算： <https://chenshuo.github.io/notes/tl431>
 
 *  Bob Pease "The Design of Band-Gap Reference Circuits: Trials and Tribulations", https://www.tayloredge.com/reference/Ganssle-Pease/bobpease-bandgap.pdf
 
-* 1971 年 Fairchild [Linear Integrated Circuits Data Catalog](https://bitsavers.org/components/fairchild/_dataBooks/1971_Fairchild_Linear_Integrated_Circuits_Data_Catalog.pdf) 出现了 μA7800
+* 1971 年 Fairchild [Linear Integrated Circuits Data Catalog](https://bitsavers.org/components/fairchild/_dataBooks/1971_Fairchild_Linear_Integrated_Circuits_Data_Catalog.pdf) 出现了 μA7800，[当时的广告](img/ua7800-1972jan.pdf)
 
 * 1972 年 National Semiconductor [Linear Integrated Circuits](https://bitsavers.org/components/national/_dataBooks/1972_National_Linear_Integrated_Circuits.pdf) 有 LM340，也就是后来的 LM7800
 
