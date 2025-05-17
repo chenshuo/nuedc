@@ -4,6 +4,7 @@
 * BJT 三极管基础知识复习与仿真 [link](/bjt-basics/)
 * 模拟电路知识点小结 [pdf](analog.pdf)
 * 关于 LM7805、TL431 等的笔记 [稳压与基准](regulator.md)
+* 经典集成运算放大器内部电路简析 [pdf](opamp.pdf)
 * 关于 [741 运放的笔记](741.md)
 * [RC4558 运放的笔记](/rc4558/)
 
