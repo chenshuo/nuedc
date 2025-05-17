@@ -10,3 +10,5 @@ Nuedc.org's mission is to organize NUEDC's information and make it universally a
 历届试题： http://nuedc.org/problems
 
 模拟电路知识点小结 http://nuedc.org/analog.pdf
+
+经典集成运算放大器内部电路简析 http://nuedc.org/opamp.pdf
