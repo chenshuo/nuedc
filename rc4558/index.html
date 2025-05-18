@@ -590,9 +590,10 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <h1 id="rc4558">RC4558 运放<a class="anchor-link" href="#rc4558">¶</a></h1><p><strong>内部电路分析与仿真</strong></p>
 <p>陈硕 2024/06 初稿</p>
-<p>根据 <a href="https://www.learningelectronics.net/VA3AVR/gadgets/741/741.html">https://www.learningelectronics.net/VA3AVR/gadgets/741/741.html</a> 的说法，RC4558 是 Raytheon 公司 1974 首次年推出的双运放，不过我在<a href="http://www.bitsavers.org/magazines/The_Electronic_Engineer/The_Electronic_Engineer_V31_N12_197212.pdf">一本1972年的杂志</a>上查到了 µA741/RC4558 等流行运放的价格。RC4558 性能与 741 相仿，RC4558 在带宽方面略好 (3MHz)，较适合音频应用。日本的 JRC 公司在 1980s 仿制成功 JRC4558 (现 NJM4558)，因其廉价，在 80/90 年代的中低档组合音响中用得很多（高档音响一般用 NE5532）。</p>
+<p>RC4558 是 Raytheon 公司 1971 年推出的首款低成本双运放，它定义了 DIP-8 封装的双运放的管脚排布标准。
+<a href="../opamp/rc4558-1971nov.pdf">RC4558 约等于双 741</a>，前者在带宽方面略好 (3MHz)，较适合音频应用。日本的 JRC 公司在 1980s 仿制成功 JRC4558 (现 NJM4558)，因其廉价，在 80/90 年代的中低档磁带组合音响中用得很多（高档 CD 音响一般用 NE5532，带宽 10MHz）。</p>
 <blockquote>
-<p>Raytheon 公司于 2020 年关张。它在 1950s 销售的 <a href="https://en.wikipedia.org/wiki/CK722">CK722</a> PNP 锗管是第一款低价三极管，当年在电子爱好者中很受欢迎，可以说为普及晶体管电路做了贡献。</p>
+<p>我在<a href="../opamp/rc4558-1971sep.pdf">一本1971年的杂志</a>上查到了 RC4558 的上市广告，据此我认为 RC4558 是 1971 年面世的，网上<a href="https://www.learningelectronics.net/VA3AVR/gadgets/741/741.html">另一种说法是 1974 年</a>，对此我不认可。Raytheon 公司于 2020 年关张。它在 1950s 销售的 <a href="https://en.wikipedia.org/wiki/CK722">CK722</a> PNP 锗管是第一款低价三极管，当年在电子爱好者中很受欢迎，可以说为普及晶体管电路做了贡献。</p>
 </blockquote>
 <p>TI 目前还在生产 RC4558，可能是因收购 National 而继承的产品线，其<a href="https://www.ti.com/lit/ds/symlink/rc4558.pdf">技术手册</a>如实反应了当输入共模电压过低时会出现的相位反转 (phase reversal)现象，我们后面的仿真结果与此相符。</p>
 <p>ElectroSmash 网站上有对 JRC4558 工作原理的详细（定性）介绍： <a href="https://www.electrosmash.com/jrc4558-analysis">https://www.electrosmash.com/jrc4558-analysis</a></p>
@@ -614,7 +615,7 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="schematic">内部电路概述 schematic<a class="anchor-link" href="#schematic">¶</a></h2><p>以下是根据原厂 <a href="/opamp/rc4558-1994.pdf">1994 年的数据手册</a>重绘的内部电路。</p>
+<h2 id="schematic">内部电路概述 schematic<a class="anchor-link" href="#schematic">¶</a></h2><p>以下是根据原厂 <a href="../opamp/rc4558-1994.pdf">1994 年的数据手册</a>重绘的内部电路。</p>
 </div>
 </div>
 </div>
@@ -668,11 +669,115 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
 </div>
 </div>
 </div>
-<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=68019a94-5575-45b2-88a8-bbfdfa94fad2">
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=937ef8bc-447c-48cc-a289-57c137c5df25">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<p>根据数据手册提供的电路参数，结合前述论文的公式，我们可以估算很多有用的信息。</p>
+<p>$\newcommand{\li}[1]{{i_\mathrm{#1}}}$
+$\newcommand{\ui}[1]{{I_\mathrm{#1}}}$
+$\newcommand{\lv}[1]{{v_\mathrm{#1}}}$
+$\newcommand{\uv}[1]{{V_\mathrm{#1}}}$
+$\newcommand{\ur}[1]{{R_\mathrm{#1}}}$
+$\newcommand{\sm}[2]{{{#1}_\mathrm{#2}}}$</p>
+<table>
+<thead>
+<tr>
+<th>Param</th>
+<th style="text-align:center">Unit</th>
+<th style="text-align:right">min</th>
+<th style="text-align:right">typ.</th>
+<th style="text-align:right">max</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Input Offset Voltage $\uv{os}$</td>
+<td style="text-align:center">mV</td>
+<td style="text-align:right"></td>
+<td style="text-align:right">2</td>
+<td style="text-align:right">6</td>
+</tr>
+<tr>
+<td>Input Bias Current $\ui{IB}$</td>
+<td style="text-align:center">nA</td>
+<td style="text-align:right"></td>
+<td style="text-align:right">40</td>
+<td style="text-align:right">500</td>
+</tr>
+<tr>
+<td>Input Resistance $\ur{id}$</td>
+<td style="text-align:center">MΩ</td>
+<td style="text-align:right">0.3</td>
+<td style="text-align:right">1.0</td>
+<td style="text-align:right"></td>
+</tr>
+<tr>
+<td>Large Signal Voltage Gain</td>
+<td style="text-align:center">V/mV</td>
+<td style="text-align:right">20</td>
+<td style="text-align:right">300</td>
+<td style="text-align:right"></td>
+</tr>
+<tr>
+<td>Unity Gain Bandwidth</td>
+<td style="text-align:center">MHz</td>
+<td style="text-align:right">2.5</td>
+<td style="text-align:right">3</td>
+<td style="text-align:right"></td>
+</tr>
+<tr>
+<td>Slew rate</td>
+<td style="text-align:center">V/μs</td>
+<td style="text-align:right"></td>
+<td style="text-align:right">0.8</td>
+<td style="text-align:right"></td>
+</tr>
+<tr>
+<td>Power Consumption</td>
+<td style="text-align:center">mW</td>
+<td style="text-align:right"></td>
+<td style="text-align:right">100</td>
+<td style="text-align:right">170</td>
+</tr>
+</tbody>
+</table>
+<p>我认为手册上给的数据有一些不一致的地方：</p>
+<ul>
+<li>输入电阻 $\ur{id}=1$MΩ</li>
+<li>输入偏置电流 40nA，即 $\ui{IB}=40$nA</li>
+</ul>
+<p>按照 hybrid-$\pi$ 模型</p>
+<ul>
+<li>$r_{\pi1}=\dfrac{\uv{T}}{\ui{IB}}=\dfrac{26\mathrm{mV}}{40\mathrm{nA}}=650$kΩ</li>
+<li>那么输入电阻 $\ur{id}=2r_{\pi1}=1.3$MΩ，可能手册给的输入电阻 $\ur{id}=1$MΩ 是比较保守的数据。</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=d16655a6-ba14-4cd2-b257-0c9935d05195">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<p>根据 slew rate = 0.8 V/μs，$C_c=15$pF，用公式(18) $S\!R=\displaystyle\frac{2I_1}{C_c}$ 可算出 $2I_1=S\!R \cdot C_c = 12$μA，即 Q1 和 Q2 的偏置电流 $I_1=6$μA，$\ui{C5} = 12$μA。</p>
+<p>估算 $\sm{\beta}{P}\approx\displaystyle\frac{I_1}{\ui{IB}}=\frac{6}{0.04}=150$</p>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=cc67bc07-2dc5-4e93-aae6-48f33577d92c">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<p>跨导 $\sm{g}{m1}=\displaystyle\frac{I_1}{\uv{T}}=\frac{6}{26}\approx 0.23$mS</p>
+<p>由公式(16)可计算单位增益带宽 $f_t = \displaystyle\frac{\sm{g}{m1}}{2\pi C_c}=\frac{0.23}{15\times 2\pi }\approx 2.45$MHz</p>
+<p>这里又出现了不一致，我推测是因为手册上给的 slew rate 参数偏保守。从手册上给的图可以看出，slew rate 的上升和下降是不对称的，SR$+\approx 1.33$，SR$-\approx 1.0$。</p>
+<p><img alt="RC4558 Slew Rate" src="../img/rc4558-slewrate.png"/></p>
+<p>假如我们取 slew rate = 1.0 V/μs 重新计算，可得出 $2I_{1} = 15$μA，$\sm{g}{m1}=\displaystyle\frac{I_1}{V_T}=\frac{7.5}{26}$， $f_t = \displaystyle\frac{\sm{g}{m1}}{2\pi C_c}\approx 3.06$MHz。这个数据看上去就比较协调了。</p>
 </div>
 </div>
 </div>
@@ -693,12 +798,7 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <p>原理图上只给了电阻的阻值，没有其他器件参数。我们按一般双极型集成电路的器件参数来建模，但是晶体管的面积之比就无从得知了。
-参数取自 Paul &amp; Meyer, <em>Analysis and Design of Analog Integrated Circuits</em>, 5e.
-$\newcommand{\li}[1]{{i_\mathrm{#1}}}$
-$\newcommand{\ui}[1]{{I_\mathrm{#1}}}$
-$\newcommand{\lv}[1]{{v_\mathrm{#1}}}$
-$\newcommand{\uv}[1]{{V_\mathrm{#1}}}$
-$\newcommand{\sm}[2]{{{#1}_\mathrm{#2}}}$</p>
+参数取自 Paul &amp; Meyer, <em>Analysis and Design of Analog Integrated Circuits</em>, 5e.</p>
 <table>
 <thead>
 <tr>
@@ -846,7 +946,7 @@ $\newcommand{\sm}[2]{{{#1}_\mathrm{#2}}}$</p>
 </div>
 </clipboard-copy>
 </div>
-<div class="highlight-ipynb hl-python"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">Ic5</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+<div class="highlight-ipynb hl-python"><pre><span></span><span class="k">def</span> <span class="nf">Ic5</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
     <span class="n">Ic</span> <span class="o">=</span> <span class="n">x</span>
     <span class="n">Vt</span> <span class="o">=</span> <span class="mi">26</span>
     <span class="n">Iref</span> <span class="o">=</span> <span class="mi">860</span>
@@ -1061,16 +1161,6 @@ if root.converged:
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p>我认为手册上给的数据有一点小小的不一致：</p>
-<ul>
-<li>输入电阻 1MΩ</li>
-<li>输入偏置电流 40nA，即 $\ui{B}=40$nA</li>
-</ul>
-<p>按照 hybrid-pi 模型</p>
-<ul>
-<li>$r_\pi=\dfrac{\uv{T}}{\ui{B}}=\dfrac{26\mathrm{mV}}{40\mathrm{nA}}=650$kΩ</li>
-<li>那么输入电阻应该是 1.3MΩ</li>
-</ul>
 </div>
 </div>
 </div>
