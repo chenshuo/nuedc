@@ -7,4 +7,5 @@ p {
 th, td {
   border-width: 1px;
   border-color: #bdb;
+  padding: 4px 8px;
 }
