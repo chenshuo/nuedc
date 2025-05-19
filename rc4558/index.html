@@ -140,6 +140,10 @@
               <ul class="nav flex-column">
               </ul>
             </li>
+            <li class="nav-item" data-bs-level="2"><a href="#spice" class="nav-link">SPICE 仿真</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
               </ul>
             </li>
         </ul>
@@ -591,14 +595,14 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
 <h1 id="rc4558">RC4558 运放<a class="anchor-link" href="#rc4558">¶</a></h1><p><strong>内部电路分析与仿真</strong></p>
 <p>陈硕 2024/06 初稿</p>
 <p>RC4558 是 Raytheon 公司 1971 年推出的首款低成本双运放，它定义了 DIP-8 封装的双运放的管脚排布标准。
-<a href="../opamp/rc4558-1971nov.pdf">RC4558 约等于双 741</a>，前者在带宽方面略好 (3MHz)，较适合音频应用。日本的 JRC 公司在 1980s 仿制成功 JRC4558 (现 NJM4558)，因其廉价，在 80/90 年代的中低档磁带组合音响中用得很多（高档 CD 音响一般用 NE5532，带宽 10MHz）。</p>
+<a href="../opamp/rc4558-1971nov.pdf">RC4558 的定位是“双 741”</a>，前者在带宽方面略好(3MHz)，较适合音频应用。日本的 JRC 公司在 1980s 仿制成功 JRC4558 (现 NJM4558)，因其<a href="http://chenshuo.github.io/notes/media/opamp-ee1972dec.pdf">廉价</a>，在 80/90 年代的中低档磁带组合音响中用得很多（高档 CD 音响一般用 NE5532，带宽 10MHz）。</p>
 <blockquote>
 <p>我在<a href="../opamp/rc4558-1971sep.pdf">一本1971年的杂志</a>上查到了 RC4558 的上市广告，据此我认为 RC4558 是 1971 年面世的，网上<a href="https://www.learningelectronics.net/VA3AVR/gadgets/741/741.html">另一种说法是 1974 年</a>，对此我不认可。Raytheon 公司于 2020 年关张。它在 1950s 销售的 <a href="https://en.wikipedia.org/wiki/CK722">CK722</a> PNP 锗管是第一款低价三极管，当年在电子爱好者中很受欢迎，可以说为普及晶体管电路做了贡献。</p>
 </blockquote>
 <p>TI 目前还在生产 RC4558，可能是因收购 National 而继承的产品线，其<a href="https://www.ti.com/lit/ds/symlink/rc4558.pdf">技术手册</a>如实反应了当输入共模电压过低时会出现的相位反转 (phase reversal)现象，我们后面的仿真结果与此相符。</p>
 <p>ElectroSmash 网站上有对 JRC4558 工作原理的详细（定性）介绍： <a href="https://www.electrosmash.com/jrc4558-analysis">https://www.electrosmash.com/jrc4558-analysis</a></p>
 <p>从内部电路上看，TI 的 <a href="https://leachlegacy.ece.gatech.edu/ece4435/sp08/TL071ckt.pdf">TL072</a> / <a href="https://www.ti.com/lit/ds/symlink/lf353.pdf">LF353</a> 和 RC4558 可以说如出一辙，只是把输入的 PNP 差分管换成了 JFET。</p>
-<p><img alt="" src="/741/rc4558.png"/></p>
+<p><img alt="" src="../img/rc4558.png"/></p>
 <p>RC4558 的硅片版图： <a href="https://zeptobars.com/en/read/Raytheon-RC4558N-general-purpose-dual-opamp-ua741">https://zeptobars.com/en/read/Raytheon-RC4558N-general-purpose-dual-opamp-ua741</a></p>
 <p>借助分析 RC4558 内部电路，可以将模拟电路的很多知识串到一起复习，大致步骤如下：</p>
 <ul>
@@ -776,7 +780,7 @@ $\newcommand{\sm}[2]{{{#1}_\mathrm{#2}}}$</p>
 <p>跨导 $\sm{g}{m1}=\displaystyle\frac{I_1}{\uv{T}}=\frac{6}{26}\approx 0.23$mS</p>
 <p>由公式(16)可计算单位增益带宽 $f_t = \displaystyle\frac{\sm{g}{m1}}{2\pi C_c}=\frac{0.23}{15\times 2\pi }\approx 2.45$MHz</p>
 <p>这里又出现了不一致，我推测是因为手册上给的 slew rate 参数偏保守。从手册上给的图可以看出，slew rate 的上升和下降是不对称的，SR$+\approx 1.33$，SR$-\approx 1.0$。</p>
-<p><img alt="RC4558 Slew Rate" src="../img/rc4558-slewrate.png"/></p>
+<img alt="RC4558 Slew Rate" src="../img/rc4558-slewrate.png" width="50%"/>
 <p>假如我们取 slew rate = 1.0 V/μs 重新计算，可得出 $2I_{1} = 15$μA，$\sm{g}{m1}=\displaystyle\frac{I_1}{V_T}=\frac{7.5}{26}$， $f_t = \displaystyle\frac{\sm{g}{m1}}{2\pi C_c}\approx 3.06$MHz。这个数据看上去就比较协调了。</p>
 </div>
 </div>
@@ -838,7 +842,7 @@ $\newcommand{\sm}[2]{{{#1}_\mathrm{#2}}}$</p>
 <h3 id="">偏置电路<a class="anchor-link" href="#">¶</a></h3><p>RC4558 的偏置电路比 741 简单：</p>
 <ul>
 <li>JFET Q7 给 Zener 二极管 D2 提供一个基本稳定的工作电流，D2 给 Q8 的基极提供参考电压</li>
-<li>Q8/R9/D2 产生基本不随电源电压变化的参考电流 $\ui{ref}=\ui{C8}\approx\dfrac{5.5\mathrm{V}-\uv{BE8}}{R_9}$</li>
+<li>Q8/R9/D2 产生基本不随电源电压变化的参考电流 $\ui{ref}=\ui{C8}\approx\dfrac{\uv{ZD2}-\uv{BE8}}{R_9}$</li>
 <li>Q6/Q10 是基本的镜像电流源，为 Q11 提供偏置电流 $I_2$, 我们假定 $I_2 = \ui{C10} = \ui{C8}=\ui{ref}$</li>
 <li>Q5/Q6 是 Widlar 微电流源，为差分输入级提供偏置电流 $\ui{C5}=2I_1$</li>
 </ul>
@@ -920,8 +924,11 @@ $\newcommand{\sm}[2]{{{#1}_\mathrm{#2}}}$</p>
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <h3 id="bias-currents">偏置电流 bias currents<a class="anchor-link" href="#bias-currents">¶</a></h3><p>以下估算以 $\beta \gg 1$ 为前提，因此忽略基极电流，认为 $\ui{E}\approx\ui{C}$</p>
-<p>Zener 二极管 D2 的稳定电压未知，不妨假设是 5.6V，那么 Q8 e 极对 Vee 的电压约为 $5.6-0.6=5$V，$\ui{ref}\approx 5/5.8 \approx 0.86$mA.
+<p>Zener 二极管 D2 的稳定电压未知，不妨假设是 5.6V，那么 Q8 的 E 极对 Vee 的电压约为 $5.6-0.6=5$V，$\ui{ref}\approx 5/5.8 \approx 0.86$mA.
 因此 $I_2 = \ui{C10}\approx\ui{C11}\approx 0.86$mA.</p>
+<blockquote>
+<p>RC4136 四运放的电路与 RC4558 相同，<a href="../opamp/rc4136-1994.pdf">其手册上给的击穿电压是 5.5V</a>，但是 R9 改成了 15kΩ，仅供参考。</p>
+</blockquote>
 <p>接下来考虑 Q5/R1 的微电流源</p>
 <p>$\ui{C5}R_1 = \uv{T}\ln\dfrac{\ui{ref}}{\ui{C5}}$</p>
 </div>
@@ -992,7 +999,7 @@ if root.converged:
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p>故 $\ui{C1}=\ui{C2}=\ui{C3}=\ui{C4}=\dfrac{\ui{C5}}{2} = 6.31$uA.</p>
+<p>故 $I_1=\ui{C1}=\ui{C2}=\ui{C3}=\ui{C4}=\dfrac{\ui{C5}}{2} = 6.31$uA.</p>
 </div>
 </div>
 </div>
@@ -1089,6 +1096,19 @@ if root.converged:
 </tr>
 </tbody>
 </table>
+<p>静态供电电流（暂不考虑 Q7/D2 的工作电流 $\ui{D2}$）为 $2I_1 + I_2 + \ui{ref} + \ui{C9}+\ui{C14}\approx 0.0126 + 0.86\times 2 + 0.0178 + 0.371\approx 2.12$mA</p>
+<blockquote>
+<p>手册上给出的静态空载供电电流为 3.6mA，每路运放运放为 1.8mA，跟这里的计算有所不符。我感觉这里计算得到的 $\ui{ref}$ 可能偏大了一些，$\ui{C11}$ 应该用不了 0.86mA 这么大。</p>
+</blockquote>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=92fb22a4-7e45-4e9c-8053-038c7ab6b0d0">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <p>在计算过程中我们没有用到电源电压，也暂时忽略了 Early 效应的影响。
 换句话说，RC4558 的直流工作点与电源电压基本无关，这也是它能宽电压工作的主要原因。</p>
 <blockquote>
@@ -1151,7 +1171,7 @@ if root.converged:
 <li>$v_\pi$ 在国内教材上一般叫 $\sm{v}{be}$ 或 $\sm{v}{b'e}$</li>
 <li>$\sm{r}{o}$ 在国内教材上一般叫 $\sm{r}{ce}$</li>
 </ul>
-<p><strong>差分输入电阻</strong> $\sm{R}{id}=2r_{\pi1}=2\times 206=412$kΩ，手册上给的典型数据是 1MΩ</p>
+<p><strong>差分输入电阻</strong> $\sm{R}{id}=2r_{\pi1}=2\times 206=412$kΩ，手册上给的典型数据是 1MΩ，可能实际的 $\sm{\beta}{P}$ 不是 50 而是 100 甚至 150。</p>
 </div>
 </div>
 </div>
@@ -1181,6 +1201,8 @@ if root.converged:
 <li><p>因 $R_3\ll r_{\pi4}$，$R_3/\!/ r_{\pi4}\approx R_3=5$kΩ</p>
 </li>
 <li><p>$\sm{R}{o4} = \sm{r}{o4}(1+\sm{g}{m}R_3)=\sm{r}{o4}(1+\dfrac{5000\times 6.31\mathrm{uA}}{\uv{T}})=2.213 \sm{r}{o4}=45.6$MΩ</p>
+</li>
+<li><p>$\sm{R}{o1}=\sm{r}{o1}/\!/\sm{R}{o4}\approx 6.75$MΩ</p>
 </li>
 </ul>
 </div>
@@ -1221,9 +1243,9 @@ if root.converged:
 $\sm{A}{v1}=\sm{g}{m1}(\sm{R}{o1} /\!/ \sm{R}{i2})$</p>
 <p>Q9 是射极跟随器，其负载电阻为 $R_4 /\!/ r_{\pi11}$</p>
 <ul>
-<li><p>$r_{\pi9}=\dfrac{\sm{\beta}{N}\uv{T}}{\ui{C9}}=\dfrac{200\times 26\mathrm{mV}}{17.8\mathrm{uA}}=292$kΩ</p>
+<li><p>$r_{\pi9}=\sm{\beta}{N}\dfrac{\uv{T}}{\ui{C9}}=\dfrac{200\times 26\mathrm{mV}}{17.8\mathrm{uA}}=292$kΩ</p>
 </li>
-<li><p>$r_{\pi11}=\dfrac{\uv{T}}{\ui{B11}}=\dfrac{26\mathrm{mV}}{0.86\mathrm{mA}/200}=6046.5$Ω</p>
+<li><p>$r_{\pi11}=\dfrac{\uv{T}}{\ui{B11}}=\sm{\beta}{N}\dfrac{\uv{T}}{\ui{C11}}=\dfrac{26\mathrm{mV}}{0.86\mathrm{mA}}\times 200=6046.5$Ω</p>
 </li>
 <li><p>$\sm{R}{i2}=r_{\pi9}+(1+\sm{\beta}{N})(R_4 /\!/ r_{\pi11})$</p>
 </li>
@@ -1248,7 +1270,7 @@ $\sm{A}{v1}=\sm{g}{m1}(\sm{R}{o1} /\!/ \sm{R}{i2})$</p>
 <p>$\sm{R}{o2}=(\sm{r}{o11}/\!/\sm{r}{o10})= \dfrac{\uv{AP}}{\ui{C10}}/\!/\dfrac{\uv{AN}}{\ui{C11}}\approx 42$kΩ</p>
 <p>输出级为射极跟随器，不妨认为其输入阻抗 $\sm{R}{i3}\gg \sm{R}{o2}$，从而粗略估算本级的电压增益 $\sm{A}{v2}$ 为</p>
 <p>$\sm{A}{v2}=\sm{g}{m11}(\sm{r}{o11}/\!/\sm{r}{o10})=\dfrac{\uv{AN}\uv{AP}}{\uv{T}(\uv{AN}+\uv{AP})} = \dfrac{130\times 50}{26\times(130+50)}\times 1000=1389$</p>
-<p>可见整个电路的增益主要由第二级提供。总的增益为 $\sm{A}{v1}\sm{A}{v2}=277\times 1389=384,753$，合 111.7dB</p>
+<p>可见整个电路的增益主要由第二级提供。总的增益为 $\sm{A}{v1}\sm{A}{v2}=277\times 1389=384,753$，合 111.7dB。手册给出的典型增益为 300,000，与计算基本符合。</p>
 </div>
 </div>
 </div>
@@ -1263,66 +1285,34 @@ $\sm{A}{v1}=\sm{g}{m1}(\sm{R}{o1} /\!/ \sm{R}{i2})$</p>
 </div>
 </div>
 </div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=23602f98-544c-40c4-a7af-9c746dc6326e">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<p>Slew rate 用 James Solomon 论文中的公式 (18) 可以直接算出来：$S\!R = \dfrac{2I_1}{C_c}=\dfrac{12.6}{15}\approx 0.84$V/μs，与数据手册的 0.8V/μs 基本符合。</p>
+<p>单位增益带宽 GBW 用上文提到的公式 (16) 也容易计算：$f_t = \displaystyle\frac{\sm{g}{m1}}{2\pi C_c}=\frac{I_1}{2\pi C_c\,\uv{T}}=\frac{6.31}{2\pi\times 15 \times 26 }\approx 2.58$MHz，也接近数据手册的 3.0MHz 典型值。</p>
+<p>增大 $I_1$ 可以提高速度（slew rate 和 GBW），但是会降低输入电阻 $\sm{R}{id}$ 并增加输入偏置电流，这是 BJT 运放的一组基本矛盾，一个解决办法是降低输入级的 $\sm{g}{m}$。(Jim Solomon, William Davis, P. Lee, "A Self-Compensated Monolithic Operational Amplifier With Low Input Current and High Slew Rate.")</p>
+</div>
+</div>
+</div>
+</div>
+<div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=0621c935-94d0-4686-8f75-02fd09f5b5dc">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
+<h2 id="spice">SPICE 仿真<a class="anchor-link" href="#spice">¶</a></h2>
+</div>
+</div>
+</div>
+</div>
 <div class="jp-Cell jp-MarkdownCell jp-Notebook-cell" id="cell-id=3ecf3f61-c482-489f-baeb-8727e2e69ab4">
 <div class="jp-Cell-inputWrapper" tabindex="0">
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <p>待续。。。</p>
-</div>
-</div>
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
-<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=732ed2f9-2047-4eb6-82e2-56772839fb5c">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-<div class="CodeMirror cm-s-jupyter">
-<div class="zeroclipboard-container">
-<clipboard-copy ,="" aria-label="Copy to Clipboard" for="cell-2">
-<div>
-<span class="notice" hidden="">Copied!</span>
-<svg aria-hidden="true" class="clipboard-copy-icon" data-view-component="true" height="20" version="1.1" viewbox="0 0 16 16" width="20">
-<path d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z" fill="currentColor" fill-rule="evenodd"></path>
-<path d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z" fill="currentColor" fill-rule="evenodd"></path>
-</svg>
-</div>
-</clipboard-copy>
-</div>
-<div class="highlight-ipynb hl-python"><pre><span></span>
-</pre></div>
-<div class="clipboard-copy-txt" id="cell-2"></div>
-</div>
-</div>
-</div>
-</div>
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
-<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=ddb91788-d0e7-4e9a-893b-2263d92fb83e">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-<div class="CodeMirror cm-s-jupyter">
-<div class="zeroclipboard-container">
-<clipboard-copy ,="" aria-label="Copy to Clipboard" for="cell-3">
-<div>
-<span class="notice" hidden="">Copied!</span>
-<svg aria-hidden="true" class="clipboard-copy-icon" data-view-component="true" height="20" version="1.1" viewbox="0 0 16 16" width="20">
-<path d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z" fill="currentColor" fill-rule="evenodd"></path>
-<path d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z" fill="currentColor" fill-rule="evenodd"></path>
-</svg>
-</div>
-</clipboard-copy>
-</div>
-<div class="highlight-ipynb hl-python"><pre><span></span>
-</pre></div>
-<div class="clipboard-copy-txt" id="cell-3"></div>
-</div>
-</div>
 </div>
 </div>
 </div>
