@@ -806,26 +806,26 @@ $\newcommand{\sm}[2]{{{#1}_\mathrm{#2}}}$</p>
 <table>
 <thead>
 <tr>
-<th>参数</th>
-<th>NPN</th>
-<th>横向 PNP</th>
+<th style="text-align:center">参数</th>
+<th style="text-align:right">NPN</th>
+<th style="text-align:right">横向 PNP</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>$\ui{S}$</td>
-<td>$\ui{SN}=5\mathrm{fA}$</td>
-<td>$\ui{SP}=2\mathrm{fA}$</td>
+<td style="text-align:center">$\ui{S}$</td>
+<td style="text-align:right">$\ui{SN}=5\mathrm{fA}$</td>
+<td style="text-align:right">$\ui{SP}=2\mathrm{fA}$</td>
 </tr>
 <tr>
-<td>$\beta$</td>
-<td>$\sm{\beta}{N}=200$</td>
-<td>$\sm{\beta}{P}=50$</td>
+<td style="text-align:center">$\beta$</td>
+<td style="text-align:right">$\sm{\beta}{N}=200$</td>
+<td style="text-align:right">$\sm{\beta}{P}=50$</td>
 </tr>
 <tr>
-<td>$\uv{A}$</td>
-<td>$\uv{AN}= 130$V</td>
-<td>$\uv{AP}=50$V</td>
+<td style="text-align:center">$\uv{A}$</td>
+<td style="text-align:right">$\uv{AN}= 130$V</td>
+<td style="text-align:right">$\uv{AP}=50$V</td>
 </tr>
 </tbody>
 </table>
@@ -953,7 +953,7 @@ $\newcommand{\sm}[2]{{{#1}_\mathrm{#2}}}$</p>
 </div>
 </clipboard-copy>
 </div>
-<div class="highlight-ipynb hl-python"><pre><span></span><span class="k">def</span> <span class="nf">Ic5</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+<div class="highlight-ipynb hl-python"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">Ic5</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
     <span class="n">Ic</span> <span class="o">=</span> <span class="n">x</span>
     <span class="n">Vt</span> <span class="o">=</span> <span class="mi">26</span>
     <span class="n">Iref</span> <span class="o">=</span> <span class="mi">860</span>
@@ -1054,45 +1054,50 @@ if root.converged:
 <thead>
 <tr>
 <th>三极管</th>
-<th>手算</th>
-<th>仿真</th>
+<th style="text-align:right">手算</th>
+<th style="text-align:right">仿真</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td>Q1/Q2/Q3/Q4</td>
-<td>6.31uA</td>
-<td></td>
+<td style="text-align:right">6.31μA</td>
+<td style="text-align:right">~6.9μA</td>
 </tr>
 <tr>
 <td>Q5</td>
-<td>12.62uA</td>
-<td></td>
+<td style="text-align:right">12.62μA</td>
+<td style="text-align:right">14.04μA</td>
 </tr>
 <tr>
-<td>Q8/Q6/Q10/Q11</td>
-<td>860uA</td>
-<td></td>
+<td>Q8/Q6</td>
+<td style="text-align:right">860μA</td>
+<td style="text-align:right">840μA/808μA</td>
+</tr>
+<tr>
+<td>Q10/Q11</td>
+<td style="text-align:right">860μA</td>
+<td style="text-align:right">975μA/978μA</td>
 </tr>
 <tr>
 <td>Q9</td>
-<td>17.8uA</td>
-<td></td>
+<td style="text-align:right">17.8μA</td>
+<td style="text-align:right">17.8μA</td>
 </tr>
 <tr>
 <td>Q12</td>
-<td>860uA</td>
-<td></td>
+<td style="text-align:right">860μA</td>
+<td style="text-align:right">956μA</td>
 </tr>
 <tr>
 <td>Q13</td>
-<td>17.8uA</td>
-<td></td>
+<td style="text-align:right">17.8μA</td>
+<td style="text-align:right">18.2μA</td>
 </tr>
 <tr>
 <td>Q14/Q15</td>
-<td>371uA</td>
-<td></td>
+<td style="text-align:right">371μA</td>
+<td style="text-align:right">~240μA</td>
 </tr>
 </tbody>
 </table>
@@ -1303,6 +1308,165 @@ $\sm{A}{v1}=\sm{g}{m1}(\sm{R}{o1} /\!/ \sm{R}{i2})$</p>
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <h2 id="spice">SPICE 仿真<a class="anchor-link" href="#spice">¶</a></h2>
+</div>
+</div>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
+<div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=eeaae033-abe7-4a50-b782-1b36c47a064c">
+<div class="jp-Cell-inputWrapper" tabindex="0">
+<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
+</div>
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+<div class="CodeMirror cm-s-jupyter">
+<div class="zeroclipboard-container">
+<clipboard-copy ,="" aria-label="Copy to Clipboard" for="cell-2">
+<div>
+<span class="notice" hidden="">Copied!</span>
+<svg aria-hidden="true" class="clipboard-copy-icon" data-view-component="true" height="20" version="1.1" viewbox="0 0 16 16" width="20">
+<path d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z" fill="currentColor" fill-rule="evenodd"></path>
+<path d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z" fill="currentColor" fill-rule="evenodd"></path>
+</svg>
+</div>
+</clipboard-copy>
+</div>
+<div class="highlight-ipynb hl-python"><pre><span></span><span class="n">ng</span><span class="o">.</span><span class="n">circ</span><span class="p">(</span><span class="s1">'''</span>
+<span class="s1">Vcc vcc 0   15V</span>
+<span class="s1">Vee vee 0  -15V</span>
+<span class="s1">Vin vin 0  DC -339.5u AC 1V</span>
+<span class="s1">Rd1 vin in+ 1</span>
+<span class="s1">Rd2 in- 0   1</span>
+<span class="s1">* Bias</span>
+
+<span class="s1">J1  q8b  vcc  vcc  PJFET</span>
+<span class="s1">D2  vee  q8b       DZ</span>
+<span class="s1">Q8  q6c  q8b  q8e  NPN</span>
+<span class="s1">R9  q8e  vee       5.8k</span>
+<span class="s1">Q6  q6c  q6c  vcc  PNP</span>
+<span class="s1">Q10 q14b q6c  vcc  PNP</span>
+<span class="s1">Q5  q5c  q6c  q5e  PNP</span>
+<span class="s1">R1  vcc  q5e       8.7k</span>
+
+<span class="s1">* Input</span>
+
+<span class="s1">Q1 q9b in+ q5c PNP</span>
+<span class="s1">Q2 q3c in- q5c PNP</span>
+<span class="s1">Q3 q3c q3c r2  NPN</span>
+<span class="s1">Q4 q9b q3c r3  NPN</span>
+<span class="s1">R2 r2  vee 5k</span>
+<span class="s1">R3 r3  vee 5k</span>
+<span class="s1">C1 r2  vee 15pF</span>
+
+<span class="s1">* Gain</span>
+
+<span class="s1">Q9  vcc  q9b  q11b NPN</span>
+<span class="s1">Q11 q15b q11b vee  NPN</span>
+<span class="s1">R4  q11b vee  50k</span>
+<span class="s1">C2  q9b  q15b 15pF</span>
+<span class="s1">D1  q9b  q15b D</span>
+
+<span class="s1">* Vbe multiplier</span>
+
+<span class="s1">Q13 q14b q14b q12b NPN</span>
+<span class="s1">Q12 q14b q12b q15b NPN</span>
+<span class="s1">R5  q12b q15b 50k</span>
+
+<span class="s1">* Output</span>
+
+<span class="s1">Q14 vcc q14b q14e NPN 3</span>
+<span class="s1">Q15 vee q15b q15e PNP 3</span>
+<span class="s1">R6  q14e mid  27</span>
+<span class="s1">R7  mid  q15e 27</span>
+<span class="s1">R8  mid  out  120</span>
+
+<span class="s1">.model D  D(IS=1fA)</span>
+<span class="s1">.model DZ D(IS=10fA BV=5.6)</span>
+<span class="s1">.model NJFET NJF(VTO=-5.6 BETA=1e-3 LAMBDA=1e-3)</span>
+<span class="s1">.model PJFET PJF(VTO=-1  BETA=2e-4 LAMBDA=1e-3)</span>
+
+<span class="s1">.model npn NPN ( Bf=200 Br=2.0 VAf=125V Is=5fA Tf=0.35ns</span>
+<span class="s1">+ Rb=200 Rc=200 Re=2 Cje=1.0pF Vje=0.70V Mje=0.33 Cjc=0.3pF</span>
+<span class="s1">+ Vjc=0.55V Mjc=0.5 Cjs=3.0pF Vjs=0.52V Mjs=0.5)</span>
+
+<span class="s1">.model pnp PNP ( Bf=50 Br=4.0 VAf=50V Is=2fA Tf=30ns</span>
+<span class="s1">+ Rb=300 Rc=100 Re=10 Cje=0.3pF Vje=0.55V Mje=0.5 Cjc=1.0pF</span>
+<span class="s1">+ Vjc=0.55V Mjc=0.5 Cjs=3.0pF Vjs=0.52V Mjs=0.5)</span>
+
+<span class="s1">.options savecurrents</span>
+<span class="s1">* .save all @q5[ic] @q1[ic] @q8[ic] @d2[id]</span>
+<span class="s1">* .save @q9[ic] @q10[ic] @q11[ic]</span>
+<span class="s1">'''</span><span class="p">)</span>
+<span class="n">print_op</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+</pre></div>
+<div class="clipboard-copy-txt" id="cell-2">ng.circ('''
+Vcc vcc 0   15V
+Vee vee 0  -15V
+Vin vin 0  DC -339.5u AC 1V
+Rd1 vin in+ 1
+Rd2 in- 0   1
+* Bias
+
+J1  q8b  vcc  vcc  PJFET
+D2  vee  q8b       DZ
+Q8  q6c  q8b  q8e  NPN
+R9  q8e  vee       5.8k
+Q6  q6c  q6c  vcc  PNP
+Q10 q14b q6c  vcc  PNP
+Q5  q5c  q6c  q5e  PNP
+R1  vcc  q5e       8.7k
+
+* Input
+
+Q1 q9b in+ q5c PNP
+Q2 q3c in- q5c PNP
+Q3 q3c q3c r2  NPN
+Q4 q9b q3c r3  NPN
+R2 r2  vee 5k
+R3 r3  vee 5k
+C1 r2  vee 15pF
+
+* Gain
+
+Q9  vcc  q9b  q11b NPN
+Q11 q15b q11b vee  NPN
+R4  q11b vee  50k
+C2  q9b  q15b 15pF
+D1  q9b  q15b D
+
+* Vbe multiplier
+
+Q13 q14b q14b q12b NPN
+Q12 q14b q12b q15b NPN
+R5  q12b q15b 50k
+
+* Output
+
+Q14 vcc q14b q14e NPN 3
+Q15 vee q15b q15e PNP 3
+R6  q14e mid  27
+R7  mid  q15e 27
+R8  mid  out  120
+
+.model D  D(IS=1fA)
+.model DZ D(IS=10fA BV=5.6)
+.model NJFET NJF(VTO=-5.6 BETA=1e-3 LAMBDA=1e-3)
+.model PJFET PJF(VTO=-1  BETA=2e-4 LAMBDA=1e-3)
+
+.model npn NPN ( Bf=200 Br=2.0 VAf=125V Is=5fA Tf=0.35ns
++ Rb=200 Rc=200 Re=2 Cje=1.0pF Vje=0.70V Mje=0.33 Cjc=0.3pF
++ Vjc=0.55V Mjc=0.5 Cjs=3.0pF Vjs=0.52V Mjs=0.5)
+
+.model pnp PNP ( Bf=50 Br=4.0 VAf=50V Is=2fA Tf=30ns
++ Rb=300 Rc=100 Re=10 Cje=0.3pF Vje=0.55V Mje=0.5 Cjc=1.0pF
++ Vjc=0.55V Mjc=0.5 Cjs=3.0pF Vjs=0.52V Mjs=0.5)
+
+.options savecurrents
+* .save all @q5[ic] @q1[ic] @q8[ic] @d2[id]
+* .save @q9[ic] @q10[ic] @q11[ic]
+''')
+print_op(0)</div>
+</div>
+</div>
 </div>
 </div>
 </div>
