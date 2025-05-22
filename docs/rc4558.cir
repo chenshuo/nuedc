@@ -1,0 +1,116 @@
+* RC4558 and XL4558
+
+.subckt RC4558 in+ in- vcc vee out
+
+* Bias
+
+J1  q8b  vcc  vcc  PJFET
+D2  vee  q8b       DZ
+Q8  q6c  q8b  q8e  NPN
+R9  q8e  vee       5.8k
+Q6  q6c  q6c  vcc  PNP
+Q10 q14b q6c  vcc  PNP
+Q5  q5c  q6c  q5e  PNP
+R1  vcc  q5e       8.7k
+
+* Input
+
+Q1  q9b  in+  q5c  PNP
+Q2  q3c  in-  q5c  PNP
+Q3  q3c  q3c  r2   NPN
+Q4  q9b  q3c  r3   NPN
+R2  r2   vee       5k
+R3  r3   vee       5k
+C1  r2   vee       15pF
+
+* Gain
+
+Q9  vcc  q9b  q11b NPN
+Q11 q15b q11b vee  NPN
+R4  q11b vee       50k
+C2  q9b  q15b      15pF
+D1  q9b  q15b      D
+
+* Vbe multiplier
+
+Q13 q14b q14b q12b NPN
+Q12 q14b q12b q15b NPN
+R5  q12b q15b      50k
+
+* Output
+
+Q14 vcc  q14b q14e NPN 3
+Q15 vee  q15b q15e PNP 3
+R6  q14e mid       27
+R7  mid  q15e      27
+R8  mid  out       120
+
+.model D  D(IS=1fA)
+.model DZ D(IS=10fA BV=5.6)
+.model PJFET PJF(VTO=-1 BETA=2e-4 LAMBDA=5e-3)
+
+.model npn NPN ( Bf=200 Br=2.0 VAf=130V Is=5fA Tf=0.35ns
++ Rb=200 Rc=200 Re=2 Cje=1.0pF Vje=0.70V Mje=0.33 Cjc=0.3pF
++ Vjc=0.55V Mjc=0.5 Cjs=3.0pF Vjs=0.52V Mjs=0.5)
+
+.model pnp PNP ( Bf=50 Br=4.0 VAf=50V Is=2fA Tf=30ns
++ Rb=300 Rc=100 Re=10 Cje=0.3pF Vje=0.55V Mje=0.5 Cjc=1.0pF
++ Vjc=0.55V Mjc=0.5 Cjs=3.0pF Vjs=0.52V Mjs=0.5)
+
+.ends
+
+* =================================================================
+
+.SUBCKT XL4558 in+ in- vcc vee out
+
+* Bias
+
+Q7  q8b q8e vee NPN
+Q8  q6c q8b q8e NPN
+R9  q8e vee 1k
+R10 vcc q8b 75k
+
+Q6 q6c q6c vcc PNP
+Q10 q14b q6c vcc PNP
+Q5 q5c q6c q5e PNP
+R1 vcc q5e 8.7k
+
+* Input
+
+Q1 q9b in+ q5c PNP
+Q2 q3c in- q5c PNP
+Q3 q3c q3c r2  NPN
+Q4 q9b q3c r3  NPN
+R2 r2  vee 5k
+R3 r3  vee 5k
+C1 r2  vee 15pF
+
+* Gain
+
+Q9  vcc  q9b  q11b NPN
+Q11 q15b q11b vee  NPN
+R4  q11b vee  50k
+C2  q9b  q15b 15pF
+
+* Vbe multiplier
+
+Q13 q14b q14b q12b NPN
+Q12 q14b q12b q15b NPN
+R5  q12b q15b 50k
+
+* Output
+
+Q14 vcc q14b q14e NPN 3
+Q15 vee q15b q15e PNP 3
+R6  q14e mid  27
+R7  mid  q15e 27
+R8  mid  out  120
+
+.model npn NPN ( Bf=200 Br=2.0 VAf=130V Is=10fA Tf=0.35ns
++ Rb=200 Rc=200 Re=2 Cje=1.0pF Vje=0.70V Mje=0.33 Cjc=0.3pF
++ Vjc=0.55V Mjc=0.5 Cjs=3.0pF Vjs=0.52V Mjs=0.5)
+.model pnp PNP ( Bf=50 Br=4.0 VAf=50V Is=10fA Tf=30ns
++ Rb=300 Rc=100 Re=10 Cje=0.3pF Vje=0.55V Mje=0.5 Cjc=1.0pF
++ Vjc=0.55V Mjc=0.5 Cjs=3.0pF Vjs=0.52V Mjs=0.5)
+
+.ends XL4558
