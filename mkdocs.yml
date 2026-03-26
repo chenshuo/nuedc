@@ -6,6 +6,7 @@ site_author: 陈硕
 
 theme:
   name: mkdocs
+  custom_dir: overrides
   analytics:
     gtag: G-KF122GXJGS
 extra_css: [extra.css]
